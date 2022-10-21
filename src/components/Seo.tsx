@@ -6,7 +6,7 @@ const defaultMeta = {
   siteName:
     'Ini Lho ITS 2020 adalah sebuah event yang membantu calon mahasiswa baru ITS menemukan jurusan yang sesuai minat & bakat yang dimiliki nya.',
   description:
-    'A starter for Next.js, Tailwind CSS, and TypeScript with Absolute Import, Seo, Link component, pre-configured with Husky',
+    'Kenali Dirimu, Kenali Masa Depanmu, Di Ini Lho ITS! 2022" Ini Lho ITS! 2022 membantu calon mahasiswa baru ITS dalam menemukan jurusan yang sesuai minat & bakat yang dimilikinya. Ini Lho ITS! 2022 memiliki serangkaian event yang terdiri dari Open Campus, Visit, dan Welcome',
   url: 'https://inilhoits.com',
   type: 'website',
   robots: 'follow, index',
@@ -14,7 +14,7 @@ const defaultMeta = {
    * No need to be filled, will be populated with openGraph function
    * If you wish to use a normal image, just specify the path below
    */
-  image: 'https://tsnext-tw.thcl.dev/images/large-og.png',
+  image: 'https://inilhoits.com/images/large-og.png',
 };
 
 type SeoProps = {
@@ -56,7 +56,7 @@ export default function Seo(props: SeoProps) {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@th_clarence' />
+      <meta name='twitter:site' content='@inilhoits' />
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
