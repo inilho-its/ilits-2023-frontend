@@ -6,8 +6,6 @@
 4. Zustand
 5. React-hook-form
 6. Toast
-7. React-location
-8. TailwindCSS
 
 ## Role
 

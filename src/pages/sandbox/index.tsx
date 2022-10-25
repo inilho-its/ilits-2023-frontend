@@ -18,6 +18,10 @@ const components = [
     name: 'Form',
     path: '/sandbox/form',
   },
+  {
+    name: 'Redirect Page',
+    path: '/sandbox/redirect',
+  },
 ];
 
 export default function SandboxPage() {
