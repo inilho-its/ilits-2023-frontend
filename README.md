@@ -1,3 +1,14 @@
+## TechStack
+
+1. NextJS
+2. ReactJS
+3. Typescript
+4. Zustand
+5. React-hook-form
+6. Toast
+7. React-location
+8. TailwindCSS
+
 ## Role
 
 To Start working on a given task
