@@ -67,7 +67,7 @@ export default function FilePreview({
           <button
             type='button'
             onClick={() => setIsOpen(true)}
-            className='inline-block rounded text-xl font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:ring focus:ring-primary-500'
+            className='focus:ring-primary-500 inline-block rounded text-xl font-medium text-gray-500 hover:text-gray-700 focus:outline-none focus:ring'
           >
             <HiOutlineEye />
           </button>
@@ -114,7 +114,7 @@ export default function FilePreview({
       <div className='ml-4 flex flex-shrink-0 items-center space-x-2'>
         <UnstyledLink
           href={file.preview}
-          className='rounded text-gray-500 hover:text-gray-700 focus:outline-none focus:ring focus:ring-primary-500'
+          className='focus:ring-primary-500 rounded text-gray-500 hover:text-gray-700 focus:outline-none focus:ring'
         >
           <HiOutlineExternalLink size={20} />
         </UnstyledLink>
