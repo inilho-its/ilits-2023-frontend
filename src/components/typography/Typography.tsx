@@ -71,26 +71,18 @@ export default function Typography<T extends React.ElementType>({
       className={clsxm(
         //#region  //*=========== Variants ===========
         [
-          variant === 'h1' && 'text-6xl font-bold',
-          variant === 'h2' && 'text-5xl font-bold',
-          variant === 'h3' && 'text-4xl font-bold',
-          variant === 'h4' && 'text-3xl font-bold',
-          variant === 'h5' && 'text-2xl font-bold',
-          variant === 'h6' && 'text-xl font-bold',
-          variant === 'subtitle1' && 'text-lg font-semibold',
-          variant === 'subtitle2' && 'text-md font-semibold',
-          variant === 'body1' && 'text-base',
-          variant === 'body2' && 'text-sm',
-          variant === 'caption' && 'text-xs',
-          variant === 'overline' && 'text-xs uppercase',
+          variant === 'h1' && 'text-[80px] font-bold',
+          variant === 'h2' && 'text-7xl font-bold',
+          variant === 'h3' && 'text-[64px] font-bold',
+          variant === 'body' && 'text-2xl',
+          variant === 'button' && 'text-xl font-semibold',
         ],
         //#endregion  //*======== Variants ===========
         //#region  //*=========== Color ===========
         [
-          color === 'primary' && 'text-typo-primary',
-          color === 'secondary' && 'text-typo-secondary',
-          color === 'tertiary' && 'text-typo-tertiary',
-          color === 'quaternary' && 'text-typo-quaternary',
+          color === 'primary' && 'text-primary-blue',
+          color === 'warning' && 'text-primary-yellow',
+          color === 'danger' && 'text-primary-red',
         ],
         //#endregion  //*======== Color ===========
         className
