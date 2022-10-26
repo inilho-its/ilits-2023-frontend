@@ -13,9 +13,9 @@ export default function RedirectPage() {
         <section>
           <div className='layout flex h-screen w-full items-center'>
             <div className='flex flex-col items-center '>
-              <div className='w-72'>
+              <div className='w-96'>
                 <Image
-                  src='/images/ilits-logo.svg'
+                  src='/images/ilits-logo.png'
                   width='100%'
                   height='50%'
                   layout='responsive'
@@ -23,7 +23,11 @@ export default function RedirectPage() {
                   alt='logo-ilits'
                 />
               </div>
-              <Typography as='h3' variant='h3' className='text-primary-yellow'>
+              <Typography
+                as='body'
+                variant='body'
+                className='font-semibold tracking-widest text-primary-yellow'
+              >
                 You are being redirected...
               </Typography>
             </div>
