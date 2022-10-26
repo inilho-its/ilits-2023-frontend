@@ -1,0 +1,25 @@
+name: Deploy Inilho ITS Frontend DO
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH to server & execute commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 18235
+          script: |
+            cd /var/www/ilits-2023-frontend
+            git pull origin develop
+            yarn install
+            yarn build
+            pm2 reload frontend
+            pm2 restart frontend
