@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
+import { UrlObject } from 'url';
 
 import apiMock from '@/lib/apiMock';
 
@@ -28,11 +29,16 @@ export default function NotFoundPage() {
     try {
       apiMock
         .get<ApiReturnUrl>(`/shortener${path}`)
-        .then((res) => {
-          if (res.status === 200) {
-            setTimeout(() => router.push(res.data.shortener.url), 3000);
+        .then(
+          (res: {
+            status: number;
+            data: { shortener: { url: string | UrlObject } };
+          }) => {
+            if (res.status === 200) {
+              setTimeout(() => router.push(res.data.shortener.url), 3000);
+            }
           }
-        })
+        )
         .catch(() => {
           setStatus(false);
         });
