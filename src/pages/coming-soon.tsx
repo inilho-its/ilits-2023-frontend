@@ -1,7 +1,9 @@
-import Image from 'next/image';
 import * as React from 'react';
+import { AiOutlineInstagram } from 'react-icons/ai';
+import { MdArrowForwardIos } from 'react-icons/md';
 
 import Layout from '@/components/layout/Layout';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
 export default function CommingsoonPage() {
@@ -10,26 +12,40 @@ export default function CommingsoonPage() {
       <Seo templateTitle='Coming-Soon' />
       <main>
         <section className='Coming Soon'>
-          <div className='relative flex min-h-screen w-full overflow-hidden bg-[#F2F2F2] '>
-            <div className='absolute top-4 left-[-20px] h-[282px] w-[227.38px] blur-lg sm:top-0 sm:left-[0px] sm:h-[350px] sm:w-[350px] sm:blur-none  lg:left-0 lg:h-[550px] lg:w-[375px]'>
-              <Image alt='/' src='/images/bg-update1.svg' layout='fill' />
-            </div>
-            <div className='absolute bottom-0 -right-[30px] h-[250px] w-[200px] blur-lg sm:right-20 sm:blur-none lg:h-[287px] lg:w-[239px]'>
-              <Image alt='/' src='/images/bg-update2.svg' layout='fill' />
-            </div>
-            <div className='m-auto'>
-              <p className='text-center text-[39.1px] font-semibold text-[#3B71C7] sm:text-[44px] lg:text-6xl'>
-                Coming Soon
-              </p>
-              <p className='pt-5 text-center text-lg font-[600] text-[#3B71C7] sm:text-xl lg:pt-8 lg:text-3xl'>
-                <span className='bg-gradient-to-r from-[#487DBC] to-[#60BEE0] bg-clip-text pr-[7px] font-[600] text-transparent'>
-                  INI LHO ITS! 2023
-                </span>
-                akan segera hadir
-              </p>
-              <p className='text-center text-lg font-[600] text-[#3B71C7] sm:text-xl md:pt-2  lg:pt-3 lg:text-3xl'>
-                Stay tune.
-              </p>
+          <div className='m-auto flex min-h-screen w-full self-center bg-background-cream'>
+            <div className='m-auto flex flex-col'>
+              <div className='m-auto flex flex-col'>
+                <div className='w-[300px] self-center sm:w-[400px] md:w-[500px] lg:w-[623px]'>
+                  <NextImage
+                    alt='comingsoon'
+                    src='/comingsoon/comingsoon-img.png'
+                    width='100%'
+                    height='70%'
+                    layout='responsive'
+                    objectFit='contain'
+                  />
+                </div>
+                <div className='px-7 pt-7 text-center text-3xl font-bold sm:px-3 sm:text-4xl md:pt-6 md:text-5xl lg:pt-6 lg:text-6xl'>
+                  <p className='text-dark'>
+                    Our website will come
+                    <span className='text-rose-500'> very soon!</span>
+                  </p>
+                </div>
+                <p className='pt-5 pb-4 text-center text-xs font-medium text-dark sm:text-sm md:pb-4 md:pt-6 md:text-base lg:pt-4'>
+                  meanwhile, have a look at these :
+                </p>
+              </div>
+              <div className='inline-flex justify-center text-primary-white'>
+                <a href='https://www.instagram.com/inilhoits'>
+                  <div className='flex flex-row rounded-md bg-primary-blue p-3 sm:py-3 sm:px-4'>
+                    <AiOutlineInstagram className='self-center text-sm md:text-xl' />
+                    <p className='self-center px-2 text-xs font-semibold sm:text-sm md:text-base lg:text-lg'>
+                      Instagram Ini Lho ITS! 2023
+                    </p>
+                    <MdArrowForwardIos className='self-center text-sm font-semibold md:text-xl' />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
