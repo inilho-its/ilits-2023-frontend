@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = 'https://inilhoits.its.ac.id/api';
+const baseURL = 'https://inilho.its.ac.id/api';
 
 export const apiMock = axios.create({
   baseURL,
