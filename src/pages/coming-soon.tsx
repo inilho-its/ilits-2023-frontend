@@ -23,6 +23,7 @@ export default function CommingsoonPage() {
                     height='70%'
                     layout='responsive'
                     objectFit='contain'
+                    priority
                   />
                 </div>
                 <div className='px-7 pt-7 text-center text-3xl font-bold sm:px-3 sm:text-4xl md:pt-6 md:text-5xl lg:pt-6 lg:text-6xl'>

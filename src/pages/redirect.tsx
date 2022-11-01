@@ -21,6 +21,7 @@ export default function RedirectPage() {
                   layout='responsive'
                   objectFit='contain'
                   alt='logo-ilits'
+                  priority
                 />
               </div>
               <Typography
