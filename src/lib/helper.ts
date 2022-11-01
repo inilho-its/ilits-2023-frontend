@@ -10,7 +10,7 @@ export function openGraph({
   siteName,
   templateTitle,
   description,
-  logo = 'https://inilhoits.com/images/logo.png',
+  logo = 'https://inilho.its.ac.id/images/logo.png',
 }: OpenGraphType): string {
   const ogLogo = encodeURIComponent(logo);
   const ogSiteName = encodeURIComponent(siteName.trim());
