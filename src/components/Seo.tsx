@@ -7,14 +7,14 @@ const defaultMeta = {
     'Ini Lho ITS 2020 adalah sebuah event yang membantu calon mahasiswa baru ITS menemukan jurusan yang sesuai minat & bakat yang dimiliki nya.',
   description:
     'Kenali Dirimu, Kenali Masa Depanmu, Di Ini Lho ITS! 2022" Ini Lho ITS! 2022 membantu calon mahasiswa baru ITS dalam menemukan jurusan yang sesuai minat & bakat yang dimilikinya. Ini Lho ITS! 2022 memiliki serangkaian event yang terdiri dari Open Campus, Visit, dan Welcome',
-  url: 'https://inilhoits.com',
+  url: 'https://inilho.its.ac.id',
   type: 'website',
   robots: 'follow, index',
   /**
    * No need to be filled, will be populated with openGraph function
    * If you wish to use a normal image, just specify the path below
    */
-  image: 'https://inilhoits.com/images/large-og.png',
+  image: 'https://inilho.its.ac.id/images/large-og.png',
 };
 
 type SeoProps = {
