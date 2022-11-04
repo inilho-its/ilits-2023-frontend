@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { RiAlarmWarningFill } from 'react-icons/ri';
 
 import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/links/ArrowLink';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import Typography from '@/components/typography/Typography';
 
 export default function NotFoundPage() {
   return (
@@ -11,14 +12,30 @@ export default function NotFoundPage() {
       <>
         <Seo templateTitle='Not Found' />
         <main>
-          <section className='bg-white'>
-            <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-black'>
-              <RiAlarmWarningFill
-                size={60}
-                className='drop-shadow-glow animate-flicker text-red-500'
-              />
-              <h1 className='mt-8 text-4xl md:text-6xl'>Page Not Found</h1>
-              <ArrowLink className='mt-4 md:text-lg' href='/'>
+          <section className='bg-background-cream'>
+            <div className='flex h-screen flex-col items-center justify-center text-center'>
+              <div className='w-80 sm:w-96'>
+                <NextImage
+                  src='/images/ilits-logo.png'
+                  width='100%'
+                  height='50%'
+                  layout='responsive'
+                  objectFit='contain'
+                  alt='logo-ilits'
+                  priority
+                />
+              </div>
+              <Typography
+                variant='h3'
+                color='danger'
+                className='whitespace-normal'
+              >
+                Page not Found
+              </Typography>
+              <ArrowLink
+                className='mt-6 text-primary-blue  md:text-lg'
+                href='/'
+              >
                 Back to Home
               </ArrowLink>
             </div>

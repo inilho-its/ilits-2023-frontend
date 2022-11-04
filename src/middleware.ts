@@ -1,7 +1,7 @@
-import type { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import arrayMerge from '@/lib/arrayMerge';
-import getUrlShortener from '@/lib/getUrlShortener';
+import { getUrlShortener } from '@/lib/getUrlShortener';
 
 export default async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname.split('/')[1];
@@ -16,17 +16,23 @@ export default async function middleware(req: NextRequest) {
       'images',
       'svg',
       '',
+      '/',
       'favicon.ico',
     ],
     // Pages URL
-    ['coming-soon'],
+    ['coming-soon', 'redirect', '404', '500', ''],
   ]);
 
   if (pageList.includes(path)) {
     return;
   }
-
-  const url = await getUrlShortener(path);
-
-  return url;
+  try {
+    const res = await getUrlShortener(path);
+    return NextResponse.redirect(
+      'https://inilho.its.ac.id/redirect?url=' + res.shortener.url
+    );
+  } catch {
+    // eslint-disable-next-line no-console
+    console.error('Error: URL Shortener not found');
+  }
 }
