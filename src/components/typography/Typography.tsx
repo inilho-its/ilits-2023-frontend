@@ -71,9 +71,9 @@ export default function Typography<T extends React.ElementType>({
       className={clsxm(
         //#region  //*=========== Variants ===========
         [
-          variant === 'h1' && 'text-[80px] font-bold',
+          variant === 'h1' && 'text-[80px] font-bold leading-none',
           variant === 'h2' && 'text-7xl font-bold',
-          variant === 'h3' && 'text-[64px] font-bold',
+          variant === 'h3' && 'text-[64px] font-bold leading-none',
           variant === 'body' && 'text-2xl',
           variant === 'button' && 'text-xl font-semibold',
         ],
