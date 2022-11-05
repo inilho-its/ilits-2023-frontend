@@ -22,17 +22,17 @@ pipelines:
               - yarn lint:strict
             caches:
               - node
-        - step: 
+        - step:
             name: Type Check
-            script: 
+            script:
               - yarn install
               - yarn typecheck
-            caches: 
+            caches:
               - node
-        - step: 
+        - step:
             name: Prettier Check
-            script: 
+            script:
               - yarn install
               - yarn format:check
-            caches: 
+            caches:
               - node
