@@ -19,7 +19,7 @@ pipelines:
             name: Code linting
             script:
               - yarn install
-              - lint:strict
+              - yarn lint:strict
             caches:
               - node
         - step: 
