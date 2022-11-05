@@ -18,18 +18,21 @@ pipelines:
         - step:
             name: Code linting
             script:
+              - yarn install
               - lint:strict
             caches:
               - node
         - step: 
             name: Type Check
             script: 
+              - yarn install
               - yarn typecheck
             caches: 
               - node
         - step: 
             name: Prettier Check
             script: 
+              - yarn install
               - yarn format:check
             caches: 
               - node
