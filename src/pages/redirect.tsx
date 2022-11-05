@@ -1,11 +1,26 @@
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
 export default function RedirectPage() {
+  const router = useRouter();
+  const { url } = router.query;
+  React.useEffect(() => {
+    setTimeout(() => {
+      if (router.isReady) {
+        if (url) {
+          router.replace(url as string);
+        } else {
+          router.replace('/');
+        }
+      }
+    }, 2000);
+  }, [router, url]);
+
   return (
     <Layout>
       <Seo templateTitle='Loading' />
@@ -14,7 +29,7 @@ export default function RedirectPage() {
           <div className='layout flex h-screen w-full items-center'>
             <div className='flex flex-col items-center '>
               <div className='w-96'>
-                <Image
+                <NextImage
                   src='/images/ilits-logo.png'
                   width='100%'
                   height='50%'
@@ -25,7 +40,6 @@ export default function RedirectPage() {
                 />
               </div>
               <Typography
-                as='body'
                 variant='body'
                 className='font-semibold tracking-widest text-primary-yellow'
               >
