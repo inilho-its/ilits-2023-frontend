@@ -11,10 +11,12 @@ export default function RedirectPage() {
   const { url } = router.query;
   React.useEffect(() => {
     setTimeout(() => {
-      if (url) {
-        router.replace(url as string);
-      } else {
-        router.replace('/');
+      if (router.isReady) {
+        if (url) {
+          router.replace(url as string);
+        } else {
+          router.replace('/');
+        }
       }
     }, 2000);
   }, [router, url]);
