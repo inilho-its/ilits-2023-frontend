@@ -26,13 +26,14 @@ export default async function middleware(req: NextRequest) {
   if (pageList.includes(path)) {
     return;
   }
+
   try {
     const res = await getUrlShortener(path);
     return NextResponse.redirect(
-      'https://inilho.its.ac.id/redirect?url=' + res.shortener.url
+      'https://inilho.its.ac.id/redirect?url=' + res.data.url
     );
   } catch {
     // eslint-disable-next-line no-console
-    console.error('Error: URL Shortener not found');
+    console.error('Error: URL Shortener not found ' + path);
   }
 }
