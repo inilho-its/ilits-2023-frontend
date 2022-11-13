@@ -3,6 +3,8 @@ import * as React from 'react';
 import { Accept, FileRejection, useDropzone } from 'react-dropzone';
 import { Controller, useFormContext } from 'react-hook-form';
 
+import clsxm from '@/lib/clsxm';
+
 import FilePreview from '@/components/forms/FilePreview';
 
 import { FileWithPreview } from '@/types/dropzone';
@@ -126,7 +128,10 @@ export default function DropzoneInput({
 
   return (
     <div>
-      <label className='block text-sm font-normal text-gray-700' htmlFor={id}>
+      <label
+        className={clsxm('block text-sm font-semibold text-gray-700')}
+        htmlFor={id}
+      >
         {label}
       </label>
 

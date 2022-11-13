@@ -10,7 +10,7 @@ export default function TypographyPage() {
       <Seo templateTitle='Typography' />
 
       <main>
-        <section className=''>
+        <section className='bg-bone-500 text-primary-main'>
           <div className='layout min-h-screen space-y-3 py-20'>
             <Typography as='h1' variant='h1'>
               Heading 1
@@ -30,28 +30,12 @@ export default function TypographyPage() {
             <Typography as='h6' variant='h6'>
               Heading 6
             </Typography>
-            <Typography>Paragraph</Typography>
-            <Typography as='subtitle1' variant='subtitle1'>
-              Subtitle 1
-            </Typography>
-            <br></br>
-            <Typography as='subtitle2' variant='subtitle2'>
-              Subtitle 2
-            </Typography>
-            <br></br>
-            <Typography as='body1' variant='body1'>
-              Body 1
-            </Typography>
-            <br></br>
-            <Typography as='body2' variant='body2'>
-              Body 2
-            </Typography>
-            <Typography as='caption' variant='caption'>
-              Caption
-            </Typography>
-            <Typography as='overline' variant='overline'>
-              Overline
-            </Typography>
+            <br />
+            <Typography variant='title'>Title</Typography>
+            <Typography variant='paragraph'>Paragraph</Typography>
+            <Typography variant='body'>Body</Typography>
+            <Typography variant='button'>Button</Typography>
+            <Typography variant='caption'>Caption</Typography>
           </div>
         </section>
       </main>

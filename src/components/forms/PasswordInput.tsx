@@ -1,7 +1,14 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
-import { HiEye, HiEyeOff } from 'react-icons/hi';
+import { HiExclamationCircle, HiEye, HiEyeOff } from 'react-icons/hi';
+
+import clsxm from '@/lib/clsxm';
+
+enum LabelType {
+  'row',
+  'col',
+}
 
 export type PasswordInputProps = {
   /** Input label */
@@ -15,6 +22,8 @@ export type PasswordInputProps = {
   placeholder?: string;
   /** Small text below input, useful for additional information */
   helperText?: string;
+  // Label type
+  labelType?: keyof typeof LabelType;
   /**
    * Input type
    * @example text, email, password
@@ -32,8 +41,11 @@ export default function PasswordInput({
   label,
   placeholder = '',
   helperText,
+  labelType = 'col',
   id,
   readOnly = false,
+  required,
+  hideError,
   validation,
   ...rest
 }: PasswordInputProps) {
@@ -47,45 +59,62 @@ export default function PasswordInput({
 
   return (
     <div>
-      <label htmlFor={id} className='block text-sm font-normal text-gray-700'>
-        {label}
-      </label>
-      <div className='relative mt-1'>
-        <input
-          {...register(id, validation)}
-          {...rest}
-          type={showPassword ? 'text' : 'password'}
-          name={id}
-          id={id}
-          readOnly={readOnly}
-          className={clsx(
-            readOnly
-              ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
-              : errors[id]
-              ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-              : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300',
-            'block w-full rounded-md shadow-sm'
+      <div
+        className={clsxm(
+          labelType === 'row'
+            ? 'grid grid-flow-row grid-cols-4 items-center'
+            : ''
+        )}
+      >
+        <label
+          htmlFor={id}
+          className={clsxm(
+            'block text-sm font-semibold text-gray-700',
+            labelType === 'row' && 'col-span-1'
           )}
-          placeholder={placeholder}
-          aria-describedby={id}
-        />
-
-        <button
-          onClick={togglePassword}
-          type='button'
-          className='focus:ring-primary-500 absolute inset-y-0 right-0 mr-3 flex items-center rounded-lg p-1 focus:outline-none focus:ring'
         >
-          {showPassword ? (
-            <HiEyeOff className='cursor-pointer text-xl text-gray-500 hover:text-gray-600' />
-          ) : (
-            <HiEye className='cursor-pointer text-xl text-gray-500 hover:text-gray-600' />
-          )}
-        </button>
+          {label}{' '}
+          {required && <span className='font-bold text-danger-main'>*</span>}
+        </label>
+        <div className='relative col-span-3 mt-1'>
+          <input
+            {...register(id, validation)}
+            {...rest}
+            type={showPassword ? 'text' : 'password'}
+            name={id}
+            id={id}
+            readOnly={readOnly}
+            className={clsx(
+              readOnly
+                ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
+                : errors[id]
+                ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300',
+              'block w-full rounded-md shadow-sm',
+              'hover:border-[#ED6C3A]'
+            )}
+            placeholder={placeholder}
+            aria-describedby={id}
+          />
+
+          <button
+            onClick={togglePassword}
+            type='button'
+            className='focus:ring-primary-500 absolute inset-y-0 right-0 mr-3 flex items-center rounded-lg p-1 focus:outline-none focus:ring'
+          >
+            {showPassword ? (
+              <HiEyeOff className='cursor-pointer text-xl text-gray-500 hover:text-gray-600' />
+            ) : (
+              <HiEye className='cursor-pointer text-xl text-gray-500 hover:text-gray-600' />
+            )}
+          </button>
+        </div>
       </div>
       <div className='mt-1'>
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
-        {errors[id] && (
-          <span className='text-sm text-red-500'>
+        {!hideError && errors[id] && (
+          <span className='flex gap-2 text-sm text-red-500'>
+            <HiExclamationCircle className='text-xl text-red-500' />
             {errors[id]?.message as unknown as string}
           </span>
         )}

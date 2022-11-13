@@ -40,8 +40,8 @@ export default function RedirectPage() {
                 />
               </div>
               <Typography
-                variant='body'
-                className='font-semibold tracking-widest text-primary-yellow'
+                variant='title'
+                className='font-semibold tracking-widest text-warning-main'
               >
                 You are being redirected...
               </Typography>
