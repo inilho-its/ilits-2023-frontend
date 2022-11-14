@@ -8,7 +8,7 @@ export default function IndexPage() {
   // Coming Soon
   return (
     <Layout>
-      <CommingsoonPage />;
+      <CommingsoonPage />
     </Layout>
   );
 }
