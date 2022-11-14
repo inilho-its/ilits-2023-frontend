@@ -17,22 +17,10 @@ enum TypographyVariant {
   'overline',
 }
 
-enum TypographyColor {
-  'primary',
-  'secondary',
-  'tertiary',
-  'quaternary',
-  'danger',
-  'warning',
-  'success',
-  'info',
-}
-
 type TypographyProps<T extends React.ElementType> = {
   /** @default 'p' */
   as?: T;
   className?: string;
-  color?: keyof typeof TypographyColor;
   /** Variant
    * | Variant  | Size Class | Font Size | Font Size (px) | Font Weight |
    * | -------- | ---------- | --------- | -------------- | ----------- |
@@ -59,7 +47,6 @@ type TypographyProps<T extends React.ElementType> = {
 export default function Typography<T extends React.ElementType>({
   as,
   className,
-  color = 'primary',
   variant,
   children,
   ...rest
@@ -71,20 +58,19 @@ export default function Typography<T extends React.ElementType>({
       className={clsxm(
         //#region  //*=========== Variants ===========
         [
-          variant === 'h1' && 'text-[80px] font-bold leading-none',
-          variant === 'h2' && 'text-7xl font-bold',
-          variant === 'h3' && 'text-[64px] font-bold leading-none',
-          variant === 'body' && 'text-2xl',
-          variant === 'button' && 'text-xl font-semibold',
+          variant === 'h1' && 'text-[80px] leading-[96px]',
+          variant === 'h2' && 'text-[72px] leading-[90px]',
+          variant === 'h3' && 'text-[64px] leading-[84px]',
+          variant === 'h4' && 'text-[48px] leading-[64px]',
+          variant === 'h5' && 'text-[32px] leading-[48px]',
+          variant === 'h6' && 'text-[24px] leading-[32px]',
+          variant === 'title' && 'text-[20px] leading-[24px]',
+          variant === 'paragraph' && 'text-[18px] leading-[24px]',
+          variant === 'body' && 'text-[16px] leading-[24px]',
+          variant === 'button' && 'text-[16px] leading-[24px]',
+          variant === 'caption' && 'text-[14px] leading-[24px]',
         ],
         //#endregion  //*======== Variants ===========
-        //#region  //*=========== Color ===========
-        [
-          color === 'primary' && 'text-primary-blue',
-          color === 'warning' && 'text-primary-yellow',
-          color === 'danger' && 'text-primary-red',
-        ],
-        //#endregion  //*======== Color ===========
         className
       )}
       {...rest}

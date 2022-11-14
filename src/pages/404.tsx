@@ -27,15 +27,12 @@ export default function NotFoundPage() {
               </div>
               <Typography
                 variant='h3'
-                color='danger'
-                className='whitespace-normal'
+                as='h3'
+                className='whitespace-normal text-danger-main'
               >
                 Page not Found
               </Typography>
-              <ArrowLink
-                className='mt-6 text-primary-blue  md:text-lg'
-                href='/'
-              >
+              <ArrowLink className='mt-6 text-primary-main md:text-lg' href='/'>
                 Back to Home
               </ArrowLink>
             </div>

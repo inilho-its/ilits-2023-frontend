@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import { BsCircle } from 'react-icons/bs';
 
 import logger from '@/lib/logger';
 
@@ -7,10 +8,12 @@ import Button from '@/components/buttons/Button';
 import DatePicker from '@/components/forms/DatePicker';
 import DropzoneInput from '@/components/forms/DropzoneInput';
 import Input from '@/components/forms/Input';
+import PasswordInput from '@/components/forms/PasswordInput';
 import SelectInput from '@/components/forms/SelectInput';
 import TextArea from '@/components/forms/TextArea';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
+import Typography from '@/components/typography/Typography';
 
 import { FileWithPreview } from '@/types/dropzone';
 
@@ -45,17 +48,60 @@ export default function FormSandbox() {
     <Layout>
       <Seo templateTitle='Form Sandbox' />
 
-      <section className=''>
+      <section className='bg-bone-500'>
         <div className='layout min-h-screen py-20'>
           <FormProvider {...methods}>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className='max-w-sm space-y-3'
             >
+              <Typography as='h2' variant='h2'>
+                Input
+              </Typography>
+
               <Input
                 id='name'
+                labelType='row'
                 label='Name'
                 validation={{ required: 'Name must be filled' }}
+              />
+              <Input
+                rightText='.com'
+                required
+                id='email'
+                label='Email'
+                validation={{ required: 'Email must be filled' }}
+              />
+              <Input
+                leftText='www.'
+                id='portofolioLink'
+                label='Portofolio Link'
+                validation={{ required: 'Portofolio Link must be filled' }}
+              />
+              <Input
+                rightIcon={BsCircle}
+                id='key'
+                label='Key'
+                validation={{ required: 'Key must be filled' }}
+              />
+              <Input
+                id='hint'
+                label='Hint'
+                helperText='Please input hint'
+                validation={{ required: 'Hint must be filled' }}
+              />
+              <PasswordInput
+                id='password'
+                labelType='row'
+                label='Password'
+                validation={{ required: 'Password must be filled' }}
+              />
+              <PasswordInput
+                id='passwordConfirm'
+                label='Password Confirmation'
+                validation={{
+                  required: 'Password Confirmation must be filled',
+                }}
               />
               <SelectInput
                 id='gender'
@@ -89,8 +135,10 @@ export default function FormSandbox() {
                 validation={{ required: 'Address must be filled' }}
               />
               <div className='flex flex-wrap gap-4'>
-                <Button variant='outline'>Not Submit</Button>
-                <Button type='submit'>Submit</Button>
+                <Button variant='pink'>Not Submit</Button>
+                <Button type='submit' variant='yellow'>
+                  Submit
+                </Button>
               </div>
               <p className='text-sm text-gray-800'>
                 Check console after submit

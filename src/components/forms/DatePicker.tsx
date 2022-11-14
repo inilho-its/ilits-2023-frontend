@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import { Controller, RegisterOptions, useFormContext } from 'react-hook-form';
-import { HiOutlineCalendar } from 'react-icons/hi';
+import { HiExclamationCircle, HiOutlineCalendar } from 'react-icons/hi';
 
 import 'react-datepicker/dist/react-datepicker.css';
+
+import clsxm from '@/lib/clsxm';
 
 type DatePickerProps = {
   validation?: RegisterOptions;
@@ -14,6 +16,7 @@ type DatePickerProps = {
   defaultMonth?: number;
   defaultValue?: string;
   helperText?: string;
+  hideError?: boolean;
   readOnly?: boolean;
 } & Omit<ReactDatePickerProps, 'onChange'>;
 
@@ -26,6 +29,7 @@ export default function DatePicker({
   defaultMonth,
   defaultValue,
   helperText,
+  hideError,
   readOnly = false,
   ...rest
 }: DatePickerProps) {
@@ -41,7 +45,10 @@ export default function DatePicker({
 
   return (
     <div className='relative'>
-      <label htmlFor={id} className='block text-sm font-normal text-gray-700'>
+      <label
+        htmlFor={id}
+        className={clsxm('block text-sm font-semibold text-gray-700')}
+      >
         {label}
       </label>
 
@@ -63,7 +70,7 @@ export default function DatePicker({
                     ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
                     : errors[id]
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                    : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300',
+                    : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300 hover:border-[#ED6C3A]',
                   'block w-full rounded-md shadow-sm'
                 )}
                 placeholderText={placeholder}
@@ -79,11 +86,12 @@ export default function DatePicker({
               <HiOutlineCalendar className='pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 transform text-lg text-gray-500' />
             </div>
             <div className='mt-1'>
-              {helperText !== '' && (
+              {helperText && (
                 <p className='text-xs text-gray-500'>{helperText}</p>
               )}
-              {errors[id] && (
-                <span className='text-sm text-red-500'>
+              {!hideError && errors[id] && (
+                <span className='flex gap-2 text-sm text-red-500'>
+                  <HiExclamationCircle className='text-xl text-red-500' />
                   {errors[id]?.message as unknown as string}
                 </span>
               )}

@@ -29,16 +29,16 @@ export default function CommingsoonPage() {
                 <div className='px-7 pt-7 text-center text-3xl font-bold sm:px-3 sm:text-4xl md:pt-6 md:text-5xl lg:pt-6 lg:text-6xl'>
                   <p className='text-dark'>
                     Our website will come
-                    <span className='text-rose-500'> very soon!</span>
+                    <span className='text-danger-main'> very soon!</span>
                   </p>
                 </div>
                 <p className='pt-5 pb-4 text-center text-xs font-medium text-dark sm:text-sm md:pb-4 md:pt-6 md:text-base lg:pt-4'>
                   meanwhile, have a look at these :
                 </p>
               </div>
-              <div className='inline-flex justify-center text-primary-white'>
+              <div className='inline-flex justify-center text-neutral-100'>
                 <a href='https://www.instagram.com/inilhoits'>
-                  <div className='flex flex-row rounded-md bg-primary-blue p-3 sm:py-3 sm:px-4'>
+                  <div className='flex flex-row rounded-md bg-primary-main p-3 sm:py-3 sm:px-4'>
                     <AiOutlineInstagram className='self-center text-sm md:text-xl' />
                     <p className='self-center px-2 text-xs font-semibold sm:text-sm md:text-base lg:text-lg'>
                       Instagram Ini Lho ITS! 2023

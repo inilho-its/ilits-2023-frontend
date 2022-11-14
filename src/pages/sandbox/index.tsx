@@ -15,12 +15,12 @@ const components = [
     path: '/sandbox/button',
   },
   {
-    name: 'Form',
-    path: '/sandbox/form',
+    name: 'Button Link',
+    path: '/sandbox/button-link',
   },
   {
-    name: 'Redirect Page',
-    path: '/sandbox/redirect',
+    name: 'Form',
+    path: '/sandbox/form',
   },
 ];
 
@@ -30,22 +30,34 @@ export default function SandboxPage() {
       <Seo templateTitle='Index' />
 
       <main>
-        <section className=''>
+        <section className='bg-bone-500'>
           <div className='layout min-h-screen py-20'>
-            <Typography variant='h2' as='h2' className='text-center'>
+            <Typography
+              variant='h2'
+              as='h2'
+              className='text-center text-primary-main'
+            >
               Design System
             </Typography>
 
             <div className='mt-10'>
-              <Typography variant='h3' as='h3' className='text-center'>
+              <Typography
+                variant='h3'
+                as='h3'
+                className='text-center text-success-main'
+              >
                 Pages
               </Typography>
             </div>
             <div className='mt-10'>
-              <Typography variant='h3' as='h3' className='my-3 text-center'>
+              <Typography
+                variant='h3'
+                as='h3'
+                className='my-3 text-center text-warning-main'
+              >
                 Components
               </Typography>
-              <div className='flex flex-wrap items-center justify-center space-x-3'>
+              <div className='flex flex-wrap items-center justify-center space-x-3 py-20'>
                 {components.map((component) => (
                   <ButtonLink href={component.path} key={component.name}>
                     {component.name}

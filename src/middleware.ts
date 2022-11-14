@@ -18,9 +18,20 @@ export default async function middleware(req: NextRequest) {
       '',
       '/',
       'favicon.ico',
+      'comingsoon',
     ],
     // Pages URL
-    ['coming-soon', 'redirect', '404', '500', ''],
+    [
+      'coming-soon',
+      'redirect',
+      '404',
+      '500',
+      '',
+      'sandbox',
+      'prestasi',
+      'team',
+      'fasilitas',
+    ],
   ]);
 
   if (pageList.includes(path)) {
