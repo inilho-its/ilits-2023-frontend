@@ -1,14 +1,17 @@
 import * as React from 'react';
 
 import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
 
 import CommingsoonPage from '@/pages/coming-soon';
 
-export default function IndexPage() {
-  // Coming Soon
+export default function TimPage() {
   return (
     <Layout>
-      <CommingsoonPage />;
+      <Seo templateTitle='Tim' />
+      <main>
+        <CommingsoonPage />
+      </main>
     </Layout>
   );
 }

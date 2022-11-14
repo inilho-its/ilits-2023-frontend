@@ -18,7 +18,7 @@ export default function CommingsoonPage() {
                 <div className='w-[300px] self-center sm:w-[400px] md:w-[500px] lg:w-[623px]'>
                   <NextImage
                     alt='comingsoon'
-                    src='/comingsoon/comingsoon-img.png'
+                    src='/images/comingsoon/comingsoon-img.png'
                     width='100%'
                     height='70%'
                     layout='responsive'

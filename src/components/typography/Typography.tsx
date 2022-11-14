@@ -9,12 +9,11 @@ enum TypographyVariant {
   'h4',
   'h5',
   'h6',
-  'subtitle1',
-  'subtitle2',
-  'body1',
-  'body2',
+  'title',
+  'paragraph',
+  'body',
+  'button',
   'caption',
-  'overline',
 }
 
 type TypographyProps<T extends React.ElementType> = {

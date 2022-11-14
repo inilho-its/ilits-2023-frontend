@@ -29,7 +29,7 @@ export default async function middleware(req: NextRequest) {
       '',
       'sandbox',
       'prestasi',
-      'team',
+      'tim',
       'fasilitas',
     ],
   ]);

@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 const defaultMeta = {
   title: 'Ini Lho ITS 2023',
   siteName:
-    'Ini Lho ITS 2020 adalah sebuah event yang membantu calon mahasiswa baru ITS menemukan jurusan yang sesuai minat & bakat yang dimiliki nya.',
+    'Ini Lho ITS 2023 adalah sebuah event yang membantu calon mahasiswa baru ITS menemukan jurusan yang sesuai minat & bakat yang dimiliki nya.',
   description:
-    'Kenali Dirimu, Kenali Masa Depanmu, Di Ini Lho ITS! 2022" Ini Lho ITS! 2022 membantu calon mahasiswa baru ITS dalam menemukan jurusan yang sesuai minat & bakat yang dimilikinya. Ini Lho ITS! 2022 memiliki serangkaian event yang terdiri dari Open Campus, Visit, dan Welcome',
+    'Kenali Dirimu, Kenali Masa Depanmu, Di Ini Lho ITS! 2023" Ini Lho ITS! 2023 membantu calon mahasiswa baru ITS dalam menemukan jurusan yang sesuai minat & bakat yang dimilikinya. Ini Lho ITS! 2023 memiliki serangkaian event yang terdiri dari Open Campus, Visit, dan Welcome',
   url: 'https://inilho.its.ac.id',
   type: 'website',
   robots: 'follow, index',
