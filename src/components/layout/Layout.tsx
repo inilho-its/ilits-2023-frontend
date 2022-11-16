@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
+
 import BaseDialog from '@/components/dialog/BaseDialog';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
