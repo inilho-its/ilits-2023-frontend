@@ -26,7 +26,6 @@ export default function PrestasiPage() {
               alt='string background'
             />
           </div>
-
           <div className='absolute mt-96 w-1/2'>
             <NextImage
               src='/images/prestasi/Cloud-1.png'
@@ -37,7 +36,6 @@ export default function PrestasiPage() {
               alt='cloud background'
             />
           </div>
-
           <div className='absolute -top-5 w-1/2'>
             <NextImage
               src='/images/prestasi/Light-2.png'
@@ -48,7 +46,6 @@ export default function PrestasiPage() {
               alt='light background'
             />
           </div>
-
           <div className={`${styles.personLightDimension} absolute -top-6`}>
             <NextImage
               src='/images/prestasi/Light-1.png'
@@ -59,7 +56,6 @@ export default function PrestasiPage() {
               alt='person'
             />
           </div>
-
           <div className={`${styles.personWidth} absolute right-0 mt-6`}>
             <NextImage
               src='/images/prestasi/Person-3.png'
@@ -71,7 +67,8 @@ export default function PrestasiPage() {
               alt='person'
             />
           </div>
-
+          {/* TODO: Change mainStar to landingStar 
+              TODO: Change landingStar position to be closer to the prototype */}
           <div className={`${styles.mainStarLeft} absolute mt-64 w-24`}>
             <NextImage
               src='/images/prestasi/Star-1.png'
@@ -82,7 +79,6 @@ export default function PrestasiPage() {
               alt='person'
             />
           </div>
-
           {/* ANCHOR CONTENT AREA */}
           <div className='layout'>
             <div
