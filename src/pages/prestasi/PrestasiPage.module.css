@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:600,700,900&display=swap');
-
 .mainStarLeft {
   left: 57%;
 }
@@ -15,23 +13,18 @@
 }
 
 .prestasi {
-  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 900;
   line-height: 90px;
   display: flex;
   align-items: flex-end;
   color: #ff7a66;
-
-  /* Meragukan compatibility-nya, alternative: text-shadow */
-  -webkit-text-stroke: 2px #30302e;
   flex: none;
   order: 0;
   flex-grow: 0;
 }
 
 .its {
-  font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 600;
   text-align: justify;
@@ -43,9 +36,8 @@
 }
 
 .fakultasButton {
-  font-family: 'Poppins', sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 13px;
   padding: 1px 3px;
   line-height: 24px;
@@ -61,12 +53,10 @@
 
 .ITSFlex {
   display: inline-flex;
-  font-family: 'Poppins', sans-serif;
   font-weight: 900;
   font-size: 38px;
   line-height: 64px;
   color: #ffffff;
-  -webkit-text-stroke: 2px #121212;
 }
 
 .megaPhoneLeft {
