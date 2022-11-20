@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import NextImage from '@/components/NextImage';
 import Typography from '@/components/typography/Typography';
 
@@ -11,16 +13,13 @@ type teamProps = {
 };
 
 export default function TimGrid(props: teamProps) {
-  let gridStyle =
-    'bg-neutral-100 border-2 border-black rounded-2xl flex flex-row' +
-    props.isLeft
-      ? ''
-      : '-reverse';
-  if (!props.isLeft) {
-    gridStyle += '-reverse';
-  }
   return (
-    <div className={gridStyle}>
+    <div
+      className={clsxm(
+        'flex rounded-2xl border-2 border-black bg-neutral-100',
+        props.isLeft ? ' flex-row' : ' flex-row-reverse'
+      )}
+    >
       <div className='rounded-2xl'>
         <NextImage
           src={props.imgSrc}
@@ -29,6 +28,7 @@ export default function TimGrid(props: teamProps) {
           objectFit='contain'
           layout='responsive'
           alt='tim'
+          className='rounded-2xl'
         />
       </div>
       <div className='pt-5 pl-7 pr-7'>

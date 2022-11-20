@@ -1,11 +1,51 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
-import TimGrid from '@/components/timGrid';
+// import TimGrid from '@/components/TimGrid';
 import Typography from '@/components/typography/Typography';
+
+type teamProps = {
+  teamName: string;
+  imgSrc: string;
+  desc: string;
+  isLeft: boolean;
+};
+
+function TimGrid(props: teamProps) {
+  return (
+    <div
+      className={clsxm(
+        'flex rounded-2xl border-2 border-black bg-neutral-100',
+        props.isLeft ? ' flex-row' : ' flex-row-reverse'
+      )}
+    >
+      <div className='w-76 rounded-2xl grayscale transition duration-200 hover:grayscale-0'>
+        <NextImage
+          src={props.imgSrc}
+          width='100%'
+          height='80%'
+          objectFit='contain'
+          layout='responsive'
+          alt='tim'
+          className='rounded-2xl'
+        />
+      </div>
+      <div className='pt-5 pl-7 pr-7'>
+        <Typography variant='h4' className='font-bold text-bone-1000'>
+          {props.teamName}
+        </Typography>
+        <Typography variant='body' className='pt-4 text-bone-1000'>
+          {props.desc}
+        </Typography>
+      </div>
+    </div>
+  );
+}
 
 export default function TimPage() {
   return (
@@ -16,11 +56,11 @@ export default function TimPage() {
           <div className='mx-auto flex w-10/12 justify-between'>
             <div className='pt-[225px]'>
               <div className='relative z-20 h-[33px] w-[618px] rounded-t-2xl border-2 border-black bg-yellow-400'>
-                <div className='absolute -top-6 -left-4 z-50'>
+                <div className='absolute -top-6 -left-4 z-50 w-28'>
                   <NextImage
                     src='/images/pageTim/Eye.png'
-                    width={116.98}
-                    height={70.51}
+                    width='100%'
+                    height='60%'
                     objectFit='contain'
                     layout='responsive'
                     alt='eye'
@@ -49,24 +89,23 @@ export default function TimPage() {
                 >
                   Kenali Lebih Lanjut
                 </ButtonLink>
-                <div className='absolute -bottom-20 right-7 z-50'>
+                <div className='absolute -bottom-16 right-7 z-50 w-32'>
                   <NextImage
                     src='/images/pageTim/Magnifier.png'
-                    width={122.37}
-                    height={142.43}
+                    width='100%'
+                    height='100%'
                     objectFit='contain'
                     layout='responsive'
                     alt='magnifier'
                   />
                 </div>
-                {/* yg blkg" di absolut in dulu, yg bersentuhan sama gambar lain dibikin relative ke "block" tertentu. z index jg diatur */}
               </div>
             </div>
-            <div className='pt-28'>
+            <div className='w-[431.67px] pt-28'>
               <NextImage
                 src='/images/pageTim/Person.png'
-                width={431.67}
-                height={671}
+                width='100%'
+                height='150'
                 objectFit='contain'
                 layout='responsive'
                 alt='person'
@@ -75,16 +114,17 @@ export default function TimPage() {
           </div>
         </section>
         <section>
-          <div className='border-t-4 border-b-4 border-black bg-red-500'>
-            {/* <div>
-              <NextImage 
-                src="/images/pageTim/Arrow-1.png" 
-                width="100%"
-                height="5%"
-                objectFit="contain" 
-                layout="responsive" 
-                alt="arrow"/>
-            </div> */}
+          <div className='relative border-t-4 border-b-4 border-black bg-red-500'>
+            <div className='absolute top-0 left-3 w-32'>
+              <NextImage
+                src='/images/pageTim/Arrow-1.png'
+                width='100%'
+                height='75%'
+                objectFit='contain'
+                layout='responsive'
+                alt='arrow'
+              />
+            </div>
             <div>
               <Typography
                 variant='h4'
@@ -93,15 +133,16 @@ export default function TimPage() {
                 TIM KEBANGGAAN ITS ??!!
               </Typography>
             </div>
-            {/* <div>
-              <NextImage 
-                src="/images/pageTim/Eye-1.png" 
-                width="100%" 
-                height="5%" 
-                objectFit="contain" 
-                layout="responsive" 
-                alt="eye staring" />
-            </div> */}
+            <div className='absolute top-10 right-16 w-32'>
+              <NextImage
+                src='/images/pageTim/Eye-1.png'
+                width='100%'
+                height='100%'
+                objectFit='contain'
+                layout='responsive'
+                alt='eye staring'
+              />
+            </div>
           </div>
         </section>
         <section>
@@ -115,8 +156,8 @@ export default function TimPage() {
                 </div>
               </div>
               <div className='relative h-[414px] border-2 border-t-0 border-black bg-neutral-100'>
-                <div className='flex justify-between'>
-                  <div className='w-1/2 pt-10 pl-10'>
+                <div className='flex flex-row'>
+                  <div className='flex w-1/2 flex-1 flex-col p-10'>
                     <Typography
                       variant='h5'
                       className='font-semibold text-bone-1000'
@@ -125,6 +166,7 @@ export default function TimPage() {
                     </Typography>
                     <div className='pt-4'>
                       <Typography variant='body' className='text-bone-1000'>
+                        {' '}
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -146,17 +188,18 @@ export default function TimPage() {
                       </div>
                     </div>
                   </div>
-                  {/* <div className='-mt-7'>                  
+                  <div className='w-[475px]'>
                     <NextImage
-                      src="/images/pageTim/image-8.png"
-                      width="5%"
-                      height="5%"
+                      src='/images/pageTim/image-8.png'
+                      width='100%'
+                      height='87.5%'
                       objectFit='contain'
                       layout='responsive'
-                      alt='image'/>
-                  </div> */}
+                      alt='image'
+                    />
+                  </div>
                 </div>
-                <div className='absolute -right-11'>
+                {/* <div className='absolute -right-11'>
                   <NextImage
                     src='/images/pageTim/Cursor.png'
                     width={106}
@@ -165,18 +208,18 @@ export default function TimPage() {
                     layout='responsive'
                     alt='cursor'
                   />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </section>
         <section>
           <div className='relative mx-auto mt-[147.66px] w-10/12 rounded-3xl border-2 border-black bg-green-400'>
-            <div className='absolute -top-12 -left-8'>
+            <div className='absolute -top-12 -left-8 w-32'>
               <NextImage
                 src='/images/pageTim/Magnifier.png'
-                width={121.97}
-                height={142.43}
+                width='100%'
+                height='100%'
                 objectFit='contain'
                 layout='responsive'
                 alt='magnifier'
@@ -188,11 +231,11 @@ export default function TimPage() {
             >
               Apa Saja Tim di ITS?
             </Typography>
-            <div className='absolute -bottom-20 right-10'>
+            <div className='absolute -bottom-20 right-6 w-36'>
               <NextImage
                 src='/images/pageTim/Arrow-2.png'
-                width={123.6}
-                height={145}
+                width='90%'
+                height='110%'
                 objectFit='contain'
                 layout='responsive'
                 alt='Arrow'
@@ -201,7 +244,7 @@ export default function TimPage() {
           </div>
         </section>
         <section>
-          <div className='mx-auto w-10/12 pt-[159px] pb-[159px]'>
+          <div className='mx-auto w-10/12 space-y-10 pt-[159px] pb-[159px]'>
             <TimGrid
               teamName='TIM ICHIRO'
               imgSrc='/images/pageTim/tim.png'
@@ -210,19 +253,19 @@ export default function TimPage() {
             />
             <TimGrid
               teamName='TIM BAYUCARAKA'
-              imgSrc='/images/pageTim/tim.png'
+              imgSrc='/images/pageTim/tim-r.png'
               desc='Turpis leo id a sed. Lacus amet massa in id viverra ornare porttitor blandit nullam. Vel sit enim vitae enim lobortis mattis arcu. Nec lacus sit nulla turpis sapien morbi sagittis ornare. Leo viverra auctor vitae morbi lacus posuere. At leo malesuada sit adipiscing nisi tincidunt at bibendum. Arcu massa adipiscing in adipiscing tempor.'
               isLeft={false}
             />
             <TimGrid
               teamName='TIM ICHIRO'
-              imgSrc='/images/pageTim/tim.png'
+              imgSrc='/images/pageTim/tim-c.png'
               desc='Turpis leo id a sed. Lacus amet massa in id viverra ornare porttitor blandit nullam. Vel sit enim vitae enim lobortis mattis arcu. Nec lacus sit nulla turpis sapien morbi sagittis ornare. Leo viverra auctor vitae morbi lacus posuere. At leo malesuada sit adipiscing nisi tincidunt at bibendum. Arcu massa adipiscing in adipiscing tempor.'
               isLeft={true}
             />
             <TimGrid
               teamName='TIM BAYUCARAKA'
-              imgSrc='/images/pageTim/tim.png'
+              imgSrc='/images/pageTim/tim-r.png'
               desc='Turpis leo id a sed. Lacus amet massa in id viverra ornare porttitor blandit nullam. Vel sit enim vitae enim lobortis mattis arcu. Nec lacus sit nulla turpis sapien morbi sagittis ornare. Leo viverra auctor vitae morbi lacus posuere. At leo malesuada sit adipiscing nisi tincidunt at bibendum. Arcu massa adipiscing in adipiscing tempor.'
               isLeft={false}
             />
@@ -232,6 +275,10 @@ export default function TimPage() {
     </Layout>
   );
 }
+/* 
+yg blkg" di absolut in dulu, yg bersentuhan sama gambar lain dibikin relative ke "block" tertentu. z index jg diatur
+ */
+
 /*
 kl hover jd berwarna:
 - default semua image grayscale
