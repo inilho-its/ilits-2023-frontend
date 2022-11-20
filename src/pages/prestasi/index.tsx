@@ -7,10 +7,22 @@ import clsxm from '@/lib/clsxm';
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
+import TitleTable from '@/components/prestasi/TitleTable';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
+// TODO: Add remaining background decorations
+
 export default function PrestasiPage() {
+  const HeaderPrestasi = ['Nama Prestasi', 'Penyelenggara', 'Tahun'];
+  const PrestasiInternasional = [
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
+  ];
+
   return (
     <Layout>
       <Seo templateTitle='Prestasi' />
@@ -74,9 +86,7 @@ export default function PrestasiPage() {
               priority
             />
           </div>
-          {/* TODO: Change mainStar to landingStar 
-              TODO: Change landingStar position to be closer to the prototype */}
-          <div className={clsxm(styles.mainStarLeft, 'absolute mt-64 w-24')}>
+          <div className={clsxm(styles.landingStarLeft, 'absolute mt-64 w-24')}>
             <NextImage
               src='/images/prestasi/Star-1.png'
               width='100%'
@@ -94,7 +104,9 @@ export default function PrestasiPage() {
                 'relative top-32 ml-6 rounded-xl border-2 border-black bg-white'
               )}
             >
-              <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'></div>
+              <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'>
+                {/* HEADER */}
+              </div>
               <div className='ml-8'>
                 <div className='mb-8 mt-10'>
                   <Typography
@@ -116,6 +128,7 @@ export default function PrestasiPage() {
                   size='small'
                 >
                   <Typography
+                    variant='button'
                     className={clsxm('font-sans', styles.fakultasButton)}
                   >
                     Lihat Fakultas
@@ -150,7 +163,28 @@ export default function PrestasiPage() {
         {/* !SECTION LANDING END */}
 
         {/* SECTION BANNER */}
-        <section className='relative m-0 p-0'>
+        <section className='relative mb-32 p-0'>
+          {/* ANCHOR BACKGROUND AREA*/}
+          <div className='absolute top-14 w-1/6'>
+            <NextImage
+              src='/images/prestasi/Cloud-2.png'
+              width='100%'
+              height='100%'
+              objectFit='contain'
+              alt='cloud decoration near banner'
+            />
+          </div>
+
+          <div className='absolute top-14 right-0 w-1/4'>
+            <NextImage
+              src='/images/prestasi/Cloud-3.png'
+              width='100%'
+              height='100%'
+              objectFit='contain'
+              alt='cloud decoration near banner'
+            />
+          </div>
+
           {/* ANCHOR CONTENT AREA */}
           <div className='relative h-32 w-full border-t-2 border-b-2 border-gray-800 bg-green-400 '>
             <div className={clsxm(styles.megaPhoneLeft, 'absolute bottom-0')}>
@@ -180,6 +214,85 @@ export default function PrestasiPage() {
           </div>
         </section>
         {/* !SECTION BANNER END */}
+
+        {/* SECTION  INFO UNIK */}
+        <section className='relative mb-32 p-0'>
+          {/* ANCHOR CONTENT AREA */}
+          <div className='layout block min-w-min max-w-4xl rounded-xl border-2 border-black bg-white'>
+            <div className='h-8 w-full rounded-t-xl border-b-2 border-black bg-pink-400'>
+              {/* HEADER */}
+            </div>
+            <div className='flex items-center justify-evenly'>
+              <div className='w-full pl-10 pr-10'>
+                <Typography className='font-sans font-bold' variant='h6'>
+                  Info Unik Buat Kamu
+                </Typography>
+                <Typography className='font-sans font-medium' variant='caption'>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Veritatis unde eos, officiis qui consequatur eius sequi dolor
+                  deserunt quas sunt quis, pariatur facilis voluptates esse
+                  explicabo accusamus natus, repellendus maiores cum quibusdam
+                  minima quo optio aperiam nihil! Laudantium repudiandae totam,
+                  et quasi molestiae atque velit esse odit perspiciatis quis
+                  facilis repellat libero nam iste illum. Numquam, qui!
+                  Temporibus voluptas possimus ea quo nulla dignissimos labore,
+                  laudantium quasi tenetur odio porro doloremque veniam totam
+                  expedita! Dolorum similique error quasi eaque enim?
+                </Typography>
+              </div>
+              {/* TODO: Figure out/ask how to round the image */}
+              <div className='w-full rounded-xl'>
+                <NextImage
+                  className='rounded-lg'
+                  src='/images/prestasi/Random-People.png'
+                  width='100%'
+                  height='100%'
+                  alt='people getting excited'
+                  objectFit='cover'
+                  objectPosition='top'
+                ></NextImage>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* !SECTION INFO UNIK END */}
+
+        {/* SECTION PRESTASI */}
+
+        <section>
+          {/* ANCHOR BACKGROUND AREA */}
+
+          {/* ANCHOR CONTENT AREA */}
+          <TitleTable
+            title='prestasi internasional'
+            header={HeaderPrestasi}
+            items={PrestasiInternasional}
+          ></TitleTable>
+        </section>
+
+        <section>
+          {/* ANCHOR BACKGROUND AREA */}
+
+          {/* ANCHOR CONTENT AREA */}
+          <TitleTable
+            title='prestasi nasional'
+            header={HeaderPrestasi}
+            items={PrestasiInternasional}
+          ></TitleTable>
+        </section>
+
+        <section>
+          {/* ANCHOR BACKGROUND AREA */}
+
+          {/* ANCHOR CONTENT AREA */}
+          <TitleTable
+            className='pb-40'
+            title='prestasi regional'
+            header={HeaderPrestasi}
+            items={PrestasiInternasional}
+          ></TitleTable>
+        </section>
+        {/* !SECTION PRESTASI END */}
       </main>
     </Layout>
   );
