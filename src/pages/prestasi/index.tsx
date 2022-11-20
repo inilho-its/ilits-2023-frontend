@@ -23,6 +23,9 @@ export default function PrestasiPage() {
     ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
   ];
 
+  const PrestasiNasional = PrestasiInternasional;
+  const PrestasiRegional = PrestasiInternasional;
+
   return (
     <Layout>
       <Seo templateTitle='Prestasi' />
@@ -277,7 +280,7 @@ export default function PrestasiPage() {
           <TitleTable
             title='prestasi nasional'
             header={HeaderPrestasi}
-            items={PrestasiInternasional}
+            items={PrestasiNasional}
           ></TitleTable>
         </section>
 
@@ -289,7 +292,7 @@ export default function PrestasiPage() {
             className='pb-40'
             title='prestasi regional'
             header={HeaderPrestasi}
-            items={PrestasiInternasional}
+            items={PrestasiRegional}
           ></TitleTable>
         </section>
         {/* !SECTION PRESTASI END */}
