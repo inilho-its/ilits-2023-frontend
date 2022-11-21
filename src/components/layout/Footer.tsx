@@ -12,7 +12,7 @@ import Typography from '@/components/typography/Typography';
 
 export default function Footer() {
   return (
-    <footer className='w-full bg-neutral-900'>
+    <footer className='absolute z-50 min-h-screen w-full bg-neutral-900'>
       <div className='mx-auto w-11/12'>
         <div className='flex items-center justify-between'>
           <NextImage

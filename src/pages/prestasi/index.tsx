@@ -11,11 +11,11 @@ import TitleTable from '@/components/prestasi/TitleTable';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
-// TODO: Add remaining background decorations
-
 export default function PrestasiPage() {
   const HeaderPrestasi = ['Nama Prestasi', 'Penyelenggara', 'Tahun'];
   const PrestasiInternasional = [
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
+    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
     ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
     ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
     ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
@@ -260,42 +260,75 @@ export default function PrestasiPage() {
         </section>
         {/* !SECTION INFO UNIK END */}
 
-        {/* SECTION PRESTASI */}
-
-        <section>
+        {/* SECTION INTERNASIONAL */}
+        <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-
+          <div className='absolute -top-28 w-full'>
+            <NextImage
+              src='/images/prestasi/String-Cloud-1.png'
+              width='100%'
+              height='100%'
+              objectFit='contain'
+              objectPosition='top'
+              alt='string and cloud background decor'
+            ></NextImage>
+          </div>
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
+            className='relative mb-40'
             title='prestasi internasional'
             header={HeaderPrestasi}
             items={PrestasiInternasional}
           ></TitleTable>
         </section>
+        {/* !SECTION INTERNASIONAL END */}
 
-        <section>
+        {/* SECTION NASIONAL */}
+        <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-
+          <div className='absolute right-0 -top-16 w-9/12'>
+            <NextImage
+              src='/images/prestasi/String-Cloud-2.png'
+              width='100%'
+              height='100%'
+              objectFit='contain'
+              objectPosition='top'
+              alt='string and cloud background decor'
+            ></NextImage>
+          </div>
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
+            className='relative mb-40'
             title='prestasi nasional'
             header={HeaderPrestasi}
             items={PrestasiNasional}
           ></TitleTable>
         </section>
+        {/* !SECTION NASIONAL END */}
 
-        <section>
+        {/* SECTION REGIONAL */}
+        <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
+          <div className='absolute top-14 max-h-screen w-full'>
+            <NextImage
+              src='/images/prestasi/String-Cloud-3.png'
+              width='100%'
+              height='60%'
+              objectFit='contain'
+              objectPosition='top'
+              alt='string and cloud background decor'
+            ></NextImage>
+          </div>
 
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
-            className='pb-40'
+            className='relative pb-40'
             title='prestasi regional'
             header={HeaderPrestasi}
             items={PrestasiRegional}
           ></TitleTable>
         </section>
-        {/* !SECTION PRESTASI END */}
+        {/* !SECTION REGIONAL END */}
       </main>
     </Layout>
   );
