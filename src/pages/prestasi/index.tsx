@@ -3,25 +3,18 @@ import * as React from 'react';
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
-import TitleTable from '@/components/prestasi/TitleTable';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
+import {
+  HeaderPrestasi,
+  PrestasiInternasional,
+  PrestasiNasional,
+  PrestasiRegional,
+} from '@/constant/prestasi';
+import TitleTable from '@/pages/prestasi/TitleTable';
+
 export default function PrestasiPage() {
-  const HeaderPrestasi = ['Nama Prestasi', 'Penyelenggara', 'Tahun'];
-  const PrestasiInternasional = [
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-    ['Juara 1 Membuat Robot KRI', 'Puspresnas', '2022'],
-  ];
-
-  const PrestasiNasional = PrestasiInternasional;
-  const PrestasiRegional = PrestasiInternasional;
-
   return (
     <Layout>
       <Seo templateTitle='Prestasi' />
@@ -72,7 +65,7 @@ export default function PrestasiPage() {
             />
           </div>
 
-          <div className='absolute right-0 w-[37rem] mt-6'>
+          <div className='absolute right-0 mt-6 w-[37rem]'>
             <NextImage
               src='/images/prestasi/Person-3.png'
               width='100%'
@@ -92,6 +85,7 @@ export default function PrestasiPage() {
               objectFit='contain'
               layout='responsive'
               alt='person'
+              priority
             />
           </div>
           {/* ANCHOR CONTENT AREA */}
@@ -182,7 +176,7 @@ export default function PrestasiPage() {
 
           {/* ANCHOR CONTENT AREA */}
           <div className='relative h-32 w-full border-t-2 border-b-2 border-gray-800 bg-green-400 '>
-            <div className='absolute bottom-0 left-1/4'>
+            <div className='absolute bottom-0 left-[20%]'>
               <div className='w-28'>
                 <NextImage
                   src='/images/prestasi/Megaphone.png'
@@ -236,9 +230,8 @@ export default function PrestasiPage() {
                 </Typography>
               </div>
               {/* TODO: Figure out/ask how to round the image */}
-              <div className='w-full rounded-xl'>
+              <div className='w-full border-l-2 border-black'>
                 <NextImage
-                  className='rounded-lg'
                   src='/images/prestasi/Random-People.png'
                   width='100%'
                   height='100%'
@@ -268,7 +261,7 @@ export default function PrestasiPage() {
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
             className='relative mb-40'
-            title='prestasi internasional'
+            title='PRESTASI INTERNASIONAL'
             header={HeaderPrestasi}
             items={PrestasiInternasional}
           ></TitleTable>
@@ -278,7 +271,7 @@ export default function PrestasiPage() {
         {/* SECTION NASIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute right-0 -top-[20%] w-9/12'>
+          <div className='absolute right-0 -top-[10%] w-8/12'>
             <NextImage
               src='/images/prestasi/String-Cloud-2.png'
               width='100%'
@@ -291,7 +284,7 @@ export default function PrestasiPage() {
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
             className='relative mb-40'
-            title='prestasi nasional'
+            title='PRESTASI NASIONAL'
             header={HeaderPrestasi}
             items={PrestasiNasional}
           ></TitleTable>
@@ -315,7 +308,7 @@ export default function PrestasiPage() {
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
             className='relative pb-40'
-            title='prestasi regional'
+            title='PRESTASI REGIONAL'
             header={HeaderPrestasi}
             items={PrestasiRegional}
           ></TitleTable>

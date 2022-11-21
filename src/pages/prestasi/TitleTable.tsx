@@ -15,50 +15,44 @@ const TitleTable = ({
   items: string[][];
   className?: string;
 }): ReactElement => {
-  let id = 0;
-
   return (
     <div className={className}>
       <Typography
         variant='h5'
         className='stroke mb-10 text-center font-sans font-bold text-white'
       >
-        {title.toUpperCase()}
+        {title}
       </Typography>
       <div className='layout min-h-min max-w-4xl rounded-xl border-2 border-black'>
         {/* HEADER */}
         <div className='flex h-14 items-center justify-center rounded-t-lg border-b-2 border-black bg-red-500'>
-          {header.map((title) => (
+          {header?.map((title, index) => (
             <Typography
-              key={title}
+              style={{ width: `${100 / header.length}%` }} // we use style  here for readibility (integrating to tailwind results in unneeded complexity)
+              key={index}
               className='stroke text-center font-sans font-bold text-white' // Global stroke looks really bad
               variant='body'
-              style={{ width: `${100 / header.length}%` }}
             >
-              {title}
+              {title?.toUpperCase()}
             </Typography>
           ))}
         </div>
 
         {/* CONTENT */}
-        {items.map((item) => {
-          id += 1;
-          let valueId = 0;
-
+        {items?.map((item, indexRow) => {
           return (
             // Rounded bottom corners on the last item
             <div
-              key={id}
+              key={indexRow}
               className={clsxm(
                 'flex h-10 items-center justify-center border-b-2 border-black bg-red-200',
-                id == items.length ? 'rounded-b-lg border-b-0' : ''
+                indexRow + 1 == items.length ? 'rounded-b-lg border-b-0' : ''
               )}
             >
-              {item.map((value) => {
-                valueId += 1;
+              {item?.map((value, indexItem) => {
                 return (
                   <Typography
-                    key={valueId}
+                    key={indexItem}
                     className='text-center font-sans font-medium text-black'
                     variant='caption'
                     style={{ width: `${100 / header.length}%` }}
