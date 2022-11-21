@@ -9,11 +9,15 @@ const TitleTable = ({
   header,
   items,
   className = 'mb-20',
+  headerClass,
+  tableClass,
 }: {
   title: string;
   header: string[];
   items: string[][];
   className?: string;
+  headerClass: string;
+  tableClass: string;
 }): ReactElement => {
   return (
     <div className={className}>
@@ -25,7 +29,12 @@ const TitleTable = ({
       </Typography>
       <div className='layout min-h-min max-w-4xl rounded-xl border-2 border-black'>
         {/* HEADER */}
-        <div className='flex h-14 items-center justify-center rounded-t-lg border-b-2 border-black bg-red-500'>
+        <div
+          className={clsxm(
+            'flex h-14 items-center justify-center rounded-t-lg border-b-2 border-black bg-red-500',
+            headerClass
+          )}
+        >
           {header?.map((title, index) => (
             <Typography
               style={{ width: `${100 / header.length}%` }} // we use style  here for readibility (integrating to tailwind results in unneeded complexity)
@@ -46,7 +55,8 @@ const TitleTable = ({
               key={indexRow}
               className={clsxm(
                 'flex h-10 items-center justify-center border-b-2 border-black bg-red-200',
-                indexRow + 1 == items.length ? 'rounded-b-lg border-b-0' : ''
+                indexRow + 1 == items.length ? 'rounded-b-lg border-b-0' : '',
+                tableClass
               )}
             >
               {item?.map((value, indexItem) => {

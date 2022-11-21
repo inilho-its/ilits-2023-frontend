@@ -260,6 +260,8 @@ export default function PrestasiPage() {
           </div>
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
+            headerClass='bg-red-500'
+            tableClass='bg-red-200'
             className='relative mb-40'
             title='PRESTASI INTERNASIONAL'
             header={HeaderPrestasi}
@@ -283,6 +285,8 @@ export default function PrestasiPage() {
           </div>
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
+            headerClass='bg-blue-500'
+            tableClass='bg-blue-200'
             className='relative mb-40'
             title='PRESTASI NASIONAL'
             header={HeaderPrestasi}
@@ -307,6 +311,8 @@ export default function PrestasiPage() {
 
           {/* ANCHOR CONTENT AREA */}
           <TitleTable
+            headerClass='bg-yellow-500'
+            tableClass='bg-yellow-200'
             className='relative pb-40'
             title='PRESTASI REGIONAL'
             header={HeaderPrestasi}
