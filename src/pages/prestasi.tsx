@@ -1,9 +1,5 @@
 import * as React from 'react';
 
-import styles from './PrestasiPage.module.css';
-
-import clsxm from '@/lib/clsxm';
-
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
@@ -31,7 +27,7 @@ export default function PrestasiPage() {
       <Seo templateTitle='Prestasi' />
       <main className='m-0 min-h-screen bg-bone-500 p-0'>
         {/* SECTION LANDING */}
-        <section className='relative mb-80 p-0'>
+        <section className='relative mb-60 p-0'>
           {/* ANCHOR BACKGROUND IMAGE AREA */}
           <div className='absolute top-6 w-full'>
             <NextImage
@@ -43,7 +39,7 @@ export default function PrestasiPage() {
               alt='string background'
             />
           </div>
-          <div className='absolute mt-96 w-1/2'>
+          <div className='absolute -bottom-2/3 w-1/2'>
             <NextImage
               src='/images/prestasi/Cloud-1.png'
               width='100%'
@@ -53,7 +49,7 @@ export default function PrestasiPage() {
               alt='cloud background'
             />
           </div>
-          <div className='absolute -top-5 w-1/2'>
+          <div className='absolute -top-[8%] right-1/2 w-[40rem]'>
             <NextImage
               src='/images/prestasi/Light-2.png'
               width='100%'
@@ -64,20 +60,19 @@ export default function PrestasiPage() {
               priority
             />
           </div>
-          <div
-            className={clsxm(styles.personLightDimension, 'absolute -top-6')}
-          >
+          <div className='absolute -top-6 right-56 w-72'>
             <NextImage
               src='/images/prestasi/Light-1.png'
               width='100%'
               height='100%'
               objectFit='contain'
               layout='responsive'
-              alt='person'
+              alt='light near person'
               priority
             />
           </div>
-          <div className={clsxm(styles.personWidth, 'absolute right-0 mt-6')}>
+
+          <div className='absolute right-0 w-[37rem] mt-6'>
             <NextImage
               src='/images/prestasi/Person-3.png'
               width='100%'
@@ -89,7 +84,7 @@ export default function PrestasiPage() {
               priority
             />
           </div>
-          <div className={clsxm(styles.landingStarLeft, 'absolute mt-64 w-24')}>
+          <div className='absolute right-96 mt-64 w-24'>
             <NextImage
               src='/images/prestasi/Star-1.png'
               width='100%'
@@ -101,12 +96,7 @@ export default function PrestasiPage() {
           </div>
           {/* ANCHOR CONTENT AREA */}
           <div className='layout'>
-            <div
-              className={clsxm(
-                styles.titleBoxDimension,
-                'relative top-32 ml-6 rounded-xl border-2 border-black bg-white'
-              )}
-            >
+            <div className='relative top-32 ml-6 h-auto w-1/2 rounded-xl border-2 border-black bg-white'>
               <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'>
                 {/* HEADER */}
               </div>
@@ -114,32 +104,34 @@ export default function PrestasiPage() {
                 <div className='mb-8 mt-10'>
                   <Typography
                     variant='h3'
-                    className={clsxm('stroke font-sans', styles.prestasi)}
+                    className='stroke flex flex-none items-end font-sans font-black leading-loose text-red-500'
                   >
                     Prestasi
                   </Typography>
                   <Typography
                     variant='title'
-                    className={clsxm('font-sans', styles.its)}
+                    className='order-1 flex-none text-justify font-sans font-semibold text-gray-800'
                   >
                     Institut Teknologi Sepuluh Nopember
                   </Typography>
                 </div>
-                <ButtonLink
-                  href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
-                  variant='yellow'
-                  size='small'
-                >
-                  <Typography
-                    variant='button'
-                    className={clsxm('font-sans', styles.fakultasButton)}
+                <div className='pb-10'>
+                  <ButtonLink
+                    href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
+                    variant='yellow'
+                    size='small'
                   >
-                    Lihat Fakultas
-                  </Typography>
-                </ButtonLink>
+                    <Typography
+                      variant='button'
+                      className='flex-none pt-1 pb-1 pl-1 pr-1 font-sans text-sm font-bold leading-6 text-gray-800'
+                    >
+                      Lihat Fakultas
+                    </Typography>
+                  </ButtonLink>
+                </div>
               </div>
 
-              <div className='float-right mr-3 mt-3 w-9'>
+              <div className='relative float-right -mt-11 mr-2 w-9'>
                 <NextImage
                   src='/images/prestasi/Star-box.png'
                   width='100%'
@@ -148,17 +140,17 @@ export default function PrestasiPage() {
                   alt='star in box'
                   priority
                 ></NextImage>
-              </div>
-              <div className='absolute mt-7 ml-4 w-full'>
-                <NextImage
-                  src='/images/prestasi/Cursor.png'
-                  width='100%'
-                  height='10%'
-                  objectFit='contain'
-                  objectPosition='right'
-                  alt='star in box'
-                  priority
-                ></NextImage>
+                <div className='absolute top-4 -right-7 w-14'>
+                  <NextImage
+                    src='/images/prestasi/Cursor.png'
+                    width='100%'
+                    height='100%'
+                    objectFit='contain'
+                    objectPosition='right'
+                    alt='star in box'
+                    priority
+                  ></NextImage>
+                </div>
               </div>
             </div>
           </div>
@@ -190,7 +182,7 @@ export default function PrestasiPage() {
 
           {/* ANCHOR CONTENT AREA */}
           <div className='relative h-32 w-full border-t-2 border-b-2 border-gray-800 bg-green-400 '>
-            <div className={clsxm(styles.megaPhoneLeft, 'absolute bottom-0')}>
+            <div className='absolute bottom-0 left-1/4'>
               <div className='w-28'>
                 <NextImage
                   src='/images/prestasi/Megaphone.png'
@@ -208,7 +200,7 @@ export default function PrestasiPage() {
               <div className='flex justify-center'>
                 <Typography
                   variant='h5'
-                  className={clsxm('stroke', styles.ITSFlex)}
+                  className='stroke text-4xl font-black text-white'
                 >
                   ITS BERPRESTASI LHO!
                 </Typography>
@@ -286,7 +278,7 @@ export default function PrestasiPage() {
         {/* SECTION NASIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute right-0 -top-16 w-9/12'>
+          <div className='absolute right-0 -top-[20%] w-9/12'>
             <NextImage
               src='/images/prestasi/String-Cloud-2.png'
               width='100%'
@@ -309,7 +301,7 @@ export default function PrestasiPage() {
         {/* SECTION REGIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute top-14 max-h-screen w-full'>
+          <div className='absolute -top-3 w-full'>
             <NextImage
               src='/images/prestasi/String-Cloud-3.png'
               width='100%'
