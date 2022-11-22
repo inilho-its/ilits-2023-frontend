@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import arrayMerge from '@/lib/arrayMerge';
+import DateFormat from '@/lib/dateformat';
 import { getUrlShortener } from '@/lib/getUrlShortener';
 
 export default async function middleware(req: NextRequest) {
@@ -38,6 +39,15 @@ export default async function middleware(req: NextRequest) {
     return;
   }
 
+  const date = DateFormat();
+  const ip = req.ip;
+
+  if (path.match(/[~`!@#$%^&()_={}[\]:;,.<>+/?-]/)) {
+    // eslint-disable-next-line no-console
+    console.error(`[Malicus]  ${date} - ${ip}  : with path ${path}`);
+    return NextResponse.redirect('https://inilho.its.ac.id/404');
+  }
+
   try {
     const res = await getUrlShortener(path);
     return NextResponse.redirect(
@@ -45,6 +55,8 @@ export default async function middleware(req: NextRequest) {
     );
   } catch {
     // eslint-disable-next-line no-console
-    console.error('Error: URL Shortener not found ' + path);
+    console.error(
+      `[Error] ${date} - ${ip} : URL Shortener not found ' + ${path}`
+    );
   }
 }
