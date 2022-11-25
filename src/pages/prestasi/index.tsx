@@ -94,17 +94,17 @@ export default function PrestasiPage() {
               <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'>
                 {/* HEADER */}
               </div>
-              <div className='ml-8'>
+              <div className='ml-8 mr-8'>
                 <div className='mb-8 mt-10'>
                   <Typography
                     variant='h3'
-                    className='stroke flex flex-none items-end font-sans font-black leading-loose text-red-500'
+                    className='stroke flex-none text-justify font-sans font-black leading-loose text-red-500 sm:text-4xl lg:text-5xl'
                   >
                     Prestasi
                   </Typography>
                   <Typography
                     variant='title'
-                    className='order-1 flex-none text-justify font-sans font-semibold text-gray-800'
+                    className='order-1 flex-none text-justify font-sans font-semibold text-gray-800 sm:text-lg lg:text-xl'
                   >
                     Institut Teknologi Sepuluh Nopember
                   </Typography>
@@ -117,7 +117,7 @@ export default function PrestasiPage() {
                   >
                     <Typography
                       variant='button'
-                      className='flex-none pt-1 pb-1 pl-1 pr-1 font-sans text-sm font-bold leading-6 text-gray-800'
+                      className='flex-none pt-1 pb-1 pl-1 pr-1 font-sans font-bold text-gray-800 sm:text-xs lg:text-sm'
                     >
                       Lihat Fakultas
                     </Typography>
@@ -176,8 +176,8 @@ export default function PrestasiPage() {
 
           {/* ANCHOR CONTENT AREA */}
           <div className='relative h-32 w-full border-t-2 border-b-2 border-gray-800 bg-green-400 '>
-            <div className='absolute bottom-0 left-[20%]'>
-              <div className='w-28'>
+            <div className='absolute bottom-0 sm:left-[3%] md:left-[10%] lg:left-[20%]'>
+              <div className='sm:w-24 lg:w-28'>
                 <NextImage
                   src='/images/prestasi/Megaphone.png'
                   width='100%'
@@ -212,7 +212,7 @@ export default function PrestasiPage() {
               {/* HEADER */}
             </div>
             <div className='flex items-center justify-evenly'>
-              <div className='w-full pl-10 pr-10'>
+              <div className='w-full border-black p-10 sm:border-r-2 md:border-r-0'>
                 <Typography className='font-sans font-bold' variant='h6'>
                   Info Unik Buat Kamu
                 </Typography>
@@ -229,8 +229,7 @@ export default function PrestasiPage() {
                   expedita! Dolorum similique error quasi eaque enim?
                 </Typography>
               </div>
-              {/* TODO: Figure out/ask how to round the image */}
-              <div className='w-full border-l-2 border-black'>
+              <div className='w-full border-black md:border-l-2'>
                 <NextImage
                   src='/images/prestasi/Random-People.png'
                   width='100%'
@@ -238,6 +237,7 @@ export default function PrestasiPage() {
                   alt='people getting excited'
                   objectFit='cover'
                   objectPosition='top'
+                  imgClassName='rounded-br-lg'
                 ></NextImage>
               </div>
             </div>
