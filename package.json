@@ -26,6 +26,8 @@
     "auto-zustand-selectors-hook": "^2.0.0",
     "axios": "^1.1.3",
     "clsx": "^1.2.1",
+    "flowbite": "^1.5.4",
+    "flowbite-react": "^0.3.5",
     "immer": "^9.0.16",
     "joi": "^17.7.0",
     "next": "^12.3.1",
