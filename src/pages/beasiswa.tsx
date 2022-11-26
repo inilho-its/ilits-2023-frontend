@@ -1,4 +1,9 @@
 import * as React from 'react';
+import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
@@ -6,29 +11,12 @@ import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
+import { dataBeasiswaMitraITS } from '@/constant/beasiswaData';
+
 type BeasiswaCardProps = {
   title: string;
   imgUrl: string;
 };
-
-const dataBeasiswa = [
-  {
-    title: 'Beasiswa Bank Indonesia',
-    imgUrl: '/images/beasiswaPage/beasiswa-1.png',
-  },
-  {
-    title: 'Beasiswa Bank Indonesia',
-    imgUrl: '/images/beasiswaPage/beasiswa-1.png',
-  },
-  {
-    title: 'Beasiswa Bank Indonesia',
-    imgUrl: '/images/beasiswaPage/beasiswa-1.png',
-  },
-  {
-    title: 'Beasiswa Bank Indonesia',
-    imgUrl: '/images/beasiswaPage/beasiswa-1.png',
-  },
-];
 
 const BeasiswaCard = ({ title, imgUrl }: BeasiswaCardProps) => {
   return (
@@ -67,6 +55,7 @@ export default function BeasiswaPage() {
     <Layout>
       <Seo templateTitle='Beasiswa' />
       <main>
+        {/* Section 1 Start */}
         <section className='relative z-10'>
           <div>
             <div className='absolute top-0 w-[422px]'>
@@ -76,7 +65,7 @@ export default function BeasiswaPage() {
                 height='50%'
                 layout='responsive'
                 objectFit='contain'
-                alt='star'
+                alt='cloud-1'
               />
             </div>
             <div className='absolute -top-24 -left-96 w-full'>
@@ -86,7 +75,7 @@ export default function BeasiswaPage() {
                 height='40%'
                 layout='responsive'
                 objectFit='contain'
-                alt='star'
+                alt='string-1'
               />
             </div>
             <div className='absolute right-0 w-full'>
@@ -96,7 +85,7 @@ export default function BeasiswaPage() {
                 height='80%'
                 layout='responsive'
                 objectFit='contain'
-                alt='star'
+                alt='ribbon1'
               />
             </div>
           </div>
@@ -132,17 +121,17 @@ export default function BeasiswaPage() {
                   height='100%'
                   layout='responsive'
                   objectFit='contain'
-                  alt='star'
+                  alt='star-1'
                 />
               </div>
             </div>
           </div>
         </section>
-
-        {/* Sec 2 */}
+        {/* Section 1 End */}
+        {/* Section 2 Start */}
         <section className='relative pt-52'>
-          <div className='relative z-10 flex flex-col items-center justify-center '>
-            <div className='relative flex h-36 w-screen items-center  justify-center overflow-hidden border-2 border-bone-1000 bg-red-500'>
+          <div className='relative z-10 flex flex-col items-center justify-center overflow-hidden'>
+            <div className='relative flex h-36 w-screen items-center justify-center  border-2 border-bone-1000 bg-red-500'>
               <div className='absolute top-0 left-0 w-48'>
                 <NextImage
                   src='/images/beasiswaPage/mic-1.png'
@@ -150,7 +139,7 @@ export default function BeasiswaPage() {
                   height='60%'
                   layout='responsive'
                   objectFit='contain'
-                  alt='star'
+                  alt='mic-1'
                 />
               </div>
               <div className='absolute bottom-0 right-10 w-32'>
@@ -160,7 +149,7 @@ export default function BeasiswaPage() {
                   height='60%'
                   layout='responsive'
                   objectFit='contain'
-                  alt='star'
+                  alt='eye-1'
                 />
               </div>
               <Typography
@@ -183,7 +172,7 @@ export default function BeasiswaPage() {
                   height='60%'
                   layout='responsive'
                   objectFit='contain'
-                  alt='star'
+                  alt='cloud-2'
                 />
               </div>
             </div>
@@ -222,7 +211,7 @@ export default function BeasiswaPage() {
                     height='100%'
                     layout='responsive'
                     objectFit='contain'
-                    alt='star'
+                    alt='people-1'
                     imgClassName='rounded-2xl'
                   />
                 </div>
@@ -233,24 +222,25 @@ export default function BeasiswaPage() {
                     height='100%'
                     layout='responsive'
                     objectFit='contain'
-                    alt='star'
+                    alt='mic-2'
                   />
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* Sec 3 */}
+        {/* Section 2 End */}
+        {/* Section 3 Start */}
         <section className='relative overflow-hidden pt-44'>
           <div>
-            <div className='absolute top-52 w-96'>
+            <div className='absolute top-96 w-96'>
               <NextImage
                 src='/images/beasiswaPage/cloud-3.png'
                 width='100%'
                 height='60%'
                 layout='responsive'
                 objectFit='contain'
-                alt='star'
+                alt='cloud-3'
               />
             </div>
             <div className='absolute -top-44 w-full'>
@@ -260,7 +250,7 @@ export default function BeasiswaPage() {
                 height='80%'
                 layout='responsive'
                 objectFit='contain'
-                alt='star'
+                alt='string-2'
               />
             </div>
           </div>
@@ -273,7 +263,7 @@ export default function BeasiswaPage() {
                   height='50%'
                   layout='responsive'
                   objectFit='contain'
-                  alt='star'
+                  alt='rainbow-1'
                 />
               </div>
               <div className='absolute -bottom-24 right-2 w-64'>
@@ -283,7 +273,7 @@ export default function BeasiswaPage() {
                   height='60%'
                   layout='responsive'
                   objectFit='contain'
-                  alt='star'
+                  alt='cursor-1'
                 />
               </div>
               <Typography
@@ -294,14 +284,142 @@ export default function BeasiswaPage() {
               </Typography>
             </div>
 
-            <div className='h-[1000px]'>{/* Carousel */}</div>
-
+            <div className='mt-14 mb-24 flex h-[400px] w-full max-w-[1260px]'>
+              <Swiper
+                navigation={true}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                }}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                modules={[Autoplay, Navigation, Pagination]}
+                pagination={{ clickable: true }}
+                spaceBetween={-50}
+                slidesPerView={3}
+                className='beasiswa myswiper'
+              >
+                <SwiperSlide>
+                  <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
+                    <div className='w-full'>
+                      <NextImage
+                        src='/images/beasiswaPage/carousel-1.png'
+                        width='100%'
+                        height='70%'
+                        layout='responsive'
+                        objectFit='contain'
+                        alt='carousel-1'
+                      />
+                    </div>
+                    <Typography
+                      variant='title'
+                      className='text-[20px] font-bold leading-[24px] text-black '
+                    >
+                      Beasiswa Unggulan
+                    </Typography>
+                    <ButtonLink
+                      variant='yellow'
+                      size='medium'
+                      round='medium'
+                      href='#'
+                    >
+                      Lihat
+                    </ButtonLink>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
+                    <div className='w-full'>
+                      <NextImage
+                        src='/images/beasiswaPage/carousel-1.png'
+                        width='100%'
+                        height='70%'
+                        layout='responsive'
+                        objectFit='contain'
+                        alt='carousel-1'
+                      />
+                    </div>
+                    <Typography
+                      variant='title'
+                      className='text-[20px] font-bold leading-[24px] text-black '
+                    >
+                      Beasiswa Unggulan
+                    </Typography>
+                    <ButtonLink
+                      variant='yellow'
+                      size='medium'
+                      round='medium'
+                      href='#'
+                    >
+                      Lihat
+                    </ButtonLink>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
+                    <div className='w-full'>
+                      <NextImage
+                        src='/images/beasiswaPage/carousel-1.png'
+                        width='100%'
+                        height='70%'
+                        layout='responsive'
+                        objectFit='contain'
+                        alt='carousel-1'
+                      />
+                    </div>
+                    <Typography
+                      variant='title'
+                      className='text-[20px] font-bold leading-[24px] text-black '
+                    >
+                      Beasiswa Unggulan
+                    </Typography>
+                    <ButtonLink
+                      variant='yellow'
+                      size='medium'
+                      round='medium'
+                      href='#'
+                    >
+                      Lihat
+                    </ButtonLink>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
+                    <div className='w-full'>
+                      <NextImage
+                        src='/images/beasiswaPage/carousel-1.png'
+                        width='100%'
+                        height='70%'
+                        layout='responsive'
+                        objectFit='contain'
+                        alt='carousel-1'
+                      />
+                    </div>
+                    <Typography
+                      variant='title'
+                      className='text-[20px] font-bold leading-[24px] text-black '
+                    >
+                      Beasiswa Unggulan
+                    </Typography>
+                    <ButtonLink
+                      variant='yellow'
+                      size='medium'
+                      round='medium'
+                      href='#'
+                    >
+                      Lihat
+                    </ButtonLink>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
             <div className='mb-24 flex h-1 w-10/12 items-center border-2 border-bone-1000'>
               <div className='ml-24 h-14 w-44 rounded-3xl border-2 border-black bg-lightBlue-400'></div>
             </div>
           </div>
         </section>
-        {/* Sec 4 */}
+        {/* Section 3 End */}
+        {/* Section 4 Start */}
         <section className='relative overflow-hidden px-14 pt-16 pb-32'>
           <div>
             <div className='absolute top-52 right-0 w-96'>
@@ -311,7 +429,7 @@ export default function BeasiswaPage() {
                 height='60%'
                 layout='responsive'
                 objectFit='contain'
-                alt='star'
+                alt='cloud-4'
               />
             </div>
             <div className='absolute top-72 w-full'>
@@ -326,7 +444,7 @@ export default function BeasiswaPage() {
             </div>
           </div>
           <div className='relative z-10 flex flex-col items-center justify-center'>
-            <div className='relative z-50 h-32 w-full max-w-[811px] -rotate-2 rounded-2xl border-2 border-bone-1000'>
+            <div className='relative z-50 h-32 w-full max-w-[811px] -rotate-2 rounded-2xl border-2 '>
               <div className='-rotate-4 absolute inset-0 z-50 flex h-32 w-full max-w-[811px] items-center justify-between rounded-2xl border-2 border-bone-1000 bg-green-400 px-9'>
                 <div className='flex flex-col items-center justify-center gap-4'>
                   <div className='h-[20px] w-[20px] rounded-full border-2 border-bone-1000 bg-white'></div>
@@ -347,12 +465,13 @@ export default function BeasiswaPage() {
             </div>
 
             <div className='mt-24 flex w-full flex-col items-center justify-center space-y-8'>
-              {dataBeasiswa?.map((v, i) => (
+              {dataBeasiswaMitraITS?.map((v, i) => (
                 <BeasiswaCard key={`Beasiswa-Card-key-${i}`} {...v} />
               ))}
             </div>
           </div>
         </section>
+        {/* Section 4 End */}
       </main>
     </Layout>
   );

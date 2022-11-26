@@ -27,6 +27,20 @@
   --color-primary-900: rgb(var(--tw-color-primary-900)); /* #0c4a6e */
   /* #endregion  /**======== Primary Color =========== */
 }
+.beasiswa .swiper-button-next,
+.beasiswa .swiper-button-prev {
+  @apply h-4 w-4 rounded-xl border-2 border-bone-1000 bg-yellow-500 p-4;
+}
+.beasiswa .swiper-button-next:after,
+.beasiswa .swiper-button-prev:after {
+  @apply bg-yellow-500 text-lg font-bold text-black;
+}
+.beasiswa .swiper-pagination-bullet {
+  @apply h-5 w-5 translate-y-2 border-2 border-bone-1000 bg-neutral-300;
+}
+.beasiswa .swiper-pagination-bullet-active {
+  @apply border-2  border-bone-1000 bg-yellow-500;
+}
 
 @layer base {
   /* inter var - latin */
