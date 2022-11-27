@@ -65,7 +65,7 @@ export default function PrestasiPage() {
             />
           </div>
 
-          <div className='absolute right-0 mt-6 w-[37rem]'>
+          <div className='absolute right-0 mt-6 md:w-[37rem]'>
             <NextImage
               src='/images/prestasi/Person-3.png'
               width='100%'
@@ -77,7 +77,7 @@ export default function PrestasiPage() {
               priority
             />
           </div>
-          <div className='absolute right-96 mt-64 w-24'>
+          <div className='absolute w-24 sm:right-0 sm:mt-[28rem] md:right-96 md:mt-64'>
             <NextImage
               src='/images/prestasi/Star-1.png'
               width='100%'
@@ -90,7 +90,7 @@ export default function PrestasiPage() {
           </div>
           {/* ANCHOR CONTENT AREA */}
           <div className='layout'>
-            <div className='relative top-32 ml-6 h-auto w-1/2 rounded-xl border-2 border-black bg-white'>
+            <div className='relative top-32 ml-6 h-auto rounded-xl border-2 border-black bg-white md:w-1/2'>
               <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'>
                 {/* HEADER */}
               </div>
@@ -98,30 +98,32 @@ export default function PrestasiPage() {
                 <div className='mb-8 mt-10'>
                   <Typography
                     variant='h3'
-                    className='stroke flex-none text-justify font-sans font-black leading-loose text-red-500 sm:text-4xl lg:text-5xl'
+                    className='stroke flex-none font-sans leading-loose text-red-500 sm:text-center sm:text-7xl sm:font-bold md:text-justify md:text-5xl md:font-black'
                   >
                     Prestasi
                   </Typography>
                   <Typography
                     variant='title'
-                    className='order-1 flex-none text-justify font-sans font-semibold text-gray-800 sm:text-lg lg:text-xl'
+                    className='order-1 mt-4 flex-none text-justify font-sans text-xl font-semibold text-gray-800 sm:text-center md:text-justify'
                   >
                     Institut Teknologi Sepuluh Nopember
                   </Typography>
                 </div>
-                <div className='pb-10'>
-                  <ButtonLink
-                    href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
-                    variant='yellow'
-                    size='small'
-                  >
-                    <Typography
-                      variant='button'
-                      className='flex-none pt-1 pb-1 pl-1 pr-1 font-sans font-bold text-gray-800 sm:text-xs lg:text-sm'
+                <div className='sm:flex sm:justify-center sm:align-middle md:block'>
+                  <div className='pb-10 sm:m-auto'>
+                    <ButtonLink
+                      href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
+                      variant='yellow'
+                      size='small'
                     >
-                      Lihat Fakultas
-                    </Typography>
-                  </ButtonLink>
+                      <Typography
+                        variant='button'
+                        className='flex-none pt-1 pb-1 pl-1 pr-1 font-sans font-bold text-gray-800 sm:text-xs lg:text-sm'
+                      >
+                        Kenali Lebih Lanjut!
+                      </Typography>
+                    </ButtonLink>
+                  </div>
                 </div>
               </div>
 
@@ -209,14 +211,24 @@ export default function PrestasiPage() {
           {/* ANCHOR CONTENT AREA */}
           <div className='layout block min-w-min max-w-4xl rounded-xl border-2 border-black bg-white'>
             <div className='h-8 w-full rounded-t-xl border-b-2 border-black bg-pink-400'>
-              {/* HEADER */}
+              <div className='flex justify-end pt-[0.4rem]'>
+                <div className='mr-[0.4rem] h-4 w-4 rounded-full border-[1px] border-black bg-green-400'></div>
+                <div className='mr-[0.4rem] h-4 w-4 rounded-full border-[1px] border-black bg-red-400'></div>
+                <div className='mr-4 h-4 w-4 rounded-full border-[1px] border-black bg-yellow-400'></div>
+              </div>
             </div>
-            <div className='flex items-center justify-evenly'>
-              <div className='w-full border-black p-10 sm:border-r-2 md:border-r-0'>
-                <Typography className='font-sans font-bold' variant='h6'>
+            <div className='flex sm:flex-col-reverse md:flex-row md:items-center md:justify-evenly'>
+              <div className='w-full border-black p-10'>
+                <Typography
+                  className='mb-4 font-sans font-bold sm:hidden md:block'
+                  variant='h5'
+                >
                   Info Unik Buat Kamu
                 </Typography>
-                <Typography className='font-sans font-medium' variant='caption'>
+                <Typography
+                  className='font-sans font-medium sm:text-center md:text-left'
+                  variant='caption'
+                >
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                   Veritatis unde eos, officiis qui consequatur eius sequi dolor
                   deserunt quas sunt quis, pariatur facilis voluptates esse
@@ -229,7 +241,7 @@ export default function PrestasiPage() {
                   expedita! Dolorum similique error quasi eaque enim?
                 </Typography>
               </div>
-              <div className='w-full border-black md:border-l-2'>
+              <div className='m-auto block border-black sm:mt-6 sm:w-4/6 sm:rounded-lg  sm:border-2 sm:pb-0 md:mt-0 md:w-full md:rounded-none md:border-0 md:border-l-2 md:p-0'>
                 <NextImage
                   src='/images/prestasi/Random-People.png'
                   width='100%'
@@ -237,9 +249,16 @@ export default function PrestasiPage() {
                   alt='people getting excited'
                   objectFit='cover'
                   objectPosition='top'
-                  imgClassName='rounded-br-lg'
+                  imgClassName='sm:rounded-lg md:rounded-none md:rounded-br-lg'
                 ></NextImage>
               </div>
+              {/* ONLY SHOW ON MOBILE */}
+              <Typography
+                className='mt-14 mb-2 text-center font-sans text-4xl font-bold md:hidden'
+                variant='h6'
+              >
+                Info Unik Buat Kamu!
+              </Typography>
             </div>
           </div>
         </section>
