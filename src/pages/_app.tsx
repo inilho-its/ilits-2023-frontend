@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 // EXPANSION CHANGES: 2 lines below
 import Router from 'next/router';
 import nProgress from 'nprogress';
+import * as React from 'react';
 
 import '@/styles/globals.css';
 // EXPANSION CHANGES: line below
