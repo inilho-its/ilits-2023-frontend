@@ -187,9 +187,9 @@ export default function DropzoneInput({
                       />
                     </svg>
                     <p className='text-gray-500'>
-                      Drag and drop file here, or click to choose file
+                      Letakan file di sini atau klik untuk memilih file
                     </p>
-                    <p className='text-xs text-gray-500'>{`${
+                    <p className='mx-auto w-max rounded-[4px] bg-blue-500 px-3 py-1 text-xs text-neutral-100'>{`${
                       maxFiles - (files?.length || 0)
                     } file(s) remaining`}</p>
                   </div>
