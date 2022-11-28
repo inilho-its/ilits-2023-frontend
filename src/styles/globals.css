@@ -94,6 +94,17 @@
   .min-h-main {
     @apply min-h-[calc(100vh-56px)];
   }
+
+  .stroke {
+    text-shadow: -2px -2px 0px rgba(0, 0, 0, 1), 2px -2px 0px rgba(0, 0, 0, 1),
+      -2px 2px 0px rgba(0, 0, 0, 1), 2px 2px 0px rgba(0, 0, 0, 1);
+  }
+
+  .shadow-box-alumni {
+    box-shadow: -12px 12px 0px 0px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: -12px 12px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -12px 12px 0px 0px rgba(0, 0, 0, 1);
+  }
 }
 
 @layer utilities {
