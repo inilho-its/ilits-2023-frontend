@@ -42,9 +42,9 @@ export default async function middleware(req: NextRequest) {
   const date = DateFormat();
   const ip = req.ip;
 
-  if (path.match(/[~`!@#$%^&()_={}[\]:;,.<>+/?-]/)) {
+  if (path.match(/[~`!@#$%^()={}[\]:;<>+/?]/)) {
     // eslint-disable-next-line no-console
-    console.error(`[Malicus]  ${date} - ${ip}  : with path ${path}`);
+    console.error(`[Malicious]  ${date} - ${ip}  : with path ${path}`);
     return NextResponse.redirect('https://inilho.its.ac.id/404');
   }
 
