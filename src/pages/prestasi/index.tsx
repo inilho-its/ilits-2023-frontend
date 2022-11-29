@@ -14,6 +14,7 @@ import {
 } from '@/constant/prestasi';
 import TitleTable from '@/pages/prestasi/TitleTable';
 
+// Responsivity down to 300px
 export default function PrestasiPage() {
   return (
     <Layout>
@@ -77,7 +78,7 @@ export default function PrestasiPage() {
               priority
             />
           </div>
-          <div className='absolute w-24 sm:right-0 sm:mt-[28rem] md:right-96 md:mt-64'>
+          <div className='absolute right-0 mt-[31rem] w-24 md:right-96 md:mt-64'>
             <NextImage
               src='/images/prestasi/Star-1.png'
               width='100%'
@@ -90,39 +91,41 @@ export default function PrestasiPage() {
           </div>
           {/* ANCHOR CONTENT AREA */}
           <div className='layout'>
-            <div className='relative top-32 ml-6 h-auto rounded-xl border-2 border-black bg-white md:w-1/2'>
+            <div className='relative top-32 ml-6 h-[343px] rounded-xl border-2 border-black bg-white md:w-1/2'>
               <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'>
                 {/* HEADER */}
               </div>
-              <div className='ml-8 mr-8'>
-                <div className='mb-8 mt-10'>
-                  <Typography
-                    variant='h3'
-                    className='stroke flex-none font-sans leading-loose text-red-500 sm:text-center sm:text-7xl sm:font-bold md:text-justify md:text-5xl md:font-black'
-                  >
-                    Prestasi
-                  </Typography>
-                  <Typography
-                    variant='title'
-                    className='order-1 mt-4 flex-none text-justify font-sans text-xl font-semibold text-gray-800 sm:text-center md:text-justify'
-                  >
-                    Institut Teknologi Sepuluh Nopember
-                  </Typography>
-                </div>
-                <div className='sm:flex sm:justify-center sm:align-middle md:block'>
-                  <div className='pb-10 sm:m-auto'>
-                    <ButtonLink
-                      href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
-                      variant='yellow'
-                      size='small'
+              <div className='flex h-[311px] flex-col justify-center'>
+                <div className='ml-8 mr-8'>
+                  <div className='mb-8 mt-10'>
+                    <Typography
+                      variant='h3'
+                      className='stroke flex-none text-center font-sans text-5xl font-bold text-red-500 sm:text-7xl md:text-left md:text-5xl md:font-black'
                     >
-                      <Typography
-                        variant='button'
-                        className='flex-none pt-1 pb-1 pl-1 pr-1 font-sans font-bold text-gray-800 sm:text-xs lg:text-sm'
+                      Prestasi
+                    </Typography>
+                    <Typography
+                      variant='title'
+                      className='order-1 mt-4 flex-none text-center font-sans text-lg font-semibold text-gray-800 sm:text-xl md:text-left'
+                    >
+                      Institut Teknologi Sepuluh Nopember
+                    </Typography>
+                  </div>
+                  <div className='flex justify-center align-middle md:block'>
+                    <div className='m-auto pb-10'>
+                      <ButtonLink
+                        href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
+                        variant='yellow'
+                        size='small'
                       >
-                        Kenali Lebih Lanjut!
-                      </Typography>
-                    </ButtonLink>
+                        <Typography
+                          variant='button'
+                          className='flex-none p-1 font-sans text-sm font-bold text-gray-800 lg:text-sm'
+                        >
+                          Kenali Lebih Lanjut!
+                        </Typography>
+                      </ButtonLink>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -177,9 +180,9 @@ export default function PrestasiPage() {
           </div>
 
           {/* ANCHOR CONTENT AREA */}
-          <div className='relative h-32 w-full border-t-2 border-b-2 border-gray-800 bg-green-400 '>
-            <div className='absolute bottom-0 sm:left-[3%] md:left-[10%] lg:left-[20%]'>
-              <div className='sm:w-24 lg:w-28'>
+          <div className='relative h-24 w-full  border-t-2 border-b-2 border-gray-800 bg-green-400 sm:h-32 '>
+            <div className='absolute bottom-0 left-1 sm:left-[3%] md:left-[10%] lg:left-[20%]'>
+              <div className='w-14 sm:w-24 lg:w-28'>
                 <NextImage
                   src='/images/prestasi/Megaphone.png'
                   width='100%'
@@ -196,7 +199,7 @@ export default function PrestasiPage() {
               <div className='flex justify-center'>
                 <Typography
                   variant='h5'
-                  className='stroke text-4xl font-black text-white'
+                  className='stroke text-xl font-black text-white sm:text-4xl'
                 >
                   ITS BERPRESTASI LHO!
                 </Typography>
@@ -217,16 +220,16 @@ export default function PrestasiPage() {
                 <div className='mr-4 h-4 w-4 rounded-full border-[1px] border-black bg-yellow-400'></div>
               </div>
             </div>
-            <div className='flex sm:flex-col-reverse md:flex-row md:items-center md:justify-evenly'>
+            <div className='flex flex-col-reverse md:flex-row md:items-center md:justify-evenly'>
               <div className='w-full border-black p-10'>
                 <Typography
-                  className='mb-4 font-sans font-bold sm:hidden md:block'
+                  className='mb-4 hidden font-sans font-bold md:block'
                   variant='h5'
                 >
                   Info Unik Buat Kamu
                 </Typography>
                 <Typography
-                  className='font-sans font-medium sm:text-center md:text-left'
+                  className='text-center font-sans font-medium md:text-left'
                   variant='caption'
                 >
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -241,20 +244,23 @@ export default function PrestasiPage() {
                   expedita! Dolorum similique error quasi eaque enim?
                 </Typography>
               </div>
-              <div className='m-auto block border-black sm:mt-6 sm:w-4/6 sm:rounded-lg  sm:border-2 sm:pb-0 md:mt-0 md:w-full md:rounded-none md:border-0 md:border-l-2 md:p-0'>
-                <NextImage
-                  src='/images/prestasi/Random-People.png'
-                  width='100%'
-                  height='100%'
-                  alt='people getting excited'
-                  objectFit='cover'
-                  objectPosition='top'
-                  imgClassName='sm:rounded-lg md:rounded-none md:rounded-br-lg'
-                ></NextImage>
+              <div className='flex w-full justify-center'>
+                <div className='mx-7 mt-6 block w-10/12 rounded-lg border-2 border-black pb-0 md:m-0 md:w-full md:rounded-none md:border-0 md:border-l-2 md:p-0'>
+                  <NextImage
+                    src='/images/prestasi/Random-People.png'
+                    width='100%'
+                    height='100%'
+                    alt='people getting excited'
+                    objectFit='cover'
+                    objectPosition='top'
+                    imgClassName='sm:rounded-lg md:rounded-none md:rounded-br-lg'
+                    priority
+                  ></NextImage>
+                </div>
               </div>
               {/* ONLY SHOW ON MOBILE */}
               <Typography
-                className='mt-14 mb-2 text-center font-sans text-4xl font-bold md:hidden'
+                className='mt-14 mb-2 text-center font-sans text-2xl font-bold sm:text-4xl md:hidden'
                 variant='h6'
               >
                 Info Unik Buat Kamu!

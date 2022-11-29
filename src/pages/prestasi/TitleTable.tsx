@@ -23,7 +23,7 @@ const TitleTable = ({
     <div className={className}>
       <Typography
         variant='h5'
-        className='stroke mb-10 text-center font-sans font-bold text-white'
+        className='stroke mb-8 text-center font-sans text-2xl font-bold text-white sm:mb-10 sm:text-3xl md:text-4xl'
       >
         {title}
       </Typography>
@@ -31,7 +31,7 @@ const TitleTable = ({
         {/* HEADER */}
         <div
           className={clsxm(
-            'flex h-14 items-center justify-center rounded-t-lg border-b-2 border-black bg-red-500',
+            'flex h-16 min-h-[4rem] items-center justify-center rounded-t-lg border-b-2 border-black bg-red-500',
             headerClass
           )}
         >
@@ -39,7 +39,7 @@ const TitleTable = ({
             <Typography
               style={{ width: `${100 / header.length}%` }} // we use style  here for readibility (integrating to tailwind results in unneeded complexity)
               key={index}
-              className='stroke text-center font-sans font-bold text-white' // Global stroke looks really bad
+              className='stroke px-2 text-center font-sans text-sm font-medium text-white sm:text-base sm:font-bold'
               variant='body'
             >
               {title?.toUpperCase()}
@@ -54,7 +54,7 @@ const TitleTable = ({
             <div
               key={indexRow}
               className={clsxm(
-                'flex h-10 items-center justify-center border-b-2 border-black bg-red-200',
+                'flex min-h-[3.5rem] items-center justify-center border-b-2 border-black bg-red-200 sm:min-h-[3rem] ',
                 indexRow + 1 == items.length ? 'rounded-b-lg border-b-0' : '',
                 tableClass
               )}
@@ -63,7 +63,7 @@ const TitleTable = ({
                 return (
                   <Typography
                     key={indexItem}
-                    className='text-center font-sans font-medium text-black'
+                    className='px-4 text-center font-sans font-medium text-black'
                     variant='caption'
                     style={{ width: `${100 / header.length}%` }}
                   >
