@@ -129,12 +129,13 @@
 
 .home .webseries .swiper-button-next,
 .home .webseries .swiper-button-prev {
-  @apply absolute bottom-4 !top-auto !flex !h-10 !w-10 items-center justify-center rounded-md border-2 border-black bg-white !p-4 !text-black;
+  @apply absolute bottom-4 !top-auto !flex !h-10 !w-10 items-center justify-center rounded-xl border-2 border-black bg-white !p-4 !text-black;
 }
 
 .home .webseries .swiper-button-next:after,
 .home .webseries .swiper-button-prev:after {
   font-size: 18px !important;
+  font-weight: 900 !important;
 }
 
 .home .webseries .swiper-button-next {
@@ -147,12 +148,13 @@
 
 .home .fasilitas .swiper-button-next,
 .home .fasilitas .swiper-button-prev {
-  @apply absolute bottom-4 !top-auto !flex !h-10 !w-10 items-center justify-center rounded-md border-2 border-black bg-white !p-4 !text-black;
+  @apply absolute bottom-4 !top-auto !flex !h-10 !w-10 items-center justify-center rounded-xl border-2 border-black bg-white !p-4 !text-black;
 }
 
 .home .fasilitas .swiper-button-next:after,
 .home .fasilitas .swiper-button-prev:after {
   font-size: 18px !important;
+  font-weight: 900 !important;
 }
 
 .home .fasilitas .swiper-button-next {
@@ -165,12 +167,13 @@
 
 .home .tim .swiper-button-next,
 .home .tim .swiper-button-prev {
-  @apply absolute bottom-4 !top-auto !flex !h-10 !w-10 items-center justify-center rounded-md border-2 border-black bg-white !p-4 !text-black;
+  @apply absolute bottom-4 !top-auto !flex !h-10 !w-10 items-center justify-center rounded-xl border-2 border-black bg-white !p-4 !text-black;
 }
 
 .home .tim .swiper-button-next:after,
 .home .tim .swiper-button-prev:after {
   font-size: 18px !important;
+  font-weight: 900 !important;
 }
 
 .home .tim .swiper-button-next {

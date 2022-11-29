@@ -1,16 +1,16 @@
 export const cardPrestasi = [
   {
-    src: '/images/home/prestasi1.png',
+    src: '/images/homePage/prestasi1.png',
     alt: 'Prestasi ITS 1',
     label: 'Juara 1 Loncat Ga Turun-turun',
   },
   {
-    src: '/images/home/prestasi2.png',
+    src: '/images/homePage/prestasi2.png',
     alt: 'Prestasi ITS 2',
     label: 'Juara 1 Loncat Ga Turun-turun',
   },
   {
-    src: '/images/home/prestasi3.png',
+    src: '/images/homePage/prestasi3.png',
     alt: 'Prestasi ITS 3',
     label: 'Juara 1 Loncat Ga Turun-turun',
   },
@@ -20,43 +20,43 @@ export const alumni = [
   {
     name: 'Tri Rismaharini',
     job: 'Menteri Sosial',
-    src: '/images/home/alumni1.png',
+    src: '/images/homePage/alumni1.png',
   },
   {
     name: 'Cak Lontong',
     job: 'Komedian',
-    src: '/images/home/alumni1.png',
+    src: '/images/homePage/alumni1.png',
   },
   {
     name: 'Tri Rismaharini',
     job: 'Menteri Sosial',
-    src: '/images/home/alumni1.png',
+    src: '/images/homePage/alumni1.png',
   },
   {
     name: 'Tri Rismaharini',
     job: 'Menteri Sosial',
-    src: '/images/home/alumni1.png',
+    src: '/images/homePage/alumni1.png',
   },
 ];
 
 export const beasiswa = [
   {
-    src: '/images/home/kemdikbud.png',
+    src: '/images/homePage/kemdikbud.png',
     href: '',
     label: 'Beasiswa Bank Indonesia',
   },
   {
-    src: '/images/home/kemdikbud.png',
+    src: '/images/homePage/kemdikbud.png',
     href: '',
     label: 'Beasiswa Unggulan',
   },
   {
-    src: '/images/home/kemdikbud.png',
+    src: '/images/homePage/kemdikbud.png',
     href: '',
     label: 'Beasiswa Bank Indonesia',
   },
   {
-    src: '/images/home/kemdikbud.png',
+    src: '/images/homePage/kemdikbud.png',
     href: '',
     label: 'Beasiswa Bank Indonesia',
   },
@@ -64,13 +64,13 @@ export const beasiswa = [
 
 export const companyLogo = [
   {
-    src: '/images/home/companyLogo1.png',
+    src: '/images/homePage/companyLogo1.png',
   },
   {
-    src: '/images/home/companyLogo2.png',
+    src: '/images/homePage/companyLogo2.png',
   },
   {
-    src: '/images/home/companyLogo3.png',
+    src: '/images/homePage/companyLogo3.png',
   },
 ];
 

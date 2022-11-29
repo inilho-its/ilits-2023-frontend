@@ -6,6 +6,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import clsxm from '@/lib/clsxm';
+
+import Button from '@/components/buttons/Button';
+import Card from '@/components/homepageComponent/Card';
+import Layout from '@/components/layout/Layout';
+import ButtonLink from '@/components/links/ButtonLink';
+import UnstyledLink from '@/components/links/UnstyledLink';
+import NextImage from '@/components/NextImage';
+import Seo from '@/components/Seo';
+import Typography from '@/components/typography/Typography';
+
 import {
   alumni,
   beasiswa,
@@ -13,15 +23,7 @@ import {
   companyLogo,
   fakultas,
   openCampus,
-} from '@/lib/constant';
-
-import Button from '@/components/buttons/Button';
-import Card from '@/components/homepage/Card';
-import Layout from '@/components/layout/Layout';
-import ButtonLink from '@/components/links/ButtonLink';
-import NextImage from '@/components/NextImage';
-import Seo from '@/components/Seo';
-import Typography from '@/components/typography/Typography';
+} from '@/constant/homeData';
 
 export default function HomePage() {
   const [heightW, setHeight] = React.useState<number>(0);
@@ -44,7 +46,7 @@ export default function HomePage() {
             {/* Line kiri */}
             <NextImage
               className='absolute top-0 left-0 z-40 hidden w-2/5 md:block'
-              src='/images/home/grup.png'
+              src='/images/homePage/grup.png'
               layout='responsive'
               objectFit='contain'
               width='88%'
@@ -54,7 +56,7 @@ export default function HomePage() {
             {/* Line kanan */}
             <NextImage
               className='absolute top-64 right-0 w-full md:top-24 lg:top-0'
-              src='/images/home/grup2.png'
+              src='/images/homePage/grup2.png'
               layout='responsive'
               objectFit='cover'
               width='100%'
@@ -64,7 +66,7 @@ export default function HomePage() {
             {/* Awan kanan */}
             <NextImage
               className='absolute top-[15rem] right-16 w-[33%] md:right-24 md:top-8 lg:-top-16'
-              src='/images/home/awan1.png'
+              src='/images/homePage/awan1.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -75,7 +77,7 @@ export default function HomePage() {
             {/* Awan kiri */}
             <NextImage
               className='absolute top-[13%] left-[5%] w-[36%] lg:top-[7%]'
-              src='/images/home/awan2.png'
+              src='/images/homePage/awan2.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -84,7 +86,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute top-[19rem] right-[17.2rem] block w-[38%] md:hidden'
-              src='/images/home/awan1.png'
+              src='/images/homePage/awan1.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -94,7 +96,7 @@ export default function HomePage() {
             {/* Cewek */}
             <NextImage
               className='absolute top-72 -left-0 z-50 hidden w-[23%] md:top-28 md:block lg:top-32 1xl:w-[25%]'
-              src='/images/home/female.png'
+              src='/images/homePage/female.png'
               layout='responsive'
               objectFit='contain'
               width='50%'
@@ -105,7 +107,7 @@ export default function HomePage() {
             {/* Cowok */}
             <NextImage
               className='absolute right-0 top-72 z-50 hidden w-[23%] md:top-[14%] md:block lg:top-32 1xl:w-[25%]'
-              src='/images/home/male.png'
+              src='/images/homePage/male.png'
               layout='responsive'
               objectFit='contain'
               width='50%'
@@ -115,7 +117,7 @@ export default function HomePage() {
             {/* Cewek mobile */}
             <NextImage
               className='absolute top-64 left-0 z-[50] block w-[8.5rem] md:hidden'
-              src='/images/home/girl-mobile.png'
+              src='/images/homePage/girl-mobile.png'
               layout='responsive'
               objectFit='contain'
               width='50%'
@@ -125,7 +127,7 @@ export default function HomePage() {
             {/* Cowok mobile */}
             <NextImage
               className='absolute top-56 right-0 z-[50] block w-[9.5rem] md:hidden'
-              src='/images/home/boy-mobile.png'
+              src='/images/homePage/boy-mobile.png'
               layout='responsive'
               objectFit='contain'
               width='50%'
@@ -135,7 +137,7 @@ export default function HomePage() {
             {/* Star */}
             <NextImage
               className='absolute top-[28rem] right-[22%] z-50 w-10 md:top-[70vh] md:w-16 lg:w-20 xl:w-24'
-              src='/images/home/star.png'
+              src='/images/homePage/star.png'
               layout='responsive'
               objectFit='contain'
               width='50%'
@@ -207,7 +209,7 @@ export default function HomePage() {
                   Lectus consectetur id tellus, pellentesque.
                 </Typography>
                 <div className='rounded-lg bg-yellow-500 px-5 py-[6px] font-semibold outline outline-2 outline-black md:py-2'>
-                  Kenali lebih lanjut
+                  Kenali Lebih Lanjut!
                 </div>
               </div>
             </div>
@@ -218,7 +220,7 @@ export default function HomePage() {
                 className={`${
                   heightW > 799 ? 'top-[1%]' : 'top-[10%]'
                 } absolute right-0 z-50 hidden w-16 md:block lg:w-20 1xl:w-24`}
-                src='/images/home/star2.png'
+                src='/images/homePage/star2.png'
                 layout='responsive'
                 objectFit='contain'
                 width='80%'
@@ -227,7 +229,7 @@ export default function HomePage() {
               />
               <NextImage
                 className='absolute top-52 right-0 z-50 w-[30%]'
-                src='/images/home/awan3.png'
+                src='/images/homePage/awan3.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -241,7 +243,7 @@ export default function HomePage() {
               >
                 <NextImage
                   className='absolute bottom-0 right-4 z-[51] w-12 translate-x-[45%] translate-y-1/2 md:right-0 md:w-16 lg:w-20 1xl:w-24'
-                  src='/images/home/cursor.png'
+                  src='/images/homePage/cursor.png'
                   layout='responsive'
                   objectFit='contain'
                   width='50%'
@@ -250,7 +252,7 @@ export default function HomePage() {
                 />
                 <NextImage
                   className='absolute -top-6 left-2 z-[51] w-16 md:left-12 lg:-top-8 lg:w-20 1xl:-top-12 1xl:w-24'
-                  src='/images/home/arrow.png'
+                  src='/images/homePage/arrow.png'
                   layout='responsive'
                   objectFit='contain'
                   width='50%'
@@ -259,7 +261,7 @@ export default function HomePage() {
                 />
                 <NextImage
                   className='absolute bottom-0 left-0 z-[51] hidden w-24 translate-y-[65%] -translate-x-1/2 md:block lg:w-28 1xl:w-32'
-                  src='/images/home/magnifier.png'
+                  src='/images/homePage/magnifier.png'
                   layout='responsive'
                   objectFit='contain'
                   width='50%'
@@ -299,7 +301,7 @@ export default function HomePage() {
             <div className='relative w-full'>
               <NextImage
                 className='absolute top-[30%] left-[3%] z-[49] w-[30%] xl:left-[9%]'
-                src='/images/home/awan4.png'
+                src='/images/homePage/awan4.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -308,7 +310,7 @@ export default function HomePage() {
               />
               <NextImage
                 className='absolute -bottom-8 right-0 z-[49] hidden w-[27%] md:block'
-                src='/images/home/awan5.png'
+                src='/images/homePage/awan5.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -324,7 +326,7 @@ export default function HomePage() {
               >
                 <NextImage
                   className='absolute bottom-0 right-3 z-[51] w-16 translate-x-1/2 translate-y-1/2 md:right-0 md:w-20 lg:w-28'
-                  src='/images/home/pin.png'
+                  src='/images/homePage/pin.png'
                   layout='responsive'
                   objectFit='contain'
                   width='100%'
@@ -333,7 +335,7 @@ export default function HomePage() {
                 />
                 <NextImage
                   className='absolute top-0 right-0 z-[51] hidden w-16 translate-x-[100%] -translate-y-1/3 md:block lg:w-20 lg:translate-x-[120%]'
-                  src='/images/home/star3.png'
+                  src='/images/homePage/star3.png'
                   layout='responsive'
                   objectFit='contain'
                   width='50%'
@@ -345,17 +347,17 @@ export default function HomePage() {
                     'absolute bottom-0 left-0 z-[51] hidden w-16 -translate-x-3/4 translate-y-3/4',
                     'md:block lg:w-20 lg:-translate-x-full lg:translate-y-full'
                   )}
-                  src='/images/home/star4.png'
+                  src='/images/homePage/star4.png'
                   layout='responsive'
                   objectFit='contain'
                   width='50%'
                   height='50%'
                   alt='Virtual Tour'
                 />
-                <a href=''>
+                <UnstyledLink href=''>
                   <div className='h-72 w-72 overflow-hidden rounded-xl border-2 border-black md:h-auto md:w-[574px]'>
                     <NextImage
-                      src='/images/home/virtualTour1.png'
+                      src='/images/homePage/virtualTour1.png'
                       layout='responsive'
                       objectFit='cover'
                       width='100%'
@@ -363,7 +365,7 @@ export default function HomePage() {
                       alt='Virtual Tour'
                     />
                   </div>
-                </a>
+                </UnstyledLink>
                 <Typography variant='h6' className='py-3 text-center font-bold'>
                   Virtual Tour ITS!
                 </Typography>
@@ -373,7 +375,7 @@ export default function HomePage() {
             <div className='relative border-t-2 border-b-2 border-black bg-lightBlue-500 p-4 lg:p-8 1xl:p-10'>
               <NextImage
                 className='absolute top-0 left-0 z-[49] w-20 md:w-24 lg:w-32 1xl:w-48'
-                src='/images/home/arrow2.png'
+                src='/images/homePage/arrow2.png'
                 layout='responsive'
                 objectFit='contain'
                 width='90%'
@@ -382,7 +384,7 @@ export default function HomePage() {
               />
               <NextImage
                 className='absolute bottom-0 right-0 z-[49] w-16 md:w-24 lg:w-32 1xl:right-8 1xl:w-40'
-                src='/images/home/eye.png'
+                src='/images/homePage/eye.png'
                 layout='responsive'
                 objectFit='contain'
                 width='90%'
@@ -404,7 +406,7 @@ export default function HomePage() {
             <div className='relative w-full pt-16 md:pt-24'>
               <NextImage
                 className='absolute top-0 left-0 w-full 1xl:-top-4'
-                src='/images/home/lenn.png'
+                src='/images/homePage/lenn.png'
                 layout='responsive'
                 objectFit='cover'
                 width='100%'
@@ -446,7 +448,7 @@ export default function HomePage() {
                           </Typography>
                           <NextImage
                             className='mb-4 block w-72 rounded-lg md:w-80 lg:hidden'
-                            src='/images/home/webseries-mobile.png'
+                            src='/images/homePage/webseries-mobile.png'
                             layout='responsive'
                             objectFit='contain'
                             width='100%'
@@ -465,7 +467,7 @@ export default function HomePage() {
                           <ButtonLink
                             href=''
                             variant='lightBlue'
-                            className='mb-12 mt-6 lg:mb-0 lg:mt-12'
+                            className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
                             Tonton Sekarang!
                           </ButtonLink>
@@ -473,7 +475,7 @@ export default function HomePage() {
                         <div className='relative hidden w-1/2 rounded-br-lg lg:block'>
                           <NextImage
                             imgClassName='rounded-br-lg'
-                            src='/images/home/webseries1.png'
+                            src='/images/homePage/webseries1.png'
                             layout='fill'
                             width='100%'
                             alt='Web Series ILITS'
@@ -497,7 +499,7 @@ export default function HomePage() {
                           </Typography>
                           <NextImage
                             className='mb-4 block w-72 rounded-lg md:w-80 lg:hidden'
-                            src='/images/home/webseries-mobile.png'
+                            src='/images/homePage/webseries-mobile.png'
                             layout='responsive'
                             objectFit='contain'
                             width='100%'
@@ -516,7 +518,7 @@ export default function HomePage() {
                           <ButtonLink
                             href=''
                             variant='lightBlue'
-                            className='mb-12 mt-6 lg:mb-0 lg:mt-12'
+                            className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
                             Tonton Sekarang!
                           </ButtonLink>
@@ -524,7 +526,7 @@ export default function HomePage() {
                         <div className='relative hidden w-1/2 rounded-br-lg lg:block'>
                           <NextImage
                             imgClassName='rounded-br-lg'
-                            src='/images/home/webseries1.png'
+                            src='/images/homePage/webseries1.png'
                             layout='fill'
                             width='100%'
                             alt='Web Series ILITS'
@@ -548,7 +550,7 @@ export default function HomePage() {
                           </Typography>
                           <NextImage
                             className='mb-4 block w-72 rounded-lg md:w-80 lg:hidden'
-                            src='/images/home/webseries-mobile.png'
+                            src='/images/homePage/webseries-mobile.png'
                             layout='responsive'
                             objectFit='contain'
                             width='100%'
@@ -567,7 +569,7 @@ export default function HomePage() {
                           <ButtonLink
                             href=''
                             variant='lightBlue'
-                            className='mb-12 mt-6 lg:mb-0 lg:mt-12'
+                            className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
                             Tonton Sekarang!
                           </ButtonLink>
@@ -575,7 +577,7 @@ export default function HomePage() {
                         <div className='relative hidden w-1/2 rounded-br-lg lg:block'>
                           <NextImage
                             imgClassName='rounded-br-lg'
-                            src='/images/home/webseries1.png'
+                            src='/images/homePage/webseries1.png'
                             layout='fill'
                             width='100%'
                             alt='Web Series ILITS'
@@ -592,7 +594,7 @@ export default function HomePage() {
             <div className='relative w-full'>
               <NextImage
                 className='absolute top-32 -right-4 w-12 md:w-24 lg:w-28 xl:w-32'
-                src='/images/home/star5.png'
+                src='/images/homePage/star5.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -601,7 +603,7 @@ export default function HomePage() {
               />
               <NextImage
                 className='absolute top-28 left-0 w-[21%]'
-                src='/images/home/awan6.png'
+                src='/images/homePage/awan6.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -610,7 +612,7 @@ export default function HomePage() {
               />
               <NextImage
                 className='absolute -bottom-24 right-0 w-[10%]'
-                src='/images/home/awan7.png'
+                src='/images/homePage/awan7.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -625,8 +627,7 @@ export default function HomePage() {
                   'tracking-tight md:mt-44 md:px-0 md:tracking-normal lg:mb-16 lg:text-[48px] lg:leading-[64px]'
                 )}
               >
-                Ada apa di
-                <br className='block md:hidden' />
+                Ada apa di <br className='block md:hidden' />
                 INI LHO ITS 2023?
               </Typography>
               <div className='mx-4 mb-8 max-w-6xl md:mx-16 1xl:mx-auto'>
@@ -647,7 +648,7 @@ export default function HomePage() {
             >
               <NextImage
                 className='absolute top-0 left-0 z-[15] hidden w-16 -translate-y-1/2 -translate-x-1/2 md:block lg:w-24 xl:w-32'
-                src='/images/home/star6.png'
+                src='/images/homePage/star6.png'
                 layout='responsive'
                 objectFit='contain'
                 width='100%'
@@ -663,7 +664,7 @@ export default function HomePage() {
               >
                 <NextImage
                   className='absolute top-0 -right-4 z-[15] hidden w-[21rem] md:block'
-                  src='/images/home/rainbow.png'
+                  src='/images/homePage/rainbow.png'
                   layout='responsive'
                   objectFit='contain'
                   width='80%'
@@ -672,7 +673,7 @@ export default function HomePage() {
                 />
                 <NextImage
                   className='absolute left-0 bottom-0 block w-full md:hidden'
-                  src='/images/home/rainbow-mobile.png'
+                  src='/images/homePage/rainbow-mobile.png'
                   layout='responsive'
                   objectFit='contain'
                   width='100%'
@@ -687,7 +688,7 @@ export default function HomePage() {
                     'text-white lg:text-[32px] lg:leading-[48px] xl:text-[48px] xl:leading-[64px]'
                   )}
                 >
-                  Pendaftaran Try Out ILITS! 2023
+                  Pendaftaran Try Out ILITS! 2023{' '}
                   <br className='block md:hidden' />
                   Sudah Dibuka!
                 </Typography>
@@ -696,7 +697,7 @@ export default function HomePage() {
                     variant='bone'
                     size='medium'
                     round='medium'
-                    className='relative z-[20] m-auto hidden bg-bone-50 lg:block'
+                    className='relative z-[20] m-auto hidden bg-bone-50 font-semibold lg:block'
                   >
                     Daftar Sekarang!
                   </Button>
@@ -722,7 +723,7 @@ export default function HomePage() {
           >
             <NextImage
               className='absolute top-28 left-8 z-[15] hidden w-16 md:block lg:top-44 lg:w-20 xl:top-52 xl:w-24'
-              src='/images/home/eye2.png'
+              src='/images/homePage/eye2.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -731,7 +732,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute bottom-0 right-0 z-[15] hidden w-12 md:block lg:w-16 xl:w-20'
-              src='/images/home/eye3.png'
+              src='/images/homePage/eye3.png'
               layout='responsive'
               objectFit='contain'
               width='80%'
@@ -742,7 +743,7 @@ export default function HomePage() {
             <div className='w-full lg:w-96 lg:max-w-xs xl:w-fit'>
               <Typography
                 variant='h4'
-                className='block text-[28px] font-bold leading-[34px] text-white md:hidden lg:block xl:text-[32px] xl:leading-[48px]'
+                className='block text-[28px] font-bold leading-[34px] text-white md:hidden lg:block xl:text-[48px] xl:leading-[64px]'
               >
                 Segudang Prestasi
               </Typography>
@@ -766,9 +767,9 @@ export default function HomePage() {
                 Segudang Prestasi
               </Typography>
               <div className='mx-auto grid grid-cols-1 gap-2 md:grid-cols-3 xl:gap-4'>
-                {cardPrestasi.map(({ src, alt, label }) => (
+                {cardPrestasi.map(({ src, alt, label }, index) => (
                   <div
-                    key={src}
+                    key={index}
                     className={clsxm(
                       'flex h-[30vw] flex-row overflow-hidden rounded-lg',
                       'border-2 border-black md:flex-col lg:h-[25vw] xl:rounded-xl'
@@ -825,7 +826,7 @@ export default function HomePage() {
                     id === 1 && 'bg-red-300'
                   } col-span-6 flex items-center border-2`,
                   `justify-center rounded-lg border-black bg-white py-1 px-3 text-center`,
-                  `hover:bg-red-300 md:py-2 md:px-6 lg:col-span-4 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer hover:bg-red-300 md:py-2 md:px-6 lg:col-span-4 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -842,7 +843,7 @@ export default function HomePage() {
                     id === 2 && 'bg-red-300'
                   } col-span-6  flex items-center justify-center rounded-lg border-2`,
                   `border-black bg-white py-1 px-3 text-center hover:bg-red-300`,
-                  `md:py-2 md:px-6 lg:col-span-4 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer md:py-2 md:px-6 lg:col-span-4 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -859,7 +860,7 @@ export default function HomePage() {
                     id === 3 && 'bg-red-300'
                   } col-span-6 flex items-center justify-center rounded-lg border-2`,
                   `border-black bg-white py-1 px-3 text-center hover:bg-red-300`,
-                  `md:py-2 md:px-6 lg:col-span-4 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer md:py-2 md:px-6 lg:col-span-4 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -875,7 +876,7 @@ export default function HomePage() {
                   `${
                     id === 4 && 'bg-red-300'
                   } col-span-6 flex items-center justify-center rounded-lg border-2 border-black`,
-                  `bg-white py-1 px-3 text-center hover:bg-red-300 md:py-2 md:px-6 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer bg-white py-1 px-3 text-center hover:bg-red-300 md:py-2 md:px-6 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -892,7 +893,7 @@ export default function HomePage() {
                     id === 5 && 'bg-red-300'
                   } order-last col-span-12 flex items-center justify-center`,
                   `rounded-lg border-2 border-black bg-white py-3 px-6 text-center`,
-                  `hover:bg-red-300 md:py-5 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer hover:bg-red-300 md:py-5 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -909,7 +910,7 @@ export default function HomePage() {
                     id === 6 && 'bg-red-300'
                   } col-span-6 flex items-center justify-center rounded-lg`,
                   `border-2 border-black bg-white py-3 px-6 text-center`,
-                  `hover:bg-red-300 md:py-5 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer hover:bg-red-300 md:py-5 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -925,7 +926,7 @@ export default function HomePage() {
                   `${
                     id === 7 && 'bg-red-300'
                   } col-span-6 flex items-center justify-center rounded-lg border-2 border-black`,
-                  `bg-white py-3 px-6 text-center hover:bg-red-300 md:py-5 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
+                  `cursor-pointer bg-white py-3 px-6 text-center hover:bg-red-300 md:py-5 lg:col-span-3 lg:py-1 lg:px-8 xl:py-2 xl:px-10`
                 )}
               >
                 <Typography
@@ -944,13 +945,16 @@ export default function HomePage() {
             >
               {fakultas
                 .filter((item) => item.id === id)
-                .map((item) => {
+                .map((item, index) => {
                   return (
                     <>
-                      <div className='relative w-full md:w-[45%] lg:w-5/12'>
+                      <div
+                        className='relative w-full md:w-[45%] lg:w-5/12'
+                        key={index}
+                      >
                         <NextImage
                           className='hidden md:block'
-                          src='/images/home/biologi.png'
+                          src='/images/homePage/biologi.png'
                           alt='Fakultas Impianmu'
                           width={widthW <= 768 ? '79%' : '90%'}
                           layout='responsive'
@@ -959,7 +963,7 @@ export default function HomePage() {
                         />
                         <NextImage
                           className='block md:hidden'
-                          src='/images/home/biologi-mobile.png'
+                          src='/images/homePage/biologi-mobile.png'
                           alt='Fakultas Impianmu'
                           width='100%'
                           layout='responsive'
@@ -985,7 +989,7 @@ export default function HomePage() {
                         <Typography variant='p'>{item.desc}</Typography>
                         <div className='pt-2 pb-0 text-center md:text-left lg:pb-6 lg:pt-0 xl:pb-10'>
                           <ButtonLink
-                            className='hidden lg:inline-block'
+                            className='hidden font-semibold lg:inline-block'
                             href=''
                             variant='yellow'
                             size='medium'
@@ -1043,7 +1047,7 @@ export default function HomePage() {
                   <div className='w-full md:w-1/2 lg:w-2/6'>
                     <NextImage
                       className='hidden md:block'
-                      src='/images/home/fasilitas1.png'
+                      src='/images/homePage/fasilitas1.png'
                       width={widthW <= 768 ? '81%' : '100%'}
                       height='100%'
                       layout='responsive'
@@ -1052,7 +1056,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='block md:hidden'
-                      src='/images/home/fasilitas-mobile.png'
+                      src='/images/homePage/fasilitas-mobile.png'
                       width='100%'
                       height='60%'
                       layout='responsive'
@@ -1063,7 +1067,7 @@ export default function HomePage() {
                   <div className='relative w-full border-l-2 border-black py-4 pb-28 md:w-4/6 md:pb-0 lg:py-8 xl:py-12'>
                     <NextImage
                       className='absolute left-44 top-0 z-[1] hidden w-[60%] md:block'
-                      src='/images/home/line2.png'
+                      src='/images/homePage/line2.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1072,7 +1076,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 top-0 z-[1] block w-56 md:hidden'
-                      src='/images/home/line-fas-mobile.png'
+                      src='/images/homePage/line-fas-mobile.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1081,7 +1085,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 z-[1] block w-full md:hidden'
-                      src='/images/home/line34.png'
+                      src='/images/homePage/line34.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1090,7 +1094,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 top-16 z-[1] hidden w-12 md:block lg:w-16 xl:w-20'
-                      src='/images/home/eye4.png'
+                      src='/images/homePage/eye4.png'
                       layout='responsive'
                       objectFit='contain'
                       width='60%'
@@ -1099,7 +1103,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 block w-16 md:hidden'
-                      src='/images/home/eye-fas-mob.png'
+                      src='/images/homePage/eye-fas-mob.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1108,7 +1112,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 bottom-0 z-[1] hidden w-52 md:block lg:w-72'
-                      src='/images/home/line3.png'
+                      src='/images/homePage/line3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='90%'
@@ -1117,7 +1121,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-4 bottom-0 z-[1] w-20 md:right-16 lg:w-28 xl:w-36'
-                      src='/images/home/arrow3.png'
+                      src='/images/homePage/arrow3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1139,7 +1143,7 @@ export default function HomePage() {
                       </Typography>
                     </div>
                     <div className='mt-0 px-4 md:mt-4 md:px-8'>
-                      <Typography variant='h6' className='font-bold'>
+                      <Typography variant='h5' className='font-bold'>
                         Graha ITS
                       </Typography>
                       <Typography
@@ -1170,7 +1174,7 @@ export default function HomePage() {
                   <div className='w-full md:w-1/2 lg:w-2/6'>
                     <NextImage
                       className='hidden md:block'
-                      src='/images/home/fasilitas1.png'
+                      src='/images/homePage/fasilitas1.png'
                       width={widthW <= 768 ? '81%' : '100%'}
                       height='100%'
                       layout='responsive'
@@ -1179,7 +1183,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='block md:hidden'
-                      src='/images/home/fasilitas-mobile.png'
+                      src='/images/homePage/fasilitas-mobile.png'
                       width='100%'
                       height='60%'
                       layout='responsive'
@@ -1190,7 +1194,7 @@ export default function HomePage() {
                   <div className='relative w-full border-l-2 border-black py-4 pb-28 md:w-4/6 md:pb-0 lg:py-8 xl:py-12'>
                     <NextImage
                       className='absolute left-44 top-0 z-[1] hidden w-[60%] md:block'
-                      src='/images/home/line2.png'
+                      src='/images/homePage/line2.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1199,7 +1203,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 top-0 z-[1] block w-56 md:hidden'
-                      src='/images/home/line-fas-mobile.png'
+                      src='/images/homePage/line-fas-mobile.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1208,7 +1212,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 z-[1] block w-full md:hidden'
-                      src='/images/home/line34.png'
+                      src='/images/homePage/line34.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1217,7 +1221,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 top-16 z-[1] hidden w-12 md:block lg:w-16 xl:w-20'
-                      src='/images/home/eye4.png'
+                      src='/images/homePage/eye4.png'
                       layout='responsive'
                       objectFit='contain'
                       width='60%'
@@ -1226,7 +1230,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 block w-16 md:hidden'
-                      src='/images/home/eye-fas-mob.png'
+                      src='/images/homePage/eye-fas-mob.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1235,7 +1239,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 bottom-0 z-[1] hidden w-52 md:block lg:w-72'
-                      src='/images/home/line3.png'
+                      src='/images/homePage/line3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='90%'
@@ -1244,7 +1248,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-4 bottom-0 z-[1] w-20 md:right-16 lg:w-28 xl:w-36'
-                      src='/images/home/arrow3.png'
+                      src='/images/homePage/arrow3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1266,7 +1270,7 @@ export default function HomePage() {
                       </Typography>
                     </div>
                     <div className='mt-0 px-4 md:mt-4 md:px-8'>
-                      <Typography variant='h6' className='font-bold'>
+                      <Typography variant='h5' className='font-bold'>
                         Graha ITS
                       </Typography>
                       <Typography
@@ -1297,7 +1301,7 @@ export default function HomePage() {
                   <div className='w-full md:w-1/2 lg:w-2/6'>
                     <NextImage
                       className='hidden md:block'
-                      src='/images/home/fasilitas1.png'
+                      src='/images/homePage/fasilitas1.png'
                       width={widthW <= 768 ? '81%' : '100%'}
                       height='100%'
                       layout='responsive'
@@ -1306,7 +1310,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='block md:hidden'
-                      src='/images/home/fasilitas-mobile.png'
+                      src='/images/homePage/fasilitas-mobile.png'
                       width='100%'
                       height='60%'
                       layout='responsive'
@@ -1317,7 +1321,7 @@ export default function HomePage() {
                   <div className='relative w-full border-l-2 border-black py-4 pb-28 md:w-4/6 md:pb-0 lg:py-8 xl:py-12'>
                     <NextImage
                       className='absolute left-44 top-0 z-[1] hidden w-[60%] md:block'
-                      src='/images/home/line2.png'
+                      src='/images/homePage/line2.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1326,7 +1330,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 top-0 z-[1] block w-56 md:hidden'
-                      src='/images/home/line-fas-mobile.png'
+                      src='/images/homePage/line-fas-mobile.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1335,7 +1339,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 z-[1] block w-full md:hidden'
-                      src='/images/home/line34.png'
+                      src='/images/homePage/line34.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1344,7 +1348,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 top-16 z-[1] hidden w-12 md:block lg:w-16 xl:w-20'
-                      src='/images/home/eye4.png'
+                      src='/images/homePage/eye4.png'
                       layout='responsive'
                       objectFit='contain'
                       width='60%'
@@ -1353,7 +1357,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 block w-16 md:hidden'
-                      src='/images/home/eye-fas-mob.png'
+                      src='/images/homePage/eye-fas-mob.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1362,7 +1366,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-0 bottom-0 z-[1] hidden w-52 md:block lg:w-72'
-                      src='/images/home/line3.png'
+                      src='/images/homePage/line3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='90%'
@@ -1371,7 +1375,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-4 bottom-0 z-[1] w-20 md:right-16 lg:w-28 xl:w-36'
-                      src='/images/home/arrow3.png'
+                      src='/images/homePage/arrow3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1393,7 +1397,7 @@ export default function HomePage() {
                       </Typography>
                     </div>
                     <div className='mt-0 px-4 md:mt-4 md:px-8'>
-                      <Typography variant='h6' className='font-bold'>
+                      <Typography variant='h5' className='font-bold'>
                         Graha ITS
                       </Typography>
                       <Typography
@@ -1426,7 +1430,7 @@ export default function HomePage() {
           <div className='relative flex flex-col overflow-hidden'>
             <NextImage
               className='absolute left-0 top-2 z-0 w-full'
-              src='/images/home/line4.png'
+              src='/images/homePage/line4.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -1435,7 +1439,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute right-0 top-10 z-0 w-96 lg:top-0'
-              src='/images/home/line5.png'
+              src='/images/homePage/line5.png'
               layout='responsive'
               objectFit='cover'
               width='100%'
@@ -1444,7 +1448,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute -left-2 top-10 z-[99] w-16 md:left-12 md:top-32 md:w-24 lg:top-32 lg:w-32 1xl:left-20 1xl:top-24 1xl:w-36'
-              src='/images/home/magnifier.png'
+              src='/images/homePage/magnifier.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -1453,7 +1457,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute right-0 bottom-[3.5rem] z-[99] hidden w-16 md:block lg:w-20 xl:w-24'
-              src='/images/home/star2.png'
+              src='/images/homePage/star2.png'
               layout='responsive'
               objectFit='contain'
               width='75%'
@@ -1462,7 +1466,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute bottom-16 right-0 z-[0] w-24 md:bottom-10 md:right-[12%] md:w-32 lg:right-[30%] xl:bottom-8 xl:w-36'
-              src='/images/home/arrow4.png'
+              src='/images/homePage/arrow4.png'
               layout='responsive'
               objectFit='contain'
               width='100%'
@@ -1487,8 +1491,8 @@ export default function HomePage() {
                   'px-0 py-8 md:gap-3 lg:w-[101%] lg:-translate-x-2 lg:-rotate-2 lg:flex-row xl:gap-8'
                 )}
               >
-                {beasiswa.map(({ src, href, label }) => (
-                  <a href={href} key={src}>
+                {beasiswa.map(({ src, href, label }, index) => (
+                  <UnstyledLink href={href} key={index}>
                     <div
                       className={clsxm(
                         'group h-full w-[43vw] max-w-[19rem] rounded-xl border-2 border-black',
@@ -1514,7 +1518,7 @@ export default function HomePage() {
                         </Typography>
                       </div>
                     </div>
-                  </a>
+                  </UnstyledLink>
                 ))}
               </div>
             </div>
@@ -1523,7 +1527,7 @@ export default function HomePage() {
                 href=''
                 size='medium'
                 variant='orange'
-                className='relative z-[30] mt-20 justify-center bg-orange-500'
+                className='relative z-[30] mt-20 justify-center bg-orange-500 font-semibold'
               >
                 Lihat Beasiswa Lainnya!
               </ButtonLink>
@@ -1567,7 +1571,7 @@ export default function HomePage() {
                 >
                   <NextImage
                     className='absolute top-0 left-0 z-[8] w-full'
-                    src='/images/home/line6.png'
+                    src='/images/homePage/line6.png'
                     layout='responsive'
                     objectFit='contain'
                     width='100%'
@@ -1577,7 +1581,7 @@ export default function HomePage() {
                   <div className='relative z-[10] w-full py-4 pb-28 md:w-[60%] md:pb-0 lg:w-4/6 lg:py-8 xl:py-12'>
                     <NextImage
                       className='absolute top-0 left-4 hidden w-24 md:block lg:w-32 xl:w-44'
-                      src='/images/home/eye5.png'
+                      src='/images/homePage/eye5.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1586,7 +1590,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-4 hidden w-24 md:block lg:w-32 xl:w-44'
-                      src='/images/home/arrow5.png'
+                      src='/images/homePage/arrow5.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1595,7 +1599,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 block w-16 md:hidden'
-                      src='/images/home/eye-fas-mob.png'
+                      src='/images/homePage/eye-fas-mob.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1604,7 +1608,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-4 bottom-0 z-[1] block w-20 md:hidden'
-                      src='/images/home/arrow3.png'
+                      src='/images/homePage/arrow3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1655,7 +1659,7 @@ export default function HomePage() {
                   <div className='relative z-[10] w-full md:w-[40%] lg:w-2/6'>
                     <NextImage
                       className='hidden h-full w-full md:block'
-                      src='/images/home/ichiro.png'
+                      src='/images/homePage/ichiro.png'
                       width={widthW <= 768 ? '79%' : '100%'}
                       height='100%'
                       layout='responsive'
@@ -1664,7 +1668,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='block h-full w-full md:hidden'
-                      src='/images/home/tim-mobile.png'
+                      src='/images/homePage/tim-mobile.png'
                       width='100%'
                       height='50%'
                       layout='responsive'
@@ -1683,7 +1687,7 @@ export default function HomePage() {
                 >
                   <NextImage
                     className='absolute top-0 left-0 z-[8] w-full'
-                    src='/images/home/line6.png'
+                    src='/images/homePage/line6.png'
                     layout='responsive'
                     objectFit='contain'
                     width='100%'
@@ -1693,7 +1697,7 @@ export default function HomePage() {
                   <div className='relative z-[10] w-full py-4 pb-28 md:w-[60%] md:pb-0 lg:w-4/6 lg:py-8 xl:py-12'>
                     <NextImage
                       className='absolute top-0 left-4 hidden w-24 md:block lg:w-32 xl:w-44'
-                      src='/images/home/eye5.png'
+                      src='/images/homePage/eye5.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1702,7 +1706,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-4 hidden w-24 md:block lg:w-32 xl:w-44'
-                      src='/images/home/arrow5.png'
+                      src='/images/homePage/arrow5.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1711,7 +1715,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 block w-16 md:hidden'
-                      src='/images/home/eye-fas-mob.png'
+                      src='/images/homePage/eye-fas-mob.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1720,7 +1724,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-4 bottom-0 z-[1] block w-20 md:hidden'
-                      src='/images/home/arrow3.png'
+                      src='/images/homePage/arrow3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1771,7 +1775,7 @@ export default function HomePage() {
                   <div className='relative z-[10] w-full md:w-[40%] lg:w-2/6'>
                     <NextImage
                       className='hidden h-full w-full md:block'
-                      src='/images/home/ichiro.png'
+                      src='/images/homePage/ichiro.png'
                       width={widthW <= 768 ? '79%' : '100%'}
                       height='100%'
                       layout='responsive'
@@ -1780,7 +1784,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='block h-full w-full md:hidden'
-                      src='/images/home/tim-mobile.png'
+                      src='/images/homePage/tim-mobile.png'
                       width='100%'
                       height='50%'
                       layout='responsive'
@@ -1799,7 +1803,7 @@ export default function HomePage() {
                 >
                   <NextImage
                     className='absolute top-0 left-0 z-[8] w-full'
-                    src='/images/home/line6.png'
+                    src='/images/homePage/line6.png'
                     layout='responsive'
                     objectFit='contain'
                     width='100%'
@@ -1809,7 +1813,7 @@ export default function HomePage() {
                   <div className='relative z-[10] w-full py-4 pb-28 md:w-[60%] md:pb-0 lg:w-4/6 lg:py-8 xl:py-12'>
                     <NextImage
                       className='absolute top-0 left-4 hidden w-24 md:block lg:w-32 xl:w-44'
-                      src='/images/home/eye5.png'
+                      src='/images/homePage/eye5.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1818,7 +1822,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-4 hidden w-24 md:block lg:w-32 xl:w-44'
-                      src='/images/home/arrow5.png'
+                      src='/images/homePage/arrow5.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1827,7 +1831,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute bottom-0 left-0 block w-16 md:hidden'
-                      src='/images/home/eye-fas-mob.png'
+                      src='/images/homePage/eye-fas-mob.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1836,7 +1840,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='absolute right-4 bottom-0 z-[1] block w-20 md:hidden'
-                      src='/images/home/arrow3.png'
+                      src='/images/homePage/arrow3.png'
                       layout='responsive'
                       objectFit='contain'
                       width='100%'
@@ -1887,7 +1891,7 @@ export default function HomePage() {
                   <div className='relative z-[10] w-full md:w-[40%] lg:w-2/6'>
                     <NextImage
                       className='hidden h-full w-full md:block'
-                      src='/images/home/ichiro.png'
+                      src='/images/homePage/ichiro.png'
                       width={widthW <= 768 ? '79%' : '100%'}
                       height='100%'
                       layout='responsive'
@@ -1896,7 +1900,7 @@ export default function HomePage() {
                     />
                     <NextImage
                       className='block h-full w-full md:hidden'
-                      src='/images/home/tim-mobile.png'
+                      src='/images/homePage/tim-mobile.png'
                       width='100%'
                       height='50%'
                       layout='responsive'
@@ -1912,7 +1916,7 @@ export default function HomePage() {
           <div className='relative bg-dark'>
             <NextImage
               className='absolute top-8 left-0 hidden w-12 md:block xl:w-16'
-              src='/images/home/star7.png'
+              src='/images/homePage/star7.png'
               layout='responsive'
               objectFit='contain'
               width='50%'
@@ -1921,7 +1925,7 @@ export default function HomePage() {
             />
             <NextImage
               className='absolute bottom-0 right-0 hidden w-20 md:block xl:w-24 1xl:w-28'
-              src='/images/home/eye6.png'
+              src='/images/homePage/eye6.png'
               layout='responsive'
               objectFit='contain'
               width='95%'
@@ -1966,7 +1970,11 @@ export default function HomePage() {
               ))}
             </div>
             <div className='flex justify-center pt-8 pb-12 md:pb-20'>
-              <ButtonLink href='' variant='bone' className='bg-white'>
+              <ButtonLink
+                href=''
+                variant='bone'
+                className='bg-white font-semibold'
+              >
                 Lihat Alumni Lainnya!
               </ButtonLink>
             </div>
