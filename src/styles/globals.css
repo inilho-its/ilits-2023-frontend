@@ -29,14 +29,14 @@
 }
 .beasiswa .swiper-button-next,
 .beasiswa .swiper-button-prev {
-  @apply h-4 w-4 rounded-xl border-2 border-bone-1000 bg-yellow-500 p-4;
+  @apply mt-40 ml-[8.5rem] mr-[8.5rem] h-4 w-4 rounded-xl border-2 border-bone-1000 bg-yellow-500 p-4 sm:ml-60 sm:mr-60 lg:mr-0 lg:ml-0 lg:-mt-10;
 }
 .beasiswa .swiper-button-next:after,
 .beasiswa .swiper-button-prev:after {
   @apply bg-yellow-500 text-lg font-bold text-black;
 }
 .beasiswa .swiper-pagination-bullet {
-  @apply h-5 w-5 translate-y-2 border-2 border-bone-1000 bg-neutral-300;
+  @apply h-5 w-5 -translate-y-20 border-2 border-bone-1000 bg-neutral-300 lg:translate-y-3;
 }
 .beasiswa .swiper-pagination-bullet-active {
   @apply border-2  border-bone-1000 bg-yellow-500;
@@ -59,9 +59,27 @@
     @apply !scroll-smooth;
   }
 
+  .stroke-lg {
+    text-shadow: -2.5px -2.5px 0px rgba(0, 0, 0, 1),
+      2.5px -2.5px 0px rgba(0, 0, 0, 1), -2.5px 2.5px 0px rgba(0, 0, 0, 1),
+      2.5px 2.5px 0px rgba(0, 0, 0, 1);
+  }
+
   .stroke {
     text-shadow: -2px -2px 0px rgba(0, 0, 0, 1), 2px -2px 0px rgba(0, 0, 0, 1),
       -2px 2px 0px rgba(0, 0, 0, 1), 2px 2px 0px rgba(0, 0, 0, 1);
+  }
+
+  .stroke-md {
+    text-shadow: -1.5px -1.5px 0px #000, 0px -1.5px 0px #000,
+      1.5px -1.5px 0px #000, -1.5px 0px 0px #000, 1.5px 0px 0px #000,
+      -1.5px 1.5px 0px #000, 0px 1.5px 0px #000, 1.5px 1.5px 0px #000;
+  }
+
+  .stroke-sm {
+    text-shadow: -1px -1px 0px #000, 0px -1px 0px #000, 1px -1px 0px #000,
+      -1px 0px 0px #000, 1px 0px 0px #000, -1px 1px 0px #000, 0px 1px 0px #000,
+      1px 1px 0px #000;
   }
 
   .cursor-newtab {
