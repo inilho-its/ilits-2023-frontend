@@ -46,6 +46,18 @@
       -2px 2px 0px rgba(0, 0, 0, 1), 2px 2px 0px rgba(0, 0, 0, 1);
   }
 
+  .stroke-neutral-1000 {
+    text-shadow: -2px -2px 0px rgba(48, 48, 46, 1),
+      2px -2px 0px rgba(48, 48, 46, 1), -2px 2px 0px rgba(48, 48, 46, 1),
+      2px 2px 0px rgba(48, 48, 46, 1);
+  }
+
+  .stroke-sm-neutral-1000 {
+    text-shadow: -1px -1px 0px rgba(48, 48, 46, 1),
+      1px -1px 0px rgba(48, 48, 46, 1), -1px 1px 0px rgba(48, 48, 46, 1),
+      1px 1px 0px rgba(48, 48, 46, 1);
+  }
+
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
