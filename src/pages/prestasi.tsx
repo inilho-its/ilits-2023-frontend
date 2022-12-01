@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
@@ -12,7 +14,6 @@ import {
   PrestasiNasional,
   PrestasiRegional,
 } from '@/constant/prestasi';
-import TitleTable from '@/pages/prestasi/TitleTable';
 
 // Responsivity down to 300px
 export default function PrestasiPage() {
@@ -78,7 +79,7 @@ export default function PrestasiPage() {
               priority
             />
           </div>
-          <div className='absolute right-0 mt-[31rem] w-24 md:right-96 md:mt-64'>
+          <div className='absolute right-0 mt-[30rem] w-16 sm:w-24 md:right-96 md:mt-64'>
             <NextImage
               src='/images/prestasi/Star-1.png'
               width='100%'
@@ -91,22 +92,22 @@ export default function PrestasiPage() {
           </div>
           {/* ANCHOR CONTENT AREA */}
           <div className='layout'>
-            <div className='relative top-32 ml-6 h-[343px] rounded-xl border-2 border-black bg-white md:w-1/2'>
+            <div className='relative top-16 ml-6 h-[295px] rounded-xl border-2 border-black bg-white sm:h-[343px] md:top-32 md:w-1/2'>
               <div className='h-8 w-full rounded-t-lg border-b-2 border-black bg-yellow-400'>
                 {/* HEADER */}
               </div>
               <div className='flex h-[311px] flex-col justify-center'>
-                <div className='ml-8 mr-8'>
-                  <div className='mb-8 mt-10'>
+                <div className='mx-8'>
+                  <div className='mb-8 sm:mt-10'>
                     <Typography
                       variant='h3'
-                      className='stroke flex-none text-center font-sans text-5xl font-bold text-red-500 sm:text-7xl md:text-left md:text-5xl md:font-black'
+                      className='stroke flex-none text-center font-sans text-5xl font-bold text-red-500 sm:text-[72px] sm:leading-[90px] md:text-left md:font-bold'
                     >
                       Prestasi
                     </Typography>
                     <Typography
                       variant='title'
-                      className='order-1 mt-4 flex-none text-center font-sans text-lg font-semibold text-gray-800 sm:text-xl md:text-left'
+                      className='order-1 mt-4 flex-none text-center font-sans text-lg font-semibold text-gray-800 sm:text-2xl md:text-left'
                     >
                       Institut Teknologi Sepuluh Nopember
                     </Typography>
@@ -120,7 +121,7 @@ export default function PrestasiPage() {
                       >
                         <Typography
                           variant='button'
-                          className='flex-none p-1 font-sans text-sm font-bold text-gray-800 lg:text-sm'
+                          className='flex-none px-1 py-[2px] font-sans text-sm font-semibold text-gray-800 lg:text-base'
                         >
                           Kenali Lebih Lanjut!
                         </Typography>
@@ -220,16 +221,17 @@ export default function PrestasiPage() {
                 <div className='mr-4 h-4 w-4 rounded-full border-[1px] border-black bg-yellow-400'></div>
               </div>
             </div>
-            <div className='flex flex-col-reverse md:flex-row md:items-center md:justify-evenly'>
+            <div className='flex flex-col-reverse lg:flex-row lg:items-center lg:justify-evenly'>
               <div className='w-full border-black p-10'>
+                {/* ONLY SHOW ON DESKTOP */}
                 <Typography
-                  className='mb-4 hidden font-sans font-bold md:block'
+                  className='mb-4 hidden font-sans font-bold lg:block'
                   variant='h5'
                 >
                   Info Unik Buat Kamu
                 </Typography>
                 <Typography
-                  className='text-center font-sans font-medium md:text-left'
+                  className='text-center font-sans font-medium lg:text-left'
                   variant='caption'
                 >
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -245,7 +247,7 @@ export default function PrestasiPage() {
                 </Typography>
               </div>
               <div className='flex w-full justify-center'>
-                <div className='mx-7 mt-6 block w-10/12 rounded-lg border-2 border-black pb-0 md:m-0 md:w-full md:rounded-none md:border-0 md:border-l-2 md:p-0'>
+                <div className='mx-7 mt-6 block w-10/12 rounded-lg border-2 border-black pb-0 md:w-9/12 lg:m-0 lg:w-full lg:rounded-none lg:border-0 lg:border-l-2 lg:p-0'>
                   <NextImage
                     src='/images/prestasi/Random-People.png'
                     width='100%'
@@ -253,14 +255,14 @@ export default function PrestasiPage() {
                     alt='people getting excited'
                     objectFit='cover'
                     objectPosition='top'
-                    imgClassName='sm:rounded-lg md:rounded-none md:rounded-br-lg'
+                    imgClassName='sm:rounded-lg lg:rounded-none lg:rounded-br-lg'
                     priority
                   ></NextImage>
                 </div>
               </div>
               {/* ONLY SHOW ON MOBILE */}
               <Typography
-                className='mt-14 mb-2 text-center font-sans text-2xl font-bold sm:text-4xl md:hidden'
+                className='mt-14 mb-2 text-center font-sans text-2xl font-bold sm:text-4xl lg:hidden'
                 variant='h6'
               >
                 Info Unik Buat Kamu!
@@ -349,3 +351,78 @@ export default function PrestasiPage() {
     </Layout>
   );
 }
+
+const TitleTable = ({
+  title,
+  header,
+  items,
+  className = 'mb-20',
+  headerClass,
+  tableClass,
+}: {
+  title: string;
+  header: string[];
+  items: string[][];
+  className?: string;
+  headerClass: string;
+  tableClass: string;
+}): React.ReactElement => {
+  return (
+    <div className={className}>
+      <Typography
+        variant='h5'
+        className='stroke mb-8 text-center font-sans text-2xl font-bold text-white sm:mb-10 sm:text-3xl md:text-4xl'
+      >
+        {title}
+      </Typography>
+      <div className='layout min-h-min max-w-4xl rounded-xl border-2 border-black'>
+        {/* HEADER */}
+        <div
+          className={clsxm(
+            'flex h-16 min-h-[4rem] items-center justify-center rounded-t-lg border-b-2 border-black bg-red-500',
+            headerClass
+          )}
+        >
+          {header?.map((title, index) => (
+            <Typography
+              style={{ width: `${100 / header.length}%` }} // we use style  here for readibility (integrating to tailwind results in unneeded complexity)
+              key={index}
+              className='stroke px-2 text-center font-sans text-sm font-medium text-white sm:text-base sm:font-bold'
+              variant='body'
+            >
+              {title?.toUpperCase()}
+            </Typography>
+          ))}
+        </div>
+
+        {/* CONTENT */}
+        {items?.map((item, indexRow) => {
+          return (
+            // Rounded bottom corners on the last item
+            <div
+              key={indexRow}
+              className={clsxm(
+                'flex min-h-[3.5rem] items-center justify-center border-b-2 border-black bg-red-200 sm:min-h-[3rem] ',
+                indexRow + 1 == items.length ? 'rounded-b-lg border-b-0' : '',
+                tableClass
+              )}
+            >
+              {item?.map((value, indexItem) => {
+                return (
+                  <Typography
+                    key={indexItem}
+                    className='px-4 text-center font-sans font-medium text-black'
+                    variant='caption'
+                    style={{ width: `${100 / header.length}%` }}
+                  >
+                    {value}
+                  </Typography>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
