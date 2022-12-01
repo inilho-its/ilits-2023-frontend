@@ -32,6 +32,10 @@ export default async function middleware(req: NextRequest) {
       'prestasi',
       'tim',
       'fasilitas',
+      'beasiswa',
+      'alumni',
+      'open-campus',
+      'pembayaran',
     ],
   ]);
 
