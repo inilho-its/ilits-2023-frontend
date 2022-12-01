@@ -1,55 +1,52 @@
-import * as React from 'react';
+import { createSelectorHooks } from 'auto-zustand-selectors-hook';
+import produce from 'immer';
+import create from 'zustand';
 
-import Layout from '@/components/layout/Layout';
-import Seo from '@/components/Seo';
+type OpenCampusForm = {
+  nama?: string;
+  asalSekolah?: string;
+  asalKota?: string;
+  noTelp?: string;
+  email?: string;
+  vaksin?: File;
+  link_poster?: string;
+  link_followig?: string;
+  fakultas?: string;
+  departemen?: string;
+};
 
-export default function UseOpenCampusStorePage() {
-  return (
-    <Layout>
-      <Seo templateTitle='UseOpenCampusStore' />
+type OpenCampusStoreType = {
+  formData: OpenCampusForm;
+  upsert: (data: OpenCampusForm) => void;
+  setFakultas: (fakultas: string) => void;
+  setDepartemen: (departemen: string) => void;
+};
 
-      <main>
-        <section className=''>
-          <div className='layout min-h-screen py-20'></div>
-        </section>
-      </main>
-    </Layout>
-  );
-}
+const useOpenCampusStoreBase = create<OpenCampusStoreType>((set) => ({
+  formData: {},
+  upsert: (data) => {
+    set(
+      produce<OpenCampusStoreType>((state) => {
+        state.formData = data;
+      })
+    );
+  },
+  setFakultas: (fakultas: string) => {
+    set(
+      produce<OpenCampusStoreType>((state) => {
+        state.formData.fakultas = fakultas;
+      })
+    );
+  },
+  setDepartemen: (departemen: string) => {
+    set(
+      produce<OpenCampusStoreType>((state) => {
+        state.formData.departemen = departemen;
+      })
+    );
+  },
+}));
 
-// import { createSelectorHooks } from 'auto-zustand-selectors-hook';
-// import produce from 'immer';
-// import create from 'zustand';
+const useOpenCampusStore = createSelectorHooks(useOpenCampusStoreBase);
 
-// type OpenCampusForm = {
-//   nama?: string;
-//   asalSekolah?: string;
-//   asalKota?: string;
-//   noTelp?: string;
-//   email?: string;
-//   vaksin?: File;
-//   link_poster?: string;
-//   link_followig?: string;
-//   fakultas?: string;
-//   departemen?: string;
-// }
-
-// type OpenCampusStoreType = {
-//   formData : OpenCampusForm | null;
-//   upsert: (data: OpenCampusForm) => void;
-// }
-
-// const useOpenCampusStoreBase = create<OpenCampusStoreType>((set) => ({
-
-//   upsert: (data) => {
-//     set(
-//       produce<OpenCampusStoreType>((state) => {
-//         state.formData = data;
-//       })
-//     )
-//   }
-// }))
-
-// const useOpenCampusStore = createSelectorHooks(useOpenCampusStoreBase);
-
-// export default useOpenCampusStore;
+export default useOpenCampusStore;

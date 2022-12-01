@@ -134,10 +134,10 @@ export default function Input({
             readOnly={readOnly}
             className={clsx(
               readOnly
-                ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
+                ? 'cursor-not-allowed border-neutral-300 bg-gray-100 focus:border-neutral-300 focus:ring-0'
                 : errors[id]
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300',
+                : 'focus:ring-primary-500 border-neutral-300 focus:border-blue-400',
               'block w-full shadow-sm hover:border-[#ED6C3A]',
               LeftIcon && 'rounded-md pl-12',
               RightIcon && 'rounded-md pr-10',
