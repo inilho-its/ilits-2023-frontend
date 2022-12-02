@@ -11,11 +11,15 @@ import useOpenCampusStore from '@/store/useOpenCampusStore';
 import _OpenCampusForm from '@/constant/OpenCampusForm';
 import FakultasCard from '@/pages/open-campus/components/FakultasCard';
 
+type BiodataFormState = {
+  fakultas: string;
+};
+
 export default function FakultasForm({ setStep }: FakultasFormProps) {
   const [page, setPage] = React.useState(1);
 
   const OpenCampusForm = _OpenCampusForm.slice(page - 1, page);
-  const setFakultas = useOpenCampusStore.useSetFakultas();
+  const upsert = useOpenCampusStore.useUpsert();
   const setNextPage = () => {
     const max = _OpenCampusForm.length;
     if (page < max) {
@@ -29,9 +33,9 @@ export default function FakultasForm({ setStep }: FakultasFormProps) {
     }
   };
 
-  const handleSubmit = (fakultas: string) => {
-    setFakultas(fakultas);
-    setStep(2);
+  const handleSubmit = (data: BiodataFormState) => {
+    upsert(data);
+    setStep(3);
   };
 
   return (
