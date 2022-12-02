@@ -41,6 +41,11 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
+  .stroke {
+    text-shadow: -2px -2px 0px rgba(0, 0, 0, 1), 2px -2px 0px rgba(0, 0, 0, 1),
+      -2px 2px 0px rgba(0, 0, 0, 1), 2px 2px 0px rgba(0, 0, 0, 1);
+  }
+
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
