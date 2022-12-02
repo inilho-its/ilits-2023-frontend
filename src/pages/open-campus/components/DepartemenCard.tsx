@@ -3,31 +3,25 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 import Button from '@/components/buttons/Button';
 
-type FakultasCardState = {
-  name: string;
-  image: string;
-  singkatan: string;
-  departemen: string[];
+type DepartemenFormState = {
+  departemen: string;
 };
 
-type BiodataFormState = {
-  fakultas: string;
-};
-type FakultasCardProps = {
-  data: FakultasCardState;
+type DepartemenCardProps = {
+  departemen: string;
   number: number;
   setNextPage: () => void;
   setPrevPage: () => void;
-  handleSubmit: (data: BiodataFormState) => void;
+  handleSubmit: (data: DepartemenFormState) => void;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export default function FakultasCard({
-  data,
+export default function DepartemenCard({
+  departemen,
   number,
   setNextPage,
   setPrevPage,
   handleSubmit,
-}: FakultasCardProps) {
+}: DepartemenCardProps) {
   return (
     <div className='flex flex-col items-center'>
       <div className='flex justify-between gap-24 p-12'>
@@ -38,7 +32,7 @@ export default function FakultasCard({
         </div>
         <div>
           <p>Kelompok {number}</p>
-          <p>Nama : {data.name}</p>
+          <p>Nama : {departemen}</p>
           <br />
           <h1>Page {number}</h1>
         </div>
@@ -51,7 +45,7 @@ export default function FakultasCard({
       <div>
         <Button
           variant='lightBlue'
-          onClick={() => handleSubmit({ fakultas: data.name })}
+          onClick={() => handleSubmit({ departemen })}
         >
           Lanjutkan
         </Button>

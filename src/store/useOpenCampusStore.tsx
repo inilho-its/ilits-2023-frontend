@@ -4,13 +4,13 @@ import create from 'zustand';
 
 type OpenCampusForm = {
   nama?: string;
-  asalSekolah?: string;
-  asalKota?: string;
-  noTelp?: string;
+  asal_sekolah?: string;
+  asal_kota?: string;
+  no_telp?: string;
   email?: string;
-  vaksin?: File;
-  link_poster?: string;
-  link_followig?: string;
+  image_vaksin?: File;
+  image_poster?: File;
+  image_followig?: File;
   fakultas?: string;
   departemen?: string;
 };
@@ -27,7 +27,7 @@ const useOpenCampusStoreBase = create<OpenCampusStoreType>((set) => ({
   upsert: (data) => {
     set(
       produce<OpenCampusStoreType>((state) => {
-        state.formData = data;
+        state.formData = { ...state.formData, ...data };
       })
     );
   },
