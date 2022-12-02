@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
@@ -35,7 +34,9 @@ function TimList(props: teamProps) {
           alt='tim'
           imgClassName={clsxm(
             'rounded-t-2xl',
-            props.isLeft ? ' lg:rounded-l-2xl' : ' lg:rounded-r-2xl'
+            props.isLeft
+              ? ' lg:rounded-tr-none lg:rounded-l-2xl'
+              : ' lg:rounded-tl-none lg:rounded-r-2xl'
           )}
         />
       </div>
@@ -61,11 +62,11 @@ function TimList(props: teamProps) {
 
 export default function TimPage() {
   return (
-    <Layout>
+    <>
       <Seo templateTitle='Tim' />
       <main className='min-h-screen bg-bone-500'>
         <section className='relative mb-28'>
-          <div className='absolute -top-[520px] left-0 w-screen'>
+          <div className='absolute -top-[520px] left-0 hidden w-screen lg:block'>
             <NextImage
               src='/images/pageTim/Group-7235.png'
               width='100%'
@@ -89,7 +90,7 @@ export default function TimPage() {
                   />
                 </div>
               </div>
-              <div className='absolute top-64 -right-64 z-10 w-[500px]'>
+              <div className='absolute top-64 -right-64 z-10 hidden w-[500px] lg:block'>
                 <NextImage
                   src='/images/pageTim/cloud-1.png'
                   width='100%'
@@ -179,7 +180,7 @@ export default function TimPage() {
               </div>
             </div>
           </div>
-          <div className='absolute -top-72 w-screen'>
+          <div className='absolute -top-72 hidden w-screen lg:block'>
             <NextImage
               src='/images/pageTim/Group-7237.png'
               width='100%'
@@ -189,7 +190,7 @@ export default function TimPage() {
               alt='ornament'
             />
           </div>
-          <div className='absolute -top-16 w-screen'>
+          <div className='absolute -top-16 hidden w-screen lg:block'>
             <NextImage
               src='/images/pageTim/Group-7236.png'
               width='100%'
@@ -214,15 +215,15 @@ export default function TimPage() {
             </div>
             <div>
               <Typography
-                variant='h4'
-                as='h4'
-                className='stroke p-10 text-center text-lg font-bold text-neutral-100 md:text-3xl lg:text-5xl'
+                variant='h6'
+                as='h6'
+                className='stroke p-10 text-center text-2xl font-bold text-neutral-100 md:text-3xl lg:text-5xl'
               >
                 TIM KEBANGGAAN <br className='block md:hidden' />
                 ITS ??!!
               </Typography>
             </div>
-            <div className='absolute bottom-0 right-5 w-24 lg:top-10 lg:right-16 lg:w-32'>
+            <div className='absolute bottom-0 right-5 w-24 lg:top-10 lg:right-16 lg:w-36'>
               <NextImage
                 src='/images/pageTim/Eye-1.png'
                 width='100%'
@@ -235,107 +236,99 @@ export default function TimPage() {
           </div>
         </section>
         <section>
-          <div className='relative mx-auto mb-12 w-[356px] pt-[137px] md:w-[618px] lg:mb-32 lg:w-[1046px]'>
-            <div>
-              <div className='z-30 rounded-t-2xl border-2 border-black bg-pink-500'>
-                <div className='flex flex-row-reverse p-2'>
-                  <div className='mr-2 h-[20px] w-[20px] rounded-full border-2 border-black bg-yellow-400'></div>
-                  <div className='mr-2 h-[20px] w-[20px] rounded-full border-2 border-black bg-red-400'></div>
-                  <div className='mr-2 h-[20px] w-[20px] rounded-full border-2 border-black bg-green-400'></div>
+          <div className='relative mx-auto mb-12 w-[356px] pt-[137px] md:w-[618px] lg:mb-32 lg:w-[950px] lg:px-4 xl:w-[1046px]'>
+            <div className='relative z-10'>
+              <div>
+                <div className='z-30 rounded-t-2xl border-2 border-black bg-pink-500'>
+                  <div className='flex flex-row-reverse p-2'>
+                    <div className='mr-2 h-[20px] w-[20px] rounded-full border-2 border-black bg-yellow-400'></div>
+                    <div className='mr-2 h-[20px] w-[20px] rounded-full border-2 border-black bg-red-400'></div>
+                    <div className='mr-2 h-[20px] w-[20px] rounded-full border-2 border-black bg-green-400'></div>
+                  </div>
                 </div>
-              </div>
-              <div className='relative rounded-b-2xl border-2 border-t-0 border-black bg-neutral-100'>
-                <div className='absolute -right-80 w-[500px]'>
-                  <NextImage
-                    src='/images/pageTim/cloud-1.png'
-                    width='100%'
-                    height='30%'
-                    objectFit='contain'
-                    layout='responsive'
-                    alt='cloud'
-                  />
-                </div>
-                <div className='flex flex-row'>
-                  <div className='flex w-full flex-1 flex-col p-8 text-center lg:w-1/2 lg:p-10 lg:text-left'>
-                    <Typography
-                      variant='h5'
-                      as='h5'
-                      className='text-2xl font-semibold text-bone-1000 md:text-[32px]'
-                    >
-                      Info Unik Buat Kamu
-                    </Typography>
-                    <div className='z-10 mt-4 block max-w-full lg:hidden'>
+                <div className='relative rounded-b-2xl border-2 border-t-0 border-black bg-neutral-100'>
+                  {/* <div className='absolute -right-80 w-[500px] hidden lg:block'>
+                    <NextImage
+                      src='/images/pageTim/cloud-1.png'
+                      width='100%'
+                      height='30%'
+                      objectFit='contain'
+                      layout='responsive'
+                      alt='cloud'
+                    />
+                  </div> */}
+                  <div className='flex flex-row'>
+                    <div className='flex w-full flex-1 flex-col p-8 text-center lg:w-1/2 lg:p-10 lg:text-left'>
+                      <Typography
+                        variant='h5'
+                        as='h5'
+                        className='text-2xl font-semibold text-bone-1000 md:text-[32px]'
+                      >
+                        Info Unik Buat Kamu
+                      </Typography>
+                      <div className='z-10 mt-4 block max-w-full lg:hidden'>
+                        <NextImage
+                          src='/images/pageTim/image.png'
+                          width='100%'
+                          height='62.5%'
+                          objectFit='contain'
+                          layout='responsive'
+                          alt='image'
+                          imgClassName='rounded border-2 border-black'
+                        />
+                      </div>
+                      <div className='pt-4'>
+                        <Typography
+                          variant='body'
+                          as='p'
+                          className='text-[14px] text-bone-1000 md:text-base'
+                        >
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua. Ut enim ad minim veniam, quis
+                          nostrud exercitation ullamco laboris nisi ut aliquip
+                          ex ea commodo consequat. Duis aute irure dolor in
+                          reprehenderit in voluptate velit esse cillum dolore eu
+                          fugiat nulla pariatur.
+                        </Typography>
+                        <div className='pt-4 lg:pt-16'>
+                          <ButtonLink
+                            href='#'
+                            variant='pink'
+                            size='medium'
+                            round='medium'
+                            className='pt-3 pb-3 pl-7 pr-7 text-bone-1000'
+                          >
+                            Tonton Sekarang!
+                          </ButtonLink>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='z-10 hidden w-[475px] lg:block'>
                       <NextImage
-                        src='/images/pageTim/image.png'
+                        src='/images/pageTim/image-8.png'
                         width='100%'
-                        height='62.5%'
+                        height='87.5%'
                         objectFit='contain'
                         layout='responsive'
                         alt='image'
-                        imgClassName='rounded border-2 border-black'
                       />
                     </div>
-                    <div className='pt-4'>
-                      <Typography
-                        variant='body'
-                        as='p'
-                        className='text-[14px] text-bone-1000 md:text-base'
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur.
-                      </Typography>
-                      <div className='pt-4 lg:pt-16'>
-                        <ButtonLink
-                          href='#'
-                          variant='lightBlue'
-                          size='medium'
-                          round='medium'
-                          className='pt-3 pb-3 pl-7 pr-7 text-bone-1000'
-                        >
-                          Tonton Sekarang!
-                        </ButtonLink>
-                      </div>
-                    </div>
                   </div>
-                  <div className='z-10 hidden w-[475px] lg:block'>
-                    <NextImage
-                      src='/images/pageTim/image-8.png'
-                      width='100%'
-                      height='87.5%'
-                      objectFit='contain'
-                      layout='responsive'
-                      alt='image'
-                    />
-                  </div>
-                </div>
-                <div className='absolute -left-80 bottom-0 w-[500px]'>
-                  <NextImage
-                    src='/images/pageTim/cloud-1.png'
-                    width='100%'
-                    height='30%'
-                    objectFit='contain'
-                    layout='responsive'
-                    alt='cloud'
-                  />
                 </div>
               </div>
+              <div className='absolute right-0 -bottom-5 z-20 w-12 md:-right-11 md:-bottom-16 md:w-28'>
+                <NextImage
+                  src='/images/pageTim/Cursor.png'
+                  width='70%'
+                  height='100%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='cursor'
+                />
+              </div>
             </div>
-            <div className='absolute right-0 -bottom-5 z-20 w-12 md:-right-11 md:-bottom-16 md:w-28'>
-              <NextImage
-                src='/images/pageTim/Cursor.png'
-                width='70%'
-                height='100%'
-                objectFit='contain'
-                layout='responsive'
-                alt='cursor'
-              />
-            </div>
-            <div className='absolute -right-32 -bottom-28 w-96'>
+            {/* <div className='absolute -right-32 -bottom-28 w-96 hidden lg:block'>
               <NextImage
                 src='/images/pageTim/gradien.png'
                 width='100%'
@@ -345,35 +338,67 @@ export default function TimPage() {
                 alt='gradien'
               />
             </div>
+            <div className='absolute -left-80 bottom-0 w-[500px] hidden lg:block'>
+              <NextImage
+                src='/images/pageTim/cloud-1.png'
+                width='100%'
+                height='30%'
+                objectFit='contain'
+                layout='responsive'
+                alt='cloud'
+              />
+            </div> */}
           </div>
         </section>
         <section>
           <div className='relative mx-auto mt-[147.66px] w-10/12 rounded-3xl border-2 border-black bg-green-400'>
-            <div className='absolute -top-12 -left-8 hidden w-32 md:block'>
+            {/* <div className='absolute -top-24 -left-24 w-96 hidden lg:block'>
               <NextImage
-                src='/images/pageTim/Magnifier.png'
+                src='/images/pageTim/gradien.png'
                 width='100%'
                 height='100%'
                 objectFit='contain'
                 layout='responsive'
-                alt='magnifier'
+                alt='gradien'
               />
             </div>
-            <Typography
-              variant='h4'
-              className='stroke p-10 text-center text-2xl font-bold text-neutral-100 md:text-3xl lg:text-5xl'
-            >
-              Apa Saja Tim di ITS?
-            </Typography>
-            <div className='absolute -bottom-20 right-4 hidden w-24 md:block lg:right-6 lg:w-36'>
+            <div className='absolute right-0 w-[500px] hidden lg:block'>
               <NextImage
-                src='/images/pageTim/Arrow-2.png'
-                width='90%'
-                height='110%'
+                src='/images/pageTim/cloud-1.png'
+                width='100%'
+                height='30%'
                 objectFit='contain'
                 layout='responsive'
-                alt='Arrow'
+                alt='cloud'
               />
+            </div> */}
+            <div className='relative'>
+              <div className='absolute -top-12 -left-8 hidden w-32 md:block'>
+                <NextImage
+                  src='/images/pageTim/Magnifier.png'
+                  width='100%'
+                  height='100%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='magnifier'
+                />
+              </div>
+              <Typography
+                variant='h4'
+                className='stroke p-10 text-center text-2xl font-bold text-neutral-100 md:text-3xl lg:text-5xl'
+              >
+                Apa Saja Tim di ITS?
+              </Typography>
+              <div className='absolute -bottom-20 right-4 hidden w-24 md:block lg:right-6 lg:w-36'>
+                <NextImage
+                  src='/images/pageTim/Arrow-2.png'
+                  width='90%'
+                  height='110%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='Arrow'
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -386,6 +411,6 @@ export default function TimPage() {
           </div>
         </section>
       </main>
-    </Layout>
+    </>
   );
 }
