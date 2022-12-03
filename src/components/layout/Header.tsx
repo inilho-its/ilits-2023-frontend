@@ -9,7 +9,7 @@ const links = [
   { href: '/', label: 'Eventual' },
   { href: '/', label: 'Fakultas' },
   { href: '/', label: 'Prestasi' },
-  { href: '/', label: 'Fasilitas' },
+  { href: '/fasilitas', label: 'Fasilitas' },
   { href: '/', label: 'Alumni' },
   { href: '/', label: 'Beasiswa' },
 ];
