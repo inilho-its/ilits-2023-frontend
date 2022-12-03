@@ -7,6 +7,7 @@ import clsxm from '@/lib/clsxm';
 
 export type SelectInputProps = {
   label: string;
+  isLabel?: boolean;
   id: string;
   placeholder?: string;
   helperText?: string;
@@ -21,6 +22,7 @@ export default function SelectInput({
   label,
   helperText,
   id,
+  isLabel = true,
   placeholder,
   readOnly = false,
   children,
@@ -53,12 +55,14 @@ export default function SelectInput({
 
   return (
     <div>
-      <label
-        htmlFor={id}
-        className={clsxm('block text-sm font-semibold text-gray-700')}
-      >
-        {label}
-      </label>
+      {isLabel && (
+        <label
+          htmlFor={id}
+          className={clsxm('block text-sm font-semibold text-gray-700')}
+        >
+          {label}
+        </label>
+      )}
       <div className='relative mt-1'>
         <select
           {...register(id, validation)}

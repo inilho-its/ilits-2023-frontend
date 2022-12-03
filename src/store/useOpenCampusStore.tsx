@@ -2,15 +2,17 @@ import { createSelectorHooks } from 'auto-zustand-selectors-hook';
 import produce from 'immer';
 import create from 'zustand';
 
+import { FileWithPreview } from '@/types/dropzone';
+
 type OpenCampusForm = {
   nama?: string;
   asal_sekolah?: string;
   asal_kota?: string;
   no_telp?: string;
   email?: string;
-  image_vaksin?: File;
-  image_poster?: File;
-  image_followig?: File;
+  image_vaksin?: FileWithPreview;
+  image_poster?: FileWithPreview;
+  image_followig?: FileWithPreview;
   fakultas?: string;
   departemen?: string;
 };

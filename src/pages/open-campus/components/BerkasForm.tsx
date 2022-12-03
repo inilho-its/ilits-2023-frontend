@@ -7,10 +7,12 @@ import DropzoneInput from '@/components/forms/DropzoneInput';
 
 import useOpenCampusStore from '@/store/useOpenCampusStore';
 
+import { FileWithPreview } from '@/types/dropzone';
+
 type BiodataFormState = {
-  image_vaksin: File;
-  image_poster: File;
-  image_followig: File;
+  image_vaksin: FileWithPreview;
+  image_poster: FileWithPreview;
+  image_followig: FileWithPreview;
 };
 
 type BiodataFormProps = {
@@ -22,6 +24,7 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
   const { handleSubmit } = methods;
 
   // Store
+  // const data = useOpenCampusStore.useFormData();
   const upsert = useOpenCampusStore.useUpsert();
 
   const onSubmit = (data: BiodataFormState) => {
@@ -34,7 +37,7 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-3'>
         <DropzoneInput
           label='Upload Bukti Follow Instagram @inilhoits'
-          id='followig'
+          id='image_followig'
           helperText='Ukuran maksimal file 1 Mb.'
           validation={{
             required: {
@@ -45,7 +48,7 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
         />
         <DropzoneInput
           label='Upload Bukti Share Poster'
-          id='poster'
+          id='image_poster'
           helperText='Ukuran maksimal file 1 Mb.'
           validation={{
             required: {
@@ -56,7 +59,7 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
         />
         <DropzoneInput
           label='Upload Serifikat Vaksin Dosis ke-3'
-          id='vaksin'
+          id='image_vaksin'
           helperText='Ukuran maksimal file 1 Mb.'
           validation={{
             required: {
@@ -65,15 +68,25 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
             },
           }}
         />
-        <Button
-          variant='lightBlue'
-          round='medium'
-          size='medium'
-          type='submit'
-          className='ml-auto'
-        >
-          Lanjutkan
-        </Button>
+        <div className='space-x-2'>
+          <Button
+            variant='bone'
+            round='medium'
+            size='medium'
+            onClick={() => setStep(0)}
+          >
+            Kembali
+          </Button>
+          <Button
+            variant='lightBlue'
+            round='medium'
+            size='medium'
+            type='submit'
+            className='ml-auto'
+          >
+            Lanjutkan
+          </Button>
+        </div>
       </form>
     </FormProvider>
   );
