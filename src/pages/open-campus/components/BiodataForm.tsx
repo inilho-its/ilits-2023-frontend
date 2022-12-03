@@ -86,15 +86,16 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
             required: { value: true, message: 'Wajib mengisi email' },
           }}
         />
-        <Button
-          variant='lightBlue'
-          round='medium'
-          size='medium'
-          type='submit'
-          className='ml-auto'
-        >
-          Lanjutkan
-        </Button>
+        <div>
+          <Button
+            variant='lightBlue'
+            round='medium'
+            size='medium'
+            type='submit'
+          >
+            Lanjutkan
+          </Button>
+        </div>
       </form>
     </FormProvider>
   );

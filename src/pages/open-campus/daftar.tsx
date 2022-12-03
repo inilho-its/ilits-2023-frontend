@@ -11,7 +11,7 @@ import Typography from '@/components/typography/Typography';
 import BerkasForm from '@/pages/open-campus/components/BerkasForm';
 import BiodataForm from '@/pages/open-campus/components/BiodataForm';
 import CompletedPage from '@/pages/open-campus/components/Completed';
-import FakultasForm from '@/pages/open-campus/components/FakultasForm';
+import FakultasDepartemenForm from '@/pages/open-campus/components/FakultasDepartemenForm';
 
 export default function DaftarOpenCampusPage() {
   const [step, setStep] = React.useState(0);
@@ -171,6 +171,10 @@ export default function DaftarOpenCampusPage() {
                 {step === 2 && <FakultasForm setStep={setStep} />}
                 {step === 3 && <CompletedPage />}
               </div>
+              {step === 0 && <BiodataForm setStep={setStep} />}
+              {step === 1 && <BerkasForm setStep={setStep} />}
+              {step === 2 && <FakultasDepartemenForm setStep={setStep} />}
+              {step === 3 && <CompletedPage />}
             </div>
           </div>
           {/* Main Card End */}
