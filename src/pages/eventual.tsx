@@ -351,7 +351,7 @@ export default function EventualPage() {
   return (
     <Layout>
       <Seo templateTitle='Eventual' />
-      <main>
+      <main className='bg-bone-500'>
         {/* Section 1 Start*/}
         <section className='relative'>
           {/* Img Area 1 Start*/}
@@ -430,7 +430,7 @@ export default function EventualPage() {
                   variant='orange'
                   round='medium'
                   size='large'
-                  href='#section2'
+                  href='#more'
                   className='hidden w-max font-semibold md:inline-flex'
                 >
                   Kenali Lebih Lanjut!
@@ -450,7 +450,7 @@ export default function EventualPage() {
                   variant='orange'
                   round='medium'
                   size='small'
-                  href='#section2'
+                  href='#more'
                   className='inline-flex w-max font-semibold md:hidden'
                 >
                   Kenali Lebih Lanjut!
@@ -484,10 +484,7 @@ export default function EventualPage() {
         {/* Section 1 End */}
         {/* Section 2 Start*/}
         <section className='relative mt-20 overflow-hidden'>
-          <div
-            id='section2'
-            className='relative z-20 flex h-24 w-screen items-center justify-center border-b-2 border-t-2  border-bone-1000 bg-yellow-500 md:h-36'
-          >
+          <div className='relative z-20 flex h-24 w-screen items-center justify-center border-b-2 border-t-2  border-bone-1000 bg-yellow-500 md:h-36'>
             <div className='absolute -top-[0.2rem] left-0 -z-10 w-[4.5rem] md:-top-[0.4rem] md:w-48'>
               <NextImage
                 src='/images/eventualPage/arrow-1.png'
@@ -518,7 +515,10 @@ export default function EventualPage() {
         </section>
         {/* Section 2 End */}
         {/* Section 3 Start*/}
-        <section className='relative z-10 my-14 overflow-hidden md:my-24'>
+        <section
+          className='relative z-10 overflow-hidden py-24 md:mt-24'
+          id='more'
+        >
           {/* Img Area 3 Start*/}
           <div>
             {/* Desktop Img Area 3 */}

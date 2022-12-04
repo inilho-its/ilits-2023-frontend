@@ -12,12 +12,12 @@ import useDialogStore from '@/store/useDialogStore';
 
 const links = [
   { href: '/', label: 'Home' },
-  { href: '/', label: 'Eventual' },
-  { href: '/', label: 'Fakultas' },
-  { href: '/', label: 'Prestasi' },
-  { href: '/', label: 'Fasilitas' },
-  { href: '/', label: 'Alumni' },
-  { href: '/', label: 'Beasiswa' },
+  { href: '/eventual', label: 'Eventual' },
+  { href: '/coming-soon', label: 'Fakultas' },
+  { href: '/coming-soon', label: 'Prestasi' },
+  { href: '/coming-soon', label: 'Fasilitas' },
+  { href: '/coming-soon', label: 'Alumni' },
+  { href: '/coming-soon', label: 'Beasiswa' },
 ];
 
 export default function Navbar() {

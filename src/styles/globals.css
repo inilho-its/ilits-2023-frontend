@@ -41,6 +41,10 @@
       U+2215, U+FEFF, U+FFFD;
   }
 
+  html {
+    @apply !scroll-smooth;
+  }
+
   .stroke {
     text-shadow: -2px -2px 0px rgba(0, 0, 0, 1), 2px -2px 0px rgba(0, 0, 0, 1),
       -2px 2px 0px rgba(0, 0, 0, 1), 2px 2px 0px rgba(0, 0, 0, 1);
