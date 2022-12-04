@@ -6,7 +6,6 @@ type FakultasFormProps = {
 
 import { FormProvider, useForm } from 'react-hook-form';
 
-import Button from '@/components/buttons/Button';
 import SelectInput from '@/components/forms/SelectInput';
 import PrimaryLink from '@/components/links/PrimaryLink';
 import Typography from '@/components/typography/Typography';
@@ -120,13 +119,16 @@ export default function FakultasDepartemenForm({ setStep }: FakultasFormProps) {
                 <option value='Rendy'>Departemen 3</option>
               </SelectInput>
             </div>
-            <div className='mt-5 flex items-center justify-center gap-x-2'>
-              <Button type='submit' variant='bone' onClick={() => setStep(1)}>
+            <div className='flex justify-center space-x-4 pt-8'>
+              <button
+                className='rounded-md bg-[#3872C3]/30 px-6 py-3 text-[#3872C3] hover:bg-[#3872C3]/10'
+                onClick={() => setStep(1)}
+              >
                 Kembali
-              </Button>
-              <Button type='submit' variant='lightBlue'>
-                Submit Formulir
-              </Button>
+              </button>
+              <button className='rounded-md bg-[#3872C3] px-6 py-3 text-neutral-100 hover:bg-[#3872C3]/95'>
+                Lanjutkan
+              </button>
             </div>
           </form>
         </FormProvider>

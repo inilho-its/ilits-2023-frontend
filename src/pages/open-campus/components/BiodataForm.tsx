@@ -2,7 +2,6 @@
 
 import { FormProvider, useForm } from 'react-hook-form';
 
-import Button from '@/components/buttons/Button';
 import Input from '@/components/forms/Input';
 
 import useOpenCampusStore from '@/store/useOpenCampusStore';
@@ -86,15 +85,34 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
             required: { value: true, message: 'Wajib mengisi email' },
           }}
         />
-        <div>
-          <Button
-            variant='lightBlue'
-            round='medium'
-            size='medium'
-            type='submit'
-          >
+
+        <p className='font-semibold'>Pilih jenis tryout</p>
+        <div className='mt-4 flex w-max items-center space-x-4'>
+          <Input
+            labelType='row'
+            required={true}
+            label='Saintek'
+            id='jurusan_to'
+            type='radio'
+            validation={{
+              required: { value: true, message: 'Wajib memilih jenis tryout' },
+            }}
+          />
+          <Input
+            labelType='row'
+            required={true}
+            label='Soshum'
+            id='jurusan_to'
+            type='radio'
+            validation={{
+              required: { value: true, message: 'Wajib memilih jenis tryout' },
+            }}
+          />
+        </div>
+        <div className='flex justify-center pt-2'>
+          <button className='rounded-md bg-[#3872C3] px-6 py-3 text-neutral-100 hover:bg-[#3872C3]/95'>
             Lanjutkan
-          </Button>
+          </button>
         </div>
       </form>
     </FormProvider>

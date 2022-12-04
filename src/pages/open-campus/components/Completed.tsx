@@ -3,6 +3,7 @@ import { BsHouseDoor } from 'react-icons/bs';
 
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
+import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
@@ -17,41 +18,77 @@ export default function CompletedPage() {
 
       <main>
         <section className=''>
-          <div className='layout flex flex-col items-center py-20'>
+          <div className='flex flex-col items-center space-y-4'>
             <pre>{JSON.stringify(data, null, 2)}</pre>
             <div className='w-72 self-center sm:w-[400px] md:w-[480px] lg:w-[512px]'>
               <NextImage
                 alt='ilits-logo'
                 src='/images/ilits-logo.png'
                 width='100%'
-                height='55%'
+                height='40%'
                 layout='responsive'
                 objectFit='contain'
                 priority
               />
             </div>
             <Typography
-              variant='h4'
-              className='whitespace-nowrap text-center font-bold text-orange-300'
-            >
-              Open Campus Nirwana Asa
-            </Typography>
-            <Typography
               variant='body'
-              className='mt-4 text-center font-semibold'
+              className='text-center text-base font-semibold sm:text-[16px] sm:leading-[24px]'
             >
-              kami telah mengirim email ke akun anda untuk proses
+              Terimakasih telah melakukan pendaftaran pada event:
             </Typography>
-            <Typography variant='body' className='text-center font-semibold'>
-              pembayaran, silahkan dicek dan lakukan pembayaran segera
-            </Typography>
+            <div>
+              <Typography
+                variant='h4'
+                className='text-center text-3xl font-bold text-orange-300 sm:text-[48px] sm:leading-[52px]'
+              >
+                Open Campus
+              </Typography>
+              <Typography
+                variant='h4'
+                className='text-center text-3xl font-bold text-orange-300 sm:text-[48px] sm:leading-[52px]'
+              >
+                Nirwana Asa
+              </Typography>
+            </div>
+            <div>
+              <Typography
+                variant='body'
+                className='text-center text-base  sm:text-[16px] sm:leading-[24px]'
+              >
+                Kami telah mengirim email ke akun anda untuk proses pembayaran,
+              </Typography>
+              <Typography
+                variant='body'
+                className='text-center text-base  sm:text-[16px] sm:leading-[24px]'
+              >
+                silahkan cek email anda untuk segera menyelesaikan proses
+                pembayaran
+              </Typography>
+            </div>
+            <UnstyledLink
+              href='/'
+              className='text-blue-500 underline decoration-blue-500 hover:text-blue-900'
+            >
+              Saya tidak menerima email masuk
+            </UnstyledLink>
+
             <ButtonLink
               href='/'
               variant='yellow'
               leftIcon={BsHouseDoor}
-              className='mt-14 font-semibold'
+              className='mt-14 hidden font-semibold sm:inline-flex'
             >
-              Kembali ke Home Page
+              Kembali ke Halaman Utama
+            </ButtonLink>
+            <ButtonLink
+              href='/'
+              variant='yellow'
+              size='small'
+              leftIcon={BsHouseDoor}
+              className='mt-6 inline-flex text-center font-semibold sm:hidden'
+            >
+              Kembali ke Halaman Utama
             </ButtonLink>
           </div>
         </section>

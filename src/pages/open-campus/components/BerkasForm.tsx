@@ -2,7 +2,6 @@
 
 import { FormProvider, useForm } from 'react-hook-form';
 
-import Button from '@/components/buttons/Button';
 import DropzoneInput from '@/components/forms/DropzoneInput';
 
 import useOpenCampusStore from '@/store/useOpenCampusStore';
@@ -68,24 +67,16 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
             },
           }}
         />
-        <div className='space-x-2'>
-          <Button
-            variant='bone'
-            round='medium'
-            size='medium'
+        <div className='flex justify-center space-x-4 pt-2'>
+          <button
+            className='rounded-md bg-[#3872C3]/30 px-6 py-3 text-[#3872C3] hover:bg-[#3872C3]/10'
             onClick={() => setStep(0)}
           >
             Kembali
-          </Button>
-          <Button
-            variant='lightBlue'
-            round='medium'
-            size='medium'
-            type='submit'
-            className='ml-auto'
-          >
+          </button>
+          <button className='rounded-md bg-[#3872C3] px-6 py-3 text-neutral-100 hover:bg-[#3872C3]/95'>
             Lanjutkan
-          </Button>
+          </button>
         </div>
       </form>
     </FormProvider>
