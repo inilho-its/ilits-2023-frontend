@@ -34,7 +34,7 @@ export default function PrestasiPage() {
               alt='string background'
             />
           </div>
-          <div className='absolute -bottom-2/3 w-1/2'>
+          <div className='absolute -bottom-2/3 -ml-32 w-full sm:ml-0 sm:w-1/2'>
             <NextImage
               src='/images/prestasi/Cloud-1.png'
               width='100%'
@@ -300,7 +300,7 @@ export default function PrestasiPage() {
         {/* SECTION NASIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute right-0 -top-[10%] w-8/12'>
+          <div className='absolute right-0 top-4 -mr-20 w-full sm:-top-[10%] sm:mr-0 sm:w-9/12'>
             <NextImage
               src='/images/prestasi/String-Cloud-2.png'
               width='100%'
@@ -325,7 +325,7 @@ export default function PrestasiPage() {
         {/* SECTION REGIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute -top-3 w-full'>
+          <div className='absolute top-10 w-full'>
             <NextImage
               src='/images/prestasi/String-Cloud-3.png'
               width='100%'
