@@ -36,6 +36,8 @@ export default async function middleware(req: NextRequest) {
       'alumni',
       'open-campus',
       'pembayaran',
+      'eventual',
+      'fakultas',
     ],
   ]);
 
