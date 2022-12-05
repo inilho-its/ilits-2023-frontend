@@ -10,9 +10,9 @@ import useOpenCampusStore from '@/store/useOpenCampusStore';
 import { FileWithPreview } from '@/types/dropzone';
 
 type BiodataFormState = {
-  image_vaksin: FileWithPreview;
-  image_poster: FileWithPreview;
-  image_followig: FileWithPreview;
+  sertifikat_vaksin: FileWithPreview;
+  repost_poster: FileWithPreview;
+  follow_ig: FileWithPreview;
 };
 
 type BiodataFormProps = {
@@ -70,7 +70,7 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
         />
         <div className='space-x-2'>
           <Button
-            variant='bone'
+            variant='red'
             round='medium'
             size='medium'
             onClick={() => setStep(0)}

@@ -187,7 +187,7 @@ export default function DropzoneInput({
                       />
                     </svg>
                     <p className='text-gray-500'>
-                      Drag and drop file here, or click to choose file
+                      Letakan file di sini atau klik untuk memilih file
                     </p>
                     <p className='text-xs text-gray-500'>{`${
                       maxFiles - (files?.length || 0)

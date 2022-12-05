@@ -11,8 +11,9 @@ type BiodataFormState = {
   name: string;
   asal_sekolah: string;
   asal_kota: string;
-  no_telp: string;
+  no_hp: string;
   email: string;
+  jenis_tryout: string;
 };
 
 type BiodataFormProps = {
@@ -21,7 +22,11 @@ type BiodataFormProps = {
 
 export default function BiodataForm({ setStep }: BiodataFormProps) {
   const methods = useForm<BiodataFormState>();
-  const { handleSubmit } = methods;
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = methods;
 
   // Store
   const upsert = useOpenCampusStore.useUpsert();
@@ -34,7 +39,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-3'>
+      <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-5'>
         <Input
           required={true}
           label='Nama'
@@ -70,7 +75,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
           label='Nomor Telepon'
           id='no_telp'
           placeholder='No. Telepon'
-          defaultValue={data.no_telp}
+          defaultValue={data.no_hp}
           validation={{
             required: { value: true, message: 'Wajib mengisi nomor telepon' },
           }}
@@ -86,6 +91,37 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
             required: { value: true, message: 'Wajib mengisi email' },
           }}
         />
+        <div className='mt-4 '>
+          <label>
+            Pilih Jenis Tryout <span className='text-red-500'>*</span>
+          </label>
+          <div className='mt-2 flex space-x-6'>
+            <label>
+              <div>
+                <input type='radio' value='1' {...register('jenis_tryout')} />
+                <span className='ml-4'>Saintek</span>
+              </div>
+            </label>
+            <label>
+              <div>
+                <input
+                  type='radio'
+                  value='2'
+                  {...register('jenis_tryout', {
+                    required: {
+                      value: true,
+                      message: 'Wajib memilih jenis tryout',
+                    },
+                  })}
+                />
+                <span className='ml-4'>Soshum</span>
+              </div>
+            </label>
+          </div>
+          {errors.jenis_tryout && (
+            <p className='text-sm text-red-500'>Jenis Tryout Wajib Diisi</p>
+          )}
+        </div>
         <div>
           <Button
             variant='lightBlue'

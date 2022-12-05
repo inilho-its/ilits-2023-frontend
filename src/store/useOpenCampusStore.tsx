@@ -8,12 +8,13 @@ type OpenCampusForm = {
   nama?: string;
   asal_sekolah?: string;
   asal_kota?: string;
-  no_telp?: string;
+  no_hp?: string;
   email?: string;
-  image_vaksin?: FileWithPreview;
-  image_poster?: FileWithPreview;
-  image_followig?: FileWithPreview;
+  sertifikat_vaksin?: FileWithPreview;
+  repost_poster?: FileWithPreview;
+  follow_ig?: FileWithPreview;
   fakultas?: string;
+  jenis_tryout?: string;
   departemen?: string;
 };
 
