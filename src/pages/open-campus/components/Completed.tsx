@@ -2,19 +2,15 @@ import * as React from 'react';
 import { BsHouseDoor } from 'react-icons/bs';
 
 import ButtonLink from '@/components/links/ButtonLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
+import UnderlineLink from '@/components/links/UnderlineLink';
 import NextImage from '@/components/NextImage';
 import Typography from '@/components/typography/Typography';
 
-import useOpenCampusStore from '@/store/useOpenCampusStore';
-
 export default function CompletedPage() {
-  const data = useOpenCampusStore.useFormData();
   return (
     <main>
       <section className=''>
         <div className='flex flex-col items-center space-y-4'>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
           <div className='w-72 self-center sm:w-[400px] md:w-[480px] lg:w-[512px]'>
             <NextImage
               alt='ilits-logo'
@@ -61,12 +57,32 @@ export default function CompletedPage() {
               pembayaran
             </Typography>
           </div>
-          <UnstyledLink
-            href='/'
-            className='text-blue-500 underline decoration-blue-500 hover:text-blue-900'
-          >
-            Saya tidak menerima email masuk
-          </UnstyledLink>
+          <div className='flex flex-col space-y-2'>
+            <Typography
+              variant='body'
+              className='text-center text-base  sm:text-[16px] sm:leading-[24px]'
+            >
+              Jika anda mengalami kendala, silahkan hubungi kami melalui:
+            </Typography>
+            <div>
+              <UnderlineLink
+                href='https://api.whatsapp.com/send?phone=6285839144489&text=Halo%20Admin%2C%20Saya%20ingin%20bertanya%20mengenai%20ILITS%20Open%20Campus'
+                className='mt-0'
+              >
+                CP: 1 Rizky
+              </UnderlineLink>
+            </div>
+            <div>
+              <UnderlineLink href='https://api.whatsapp.com/send?phone=6281232369146&text=Halo%20Admin%2C%20Saya%20ingin%20bertanya%20mengenai%20ILITS%20Open%20Campus'>
+                CP: 2 Yunda
+              </UnderlineLink>
+            </div>
+            <div>
+              <UnderlineLink href='https://api.whatsapp.com/send?phone=6285839144489&text=Halo%20Admin%2C%20Saya%20ingin%20bertanya%20mengenai%20ILITS%20Open%20Campus'>
+                CP: 3 Cherish
+              </UnderlineLink>
+            </div>
+          </div>
 
           <ButtonLink
             href='/'

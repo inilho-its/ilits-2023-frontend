@@ -44,7 +44,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
           required={true}
           label='Nama'
           id='nama'
-          defaultValue={data.nama}
+          defaultValue={data?.nama}
           placeholder='Nama Pendaftar'
           validation={{
             required: { value: true, message: 'Wajib mengisi nama' },
@@ -54,7 +54,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
           required={true}
           label='Asal Sekolah/Institusi'
           id='asal_sekolah'
-          defaultValue={data.asal_sekolah}
+          defaultValue={data?.asal_sekolah}
           placeholder='Asal Sekolah'
           validation={{
             required: { value: true, message: 'Wajib mengisi asal sekolah' },
@@ -64,7 +64,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
           required={true}
           label='Asal Kota'
           id='asal_kota'
-          defaultValue={data.asal_kota}
+          defaultValue={data?.asal_kota}
           placeholder='Asal Kota'
           validation={{
             required: { value: true, message: 'Wajib mengisi asal kota' },
@@ -73,22 +73,41 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
         <Input
           required={true}
           label='Nomor Telepon'
-          id='no_telp'
+          defaultValue={data?.no_hp}
+          id='no_hp'
           placeholder='No. Telepon'
-          defaultValue={data.no_hp}
           validation={{
             required: { value: true, message: 'Wajib mengisi nomor telepon' },
+            pattern: {
+              value: /^[0-9]*$/,
+              message: 'Nomor telepon harus berupa angka',
+            },
+            maxLength: {
+              value: 16,
+              message: 'Nomor telepon maksimal 16 karakter',
+            },
+            minLength: {
+              value: 8,
+              message: 'Nomor telepon minimal 10 karakter',
+            },
           }}
         />
         <Input
           required={true}
           label='Email'
+          defaultValue={data?.email}
           id='email'
           type='email'
           placeholder='email'
-          defaultValue={data.email}
           validation={{
-            required: { value: true, message: 'Wajib mengisi email' },
+            required: {
+              value: true,
+              message: 'Wajib mengisi email',
+            },
+            pattern: {
+              value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+              message: 'Email tidak valid',
+            },
           }}
         />
         <div className='mt-4 '>

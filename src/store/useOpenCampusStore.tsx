@@ -2,27 +2,23 @@ import { createSelectorHooks } from 'auto-zustand-selectors-hook';
 import produce from 'immer';
 import create from 'zustand';
 
-import { FileWithPreview } from '@/types/dropzone';
+import { OpenCampusForm } from '@/types/open-campus';
 
-type OpenCampusForm = {
-  nama?: string;
-  asal_sekolah?: string;
-  asal_kota?: string;
-  no_hp?: string;
-  email?: string;
-  sertifikat_vaksin?: FileWithPreview;
-  repost_poster?: FileWithPreview;
-  follow_ig?: FileWithPreview;
-  fakultas?: string;
-  jenis_tryout?: string;
-  departemen?: string;
+type FormDataFile = {
+  [0]: File;
+  [1]: File;
+};
+
+type ImageOpenCampus = {
+  sertifikat_vaksin: FormDataFile;
+  repost_poster: FormDataFile;
+  follow_ig: FormDataFile;
 };
 
 type OpenCampusStoreType = {
   formData: OpenCampusForm;
   upsert: (data: OpenCampusForm) => void;
-  setFakultas: (fakultas: string) => void;
-  setDepartemen: (departemen: string) => void;
+  setImage: (image_data: ImageOpenCampus) => void;
 };
 
 const useOpenCampusStoreBase = create<OpenCampusStoreType>((set) => ({
@@ -34,17 +30,10 @@ const useOpenCampusStoreBase = create<OpenCampusStoreType>((set) => ({
       })
     );
   },
-  setFakultas: (fakultas: string) => {
+  setImage: (image_data) => {
     set(
       produce<OpenCampusStoreType>((state) => {
-        state.formData.fakultas = fakultas;
-      })
-    );
-  },
-  setDepartemen: (departemen: string) => {
-    set(
-      produce<OpenCampusStoreType>((state) => {
-        state.formData.departemen = departemen;
+        state.formData = { ...state.formData, ...image_data };
       })
     );
   },

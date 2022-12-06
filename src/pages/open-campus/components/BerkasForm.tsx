@@ -6,13 +6,15 @@ import Button from '@/components/buttons/Button';
 import DropzoneInput from '@/components/forms/DropzoneInput';
 
 import useOpenCampusStore from '@/store/useOpenCampusStore';
-
-import { FileWithPreview } from '@/types/dropzone';
+type FormDataFile = {
+  [0]: File;
+  [1]: File;
+};
 
 type BiodataFormState = {
-  sertifikat_vaksin: FileWithPreview;
-  repost_poster: FileWithPreview;
-  follow_ig: FileWithPreview;
+  sertifikat_vaksin: FormDataFile;
+  repost_poster: FormDataFile;
+  follow_ig: FormDataFile;
 };
 
 type BiodataFormProps = {
@@ -20,15 +22,25 @@ type BiodataFormProps = {
 };
 
 export default function BerkasForm({ setStep }: BiodataFormProps) {
-  const methods = useForm<BiodataFormState>();
+  // Yup Validator Image FIle Size
+  // const schema = Joi.object({
+  //   sertifikat_vaksin: Joi.any().required().meta({ type: 'image' }),
+  //   repost_poster: Joi.any().required(),
+  //   follow_ig: Joi.any().required(),
+  // });
+  const methods = useForm<BiodataFormState>({
+    // resolver: joiResolver(schema, { abortEarly: false }, { mode: 'sync' }),
+    mode: 'onChange',
+  });
+
   const { handleSubmit } = methods;
 
   // Store
-  // const data = useOpenCampusStore.useFormData();
-  const upsert = useOpenCampusStore.useUpsert();
+  const setImage = useOpenCampusStore.useSetImage();
 
   const onSubmit = (data: BiodataFormState) => {
-    upsert(data);
+    setImage(data);
+
     setStep(2);
   };
 
@@ -37,35 +49,26 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-3'>
         <DropzoneInput
           label='Upload Bukti Follow Instagram @inilhoits'
-          id='image_followig'
+          id='follow_ig'
           helperText='Ukuran maksimal file 1 Mb.'
           validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengupload bukti follow instagram @inilhoits',
-            },
+            required: { value: true, message: 'Wajib mengisi asal sekolah' },
           }}
         />
         <DropzoneInput
           label='Upload Bukti Share Poster'
-          id='image_poster'
+          id='repost_poster'
           helperText='Ukuran maksimal file 1 Mb.'
           validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengupload bukti share poster',
-            },
+            required: { value: true, message: 'Wajib mengisi asal sekolah' },
           }}
         />
         <DropzoneInput
           label='Upload Serifikat Vaksin Dosis ke-3'
-          id='image_vaksin'
+          id='sertifikat_vaksin'
           helperText='Ukuran maksimal file 1 Mb.'
           validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengupload bukti vaksinasi ke-3',
-            },
+            required: { value: true, message: 'Wajib mengisi asal sekolah' },
           }}
         />
         <div className='space-x-2'>
