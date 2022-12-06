@@ -1,42 +1,170 @@
+import { useQuery } from '@tanstack/react-query';
 import * as React from 'react';
-
 type FakultasFormProps = {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 import { FormProvider, useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
+import apiMock, { mockQuery } from '@/lib/apiMock';
+import useDialog from '@/hooks/useDialog';
+
+import Button from '@/components/buttons/Button';
 import SelectInput from '@/components/forms/SelectInput';
 import PrimaryLink from '@/components/links/PrimaryLink';
 import Typography from '@/components/typography/Typography';
 
 import useOpenCampusStore from '@/store/useOpenCampusStore';
 
+import { ApiReturn } from '@/types/api-return';
+import { KuotaOpenCampus } from '@/types/open-campus';
+
 type BiodataFormState = {
-  sesi: string;
-  fakultas: string;
-  departemen: string;
+  pilihan_fakultas1: string;
+  pilihan_fakultas2: string;
+  pilihan_departemen1: string;
+  pilihan_departemen2: string;
+};
+type FormDataFile = {
+  [0]: File;
+  [1]: File;
+};
+
+type ApiResponse = {
+  status: boolean;
+  message: string;
+};
+
+type OpenCampusForm = {
+  [key: string]: string | File | FormDataFile;
+  nama: string;
+  asal_sekolah: string;
+  asal_kota: string;
+  no_hp: string;
+  email: string;
+  jenis_tryout: string;
+  pilihan_fakultas1: string;
+  pilihan_fakultas2: string;
+  pilihan_departemen1: string;
+  pilihan_departemen2: string;
+  sertifikat_vaksin: FormDataFile;
+  repost_poster: FormDataFile;
+  follow_ig: FormDataFile;
 };
 
 export default function FakultasDepartemenForm({ setStep }: FakultasFormProps) {
+  const form_data = useOpenCampusStore.useFormData();
   const methods = useForm<BiodataFormState>({
-    mode: 'onChange',
-    defaultValues: { sesi: '1' },
+    mode: 'onTouched',
+    defaultValues: {
+      pilihan_fakultas1: form_data?.pilihan_fakultas1 || '1',
+      pilihan_fakultas2: form_data?.pilihan_fakultas2 || '3',
+      pilihan_departemen1: form_data?.pilihan_departemen1 || '2',
+      pilihan_departemen2: form_data?.pilihan_departemen2 || '12',
+    },
   });
 
-  const { handleSubmit, register } = methods;
+  const dialog = useDialog();
+  const { handleSubmit, watch } = methods;
 
-  // const sesi = watch('sesi');
+  const url = 'https://inilho.its.ac.id/api/open-campus/kuota';
 
-  const upsert = useOpenCampusStore.useUpsert();
+  const { data: queryData } = useQuery<ApiReturn<KuotaOpenCampus>, Error>([
+    url,
+    mockQuery,
+    {
+      keepPreviousData: true,
+    },
+  ]);
+
+  const departemen = watch(['pilihan_fakultas1', 'pilihan_fakultas2']);
+
+  const data_departemen = React.useMemo(() => {
+    if (!queryData) return [];
+    const data = queryData.data;
+    const fakultas1 = data.sesi1.find(
+      (item) => item.id_fakultas === parseInt(departemen[0])
+    );
+    const fakultas2 = data.sesi2.find(
+      (item) => item.id_fakultas === parseInt(departemen[1])
+    );
+    return [fakultas1, fakultas2];
+  }, [queryData, departemen]);
+
+  if (!queryData)
+    return (
+      <div className='flex items-center justify-center'>
+        <Typography variant='body' className='text-center text-neutral-800'>
+          Loading...
+        </Typography>
+      </div>
+    );
+  // Watch
 
   const onSubmit = (data: BiodataFormState) => {
-    upsert(data);
-    setStep(3);
+    const Form_Data = {
+      ...data,
+      ...form_data,
+    } as OpenCampusForm;
+
+    const formdata: FormData = new FormData();
+
+    for (const key in Form_Data) {
+      if (
+        key === 'sertifikat_vaksin' ||
+        key === 'repost_poster' ||
+        key === 'follow_ig'
+      ) {
+        formdata.append(key, Form_Data[key][0] as File);
+      }
+      formdata.append(key, Form_Data[key] as string);
+    }
+
+    toast.promise(
+      apiMock
+        .post<ApiResponse>('/open-campus', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then((res) => {
+          if (res.data.status) {
+            setStep(3);
+          } else {
+            throw res.data.message;
+          }
+        })
+        .catch((err) => {
+          throw err;
+        }),
+      {
+        loading: 'Loading',
+        success: "You've successfully registered",
+        error: (err) => (
+          <p>
+            {err.response
+              ? err.response.data.message
+              : 'Something Happened. Wait a bit then try again'}
+          </p>
+        ),
+      }
+    );
+  };
+
+  const openWarning = () => {
+    dialog({
+      title: 'Apakah Anda Yakin!!!',
+      description:
+        'Periksa kembali data yang anda masukan, dan pastikan semuanya benar',
+      submitText: 'Daftar',
+      variant: 'warning',
+      catchOnCancel: true,
+    }).then(() => handleSubmit(onSubmit)());
   };
 
   return (
-    <div className='pt-10'>
+    <div className='pt-12'>
       <div className='rounded-lg bg-[#D7E3F3] py-4 px-10'>
         <Typography variant='body' className='text-center text-neutral-800'>
           Sebelum memilih harap membaca guidebook terlebih dahulu!{' '}
@@ -45,94 +173,87 @@ export default function FakultasDepartemenForm({ setStep }: FakultasFormProps) {
           </span>
         </Typography>
       </div>
-      <div className='mt-4 flex flex-col items-center justify-center'>
-        <Typography variant='body'>
-          Pilih Sesi Open Campus Nirwana Asa
-        </Typography>
-        <FormProvider {...methods}>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className='flex w-1/2 flex-col justify-center'
-          >
-            {/* Sesi */}
-            <div className='mt-4 flex items-center justify-center'>
-              <div className='flex space-x-6'>
-                <label>
-                  <div>
-                    <input type='radio' value='1' {...register('sesi')} />
-                    <span className='ml-2'>Sesi Pertama</span>
-                  </div>
-                </label>
-                <label>
-                  <div>
-                    <input type='radio' value='2' {...register('sesi')} />
-                    <span className='ml-2'>Sesi Kedua</span>
-                  </div>
-                </label>
-              </div>
-            </div>
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='mt-4 '>
             {/* Fakultas */}
-            <div>
-              <Typography variant='body' className='mt-4'>
-                Yuk Pilih Fakultas Impianmu!
-              </Typography>
-              <SelectInput
-                label='Fakultas'
-                id='fakultas'
-                name='fakultas'
-                isLabel={false}
-              >
-                <option value='fakultas-1'>Fakultas 1</option>
-                <option value='fakultas-2'>Fakultas 2</option>
-                <option value='fakultas-3'>Fakultas 3</option>
-              </SelectInput>
-            </div>
-            {/* Departemen 1*/}
-            <div>
-              <Typography variant='body' className='mt-4'>
-                Yuk Pilih Departemen Pertama!
-              </Typography>
-              <SelectInput
-                label='Departemen Kedua'
-                id='departemen-1'
-                name='departemen-1'
-                isLabel={false}
-              >
-                <option value='Teknik Rendy'>Departemen 1</option>
-                <option value='Rendy Lelet'>Departemen 2</option>
-                <option value='Rendy'>Departemen 3</option>
-              </SelectInput>
-            </div>
-            {/* Departemen 2*/}
-            <div>
-              <Typography variant='body' className='mt-4'>
-                Yuk Pilih Departemen Kedua!
-              </Typography>
-              <SelectInput
-                label='Departemen Kedua'
-                id='departemen-2'
-                name='departemen-2'
-                isLabel={false}
-              >
-                <option value='Teknik Rendy'>Departemen 1</option>
-                <option value='Rendy Lelet'>Departemen 2</option>
-                <option value='Rendy'>Departemen 3</option>
-              </SelectInput>
-            </div>
+            <Typography variant='body' className='mt-4'>
+              Yuk Pilih Fakultas Sesi Pertama!
+            </Typography>
+            <SelectInput
+              label='Pilih Fakultas Sesi Pertama'
+              id='pilihan_fakultas1'
+              name='pilihan_fakultas1'
+              isLabel={false}
+            >
+              {queryData.data.sesi1.map((fakultas, index) => (
+                <option value={fakultas.id_fakultas} key={index}>
+                  {fakultas.nama}
+                </option>
+              ))}
+            </SelectInput>
+            <Typography variant='body' className='mt-4'>
+              Yuk Pilih Fakultas Sesi Kedua!
+            </Typography>
+            <SelectInput
+              label='Pilih Fakultas Sesi Pertama'
+              id='pilihan_fakultas2'
+              name='pilihan_fakultas2'
+              isLabel={false}
+            >
+              {queryData.data.sesi2.map((fakultas, index) => (
+                <option value={fakultas.id_fakultas} key={index}>
+                  {fakultas.nama}
+                </option>
+              ))}
+            </SelectInput>
+            {data_departemen[0] && data_departemen[1] && (
+              <>
+                {/* Departemen 1*/}
+                <Typography variant='body' className='mt-4'>
+                  Yuk Pilih Departemen Sesi Pertama!
+                </Typography>
+                <SelectInput
+                  label='Pilih Departemen Sesi Kedua'
+                  id='pilihan_departemen1'
+                  name='pilihan_departemen1'
+                  isLabel={false}
+                >
+                  {data_departemen[0].departemen.map((depart, index) => (
+                    <option value={depart.id_departemen} key={index}>
+                      {`${depart.nama} - ${depart.pendaftar} dari ${depart.kuota}`}
+                    </option>
+                  ))}
+                </SelectInput>
+                {/* Departemen 2*/}
+                <Typography variant='body' className='mt-4'>
+                  Yuk Pilih Departemen Sesi Kedua!
+                </Typography>
+                <SelectInput
+                  label='Pilih Departemen Sesi Kedua'
+                  id='pilihan_departemen2'
+                  name='pilihan_departemen2'
+                  isLabel={false}
+                >
+                  {data_departemen[1].departemen.map((depart, index) => (
+                    <option value={depart.id_departemen} key={index}>
+                      {`${depart.nama} - ${depart.pendaftar} dari ${depart.kuota}`}
+                    </option>
+                  ))}
+                </SelectInput>
+              </>
+            )}
             <div className='flex justify-center space-x-4 pt-8'>
-              <button
-                className='rounded-md bg-[#3872C3]/30 px-6 py-3 text-[#3872C3] hover:bg-[#3872C3]/10'
-                onClick={() => setStep(1)}
-              >
+              <Button onClick={() => setStep(1)} variant='red'>
                 Kembali
-              </button>
-              <button className='rounded-md bg-[#3872C3] px-6 py-3 text-neutral-100 hover:bg-[#3872C3]/95'>
-                Lanjutkan
-              </button>
+              </Button>
+              <Button variant='lightBlue' onClick={openWarning}>
+                Lanjut
+              </Button>
             </div>
-          </form>
-        </FormProvider>
-      </div>
+          </div>
+        </form>
+      </FormProvider>
     </div>
   );
 }

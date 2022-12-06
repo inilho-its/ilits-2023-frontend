@@ -8,8 +8,6 @@ import ButtonLink from '@/components/links/ButtonLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 
-import useDialogStore from '@/store/useDialogStore';
-
 const links = [
   { href: '/', label: 'Home' },
   { href: '/eventual', label: 'Eventual' },
@@ -21,12 +19,11 @@ const links = [
 ];
 
 export default function Navbar() {
-  const isOpen = useDialogStore.useData();
-  const setIsOpen = useDialogStore.useSetOpen();
+  const [isOpen, setIsOpen] = React.useState(false);
   const [colorChange, setColorChange] = React.useState(false);
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 70) {
+      if (window.scrollY > 50) {
         setColorChange(true);
       } else {
         setColorChange(false);
@@ -41,7 +38,7 @@ export default function Navbar() {
   });
 
   const toggleShowNav = () => {
-    setIsOpen();
+    setIsOpen((isOpen) => !isOpen);
   };
 
   return (

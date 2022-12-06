@@ -16,7 +16,7 @@ import FakultasDepartemenForm from '@/pages/open-campus/components/FakultasDepar
 export default function DaftarOpenCampusPage() {
   const [step, setStep] = React.useState(0);
   return (
-    <Layout>
+    <Layout withFooter={false} withNavbar={false}>
       <Seo templateTitle='Daftar Open Campus' />
 
       <main className='bg-bone-500'>
@@ -95,7 +95,7 @@ export default function DaftarOpenCampusPage() {
             </div>
             {/* Title End */}
             {/* Main Card Start */}
-            <div className='relative z-10 mb-10 mt-24 flex w-full min-w-[300px] flex-col sm:mb-0 sm:mt-14 sm:min-w-0 sm:max-w-xl'>
+            <div className='relative z-10 mt-4 mb-10 flex w-full min-w-[300px] flex-col sm:mb-4 sm:mt-24 sm:min-w-0 sm:max-w-xl'>
               <div className='flex h-10 items-center justify-end gap-2 rounded-t-2xl border-4 border-bone-1000 bg-bone-1000 px-3'>
                 <div className='h-3 w-3 rounded-full bg-green-300 lg:h-5 lg:w-5'></div>
                 <div className='h-3 w-3 rounded-full bg-red-400 lg:h-5 lg:w-5'></div>
