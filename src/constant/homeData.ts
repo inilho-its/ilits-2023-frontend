@@ -76,34 +76,24 @@ export const companyLogo = [
 
 export const openCampus = [
   {
-    title: 'Open Campus',
+    title: 'OPEN CAMPUS NIRWANA ASA',
     paragraph:
-      'Pretium id egestas convallis commodo. Ullamcorper sit habitasse non elementum sed. Urna netus nulla at mi sit. Ut placerat eget at pretium et in. Morbi proin sit lectus mattis et. Quisque at convallis sed ut. ',
+      'Kegiatan yang bertujuan untuk mewujudkan penyebarluasan informasi seputar ITS dan semangat meraih pendidikan setinggit-tingginya kepada siswa/siswi SMA sederajat dalam bentuk talkshow yang menghadirkan pembicara yang akan menjelaskan mengenai ITS dan kehidupan mahasiswa di ITS.',
   },
   {
-    title: 'Open Campus',
+    title: 'ILITS_WORLDWIDE',
     paragraph:
-      'Pretium id egestas convallis commodo. Ullamcorper sit habitasse non elementum sed. Urna netus nulla at mi sit. Ut placerat eget at pretium et in. Morbi proin sit lectus mattis et. Quisque at convallis sed ut. ',
+      'Kegiatan yang bertujuan untuk mewujudkan tujuan Ini Lho ITS! untuk menyebarluaskan informasi mengenai ITS dengan segmentasi pesertanya adalah siswa/siswi yang bersekolah di SILN dan Siswa/Siswi yang bersekolah di luar negeri. ILITS_WORLDWIDE merupakan Inovasi baru yang merupakan usaha Ini Lho ITS! Dalam menerbang-tinggikan nama Institut Teknologi Sepuluh Nopember ke seluruh dunia.',
   },
   {
-    title: 'Open Campus',
+    title: 'WELCOME',
     paragraph:
-      'Pretium id egestas convallis commodo. Ullamcorper sit habitasse non elementum sed. Urna netus nulla at mi sit. Ut placerat eget at pretium et in. Morbi proin sit lectus mattis et. Quisque at convallis sed ut. ',
+      'Kegiatan tahunan Ini Lho ITS! yang diselenggarakan di Surabaya, dan juga di berbagai daerah di Indonesia yang bekerja sama dengan Forum Daerah (Forda) dengan kegiatan utama adalah tryout dan pembahasan soal dan materi persiapan tes masuk perguruan tinggi.',
   },
   {
-    title: 'Open Campus',
+    title: 'VISIT',
     paragraph:
-      'Pretium id egestas convallis commodo. Ullamcorper sit habitasse non elementum sed. Urna netus nulla at mi sit. Ut placerat eget at pretium et in. Morbi proin sit lectus mattis et. Quisque at convallis sed ut. ',
-  },
-  {
-    title: 'Open Campus',
-    paragraph:
-      'Pretium id egestas convallis commodo. Ullamcorper sit habitasse non elementum sed. Urna netus nulla at mi sit. Ut placerat eget at pretium et in. Morbi proin sit lectus mattis et. Quisque at convallis sed ut. ',
-  },
-  {
-    title: 'Open Campus',
-    paragraph:
-      'Pretium id egestas convallis commodo. Ullamcorper sit habitasse non elementum sed. Urna netus nulla at mi sit. Ut placerat eget at pretium et in. Morbi proin sit lectus mattis et. Quisque at convallis sed ut. ',
+      'Kegiatan yang menjadi salah satu inovasi dan proyeksi baru di Ini Lho ITS! 2023, dimana Ini Lho ITS akan terjun langsung ke beberapa daerah pelosok yang dinilai masih kurang terkait penyebaran semangat perguruan tinggi negeri dan segala informasi mengenai ITS dan membawa semangat meraih pendidikan dan kesempatan di perguruan tinggi ke daerah tersebut.',
   },
 ];
 

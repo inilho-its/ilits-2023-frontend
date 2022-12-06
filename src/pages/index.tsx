@@ -203,10 +203,9 @@ export default function HomePage() {
                 </Typography>
                 <Typography
                   variant='p'
-                  className='mx-12 max-w-lg py-4 pt-56 text-center font-medium md:mx-0 md:pt-0 md:font-normal'
+                  className='mx-12 max-w-lg py-4 pt-56 text-center text-xl font-medium md:mx-0 md:pt-0 md:font-normal'
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lectus consectetur id tellus, pellentesque.
+                  Kenali dirimu, kenali masa depanmu, di INI LHO ITS! 2023
                 </Typography>
                 <div className='rounded-lg bg-yellow-500 px-5 py-[6px] font-semibold outline outline-2 outline-black md:py-2'>
                   Kenali Lebih Lanjut!
@@ -281,17 +280,15 @@ export default function HomePage() {
                     Apa itu INI LHO ITS?
                   </Typography>
                   <Typography variant='p' className='pt-1 pb-4 lg:pt-2'>
-                    Pretium id egestas convallis commodo. Ullamcorper sit
-                    habitasse non elementum sed. Urna netus nulla at mi sit. Ut
-                    placerat eget at pretium et in. Morbi proin sit lectus
-                    mattis et. Quisque at convallis sed ut. Lobortis integer
-                    aenean consectetur sit. Tempor in arcu quam pretium sit
-                    pharetra. Arcu metus vel eget lobortis arcu ut. Erat
-                    tristique est ultrices risus blandit. Sodales amet placerat
-                    morbi diam. Ultrices sociis euismod enim quis pellentesque
-                    non tempor. Orci volutpat sit vitae ac gravida eget
-                    vehicula. Pulvinar diam consectetur pretium tincidunt
-                    interdum ullamcorper.
+                    INI LHO ITS! merupakan suatu wadah yang mengintegrasikan
+                    seluruh elemen-elemen ITS untuk memperkenalkan ITS beserta
+                    kehidupan perkuliahan dan keilmuan di dalamnya dengan
+                    memberikan informasi seputar fakultas dan jurusan yang ada
+                    di ITS, sembari menyebarluaskan semangat perguruan tinggi
+                    kepada seluruh siswa/i SMA sederajat di Indonesia dan bahkan
+                    ke seluruh dunia dengan mengatasnamakan Institut Teknologi
+                    Sepuluh Nopember, yang dikenal dengan sebutan INI LHO ITS!
+                    2023.
                   </Typography>
                 </div>
               </div>
@@ -444,7 +441,58 @@ export default function HomePage() {
                             variant='h5'
                             className='pb-4 text-[24px] font-bold leading-[32px] lg:pb-2 lg:text-[32px] lg:leading-[48px]'
                           >
-                            Web Series ILITS
+                            Podcast Ini Lho ITS!
+                          </Typography>
+                          <NextImage
+                            className='mb-4 block w-72 rounded-lg md:w-80 lg:hidden'
+                            src='/images/homePage/webseries-mobile.png'
+                            layout='responsive'
+                            objectFit='contain'
+                            width='100%'
+                            height='63%'
+                            alt='Web Series ILITS'
+                          />
+                          <Typography variant='p' className='pt-1 lg:pt-2'>
+                            Bincang-bincang ringan, untuk mencapai harapan!
+                            Podcast seru penuh insight dan manfaat ini, bakal
+                            nemenin hari-hari kalian dengan berbagai topik mulai
+                            dari tentang ITS, atur strategi untuk mencapai
+                            impian, hingga dunia perkuliahan yang pasti kalian
+                            pada penasaran! Pantengin terus di Youtube dan
+                            Spotify Ini Lho ITS!
+                          </Typography>
+                          <ButtonLink
+                            href='#'
+                            variant='lightBlue'
+                            className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
+                          >
+                            Tonton Sekarang!
+                          </ButtonLink>
+                        </div>
+                        <div className='relative hidden w-1/2 rounded-br-lg lg:block'>
+                          <NextImage
+                            imgClassName='rounded-br-lg'
+                            src='/images/homePage/webseries1.png'
+                            layout='fill'
+                            width='100%'
+                            alt='Web Series ILITS'
+                          />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                    {/* <SwiperSlide>
+                      <div className='flex'>
+                        <div
+                          className={clsxm(
+                            'flex w-full flex-col items-center p-6 lg:w-1/2',
+                            'lg:items-start lg:rounded-br-none lg:border-r-0 lg:p-8 xl:p-10'
+                          )}
+                        >
+                          <Typography
+                            variant='h5'
+                            className='pb-4 text-[24px] font-bold leading-[32px] lg:pb-2 lg:text-[32px] lg:leading-[48px]'
+                          >
+                            Creative Video
                           </Typography>
                           <NextImage
                             className='mb-4 block w-72 rounded-lg md:w-80 lg:hidden'
@@ -482,8 +530,8 @@ export default function HomePage() {
                           />
                         </div>
                       </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
+                    </SwiperSlide> */}
+                    {/* <SwiperSlide>
                       <div className='flex'>
                         <div
                           className={clsxm(
@@ -533,58 +581,7 @@ export default function HomePage() {
                           />
                         </div>
                       </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className='flex'>
-                        <div
-                          className={clsxm(
-                            'flex w-full flex-col items-center p-6 lg:w-1/2',
-                            'lg:items-start lg:rounded-br-none lg:border-r-0 lg:p-8 xl:p-10'
-                          )}
-                        >
-                          <Typography
-                            variant='h5'
-                            className='pb-4 text-[24px] font-bold leading-[32px] lg:pb-2 lg:text-[32px] lg:leading-[48px]'
-                          >
-                            Web Series ILITS
-                          </Typography>
-                          <NextImage
-                            className='mb-4 block w-72 rounded-lg md:w-80 lg:hidden'
-                            src='/images/homePage/webseries-mobile.png'
-                            layout='responsive'
-                            objectFit='contain'
-                            width='100%'
-                            height='63%'
-                            alt='Web Series ILITS'
-                          />
-                          <Typography variant='p' className='pt-1 lg:pt-2'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur.
-                          </Typography>
-                          <ButtonLink
-                            href=''
-                            variant='lightBlue'
-                            className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
-                          >
-                            Tonton Sekarang!
-                          </ButtonLink>
-                        </div>
-                        <div className='relative hidden w-1/2 rounded-br-lg lg:block'>
-                          <NextImage
-                            imgClassName='rounded-br-lg'
-                            src='/images/homePage/webseries1.png'
-                            layout='fill'
-                            width='100%'
-                            alt='Web Series ILITS'
-                          />
-                        </div>
-                      </div>
-                    </SwiperSlide>
+                    </SwiperSlide> */}
                   </Swiper>
                 </div>
               </div>
