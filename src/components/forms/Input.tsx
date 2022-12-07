@@ -138,7 +138,7 @@ export default function Input({
                 : errors[id]
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                 : 'focus:ring-primary-500 border-neutral-300 focus:border-blue-400',
-              'block w-full shadow-sm hover:border-[#ED6C3A]',
+              'block w-full shadow-sm hover:border-blue-400',
               LeftIcon && 'rounded-md pl-12',
               RightIcon && 'rounded-md pr-10',
               LeftText && 'rounded-r-md',

@@ -141,7 +141,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
             <p className='text-sm text-red-500'>Jenis Tryout Wajib Diisi</p>
           )}
         </div>
-        <div>
+        <div className='flex justify-center'>
           <Button
             variant='lightBlue'
             round='medium'

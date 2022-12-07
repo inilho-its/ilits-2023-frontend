@@ -94,8 +94,11 @@ export default function FakultasDepartemenForm({ setStep }: FakultasFormProps) {
 
   if (!queryData)
     return (
-      <div className='flex items-center justify-center'>
-        <Typography variant='body' className='text-center text-neutral-800'>
+      <div className='mt-20 flex items-center justify-center'>
+        <Typography
+          variant='body'
+          className='text-center font-semibold text-neutral-900'
+        >
           Loading...
         </Typography>
       </div>
@@ -168,8 +171,10 @@ export default function FakultasDepartemenForm({ setStep }: FakultasFormProps) {
       <div className='rounded-lg bg-[#D7E3F3] py-4 px-10'>
         <Typography variant='body' className='text-center text-neutral-800'>
           Sebelum memilih harap membaca guidebook terlebih dahulu!{' '}
-          <span className='text-neutral-900 underline'>
-            <PrimaryLink href='#'>Unduh Guidebook</PrimaryLink>
+          <span className='text-neutral-900 underline transition duration-100 hover:text-orange-400'>
+            <PrimaryLink href='https://drive.google.com/file/d/1HufRuMmMmvJWR4NGfT5e-GSe0SsGgWXG/view'>
+              Unduh Guidebook
+            </PrimaryLink>
           </span>
         </Typography>
       </div>

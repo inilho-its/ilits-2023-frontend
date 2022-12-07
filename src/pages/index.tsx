@@ -360,7 +360,7 @@ export default function HomePage() {
                   height='50%'
                   alt='Virtual Tour'
                 />
-                <UnstyledLink href='/coming-soon'>
+                <UnstyledLink href='https://arek.its.ac.id/VTITS/'>
                   <div className='h-72 w-72 overflow-hidden rounded-xl border-2 border-black md:h-auto md:w-[574px]'>
                     <NextImage
                       src='/images/homePage/virtualTour1.png'

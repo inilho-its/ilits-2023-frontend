@@ -439,7 +439,7 @@ export default function EventualPage() {
                   variant='bone'
                   round='medium'
                   size='large'
-                  href='#'
+                  href='https://drive.google.com/file/d/1HufRuMmMmvJWR4NGfT5e-GSe0SsGgWXG/view'
                   className='hidden w-max font-semibold md:inline-flex'
                   leftIcon={HiOutlineDownload}
                 >
@@ -459,7 +459,7 @@ export default function EventualPage() {
                   variant='bone'
                   round='medium'
                   size='small'
-                  href='#'
+                  href='https://drive.google.com/file/d/1HufRuMmMmvJWR4NGfT5e-GSe0SsGgWXG/view'
                   className='inline-flex w-max font-semibold md:hidden'
                   leftIcon={HiOutlineDownload}
                 >

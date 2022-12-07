@@ -50,28 +50,37 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
         <DropzoneInput
           label='Upload Bukti Follow Instagram @inilhoits'
           id='follow_ig'
-          helperText='Ukuran maksimal file 1 Mb.'
+          helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
           validation={{
-            required: { value: true, message: 'Wajib mengisi asal sekolah' },
+            required: {
+              value: true,
+              message: 'Wajib mengupload bukti follow Instagram @inilhoits',
+            },
           }}
         />
         <DropzoneInput
           label='Upload Bukti Share Poster'
           id='repost_poster'
-          helperText='Ukuran maksimal file 1 Mb.'
+          helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
           validation={{
-            required: { value: true, message: 'Wajib mengisi asal sekolah' },
+            required: {
+              value: true,
+              message: 'Wajib mengupload bukti share poster',
+            },
           }}
         />
         <DropzoneInput
           label='Upload Serifikat Vaksin Dosis ke-3'
           id='sertifikat_vaksin'
-          helperText='Ukuran maksimal file 1 Mb.'
+          helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
           validation={{
-            required: { value: true, message: 'Wajib mengisi asal sekolah' },
+            required: {
+              value: true,
+              message: 'Wajib mengupload bukti vaksinasi dosis ke-3',
+            },
           }}
         />
-        <div className='space-x-2'>
+        <div className='flex justify-center space-x-2 pt-2'>
           <Button
             variant='red'
             round='medium'

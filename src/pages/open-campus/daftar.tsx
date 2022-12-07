@@ -110,9 +110,9 @@ export default function DaftarOpenCampusPage() {
                         className={clsxm(
                           'relative flex h-8 w-8 items-center justify-center rounded-full text-neutral-100',
                           step == 0
-                            ? 'bg-[#3872C3]'
+                            ? 'bg-lightBlue-500'
                             : step > 0
-                            ? 'bg-[#2E7D32]'
+                            ? 'bg-green-500'
                             : 'bg-bone-600'
                         )}
                       >
@@ -129,9 +129,9 @@ export default function DaftarOpenCampusPage() {
                         className={clsxm(
                           'relative flex h-8 w-8 items-center justify-center rounded-full text-neutral-100',
                           step == 1
-                            ? 'bg-[#3872C3]'
+                            ? 'bg-lightBlue-500'
                             : step > 1
-                            ? 'bg-[#2E7D32]'
+                            ? 'bg-green-500'
                             : 'bg-bone-600'
                         )}
                       >
@@ -148,9 +148,9 @@ export default function DaftarOpenCampusPage() {
                         className={clsxm(
                           'relative flex h-8 w-8 items-center justify-center rounded-full text-neutral-100',
                           step == 2
-                            ? 'bg-[#3872C3]'
+                            ? 'bg-lightBlue-500'
                             : step > 2
-                            ? 'bg-[#2E7D32]'
+                            ? 'bg-green-500'
                             : 'bg-bone-600'
                         )}
                       >

@@ -191,7 +191,9 @@ export default function PembayaranOpenCampusPage() {
                         Yuk, Selesaikan Pembayaranmu!
                       </Typography>
                       <div className='mt-8'>
-                        <Typography>Jumlah yang harus dibayar:</Typography>
+                        <Typography className='text-bone-800'>
+                          Jumlah yang harus dibayar:
+                        </Typography>
                         <div className='flex items-center space-x-3'>
                           <HiOutlineCash
                             className='inline-block font-light text-green-500'
@@ -210,30 +212,38 @@ export default function PembayaranOpenCampusPage() {
                         <Typography className='mt-4 text-bone-800'>
                           Pembayaran dapat dilakukan melalui rekening :
                         </Typography>
-                        <li className='mt-1 ml-4 text-bone-800'>
+                        <div className='mt-1 ml-4 text-bone-1000'>
                           <Typography>
-                            <span className='font-light'>
+                            <span className='font-medium'>
                               BIMA SURYA SAMUDRA - 049734682
                             </span>{' '}
                             (BCA)
                           </Typography>
-                        </li>
-                        <li className='mt-1 ml-4 text-bone-800'>
+                        </div>
+                        <div className='mt-1 ml-4 text-bone-1000'>
                           <Typography>
-                            <span className='font-light'>
+                            <span className='font-medium'>
                               DAFFA FAHREZI MUZAKKIR - 4619463
                             </span>{' '}
                             (MANDIRI)
                           </Typography>
-                        </li>
-                        <li className='mt-1 ml-4 text-bone-800'>
+                        </div>
+                        <div className='mt-1 ml-4 text-bone-1000'>
                           <Typography>
-                            <span className='font-light'>
+                            <span className='font-medium'>
                               CHERISH GLOBAL ETNIC - 46821646
                             </span>{' '}
                             (BNI)
                           </Typography>
-                        </li>
+                        </div>
+                        <div className='mt-1 ml-4 text-bone-1000'>
+                          <Typography>
+                            <span className='font-medium'>
+                              Bagus Narendra - 3012200234
+                            </span>{' '}
+                            (BNI)
+                          </Typography>
+                        </div>
                       </div>
                       <div className='mt-8 w-11/12 md:w-3/4'>
                         <DropzoneInput
