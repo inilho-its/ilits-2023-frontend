@@ -83,26 +83,10 @@ export default function Footer() {
             >
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/preEvent'
+                  href='/coming-soon'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  Lorem Ipsum
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/preEvent'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  Lorem Ipsum
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/preEvent'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  Lorem Ipsum
+                  Ini Lho ITS 2023!
                 </UnstyledLink>
               </div>
             </div>
@@ -127,26 +111,34 @@ export default function Footer() {
             >
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/preEvent'
+                  href='/coming-soon'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  Lorem Ipsum
+                  One Day Lecture
                 </UnstyledLink>
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/preEvent'
+                  href='/coming-soon'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  Lorem Ipsum
+                  Welcome Surabaya
                 </UnstyledLink>
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/preEvent'
+                  href='/coming-soon'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  Lorem Ipsum
+                  ITS Fair
+                </UnstyledLink>
+              </div>
+              <div className='flex h-10 gap-5 px-7 md:pl-0'>
+                <UnstyledLink
+                  href='/coming-soon'
+                  className='mx-auto text-lg md:mx-0'
+                >
+                  Tour De Campus
                 </UnstyledLink>
               </div>
             </div>
@@ -171,26 +163,10 @@ export default function Footer() {
             >
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/preEvent'
+                  href='/coming-soon'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  Lorem Ipsum
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/preEvent'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  Lorem Ipsum
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/preEvent'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  Lorem Ipsum
+                  Website Try Out
                 </UnstyledLink>
               </div>
             </div>
@@ -207,7 +183,7 @@ export default function Footer() {
 
             <div className='flex h-8 px-7 md:px-0'>
               <UnstyledLink
-                href='/preEvent'
+                href='/coming-soon'
                 className='mx-auto flex items-center gap-2 text-lg font-semibold md:ml-0'
               >
                 Merchandise <FiExternalLink />

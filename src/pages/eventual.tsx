@@ -101,7 +101,7 @@ const Tab1Content = () => {
           <ButtonLink
             variant='bone'
             size='large'
-            href='#'
+            href='/open-campus'
             className='font-semibol mt-8 hidden md:block'
           >
             Daftar Sekarang
@@ -109,7 +109,7 @@ const Tab1Content = () => {
           <ButtonLink
             variant='bone'
             size='small'
-            href='#'
+            href='/open-campus'
             className='mt-8 block font-semibold md:hidden'
           >
             Daftar Sekarang
@@ -217,7 +217,7 @@ const Tab2Content = () => {
           <ButtonLink
             variant='bone'
             size='large'
-            href='#'
+            href='/open-campus'
             className='font-semibol mt-8 hidden md:block'
           >
             Daftar Sekarang
@@ -225,7 +225,7 @@ const Tab2Content = () => {
           <ButtonLink
             variant='bone'
             size='small'
-            href='#'
+            href='/open-campus'
             className='mt-8 block font-semibold md:hidden'
           >
             Daftar Sekarang
@@ -326,7 +326,7 @@ const Tab3Content = () => {
           <ButtonLink
             variant='bone'
             size='large'
-            href='#'
+            href='/open-campus'
             className='font-semibol mt-8 hidden md:block'
           >
             Daftar Sekarang
@@ -334,7 +334,7 @@ const Tab3Content = () => {
           <ButtonLink
             variant='bone'
             size='small'
-            href='#'
+            href='/open-campus'
             className='mt-8 block font-semibold md:hidden'
           >
             Daftar Sekarang
