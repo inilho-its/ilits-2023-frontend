@@ -38,6 +38,7 @@ export default async function middleware(req: NextRequest) {
       'pembayaran',
       'eventual',
       'fakultas',
+      'pembayaran',
     ],
   ]);
 
