@@ -134,6 +134,7 @@ export default function HomePage() {
             />
             {/* Star */}
             <NextImage
+              id='more'
               className='absolute top-[28rem] right-[22%] z-50 w-10 md:top-[70vh] md:w-16 lg:w-20 xl:w-24'
               src='/images/homePage/star.png'
               layout='responsive'
@@ -206,9 +207,12 @@ export default function HomePage() {
                   Kenali Dirimu, Kenali Masa Depanmu, <br />
                   di INI LHO ITS! 2023.
                 </Typography>
-                <div className='rounded-lg bg-yellow-500 px-5 py-[6px] font-semibold outline outline-2 outline-black md:py-2'>
+                <a
+                  href='#more'
+                  className='rounded-lg bg-yellow-500 px-5 py-[6px] font-semibold outline outline-2 outline-black md:py-2'
+                >
                   Kenali Lebih Lanjut!
-                </div>
+                </a>
               </div>
             </div>
 
