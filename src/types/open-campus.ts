@@ -22,6 +22,24 @@ type FormDataFile = {
   [1]: File;
 };
 
+type CurrentBatch = {
+  id: number;
+  nama_batch: string;
+  harga: number;
+  pendaftar: number;
+};
+
+type HargaOpencCampus = {
+  [0]: CurrentBatch;
+  [1]: CurrentBatch;
+  [2]: CurrentBatch;
+};
+
+export type HargaOpenCampus = {
+  current_batch: CurrentBatch;
+  batch: HargaOpencCampus;
+};
+
 export type OpenCampusForm = {
   [key: string]: string | File | Blob | undefined | FormDataFile;
   nama?: string;
