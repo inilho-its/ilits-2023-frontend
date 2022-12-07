@@ -77,7 +77,7 @@ export default function Navbar() {
         </nav>
         <div className='hidden md:block'>
           <ButtonLink
-            href='/'
+            href='/open-campus'
             className='px-2 font-semibold lg:px-[22px]'
             variant='bone'
           >
@@ -134,7 +134,7 @@ export default function Navbar() {
             ))}
           </ul>
           <ButtonLink
-            href='/'
+            href='/open-campus'
             className='mx-auto mt-3 font-semibold'
             variant='bone'
             size='medium'

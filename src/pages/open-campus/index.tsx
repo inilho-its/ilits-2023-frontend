@@ -1,18 +1,7 @@
 import * as React from 'react';
 
-import Layout from '@/components/layout/Layout';
-import Seo from '@/components/Seo';
+import MaintenancePage from '@/pages/maintenance';
 
 export default function OpenCampusPage() {
-  return (
-    <Layout>
-      <Seo templateTitle='Open Campus' />
-
-      <main>
-        <section className=''>
-          <div className='layout min-h-screen py-20'></div>
-        </section>
-      </main>
-    </Layout>
-  );
+  return <MaintenancePage />;
 }

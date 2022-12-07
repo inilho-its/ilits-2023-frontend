@@ -607,6 +607,7 @@ export default function HomePage() {
                             CULTOUR: Faculty and Facility Tour
                           </Typography>
                           <NextImage
+                            imgClassName=''
                             className='mb-4 block w-72 rounded-lg md:w-full md:max-w-lg lg:hidden lg:max-w-none'
                             src='/images/homePage/webseries-mobile.png'
                             layout='responsive'
@@ -1143,14 +1144,18 @@ export default function HomePage() {
                         <Typography
                           variant='h4'
                           className={clsxm(
-                            'pb-0 text-[24px] font-bold leading-[32px] lg:pb-4 lg:text-[32px]',
+                            'pb-0 text-[24px] font-bold leading-[32px] lg:pb-0 lg:text-[32px]',
                             'lg:leading-[48px] xl:text-[48px] xl:leading-[64px]'
                           )}
                         >
                           {item.nama}
                         </Typography>
                         <Typography variant='p'>{item.desc}</Typography>
-                        <div className='pt-2 pb-0 text-center md:text-left lg:pb-6 lg:pt-0 xl:pb-10'>
+                        <div
+                          className={`${
+                            id == 5 ? 'lg:pb-0' : 'lg:pb-6'
+                          } pt-2 pb-0 text-center md:text-left lg:pt-0 xl:pb-10`}
+                        >
                           <ButtonLink
                             className='hidden font-semibold lg:inline-block'
                             href='/coming-soon'
@@ -1193,6 +1198,7 @@ export default function HomePage() {
                 Fasilitas Untuk Semua
               </Typography>
             </div>
+
             <Swiper
               navigation={true}
               autoplay={{
@@ -1202,11 +1208,11 @@ export default function HomePage() {
               loop={true}
               loopFillGroupWithBlank={true}
               modules={[Autoplay, Navigation]}
-              className='mySwiper fasilitas'
+              className='mySwiper fasilitas flex min-h-[35rem] md:min-h-0'
               slidesPerView={1}
             >
-              <SwiperSlide>
-                <div className='max-w-8xl mx-auto flex flex-col border-y-2 border-black bg-yellow-300 md:flex-row'>
+              <SwiperSlide className='h-full'>
+                <div className='max-w-8xl mx-auto flex h-full flex-1 flex-col border-y-2 border-black bg-yellow-300 md:flex-row'>
                   <div className='w-full md:w-1/2 lg:w-2/6'>
                     <NextImage
                       className='hidden md:block'
@@ -1221,7 +1227,7 @@ export default function HomePage() {
                       className='block md:hidden'
                       src='/images/homePage/fasilitas1-mobile.png'
                       width='100%'
-                      height='60%'
+                      height='50%'
                       layout='responsive'
                       objectFit='cover'
                       alt='fasilitas1'
@@ -1305,13 +1311,13 @@ export default function HomePage() {
                         Fasilitas Untuk Semua
                       </Typography>
                     </div>
-                    <div className='mt-0 px-4 md:mt-4 md:px-8'>
+                    <div className='relative z-[20] mt-0 px-4 md:mt-4 md:px-8'>
                       <Typography variant='h5' className='font-bold'>
                         ITS Training Center
                       </Typography>
                       <Typography
                         variant='p'
-                        className='max-w-4xl pt-3 pb-6 xl:pt-4 xl:pb-10'
+                        className='max-w-4xl pt-3 pb-[3.2rem] md:pb-6 xl:pt-4 xl:pb-10'
                       >
                         menyelenggarakan pelatihan profesi dan jasa sertifikasi
                         bagi mahasiswa dan tenaga profesional dalam rangka
@@ -1328,13 +1334,13 @@ export default function HomePage() {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <div className='max-w-8xl mx-auto flex flex-col border-y-2 border-black bg-yellow-300 md:flex-row'>
+              <SwiperSlide className='h-full'>
+                <div className='max-w-8xl mx-auto flex h-full flex-1 flex-col border-y-2 border-black bg-yellow-300 md:flex-row'>
                   <div className='w-full md:w-1/2 lg:w-2/6'>
                     <NextImage
                       className='hidden md:block'
                       src='/images/homePage/fasilitas2.png'
-                      width={widthW <= 768 ? '81%' : '100%'}
+                      width={widthW <= 768 ? '81%' : '99%'}
                       height='100%'
                       layout='responsive'
                       objectFit='cover'
@@ -1344,7 +1350,7 @@ export default function HomePage() {
                       className='block md:hidden'
                       src='/images/homePage/fasilitas2-mobile.png'
                       width='100%'
-                      height='60%'
+                      height='50%'
                       layout='responsive'
                       objectFit='cover'
                       alt='fasilitas2'
@@ -1428,13 +1434,13 @@ export default function HomePage() {
                         Fasilitas Untuk Semua
                       </Typography>
                     </div>
-                    <div className='mt-0 px-4 md:mt-4 md:px-8'>
+                    <div className='relative z-[20] mt-0 px-4 md:mt-4 md:px-8'>
                       <Typography variant='h5' className='font-bold'>
                         Graha ITS
                       </Typography>
                       <Typography
                         variant='p'
-                        className='max-w-4xl pt-3 pb-6 xl:pt-4 xl:pb-10'
+                        className='max-w-4xl pt-3 pb-[1.99rem] md:pb-6 xl:pt-4 xl:pb-10'
                       >
                         Digunakan untuk berbagai keperluan, seperti Wisuda
                         mahasiswa ITS, seminar, pentas musik, temu alumni,
@@ -1453,8 +1459,8 @@ export default function HomePage() {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <div className='max-w-8xl mx-auto flex flex-col border-y-2 border-black bg-yellow-300 md:flex-row'>
+              <SwiperSlide className='h-full'>
+                <div className='max-w-8xl mx-auto flex h-full flex-1 flex-col border-y-2 border-black bg-yellow-300 md:flex-row'>
                   <div className='w-full md:w-1/2 lg:w-2/6'>
                     <NextImage
                       className='hidden md:block'
@@ -1469,7 +1475,7 @@ export default function HomePage() {
                       className='block md:hidden'
                       src='/images/homePage/fasilitas3-mobile.png'
                       width='100%'
-                      height='60%'
+                      height='50%'
                       layout='responsive'
                       objectFit='cover'
                       alt='fasilitas3'
@@ -1553,7 +1559,7 @@ export default function HomePage() {
                         Fasilitas Untuk Semua
                       </Typography>
                     </div>
-                    <div className='mt-0 px-4 md:mt-4 md:px-8'>
+                    <div className='relative z-[20] mt-0 px-4 md:mt-4 md:px-8'>
                       <Typography variant='h5' className='font-bold'>
                         Creative Co-Working Space
                       </Typography>
@@ -1717,7 +1723,7 @@ export default function HomePage() {
               <SwiperSlide>
                 <div
                   className={clsxm(
-                    'max-w-8xl relative mx-auto mt-0 flex flex-col-reverse',
+                    'max-w-8xl relative mx-auto mt-0 flex h-[21reem] flex-col-reverse',
                     'border-y-2 border-black bg-red-200 md:mt-20 md:flex-row'
                   )}
                 >
@@ -1810,7 +1816,7 @@ export default function HomePage() {
                     <NextImage
                       className='hidden h-full w-full md:block'
                       src='/images/homePage/bayubramanta.png'
-                      width={widthW <= 768 ? '79%' : '100%'}
+                      width={widthW <= 768 ? '79%' : '96%'}
                       height='100%'
                       layout='responsive'
                       objectFit='cover'
@@ -1925,7 +1931,7 @@ export default function HomePage() {
                     <NextImage
                       className='hidden h-full w-full md:block'
                       src='/images/homePage/ichiro.png'
-                      width={widthW <= 768 ? '79%' : '100%'}
+                      width={widthW <= 768 ? '79%' : '96%'}
                       height='100%'
                       layout='responsive'
                       objectFit='cover'
@@ -2018,7 +2024,7 @@ export default function HomePage() {
                       </Typography>
                       <Typography
                         variant='p'
-                        className='ml-auto max-w-4xl pt-3 pb-6 xl:pt-4 xl:pb-10'
+                        className='ml-auto max-w-4xl pt-3 pb-[3.1rem] xl:pt-4 xl:pb-10'
                       >
                         Abinara adalah tim yang melakukan penelitian dan
                         kompetisi robot otonom berkaki dengan misi menyelamatkan
@@ -2038,7 +2044,7 @@ export default function HomePage() {
                     <NextImage
                       className='hidden h-full w-full md:block'
                       src='/images/homePage/abinara.png'
-                      width={widthW <= 768 ? '79%' : '100%'}
+                      width={widthW <= 768 ? '79%' : '96%'}
                       height='100%'
                       layout='responsive'
                       objectFit='cover'
