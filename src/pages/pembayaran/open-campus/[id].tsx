@@ -215,25 +215,17 @@ export default function PembayaranOpenCampusPage() {
                         <div className='mt-1 ml-4 text-bone-1000'>
                           <Typography>
                             <span className='font-medium'>
-                              BIMA SURYA SAMUDRA - 049734682
+                              Ita Dwi Septiani - 085745596388
                             </span>{' '}
-                            (BCA)
+                            (Dana, Ovo, Shopeepay)
                           </Typography>
                         </div>
                         <div className='mt-1 ml-4 text-bone-1000'>
                           <Typography>
                             <span className='font-medium'>
-                              DAFFA FAHREZI MUZAKKIR - 4619463
+                              Ita Dwi Septiani - 90360255960
                             </span>{' '}
-                            (MANDIRI)
-                          </Typography>
-                        </div>
-                        <div className='mt-1 ml-4 text-bone-1000'>
-                          <Typography>
-                            <span className='font-medium'>
-                              CHERISH GLOBAL ETNIC - 46821646
-                            </span>{' '}
-                            (BNI)
+                            (Bank BTPN Jenius)
                           </Typography>
                         </div>
                         <div className='mt-1 ml-4 text-bone-1000'>
@@ -241,7 +233,15 @@ export default function PembayaranOpenCampusPage() {
                             <span className='font-medium'>
                               Bagus Narendra - 3012200234
                             </span>{' '}
-                            (BNI)
+                            (Bank BNI)
+                          </Typography>
+                        </div>
+                        <div className='mt-1 ml-4 text-bone-1000'>
+                          <Typography>
+                            <span className='font-medium'>
+                              Ita Dwi Septiani - 124801006635505
+                            </span>{' '}
+                            (Bank BRI)
                           </Typography>
                         </div>
                       </div>
