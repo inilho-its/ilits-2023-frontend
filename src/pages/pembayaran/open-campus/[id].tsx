@@ -16,7 +16,6 @@ import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
 import { ApiReturn } from '@/types/api-return';
-import { HargaOpenCampus } from '@/types/open-campus';
 
 type ImageFile = {
   [0]: File;
@@ -33,6 +32,10 @@ type FormPembayaran = {
   id: string;
 };
 
+type HargaOpenCampus = {
+  harga: number;
+};
+
 export default function PembayaranOpenCampusPage() {
   const [isDaftar, setIsDaftar] = React.useState(false);
   const { id } = useRouter().query;
@@ -44,8 +47,7 @@ export default function PembayaranOpenCampusPage() {
     },
   });
   const { handleSubmit } = methods;
-
-  const url = 'https://inilho.its.ac.id/api/open-campus/harga';
+  const url = 'https://inilho.its.ac.id/api/open-campus/harga?id=' + id;
 
   const { data: queryData } = useQuery<ApiReturn<HargaOpenCampus>, Error>([
     url,
@@ -201,7 +203,7 @@ export default function PembayaranOpenCampusPage() {
                           />
                           {queryData ? (
                             <Typography variant='h5' className='font-bold'>
-                              Rp{queryData.data.current_batch.harga}
+                              Rp{queryData.data.harga}
                             </Typography>
                           ) : (
                             <Typography variant='h5' className='font-bold'>
