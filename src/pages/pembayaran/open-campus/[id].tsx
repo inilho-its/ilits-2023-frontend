@@ -11,6 +11,7 @@ import clsxm from '@/lib/clsxm';
 import Button from '@/components/buttons/Button';
 import DropzoneInput from '@/components/forms/DropzoneInput';
 import Layout from '@/components/layout/Layout';
+import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
@@ -34,6 +35,7 @@ type FormPembayaran = {
 
 type HargaOpenCampus = {
   harga: number;
+  current_batch?: number;
 };
 
 export default function PembayaranOpenCampusPage() {
@@ -180,92 +182,119 @@ export default function PembayaranOpenCampusPage() {
                 <div className='h-3 w-3 rounded-full bg-yellow-300 lg:h-5 lg:w-5'></div>
               </div>
               {!isDaftar ? (
-                <FormProvider {...methods}>
-                  <form onSubmit={handleSubmit(onSubmit)}>
+                <>
+                  {!queryData?.data.harga && queryData?.data.current_batch ? (
                     <div
                       className={clsxm(
                         'w-full min-w-[300px] items-center justify-center rounded-b-2xl border-x-4 border-b-4 border-bone-1000  bg-white p-10 sm:min-w-0 sm:max-w-2xl',
                         'flex flex-col items-center'
                       )}
                     >
-                      {/* Step Pendaftaran */}
                       <Typography variant='h5' className='font-bold'>
-                        Yuk, Selesaikan Pembayaranmu!
+                        Upsss... <br />
                       </Typography>
                       <div className='mt-8'>
                         <Typography className='text-bone-800'>
-                          Jumlah yang harus dibayar:
+                          Maaf, sepertinya waktu tunggu pembayaran kamu sudah
+                          habis
                         </Typography>
-                        <div className='flex items-center space-x-3'>
-                          <HiOutlineCash
-                            className='inline-block font-light text-green-500'
-                            size={36}
-                          />
-                          {queryData ? (
-                            <Typography variant='h5' className='font-bold'>
-                              Rp{queryData.data.harga}
-                            </Typography>
-                          ) : (
-                            <Typography variant='h5' className='font-bold'>
-                              Loading...
-                            </Typography>
-                          )}
-                        </div>
-                        <Typography className='mt-4 text-bone-800'>
-                          Pembayaran dapat dilakukan melalui rekening :
+                        <Typography className='text-bone-800'>
+                          Silahkan daftar kembali di :
                         </Typography>
-                        <div className='mt-1 ml-4 text-bone-1000'>
-                          <Typography>
-                            <span className='font-medium'>
-                              Ita Dwi Septiani - 085745596388
-                            </span>{' '}
-                            (Dana, Ovo, Shopeepay)
-                          </Typography>
-                        </div>
-                        <div className='mt-1 ml-4 text-bone-1000'>
-                          <Typography>
-                            <span className='font-medium'>
-                              Ita Dwi Septiani - 90360255960
-                            </span>{' '}
-                            (Bank BTPN Jenius)
-                          </Typography>
-                        </div>
-                        <div className='mt-1 ml-4 text-bone-1000'>
-                          <Typography>
-                            <span className='font-medium'>
-                              Bagus Narendra - 3012200234
-                            </span>{' '}
-                            (Bank BNI)
-                          </Typography>
-                        </div>
-                        <div className='mt-1 ml-4 text-bone-1000'>
-                          <Typography>
-                            <span className='font-medium'>
-                              Ita Dwi Septiani - 124801006635505
-                            </span>{' '}
-                            (Bank BRI)
-                          </Typography>
-                        </div>
+                        <ButtonLink href='/open-campus' className='mt-5'>
+                          Daftar Open Campus
+                        </ButtonLink>
                       </div>
-                      <div className='mt-8 w-11/12 md:w-3/4'>
-                        <DropzoneInput
-                          id='buktiPembayaran'
-                          label='Upload Bukti Pembayaran'
-                          validation={{
-                            required: 'Bukti Pembayaran harus diisi',
-                          }}
-                        />
-                      </div>
-                      <Button
-                        type='submit'
-                        variant='lightBlue'
-                        className='mt-7'
-                      >
-                        Submit Bukti Pembayaran
-                      </Button>
                     </div>
-                  </form>
-                </FormProvider>
+                  ) : (
+                    <FormProvider {...methods}>
+                      <form onSubmit={handleSubmit(onSubmit)}>
+                        <div
+                          className={clsxm(
+                            'w-full min-w-[300px] items-center justify-center rounded-b-2xl border-x-4 border-b-4 border-bone-1000  bg-white p-10 sm:min-w-0 sm:max-w-2xl',
+                            'flex flex-col items-center'
+                          )}
+                        >
+                          {/* Step Pendaftaran */}
+                          <Typography variant='h5' className='font-bold'>
+                            Yuk, Selesaikan Pembayaranmu!{' '}
+                          </Typography>
+                          <div className='mt-8'>
+                            <Typography className='text-bone-800'>
+                              Jumlah yang harus dibayar:
+                            </Typography>
+                            <div className='flex items-center space-x-3'>
+                              <HiOutlineCash
+                                className='inline-block font-light text-green-500'
+                                size={36}
+                              />
+                              {queryData ? (
+                                <Typography variant='h5' className='font-bold'>
+                                  Rp{queryData.data.harga}
+                                </Typography>
+                              ) : (
+                                <Typography variant='h5' className='font-bold'>
+                                  Loading...
+                                </Typography>
+                              )}
+                            </div>
+                            <Typography className='mt-4 text-bone-800'>
+                              Pembayaran dapat dilakukan melalui rekening :
+                            </Typography>
+                            <div className='mt-1 ml-4 text-bone-1000'>
+                              <Typography>
+                                <span className='font-medium'>
+                                  Ita Dwi Septiani - 085745596388
+                                </span>{' '}
+                                (Dana, Ovo, Shopeepay)
+                              </Typography>
+                            </div>
+                            <div className='mt-1 ml-4 text-bone-1000'>
+                              <Typography>
+                                <span className='font-medium'>
+                                  Ita Dwi Septiani - 90360255960
+                                </span>{' '}
+                                (Bank BTPN Jenius)
+                              </Typography>
+                            </div>
+                            <div className='mt-1 ml-4 text-bone-1000'>
+                              <Typography>
+                                <span className='font-medium'>
+                                  Bagus Narendra - 3012200234
+                                </span>{' '}
+                                (Bank BNI)
+                              </Typography>
+                            </div>
+                            <div className='mt-1 ml-4 text-bone-1000'>
+                              <Typography>
+                                <span className='font-medium'>
+                                  Ita Dwi Septiani - 124801006635505
+                                </span>{' '}
+                                (Bank BRI)
+                              </Typography>
+                            </div>
+                          </div>
+                          <div className='mt-8 w-11/12 md:w-3/4'>
+                            <DropzoneInput
+                              id='buktiPembayaran'
+                              label='Upload Bukti Pembayaran'
+                              validation={{
+                                required: 'Bukti Pembayaran harus diisi',
+                              }}
+                            />
+                          </div>
+                          <Button
+                            type='submit'
+                            variant='lightBlue'
+                            className='mt-7'
+                          >
+                            Submit Bukti Pembayaran
+                          </Button>
+                        </div>
+                      </form>
+                    </FormProvider>
+                  )}
+                </>
               ) : (
                 <div
                   className={clsxm(
