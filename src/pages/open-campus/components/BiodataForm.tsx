@@ -56,6 +56,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
           id='asal_sekolah'
           defaultValue={data?.asal_sekolah}
           placeholder='Asal Sekolah'
+          helperText='Contoh : SMA Negeri 1 Surabaya'
           validation={{
             required: { value: true, message: 'Wajib mengisi asal sekolah' },
           }}
