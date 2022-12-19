@@ -34,7 +34,7 @@ export const alumni = [
   },
   {
     name: 'Dwi Soetjipto',
-    job: '(ex.) Direktur PT. Telkom',
+    job: '(ex.) Direktur PT. Pertamina',
     src: '/images/homePage/alumni4.png',
   },
 ];
