@@ -172,7 +172,7 @@ export default function FakultasDepartemenForm({ setStep }: FakultasFormProps) {
         <Typography variant='body' className='text-center text-neutral-800'>
           Sebelum memilih harap membaca guidebook terlebih dahulu!{' '}
           <span className='text-neutral-900 underline transition duration-100 hover:text-orange-400'>
-            <PrimaryLink href='https://drive.google.com/file/d/1HufRuMmMmvJWR4NGfT5e-GSe0SsGgWXG/view'>
+            <PrimaryLink href='https://drive.google.com/file/d/1F3qzerr-T9BCJro8afBmtslw2EqEUu7G/view'>
               Unduh Guidebook
             </PrimaryLink>
           </span>
