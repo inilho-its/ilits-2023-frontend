@@ -70,13 +70,13 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
           }}
         />
         <DropzoneInput
-          label='Upload Serifikat Vaksin Dosis ke-3'
+          label='Upload Serifikat Vaksin Dosis ke-2'
           id='sertifikat_vaksin'
           helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
           validation={{
             required: {
               value: true,
-              message: 'Wajib mengupload bukti vaksinasi dosis ke-3',
+              message: 'Wajib mengupload bukti vaksinasi dosis ke-2',
             },
           }}
         />
