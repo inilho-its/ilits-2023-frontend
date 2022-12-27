@@ -22,6 +22,10 @@ const components = [
     name: 'Form',
     path: '/sandbox/form',
   },
+  {
+    name: 'Modal',
+    path: '/sandbox/modal',
+  },
 ];
 
 export default function SandboxPage() {
