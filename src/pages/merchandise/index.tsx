@@ -5,74 +5,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import Button from '@/components/buttons/Button';
 import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
-type MerchDataType = {
-  itemImage: string;
-  itemName: string;
-  itemPrice: string;
-};
-
-const MerchData = [
-  {
-    itemImage: 'item-1',
-    itemName: 'Future Engineer',
-    itemPrice: 'Rp. 55.000',
-  },
-  {
-    itemImage: 'item-2',
-    itemName: 'Future Engineer',
-    itemPrice: 'Rp. 55.000',
-  },
-  {
-    itemImage: 'item-3',
-    itemName: 'Future Engineer',
-    itemPrice: 'Rp. 55.000',
-  },
-  {
-    itemImage: 'item-4',
-    itemName: 'Future Engineer',
-    itemPrice: 'Rp. 55.000',
-  },
-  {
-    itemImage: 'item-5',
-    itemName: 'Future Engineer',
-    itemPrice: 'Rp. 55.000',
-  },
-];
-
-function MerchCard({ itemImage, itemName, itemPrice }: MerchDataType) {
-  return (
-    <div className='w-full rounded-2xl border-2 border-neutral-1000 lg:h-[462px] lg:max-w-[393px]'>
-      <div>
-        <NextImage
-          src={`/images/merchandisePage/${itemImage}.png`}
-          width='100%'
-          height='90%'
-          layout='responsive'
-          objectFit='contain'
-          imgClassName='rounded-t-2xl'
-          alt='item-1'
-        />
-      </div>
-      <div className='flex h-[11.3vh] items-center justify-between rounded-b-2xl border-t-2 border-neutral-1000 bg-white px-4'>
-        <div className='flex flex-col'>
-          <p className='text-xl font-light text-neutral-1000'>{itemName}</p>
-          <p className='mt-2 text-2xl font-bold text-neutral-1000'>
-            {itemPrice}
-          </p>
-        </div>
-        <ButtonLink href='/' variant='yellow'>
-          Detail
-        </ButtonLink>
-      </div>
-    </div>
-  );
-}
+import MerchData from '@/constant/merchData';
+import ItemModal from '@/pages/merchandise/components/ItemModal';
 
 export default function MerchandisePage() {
   const [ready, setReady] = React.useState(false);
@@ -470,9 +411,38 @@ export default function MerchandisePage() {
               <div className=' absolute -left-2 -bottom-4 -z-50 h-20 w-full max-w-[811px] rounded-2xl border-2 border-bone-1000 bg-black sm:-left-4 sm:h-32'></div>
             </div>
           </div>
-          <div className='mx-24 mt-24 grid grid-cols-3 gap-y-8'>
-            {MerchData.map((v, i) => (
-              <MerchCard key={`Merchandise-Card-Key-${i}`} {...v} />
+          <div className='mx-24 mt-24 flex flex-wrap justify-center gap-8'>
+            {MerchData.map((item, i) => (
+              <ItemModal key={i} data={item}>
+                {({ openModal }) => (
+                  <div className='w-full rounded-2xl border-2 border-neutral-1000 lg:h-[462px] lg:max-w-[393px]'>
+                    <div>
+                      <NextImage
+                        src={`/images/merchandisePage/${item.itemImage}.png`}
+                        width='100%'
+                        height='90%'
+                        layout='responsive'
+                        objectFit='contain'
+                        imgClassName='rounded-t-2xl'
+                        alt='item-1'
+                      />
+                    </div>
+                    <div className='flex h-[11.3vh] items-center justify-between rounded-b-2xl border-t-2 border-neutral-1000 bg-white px-4'>
+                      <div className='flex flex-col'>
+                        <p className='text-xl font-light text-neutral-1000'>
+                          {item.itemName}
+                        </p>
+                        <p className='mt-2 text-2xl font-bold text-neutral-1000'>
+                          {item.itemPrice}
+                        </p>
+                      </div>
+                      <Button variant='yellow' onClick={openModal}>
+                        Detail
+                      </Button>
+                    </div>
+                  </div>
+                )}
+              </ItemModal>
             ))}
           </div>
         </section>
