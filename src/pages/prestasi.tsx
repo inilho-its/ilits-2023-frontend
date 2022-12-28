@@ -221,7 +221,7 @@ export default function PrestasiPage() {
                 <div className='mr-4 h-4 w-4 rounded-full border-[1px] border-black bg-yellow-400'></div>
               </div>
             </div>
-            <div className='flex flex-col-reverse lg:flex-row lg:items-center lg:justify-evenly'>
+            <div className='mt-5 flex flex-col-reverse lg:flex-row lg:items-start lg:justify-evenly'>
               <div className='w-full border-black px-8 pt-4 pb-8'>
                 {/* ONLY SHOW ON DESKTOP */}
                 <Typography
@@ -234,22 +234,17 @@ export default function PrestasiPage() {
                   className='text-center font-primary font-normal text-[#393939] lg:text-left'
                   variant='caption'
                 >
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Veritatis unde eos, officiis qui consequatur eius sequi dolor
-                  deserunt quas sunt quis, pariatur facilis voluptates esse
-                  explicabo accusamus natus, repellendus maiores cum quibusdam
-                  minima quo optio aperiam nihil! Laudantium repudiandae totam,
-                  et quasi molestiae atque velit esse odit perspiciatis quis
-                  facilis repellat libero nam iste illum. Numquam, qui!
-                  Temporibus voluptas possimus ea quo nulla dignissimos labore,
-                  laudantium quasi tenetur odio porro doloremque veniam totam
-                  expedita! Dolorum similique error quasi eaque enim?
+                  Institut Teknologi Sepuluh Nopember (ITS) memiliki Akreditasi
+                  A pada BAN-PT. Lalu diikuti dengan 1 Prodi dengan Akreditasi
+                  ABET yaitu Departemen Teknik Sistem dan Industri. ITS juga
+                  memiliki 8 Prodi berakreditasi ASIIN dan 10 Prodi
+                  berakreditasi IABEE.
                 </Typography>
               </div>
-              <div className='flex w-full justify-center'>
-                <div className='mx-7 block w-10/12 rounded-lg border-2 border-black pb-0 md:w-9/12 lg:m-0 lg:w-full lg:rounded-none lg:border-0 lg:border-l-2 lg:p-0'>
+              <div className='flex w-full justify-center lg:-mt-5'>
+                <div className='mx-7 block w-10/12 rounded-lg pb-0 md:w-9/12 lg:m-0 lg:w-full lg:rounded-none lg:p-0'>
                   <NextImage
-                    src='/images/prestasi/Random-People.png'
+                    src='/images/prestasi/InfoUnik.png'
                     width='100%'
                     height='100%'
                     alt='people getting excited'
