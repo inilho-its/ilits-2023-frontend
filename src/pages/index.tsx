@@ -2152,7 +2152,7 @@ export default function HomePage() {
                 Sponsor dan Media Partner
               </Typography>
             </div>
-            <div className='flex flex-wrap justify-center gap-x-6 px-4 py-6 sm:px-24 md:px-52 xl:px-80 xl:py-10'>
+            <div className='mx-auto flex max-w-md flex-wrap justify-center gap-x-6 px-4 py-6 md:max-w-lg lg:max-w-2xl xl:max-w-5xl xl:py-10'>
               {companyLogo.map(({ src }, index) => (
                 <div key={index} className='w-24 md:w-36 lg:w-44 xl:w-60'>
                   <NextImage
