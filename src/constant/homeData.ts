@@ -64,13 +64,19 @@ export const beasiswa = [
 
 export const companyLogo = [
   {
-    src: '/images/homePage/companyLogo1.png',
+    src: '/images/homePage/logoPP.png',
   },
   {
-    src: '/images/homePage/companyLogo2.png',
+    src: '/images/homePage/logoATM.png',
   },
   {
-    src: '/images/homePage/companyLogo3.png',
+    src: '/images/homePage/logoYSH.png',
+  },
+  {
+    src: '/images/homePage/logoSDF.png',
+  },
+  {
+    src: '/images/homePage/logoPLN.png',
   },
 ];
 

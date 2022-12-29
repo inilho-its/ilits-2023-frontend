@@ -19,6 +19,7 @@ import {
   alumni,
   beasiswa,
   cardPrestasi,
+  companyLogo,
   fakultas,
   openCampus,
 } from '@/constant/homeData';
@@ -1806,6 +1807,8 @@ export default function HomePage() {
                         bergerak maju sejak 2018. Selain penelitian dan
                         pengembangan, kegiatan utama tim ini adalah berkompetisi
                         dalam kompetisi yang kompetitif
+                        <br />
+                        <br />
                       </Typography>
                       <ButtonLink
                         href='/coming-soon'
@@ -1913,9 +1916,9 @@ export default function HomePage() {
                       </Typography>
                       <Typography
                         variant='p'
-                        className='ml-auto max-w-4xl pt-3 pb-6 xl:pt-4 xl:pb-10'
+                        className='ml-auto max-w-4xl pt-3 pb-6 sm:pb-11 xl:pt-4 xl:pb-10'
                       >
-                        im ICHIRO adalah Tim Robot Robosoccer Humanoid dari
+                        Tim ICHIRO adalah Tim Robot Robosoccer Humanoid dari
                         Institut Teknologi Sepuluh Nopember (ITS). Tim ICHIRO
                         telah mengikuti kontes robot nasional sejak tahun 2010.
                         Hingga tahun ini, tim Ichiro aktif berpartisipasi dan
@@ -2028,7 +2031,7 @@ export default function HomePage() {
                       </Typography>
                       <Typography
                         variant='p'
-                        className='ml-auto max-w-4xl pt-3 pb-[3.1rem] xl:pt-4 xl:pb-10'
+                        className='ml-auto max-w-4xl pt-3 pb-[2.73rem] xl:pt-4 xl:pb-10'
                       >
                         Abinara adalah tim yang melakukan penelitian dan
                         kompetisi robot otonom berkaki dengan misi menyelamatkan
@@ -2120,7 +2123,9 @@ export default function HomePage() {
                     >
                       {name}
                     </Typography>
-                    <Typography className='text-center'>{job}</Typography>
+                    <Typography className='mx-auto w-24 text-center sm:w-auto'>
+                      {job}
+                    </Typography>
                   </div>
                 </div>
               ))}
@@ -2138,7 +2143,7 @@ export default function HomePage() {
           {/* Temporary Spacing to Footer */}
           <div className='py-10'></div>
           {/* Sponsor Commented */}
-          {/* <div>
+          <div>
             <div className='border-y-2 border-black bg-green-400'>
               <Typography
                 variant='h4'
@@ -2150,9 +2155,9 @@ export default function HomePage() {
                 Sponsor dan Media Partner
               </Typography>
             </div>
-            <div className='flex justify-between px-4 py-6 md:px-24 xl:py-10'>
+            <div className='flex flex-wrap justify-center gap-x-6 px-4 py-6 sm:px-24 md:px-52 xl:px-80 xl:py-10'>
               {companyLogo.map(({ src }, index) => (
-                <div key={index} className='w-24 md:w-36 lg:w-48'>
+                <div key={index} className='w-24 md:w-36 lg:w-44 xl:w-60'>
                   <NextImage
                     src={src}
                     alt='Sponsor'
@@ -2164,7 +2169,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </div> */}
+          </div>
         </section>
       </main>
     </Layout>
