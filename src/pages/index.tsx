@@ -2116,7 +2116,7 @@ export default function HomePage() {
                       objectFit='cover'
                     />
                   </div>
-                  <div className='rounded-b-xl border-t-2 border-black bg-white py-2 px-4 md:px-4 xl:py-4 xl:px-12'>
+                  <div className='h-full rounded-b-xl border-t-2 border-black bg-white py-2 px-4 md:px-4 xl:py-4 xl:px-12'>
                     <Typography
                       variant='title'
                       className='text-center text-[16px] font-semibold leading-[24px] md:text-[20px] md:leading-[24px]'
@@ -2140,15 +2140,12 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </div>
-          {/* Temporary Spacing to Footer */}
-          <div className='py-10'></div>
-          {/* Sponsor Commented */}
           <div>
             <div className='border-y-2 border-black bg-green-400'>
               <Typography
                 variant='h4'
                 className={clsxm(
-                  'md:stroke py-6 text-center text-[24px] font-bold leading-[32px] text-white',
+                  'md:stroke stroke-sm py-6 text-center text-[24px] font-bold leading-[32px] text-white',
                   'md:py-4 md:text-[32px] md:leading-[48px] lg:py-6 lg:text-[48px] lg:leading-[64px] xl:py-8'
                 )}
               >
