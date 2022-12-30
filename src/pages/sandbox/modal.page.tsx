@@ -32,31 +32,37 @@ export default function ModalPage() {
         <section className=''>
           <div className='layout min-h-screen py-20'>
             <div className='flex flex-wrap gap-3'>
-              {merchendasing.map((item, index) => (
-                <ExampleModal key={index} data={item}>
-                  {({ openModal }) => (
-                    <div className='max-w-[300px]'>
-                      <div>
-                        <NextImage
-                          src='/images/merchandisePage/item-1.png'
-                          alt='alt'
-                          width='100%'
-                          height='100%'
-                        />
-                      </div>
-                      <div className=''>
-                        <div>
-                          <Typography variant='b2' as='p'>
-                            {' '}
-                            {item.name}{' '}
-                          </Typography>
+              <ExampleModal>
+                {({ openModal }) => (
+                  <>
+                    {merchendasing.map((item) => (
+                      <>
+                        <div className='max-w-[300px]'>
+                          <div>
+                            <NextImage
+                              src='/images/merchandisePage/item-1.png'
+                              alt='alt'
+                              width='100%'
+                              height='100%'
+                            />
+                          </div>
+                          <div className=''>
+                            <div>
+                              <Typography variant='b2' as='p'>
+                                {' '}
+                                {item.name}{' '}
+                              </Typography>
+                            </div>
+                            <Button onClick={() => openModal(item)}>
+                              Open Modal
+                            </Button>
+                          </div>
                         </div>
-                        <Button onClick={openModal}>Open Modal</Button>
-                      </div>
-                    </div>
-                  )}
-                </ExampleModal>
-              ))}
+                      </>
+                    ))}
+                  </>
+                )}
+              </ExampleModal>
             </div>
           </div>
         </section>
