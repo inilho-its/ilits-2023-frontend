@@ -3,12 +3,12 @@ import * as React from 'react';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import CommingsoonPage from '@/pages/coming-soon';
+import CommingsoonPage from '@/pages/coming-soon.page';
 
-export default function PrestasiPage() {
+export default function TimPage() {
   return (
     <Layout>
-      <Seo templateTitle='Prestasi' />
+      <Seo templateTitle='Tim' />
       <main>
         <CommingsoonPage />
       </main>
