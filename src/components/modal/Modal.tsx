@@ -74,7 +74,7 @@ export function ModalRoot({
                 modalContainerClassName
               )}
             >
-              <div className='absolute top-0 right-0 mt-5 mr-4 sm:mt-6 sm:mr-6 '>
+              <div className='absolute top-2 right-0 mt-5 mr-4 sm:mt-6 sm:mr-6 '>
                 <button
                   type='button'
                   className='focus:ring-primary-500 rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2'
