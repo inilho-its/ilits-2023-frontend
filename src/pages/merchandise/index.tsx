@@ -190,16 +190,19 @@ export default function MerchandisePage() {
                           From <span className='line-through'>Rp295.000</span>
                         </p>
                         <p className='text-2xl font-bold'>
-                          Now Just Rp275.000!
+                          Now Just{' '}
+                          <span className='text-red-500'>Rp275.000!</span>
                         </p>
                         <ul className='mt-4 ml-4 grid list-disc grid-cols-2'>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
+                          <li className='text-sm font-normal'>T-SHIRT</li>
+                          <li className='text-sm font-normal'>GELANG</li>
+                          <li className='text-sm font-normal'>TOTE BAG</li>
+                          <li className='text-sm font-normal'>STICKER</li>
+                          <li className='text-sm font-normal'>TOPI</li>
+                          <li className='text-sm font-normal'>KIPAS</li>
+                          <li className='text-sm font-normal'>NOTEBOOK</li>
+                          <li className='text-sm font-normal'>LANYARD</li>
+                          <li className='text-sm font-normal'>KEYCHAIN</li>
                         </ul>
                         <ButtonLink
                           variant='yellow'
@@ -226,7 +229,7 @@ export default function MerchandisePage() {
                       <div className='absolute inset-0 -left-24 h-[1000px] w-80 -translate-y-20 rotate-12 border-2 border-neutral-1000 bg-bone-500'></div>
                       <div className='w-1/2'>
                         <NextImage
-                          src='/images/merchandisePage/bundle-1.png'
+                          src='/images/merchandisePage/bundle-2.png'
                           width='100%'
                           height='80%'
                           layout='responsive'
@@ -236,19 +239,18 @@ export default function MerchandisePage() {
                       </div>
                       <div className='relative flex w-1/2 flex-col pl-14'>
                         <p className='text-lg font-medium'>
-                          From <span className='line-through'>Rp295.000</span>
+                          From <span className='line-through'>Rp230.000</span>
                         </p>
                         <p className='text-2xl font-bold'>
-                          Now Just Rp275.000!
+                          Now Just{' '}
+                          <span className='text-red-500'>Rp210.000!</span>
                         </p>
                         <ul className='mt-4 ml-4 grid list-disc grid-cols-2'>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
+                          <li className='text-sm font-normal'>T-SHIRT</li>
+                          <li className='text-sm font-normal'>GELANG</li>
+                          <li className='text-sm font-normal'>STICKER</li>
+                          <li className='text-sm font-normal'>TOPI</li>
+                          <li className='text-sm font-normal'>LANYARD</li>
                         </ul>
                         <ButtonLink
                           variant='yellow'
@@ -275,7 +277,7 @@ export default function MerchandisePage() {
                       <div className='absolute inset-0 -left-24 h-[1000px] w-80 -translate-y-20 rotate-12 border-2 border-neutral-1000 bg-bone-500'></div>
                       <div className='w-1/2'>
                         <NextImage
-                          src='/images/merchandisePage/bundle-1.png'
+                          src='/images/merchandisePage/bundle-3.png'
                           width='100%'
                           height='80%'
                           layout='responsive'
@@ -285,19 +287,17 @@ export default function MerchandisePage() {
                       </div>
                       <div className='relative flex w-1/2 flex-col pl-14'>
                         <p className='text-lg font-medium'>
-                          From <span className='line-through'>Rp295.000</span>
+                          From <span className='line-through'>Rp125.000</span>
                         </p>
                         <p className='text-2xl font-bold'>
-                          Now Just Rp275.000!
+                          Now Just{' '}
+                          <span className='text-red-500'>Rp115.000!</span>
                         </p>
-                        <ul className='mt-4 ml-4 grid list-disc grid-cols-2'>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
+                        <ul className='mt-4 ml-4 grid list-disc grid-cols-1'>
+                          <li className='text-sm font-normal'>TOTE BAG</li>
+                          <li className='text-sm font-normal'>NOTEBOOK</li>
+                          <li className='text-sm font-normal'>STICKER</li>
+                          <li className='text-sm font-normal'>LANYARD</li>
                         </ul>
                         <ButtonLink
                           variant='yellow'
@@ -324,7 +324,7 @@ export default function MerchandisePage() {
                       <div className='absolute inset-0 -left-24 h-[1000px] w-80 -translate-y-20 rotate-12 border-2 border-neutral-1000 bg-bone-500'></div>
                       <div className='w-1/2'>
                         <NextImage
-                          src='/images/merchandisePage/bundle-1.png'
+                          src='/images/merchandisePage/bundle-4.png'
                           width='100%'
                           height='80%'
                           layout='responsive'
@@ -334,24 +334,23 @@ export default function MerchandisePage() {
                       </div>
                       <div className='relative flex w-1/2 flex-col pl-14'>
                         <p className='text-lg font-medium'>
-                          From <span className='line-through'>Rp295.000</span>
+                          From <span className='line-through'>Rp70.000</span>
                         </p>
                         <p className='text-2xl font-bold'>
-                          Now Just Rp275.000!
+                          Now Just{' '}
+                          <span className='text-red-500'>Rp60.000!</span>
                         </p>
-                        <ul className='mt-4 ml-4 grid list-disc grid-cols-2'>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
-                          <li className='text-sm font-normal'>item1</li>
+                        <ul className='mt-4 ml-4 grid list-disc grid-cols-1'>
+                          <li className='text-sm font-normal'>GELANG</li>
+                          <li className='text-sm font-normal'>STICKER</li>
+                          <li className='text-sm font-normal'>KEYCHAIN</li>
+                          <li className='text-sm font-normal'>KIPAS</li>
+                          <li className='text-sm font-normal'>LANYARD</li>
                         </ul>
                         <ButtonLink
                           variant='yellow'
                           href='/'
-                          className='mt-4 flex w-2/3 justify-center'
+                          className='mt-4 flex w-2/3 justify-center text-base font-medium'
                         >
                           Order Now!
                         </ButtonLink>
@@ -415,10 +414,10 @@ export default function MerchandisePage() {
             {MerchData.map((item, i) => (
               <ItemModal key={i} data={item}>
                 {({ openModal }) => (
-                  <div className='w-full rounded-2xl border-2 border-neutral-1000 lg:h-[462px] lg:max-w-[393px]'>
-                    <div>
+                  <div className='flex flex-col rounded-2xl border-2 border-neutral-1000'>
+                    <div className='h-[353px] w-[392px]'>
                       <NextImage
-                        src={`/images/merchandisePage/${item.itemImage}.png`}
+                        src={item.itemImage}
                         width='100%'
                         height='90%'
                         layout='responsive'
@@ -427,7 +426,7 @@ export default function MerchandisePage() {
                         alt='item-1'
                       />
                     </div>
-                    <div className='flex h-[11.3vh] items-center justify-between rounded-b-2xl border-t-2 border-neutral-1000 bg-white px-4'>
+                    <div className='flex items-center justify-between rounded-b-2xl border-t-2 border-neutral-1000 bg-white px-4 lg:h-[104px]'>
                       <div className='flex flex-col'>
                         <p className='text-xl font-light text-neutral-1000'>
                           {item.itemName}
@@ -436,7 +435,11 @@ export default function MerchandisePage() {
                           {item.itemPrice}
                         </p>
                       </div>
-                      <Button variant='yellow' onClick={openModal}>
+                      <Button
+                        variant='yellow'
+                        onClick={openModal}
+                        className='text-base font-medium'
+                      >
                         Detail
                       </Button>
                     </div>

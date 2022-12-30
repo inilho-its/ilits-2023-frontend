@@ -1,4 +1,7 @@
+import { StaticImageData } from 'next/image';
 import React from 'react';
+
+import clsxm from '@/lib/clsxm';
 
 import ButtonLink from '@/components/links/ButtonLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -11,8 +14,8 @@ type ModalReturnType = {
 
 type ItemDetail = {
   imageId: number;
-  imagePreview: string;
-  imageOriginal: string;
+  imagePreview: string | StaticImageData;
+  imageOriginal: string | StaticImageData;
 };
 
 type MerchDataType = {
@@ -20,7 +23,9 @@ type MerchDataType = {
   itemImage: string;
   itemName: string;
   itemPrice: string;
-  itemSize: string;
+  itemSize?: string;
+  itemLink: string;
+  itemOngkir: string;
   isSub: boolean;
   itemDesc: string[];
   itemSubImage: ItemDetail[];
@@ -44,34 +49,46 @@ export default function ItemModal({
       {children(modalReturn)}
       <Modal open={open} setOpen={setOpen}>
         <Modal.Body>
-          <div className='flex w-full flex-row rounded-2xl border-2 border-neutral-1000 bg-white lg:h-[661px] lg:max-w-5xl'>
-            <div className='flex w-2/3 flex-col'>
+          <div className='flex h-[650px] w-full max-w-5xl flex-row overflow-hidden rounded-2xl border-2 border-neutral-1000 bg-white'>
+            <div className={clsxm('flex w-2/3 flex-col')}>
               {data.itemSubImage
                 .filter((item) => item.imageId === id)
                 .map((item, i) => (
-                  <div className='w-full border-2 border-neutral-1000' key={i}>
+                  <div className='w-full' key={i}>
                     <NextImage
-                      src={`/images/merchandisePage/${item.imageOriginal}.png`}
+                      src={item.imageOriginal}
                       width='100%'
-                      height='90%'
+                      height={data.isSub ? '77%' : '95%'}
                       layout='responsive'
+                      imgClassName='rounded-l-2xl'
                       objectFit='contain'
                       alt='item-1'
                     />
                   </div>
                 ))}
-              <div className='flex flex-row'>
+              <div
+                className={clsxm(
+                  'flex flex-row',
+                  data.isSub && 'border-t-2 border-neutral-1000'
+                )}
+              >
                 {data.isSub &&
-                  data.itemSubImage?.map((item, i) => (
+                  data.itemSubImage.map((item, i) => (
                     <div
-                      className='w-24 cursor-pointer border-2 border-neutral-1000'
+                      className={clsxm(
+                        'w-full cursor-pointer bg-[#fdfdfd]',
+                        item.imageId >= data.itemSubImage.length
+                          ? ''
+                          : 'border-r-2 border-neutral-1000',
+                        item.imageId != id ? 'brightness-75' : ''
+                      )}
                       key={i}
                       onClick={() => setId(item.imageId)}
                     >
                       <NextImage
-                        src={`/images/merchandisePage/${item.imagePreview}.png`}
+                        src={item.imagePreview}
                         width='100%'
-                        height='90%'
+                        height='54%'
                         layout='responsive'
                         objectFit='contain'
                         alt='item-1'
@@ -80,30 +97,40 @@ export default function ItemModal({
                   ))}
               </div>
             </div>
-            <div className='mx-2 my-4 flex w-1/3 flex-col justify-between'>
-              <div>
-                <h2>{data.itemId}</h2>
-                <h1>"{data.itemName}"</h1>
-                <ul className='list-disc'>
+            <div className='flex w-1/3 flex-col justify-between px-4 py-4'>
+              <div className='space-y-2'>
+                <h2 className='text-xl font-normal text-neutral-600'>
+                  {data.itemId}
+                </h2>
+                <h1 className='text-2xl font-semibold'>"{data.itemName}"</h1>
+                <ul className='ml-6 list-disc'>
                   {data.itemDesc.map((desc, i) => (
-                    <li key={i}>{desc}</li>
+                    <li key={i} className='text-base font-normal'>
+                      {desc}
+                    </li>
                   ))}
                 </ul>
-                <p>Ukuran</p>
-                <p>{data.itemSize}</p>
+                {data?.itemSize && (
+                  <div>
+                    <p>Ukuran</p>
+                    <p>{data.itemSize}</p>
+                  </div>
+                )}
               </div>
               <div className='flex flex-col space-y-4'>
-                <h3>{data.itemPrice}</h3>
+                <h3 className='fonr-bold text-[32px] leading-[48px]'>
+                  {data.itemPrice}
+                </h3>
                 <ButtonLink
-                  href='/'
+                  href={data.itemLink}
                   variant='yellow'
-                  className='flex justify-center'
+                  className='flex justify-center text-base font-medium'
                 >
                   Order Now!
                 </ButtonLink>
                 <UnstyledLink
-                  href='#'
-                  className='flex justify-center underline'
+                  href={data.itemOngkir}
+                  className='flex justify-center text-base font-medium underline'
                 >
                   Mau Free Ongkir?
                 </UnstyledLink>
