@@ -13,9 +13,9 @@ const links = [
   { href: '/eventual', label: 'Eventual' },
   { href: '/coming-soon', label: 'Fakultas' },
   { href: '/coming-soon', label: 'Prestasi' },
-  { href: '/coming-soon', label: 'Fasilitas' },
   { href: '/coming-soon', label: 'Alumni' },
   { href: '/coming-soon', label: 'Beasiswa' },
+  { href: '/merchandise', label: 'Merchandise' },
 ];
 
 export default function Navbar() {
