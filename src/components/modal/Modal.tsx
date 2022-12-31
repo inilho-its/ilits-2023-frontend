@@ -30,7 +30,7 @@ export function ModalRoot({
     <Transition.Root show={open} as={React.Fragment}>
       <Dialog
         as='div'
-        className={clsxm('fixed inset-0 z-40 overflow-y-auto', className)}
+        className={clsxm('fixed inset-0 z-[100] overflow-y-auto', className)}
         {...rest}
         onClose={setOpen}
         initialFocus={containerRef}
@@ -69,12 +69,12 @@ export function ModalRoot({
           >
             <div
               className={clsxm(
-                'align inline-block transform rounded-xl bg-none text-left shadow-xl transition-all sm:align-middle',
-                'sm:w-11/12 md:max-w-2xl lg:max-w-5xl',
+                'inline-block transform rounded-xl bg-none text-left shadow-xl transition-all sm:align-middle',
+                'w-full max-w-md sm:max-w-xl xl:max-w-5xl',
                 modalContainerClassName
               )}
             >
-              <div className='absolute top-2 right-0 mt-5 mr-4 sm:mt-6 sm:mr-6 '>
+              <div className='absolute top-8 right-4 z-10'>
                 <button
                   type='button'
                   className='focus:ring-primary-500 rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2'
