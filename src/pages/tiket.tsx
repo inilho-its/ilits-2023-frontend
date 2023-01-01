@@ -1,16 +1,15 @@
 import * as React from 'react';
-
 import { FormProvider, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
-import NextImage from '@/components/NextImage';
-import Layout from '@/components/layout/Layout';
-import Seo from '@/components/Seo';
-import Typography from '@/components/typography/Typography';
-import SearchInput from '@/components/forms/SearchInput';
 import apiMock from '@/lib/apiMock';
 import useSearchInputHooks from '@/hooks/useSearchInput';
 
+import SearchInput from '@/components/forms/SearchInput';
+import Layout from '@/components/layout/Layout';
+import NextImage from '@/components/NextImage';
+import Seo from '@/components/Seo';
+import Typography from '@/components/typography/Typography';
 
 type ApiResponse = {
   status: boolean;
@@ -53,7 +52,7 @@ export default function MyTiket() {
         }),
       {
         loading: 'Loading',
-        success: 'Ticket status successfuly collected',
+        success: 'Ticket information successfuly collected',
         error: (err) => (
           <p>
             {err.response
@@ -86,33 +85,39 @@ export default function MyTiket() {
             layout='responsive'
             alt=''
           />
-          <div className='absolute flex items-center pt-20 pl-8 sm:pl-10 sm:pt-11 lg:pl-32'>
-            <div className='w-40 lg:w-52 '>
+          <div className='absolute flex w-full items-center justify-center pt-16 sm:justify-start sm:pt-20 sm:pl-20 md:pt-16 md:pl-20 lg:pl-24 lg:pt-8'>
+            <NextImage
+              className='w-[20%]'
+              src='/images/ilits-logo.png'
+              width='100%'
+              height='63%'
+              layout='responsive'
+              alt=''
+            />
+            <Typography
+              variant='h6'
+              className='text-base font-semibold sm:text-xl md:text-[24px] lg:pl-10'
+            >
+              Status Verifikasi Welcome Forda
+            </Typography>
+          </div>
+
+          <div className='flex min-h-screen w-full items-center justify-center px-5 md:py-56 lg:py-64'>
+            <div className='relative'>
               <NextImage
-                src='/images/ilits-logo.png'
-                width='100%'
-                height='63%'
+                className='absolute -right-2 -bottom-5 w-[15%] sm:-bottom-12 sm:-right-10 lg:w-[15%]'
+                src='/images/tiket/magnifier.png'
+                width='85%'
+                height='100%'
                 layout='responsive'
                 alt=''
               />
-            </div>
-            <div>
-              <Typography
-                variant='h6'
-                className='text-lg font-semibold sm:text-xl md:text-[24px] lg:pl-10'
-              >
-                Status Verifikasi Welcome Forda
-              </Typography>
-            </div>
-          </div>
-          <div className='z-50 flex min-h-screen w-full items-center justify-center md:py-56 px-5 lg:py-64'>
-            <div className='overflow-hidden rounded-2xl '>
-              <div className='flex h-9 md:h-12 w-full items-center justify-end gap-x-3 bg-dark pr-5 md:pr-8'>
-                <div className='w-3 h-3 md:h-4 md:w-4 rounded-full bg-green-300'></div>
-                <div className='w-3 h-3 md:h-4 md:w-4 rounded-full bg-red-300'></div>
-                <div className='w-3 h-3 md:h-4 md:w-4 rounded-full bg-yellow-300'></div>
+              <div className='flex h-9 w-full items-center justify-end gap-x-3 rounded-t-2xl bg-dark pr-5 md:h-12 md:pr-8'>
+                <div className='h-3 w-3 rounded-full bg-green-300 md:h-4 md:w-4'></div>
+                <div className='h-3 w-3 rounded-full bg-red-300 md:h-4 md:w-4'></div>
+                <div className='h-3 w-3 rounded-full bg-yellow-300 md:h-4 md:w-4'></div>
               </div>
-              <div className='rounded-b-2xl border-4 border-dark bg-white px-5 py-5 sm:p-10 md:p-16 lg:px-32 lg:py-16'>
+              <div className='rounded-b-2xl border-4 border-dark bg-white px-6 py-8 sm:p-10 md:p-16 lg:px-32 lg:py-16'>
                 <Typography
                   variant='h4'
                   className='stroke max-w-xl pb-4 text-2xl font-bold text-red-300 sm:text-3xl md:text-4xl lg:text-5xl'
@@ -132,36 +137,67 @@ export default function MyTiket() {
                           value: true,
                           message: 'Wajib mengisi nomor pendaftaran',
                         },
+                        pattern: {
+                          value:
+                            /(^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})/,
+                          message: 'Nomor pendaftaran tidak valid',
+                        },
                       }}
                     />
                   </form>
                 </FormProvider>
                 {nomor_peserta.length != 0 && (
                   <div className='pt-5'>
-                    <Typography className='pb-4 font-semibold'>
+                    <Typography
+                      variant='body'
+                      className='pb-4 text-sm font-semibold sm:text-[16px]'
+                    >
                       Nomor Peserta & Password :
                     </Typography>
                     <div className='flex flex-col gap-y-2'>
                       {nomor_peserta.map(
-                        ({ nomerPeserta, password }, index=3) => (
+                        ({ nomerPeserta, password }, index = 3) => (
                           <div className='w-full' key={index}>
-                            <div className='flex sm:flex-row flex-col gap-2 justify-between rounded-md border-2 p-3 sm:p-4 md:px-7 md:py-4'>
-                              <div>
-                                <Typography variant='' className='font-bold'>
-                                  Nomor Peserta :
+                            <div className='flex justify-between gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
+                              {nomerPeserta && password != '' ? (
+                                <>
+                                  <div>
+                                    <Typography
+                                      variant='body'
+                                      className='text-sm font-bold sm:text-[16px]'
+                                    >
+                                      Nomor Peserta :
+                                    </Typography>
+                                    <Typography
+                                      variant='body'
+                                      className='text-sm font-semibold sm:text-[16px]'
+                                    >
+                                      {nomerPeserta}
+                                    </Typography>
+                                  </div>
+                                  <div className=' pr-4 md:pr-10'>
+                                    <Typography
+                                      variant='body'
+                                      className='text-sm font-bold sm:text-[16px]'
+                                    >
+                                      Password :
+                                    </Typography>
+                                    <Typography
+                                      variant='body'
+                                      className='text-sm font-semibold sm:text-[16px]'
+                                    >
+                                      {password}
+                                    </Typography>
+                                  </div>
+                                </>
+                              ) : (
+                                <Typography
+                                  variant='body'
+                                  className='text-sm font-semibold sm:text-[16px]'
+                                >
+                                  Coba beberapa saat lagi...
                                 </Typography>
-                                <Typography className='font-semibold'>
-                                  {nomerPeserta}
-                                </Typography>
-                              </div>
-                              <div className=' pr-4 md:pr-10'>
-                                <Typography className='font-bold'>
-                                  Password :
-                                </Typography>
-                                <Typography className='font-semibold'>
-                                  {password}
-                                </Typography>
-                              </div>
+                              )}
                             </div>
                           </div>
                         )

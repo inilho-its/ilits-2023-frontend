@@ -5,7 +5,7 @@ export type SearchInput = {
   text: string;
   status: boolean;
   disable: boolean;
-  isVerified: (status: boolean, text:string) => void;
+  isVerified: (status: boolean, text: string) => void;
   defaultState: () => void;
 };
 
