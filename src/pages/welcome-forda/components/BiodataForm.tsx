@@ -1,5 +1,4 @@
-// import * as React from 'react';
-
+import * as React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from '@/components/buttons/Button';
@@ -16,36 +15,12 @@ type BiodataFormProps = {
 
 export default function BiodataForm({ setStep }: BiodataFormProps) {
   //#region  //*=========== Store ===========
-  // const defaultPeserta = useFordaStore.usePesertaData();
+  const defaultPeserta = useFordaStore.usePesertaData();
   const setPesertaData = useFordaStore.useSetPesertaData();
-  //#endregion  //*======== Store ===========
-
-  /**
-   * Task
-   * nilai dari defaultPeserta
-   * {[
-   *  {nama, jenis_tryout}
-   *  {nama, jenis_tryout}
-   * ]}
-   *
-   * Nilai yang diharpakan
-   * [
-   *  {nama, jenis_tryout}
-   *  {nama, jenis_tryout}
-   * ]
-   *
-   * Nilai awal
-   * {}
-   */
 
   const methods = useForm<BiodataFormState>({
     defaultValues: {
-      peserta: [
-        {
-          jenis_tryout: '1',
-          nama: 'Test',
-        },
-      ],
+      peserta: Object.entries(defaultPeserta).map(([, value]) => value),
     },
   });
 
@@ -56,8 +31,6 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
     setPesertaData(data.peserta);
     setStep(2);
   };
-
-  //#endregion  //*======== Build id Form ===========
 
   return (
     <FormProvider {...methods}>
