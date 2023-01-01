@@ -1,64 +1,85 @@
 // import * as React from 'react';
 
+import { useQuery } from '@tanstack/react-query';
 import { FormProvider, useForm } from 'react-hook-form';
 
+import { mockQuery } from '@/lib/apiMock';
+
 import Button from '@/components/buttons/Button';
-import Input from '@/components/forms/Input';
 import SelectInput from '@/components/forms/SelectInput';
 
-import useOpenCampusStore from '@/store/useOpenCampusStore';
+import useFordaStore, { FormDataType } from '@/store/useFordaStore';
 
-type BiodataFormState = {
-  name: string;
-  asal_sekolah: string;
-  asal_kota: string;
-  no_hp: string;
-  email: string;
-  jenis_tryout: string;
+import { ApiReturn } from '@/types/api-return';
+
+type FordaMock = {
+  id: string;
+  nama_forda: string;
+  harga: number;
 };
 
-type BiodataFormProps = {
+type FordaFormPageProps = {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 };
 
-export default function BiodataForm({ setStep }: BiodataFormProps) {
-  const methods = useForm<BiodataFormState>();
+export default function FordaFormPage({ setStep }: FordaFormPageProps) {
+  const formData = useFordaStore.useFormData();
+  const methods = useForm<FormDataType>({
+    defaultValues: formData,
+  });
+  const setFormData = useFordaStore.useSetFormData();
+
   const { handleSubmit } = methods;
 
   // Store
-  const upsert = useOpenCampusStore.useUpsert();
-  const data = useOpenCampusStore.useFormData();
 
-  const onSubmit = (data: BiodataFormState) => {
-    upsert(data);
+  //#region  //*=========== Fetch Harga  ===========
+  const { data: queryData } = useQuery<ApiReturn<FordaMock[]>, Error>([
+    '/forda',
+    mockQuery,
+  ]);
+  //#endregion  //*======== Fetch Harga  ===========
+
+  const onSubmit = (data: FormDataType) => {
+    setFormData(data);
     setStep(1);
   };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-5'>
-        <Input
+        <SelectInput
           required={true}
           label='Pilih Forum Daerah'
           id='forda'
-          defaultValue={data?.nama}
           placeholder='Masukkan Forum Daerah Anda'
           validation={{
             required: { value: true, message: 'Wajib mengisi nama' },
           }}
-        />
+        >
+          <option>Pilih Forum Daerah</option>
+          {queryData?.data.map((item) => (
+            <option
+              key={item.id}
+              value={item.id}
+              selected={formData.forda_id == item.id ? true : false}
+            >
+              {item.nama_forda}
+            </option>
+          ))}
+        </SelectInput>
         <SelectInput
-          id='jumlah-tiket'
+          id='jumlah_tiket'
           label='Pilih Jumlah Tiket'
           validation={{ required: 'Wajib memilih jumlah tiket' }}
           placeholder='Masukkan Jumlah Tiket Anda'
         >
+          {/* <option value='1'>Pilih Jumlah Tiket</option> */}
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
           <option value='4'>4</option>
           <option value='5'>5</option>
-          <option value='6'>6</option>
         </SelectInput>
         <div className='flex justify-center'>
           <Button

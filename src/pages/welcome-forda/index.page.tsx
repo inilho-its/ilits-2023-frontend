@@ -15,6 +15,7 @@ import KonfirmasiForm from '@/pages/welcome-forda/components/KonfirmasiForm';
 
 export default function DaftarOpenCampusPage() {
   const [step, setStep] = React.useState(0);
+
   return (
     <Layout withFooter={false} withNavbar={false}>
       <Seo templateTitle='Daftar Open Campus' />
