@@ -5,7 +5,7 @@ export type SearchInput = {
   text: string;
   status: boolean;
   disable: boolean;
-  isVerified: (status: boolean, text:string) => void;
+  isVerified: (status: boolean, text: string) => void;
   defaultState: () => void;
 };
 
@@ -26,12 +26,12 @@ const useSearchInputBase = create<SearchInput>((set, get) => ({
       set({
         status: false,
       });
-      setTimeout(() => set({ text: text }), 235);
+      setTimeout(() => set({ text: text }), 250);
     } else {
       set({
         status: true,
       });
-      setTimeout(() => set({ text: text }), 230);
+      setTimeout(() => set({ text: text }), 305);
     }
     setTimeout(() => get().defaultState(), 3000);
   },

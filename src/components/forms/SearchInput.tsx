@@ -1,9 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import {
-  RegisterOptions,
-  useFormContext,
-} from 'react-hook-form';
+import { RegisterOptions, useFormContext } from 'react-hook-form';
 import { IconType } from 'react-icons';
 import { HiExclamationCircle } from 'react-icons/hi';
 
@@ -61,7 +58,7 @@ export default function SearchInput({
   helperText,
   labelType = 'col',
   id,
-  
+
   type = 'text',
   readOnly = false,
   hideError = false,
@@ -137,11 +134,11 @@ export default function SearchInput({
               <div
                 className={clsxm(
                   rightTextClassName,
-                  'w-16 rounded-r-xl border border-[#D1D5DC] px-3 md:py-2 py-[10px] text-[#687083] transition-all duration-500',
+                  'w-16 rounded-r-xl border border-[#D1D5DC] px-3 py-[10px] text-[#687083] transition-all duration-500 md:py-2',
                   !status && disable
                     ? 'w-52 bg-warning-main text-neutral-50'
                     : status && disable
-                    ? 'bg-green-300 text-neutral-50 w-32'
+                    ? 'w-52 bg-green-300 text-neutral-50'
                     : 'bg-gray-50'
                 )}
               >
