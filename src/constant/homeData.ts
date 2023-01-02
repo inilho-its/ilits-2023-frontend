@@ -42,22 +42,22 @@ export const alumni = [
 export const beasiswa = [
   {
     src: '/images/homePage/beasiswabi.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa Bank Indonesia',
   },
   {
     src: '/images/homePage/beasiswadik.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa Unggulan',
   },
   {
     src: '/images/homePage/beasiswakse.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa KSE',
   },
   {
     src: '/images/homePage/beasiswabca.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa BCA',
   },
 ];
