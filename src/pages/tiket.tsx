@@ -34,11 +34,11 @@ type nomor_peserta = {
   password: string;
 };
 
-function filterDataPeserta(dataPeserta: nomor_peserta[]) {
+function filterDataPeserta(dataPeserta: nomor_peserta[], status: string) {
   const filteredArr: nomor_peserta[] = dataPeserta.filter(
     (idx) => idx.nomerPeserta != ''
   );
-  if (filteredArr.length == 0)
+  if (filteredArr.length == 0 && status != 'menunggu verifikasi')
     filteredArr[0] = { nomerPeserta: '', password: '' };
   return filteredArr;
 }
@@ -61,7 +61,12 @@ export default function MyTiket() {
           }
         )
         .then((res) => {
-          setNomorPeserta(filterDataPeserta(res.data.data.dataPeserta));
+          setNomorPeserta(
+            filterDataPeserta(
+              res.data.data.dataPeserta,
+              res.data.data.status.status
+            )
+          );
           useSearchInput.isVerified(true, res.data.data.status.status);
         })
         .catch((err) => {
