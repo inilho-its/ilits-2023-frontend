@@ -89,6 +89,14 @@ export default function Footer() {
                   Ini Lho ITS 2023!
                 </UnstyledLink>
               </div>
+              <div className='flex h-10 gap-5 px-7 md:pl-0'>
+                <UnstyledLink
+                  href='/coming-soon'
+                  className='mx-auto text-lg md:mx-0'
+                >
+                  Fasilitas
+                </UnstyledLink>
+              </div>
             </div>
           </div>
           <div className='flex flex-col items-center justify-center space-y-3 text-white md:items-start'>
@@ -183,7 +191,7 @@ export default function Footer() {
 
             <div className='flex h-8 px-7 md:px-0'>
               <UnstyledLink
-                href='/coming-soon'
+                href='/merchandise'
                 className='mx-auto flex items-center gap-2 text-lg font-semibold md:ml-0'
               >
                 Merchandise <FiExternalLink />
