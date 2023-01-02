@@ -89,7 +89,7 @@ export default function MyTiket() {
 
   return (
     <Layout withFooter={false} withNavbar={false}>
-      <Seo templateTitle='Tiket Open Campus' />
+      <Seo templateTitle='Tiket Open Forda' />
       <main className='relative bg-bone-500'>
         <section>
           <NextImage
