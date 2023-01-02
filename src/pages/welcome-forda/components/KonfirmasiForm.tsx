@@ -1,7 +1,8 @@
-// import * as React from 'react';
-
+import * as React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 
+import apiMock from '@/lib/apiMock';
 import clsxm from '@/lib/clsxm';
 
 import Button from '@/components/buttons/Button';
@@ -9,15 +10,28 @@ import DropzoneInput from '@/components/forms/DropzoneInput';
 import Input from '@/components/forms/Input';
 import SelectInput from '@/components/forms/SelectInput';
 
-import useOpenCampusStore from '@/store/useOpenCampusStore';
+import useFordaStore from '@/store/useFordaStore';
 
-type BiodataFormState = {
-  name: string;
-  asal_sekolah: string;
-  asal_kota: string;
-  no_hp: string;
-  email: string;
-  jenis_tryout: string;
+import { Bank_Forda } from '@/constant/bank';
+import KonfirmasiArrayField from '@/pages/welcome-forda/components/fields/KonfirmasiArrayField';
+
+import { ApiReturn } from '@/types/api-return';
+import { BiodataFormState } from '@/types/entitas/forda';
+
+type ImageFile = {
+  [0]: File;
+  [1]: File;
+};
+
+type KonfirmasiForm = {
+  diskon_id: string;
+  opsi_pembayaran: string;
+  bukti_pembayaran: ImageFile;
+} & BiodataFormState;
+
+type DiskonReturn = {
+  diskon_id: string;
+  total_harga: number;
 };
 
 type BiodataFormProps = {
@@ -25,20 +39,163 @@ type BiodataFormProps = {
 };
 
 export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
-  const methods = useForm<BiodataFormState>();
+  const [voucer, setVoucer] = React.useState<DiskonReturn>();
+  const [currentHarga, setCurrentHarga] = React.useState(0);
+
+  //#region  //*=========== Store  ===========
+  const imageData = useFordaStore.useImageFile();
+  const formData = useFordaStore.useFormData();
+  const pesertaData = useFordaStore.usePesertaData();
+
+  //#endregion  //*======== Store  ===========
+
+  const methods = useForm<KonfirmasiForm>({
+    defaultValues: {
+      peserta: Object.entries(pesertaData).map(([, value]) => value),
+    },
+  });
+
   const {
     handleSubmit,
-    register,
-    formState: { errors },
+    watch,
+
+    unregister,
   } = methods;
 
-  // Store
-  const upsert = useOpenCampusStore.useUpsert();
-  const data = useOpenCampusStore.useFormData();
+  // unrigister peserta
+  React.useEffect(() => {
+    unregister('peserta', { keepValue: true });
+  }, [unregister]);
 
-  const onSubmit = (data: BiodataFormState) => {
-    upsert(data);
-    setStep(1);
+  //#region  //*=========== Get Diskon ===========
+  const diskon_id = watch('diskon_id');
+
+  const getDiskon = (data: {
+    kode_diskon: string;
+    jumlah_pendaftar: number;
+    forda_id: string | number;
+  }) => {
+    toast.promise(
+      apiMock
+        .post<ApiReturn<DiskonReturn>>('/forda/diskon', data)
+        .then((res) => {
+          if (res.data.status) {
+            setVoucer(res.data.data);
+            setCurrentHarga(res.data.data.total_harga);
+            return res.data;
+          } else {
+            throw Error(res.data.message);
+          }
+        }),
+      {
+        loading: 'Loading',
+        success: (res) => (
+          <>
+            <div className='flex flex-col space-y-2'>
+              <span className='font-bold'>{res.message}</span>
+            </div>
+          </>
+        ),
+        error: (err) => (
+          <>
+            <div className='flex flex-col space-y-2'>
+              <span className='font-bold'>{err.response.data.message}</span>
+            </div>
+          </>
+        ),
+      }
+    );
+  };
+
+  const onDiskon = () => {
+    const data = {
+      kode_diskon: diskon_id,
+      jumlah_pendaftar: formData.jumlah_tiket || 0,
+      forda_id: formData.forda_id || 0,
+    };
+    getDiskon(data);
+  };
+
+  //#endregion  //*======== Get Diskon ===========
+
+  const onSubmit = (data: KonfirmasiForm) => {
+    const formdata = new FormData();
+
+    //#region  //*=========== Input Peserta ===========
+    const peserta = Object.entries(pesertaData).map(([, value]) => value);
+    // console.log(peserta);
+
+    peserta.map((peserta, index) => {
+      for (const key in peserta) {
+        formdata.append(`peserta[${index}][${key}]`, peserta[key] as string);
+      }
+    });
+    //#endregion  //*======== Input Peserta ===========
+
+    //#region  //*=========== Input Image ===========
+    const image = Object.entries(imageData).map(([, value]) => value);
+    if (image.length >= 1) {
+      image.map((image, index) => {
+        for (const key in image) {
+          formdata.append(`peserta[${index}][${key}]`, image[key] as string);
+        }
+      });
+    }
+    //#endregion  //*======== Input Image ===========
+
+    //#region  //*=========== formForda ===========
+    // jumlah_tiket
+    formdata.append('jumlah_tiket', formData.jumlah_tiket?.toString() || '1');
+
+    // Harga
+    let harga = 0;
+    if (voucer) {
+      harga = currentHarga;
+    } else {
+      if (formData.harga) {
+        harga =
+          (formData.harga as number) * (formData.jumlah_tiket as number) || 1;
+      }
+    }
+    formdata.append('harga', harga.toString());
+    if (formData.forda_id) {
+      formdata.append('forda_id', formData.forda_id.toString());
+    }
+    formdata.append('opsi_pembayaran', data.opsi_pembayaran as string);
+    formdata.append('bukti_pembayaran', data.bukti_pembayaran[0] as File);
+
+    //#endregion  //*======== formForda ===========
+    // eslint-disable-next-line no-console
+    console.log(formdata);
+    // Sending data
+    toast.promise(
+      apiMock
+        .post<ApiReturn<null>>('/forda', formdata, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then((res) => {
+          if (res.data.status) {
+            return res.data;
+          } else {
+            throw Error(res.data.message);
+          }
+        }),
+      {
+        loading: 'Loading',
+        success: (res) => (
+          <div className='flex flex-col space-y-2'>
+            <span className='font-bold'>{res.message}</span>
+          </div>
+        ),
+        error: (err) => (
+          <div className='flex flex-col space-y-2'>
+            <span className='font-bold'>{err.response.data.message}</span>
+          </div>
+        ),
+      }
+    );
   };
 
   return (
@@ -46,170 +203,82 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
       <h2 className='text-center font-bold'>Konfirmasi Akhir Pendaftaran</h2>
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-5'>
         <h4>Verifikasi Dokumen</h4>
-        <Input
-          disabled
-          required={true}
-          label='Asal Sekolah/Institusi'
-          id='asal_sekolah'
-          defaultValue={data?.asal_sekolah}
-          placeholder='Asal Sekolah'
-          helperText='Contoh : SMA Negeri 1 Surabaya'
-          validation={{
-            required: { value: true, message: 'Wajib mengisi asal sekolah' },
-          }}
-        />
-        <Input
-          disabled
-          required={true}
-          label='Nama Lengkap'
-          id='nama'
-          defaultValue={data?.nama}
-          placeholder='Nama Pendaftar'
-          validation={{
-            required: { value: true, message: 'Wajib mengisi nama' },
-          }}
-        />
+        <div>
+          <pre>{JSON.stringify(formData, null, 2)}</pre>
+          <pre>{JSON.stringify(pesertaData, null, 2)}</pre>
+          <pre>{JSON.stringify(imageData, null, 2)}</pre>
 
-        <Input
-          disabled
-          required={true}
-          label='NIK'
-          id='nik'
-          defaultValue={data?.asal_kota}
-          placeholder='Masukkan NIK'
-          validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengisi NIK',
-            },
-            pattern: {
-              value: /^[0-9]*$/,
-              message: 'NIK harus berupa angka',
-            },
-            maxLength: {
-              value: 16,
-              message: 'NIK harus sejumlah 16 karakter',
-            },
-            minLength: {
-              value: 16,
-              message: 'NIK harus sejumlah 16 karakter',
-            },
-          }}
-        />
-        <Input
-          disabled
-          required={true}
-          label='Alamat Sekolah'
-          defaultValue={data?.no_hp}
-          id='alamat_sekolah'
-          placeholder='Masukkan Alamat Sekolah'
-          validation={{
-            required: { value: true, message: 'Wajib mengisi alamat sekolah' },
-          }}
-        />
-        <Input
-          disabled
-          required={true}
-          label='Nomor Telepon'
-          defaultValue={data?.no_hp}
-          id='no_hp'
-          placeholder='No. Telepon'
-          validation={{
-            required: { value: true, message: 'Wajib mengisi nomor telepon' },
-            pattern: {
-              value: /^[0-9]*$/,
-              message: 'Nomor telepon harus berupa angka',
-            },
-            maxLength: {
-              value: 16,
-              message: 'Nomor telepon maksimal 16 karakter',
-            },
-            minLength: {
-              value: 8,
-              message: 'Nomor telepon minimal 10 karakter',
-            },
-          }}
-        />
-        <Input
-          disabled
-          required={true}
-          label='Email'
-          defaultValue={data?.email}
-          id='email'
-          type='email'
-          placeholder='email'
-          validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengisi email',
-            },
-            pattern: {
-              value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-              message: 'Email tidak valid',
-            },
-          }}
-        />
-        <div className='mt-4 '>
-          <label>
-            Pilih Jenis Tryout <span className='text-red-500'>*</span>
-          </label>
-          <div className='mt-2 flex space-x-6'>
-            <label>
-              <div>
-                <input
-                  disabled
-                  type='radio'
-                  value='1'
-                  {...register('jenis_tryout')}
-                />
-                <span className='ml-4'>Saintek</span>
-              </div>
-            </label>
-            <label>
-              <div>
-                <input
-                  disabled
-                  type='radio'
-                  value='2'
-                  {...register('jenis_tryout', {
-                    required: {
-                      value: true,
-                      message: 'Wajib memilih jenis tryout',
-                    },
-                  })}
-                />
-                <span className='ml-4'>Soshum</span>
-              </div>
-            </label>
-          </div>
-          {errors.jenis_tryout && (
-            <p className='text-sm text-red-500'>Jenis Tryout Wajib Diisi</p>
-          )}
+          {/* Final Value */}
         </div>
+        <KonfirmasiArrayField jumlah_tiket={formData?.jumlah_tiket || 0} />
+
         <div className='space-y-3 font-semibold'>
           <h4>Check Out</h4>
           <div className='flex items-center justify-between'>
-            <p>3x Tiket Welcome</p>
-            <p>Rp30.000</p>
+            <p>{formData.jumlah_tiket} Tiket Welcome</p>
+            {formData.jumlah_tiket && formData.harga && (
+              <p>Rp{formData.harga * formData.jumlah_tiket}</p>
+            )}
           </div>
           <div className='flex items-center justify-between'>
             <p>Kode Refferal</p>
-            <input
-              type='text'
-              className={clsxm(
-                'block rounded-md shadow-sm hover:border-blue-400',
-                'focus:ring-primary-500 border-neutral-300 focus:border-blue-400'
+            <div className='flex gap-1'>
+              <Input
+                disabled={!!voucer}
+                label=''
+                id='diskon_id'
+                type='text'
+                className={clsxm(
+                  'block rounded-md shadow-sm hover:border-blue-400',
+                  'focus:ring-primary-500 border-neutral-300 focus:border-blue-400'
+                )}
+              />
+              {!voucer && (
+                <Button
+                  type='button'
+                  onClick={onDiskon}
+                  variant='lightBlue'
+                  size='small'
+                >
+                  Apply
+                </Button>
               )}
-            />
+              {voucer && (
+                <Button
+                  type='reset'
+                  onClick={() => {
+                    setVoucer(undefined);
+                    setCurrentHarga(0);
+                  }}
+                  variant='orange'
+                  size='small'
+                >
+                  Reset
+                </Button>
+              )}
+            </div>
           </div>
-          <div className='flex items-center justify-between'>
-            <p>Diskon Kode Refferal</p>
-            <p>-Rp10.000</p>
-          </div>
+          {voucer && (
+            <div className='flex items-center justify-between'>
+              <p>Diskon Kode Refferal</p>
+              {formData.harga && formData.jumlah_tiket && (
+                <p>
+                  -Rp{formData.harga * formData.jumlah_tiket - currentHarga}
+                </p>
+              )}
+            </div>
+          )}
           <hr className='border-[1px] bg-neutral-300' />
           <div className='flex items-center justify-between text-xl font-bold text-success-main'>
             <p>Total Bayar</p>
-            <p>Rp50.000</p>
+            {formData.harga && formData.jumlah_tiket && (
+              <p>
+                Rp
+                {currentHarga === 0
+                  ? formData.harga * formData.jumlah_tiket
+                  : currentHarga}
+              </p>
+            )}
           </div>
           <div className='space-y-5 font-normal'>
             <SelectInput
@@ -219,9 +288,11 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
               validation={{ required: 'Wajib memilih opsi pembayaran' }}
               placeholder='Pilih opsi pembayaran anda'
             >
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
+              {Bank_Forda.map((bank) => (
+                <option key={bank.id} value={bank.id}>
+                  {bank.id} : {bank.name}
+                </option>
+              ))}
             </SelectInput>
             <DropzoneInput
               label='Upload Bukti Pembayaran'
@@ -241,7 +312,9 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
             variant='red'
             round='medium'
             size='medium'
-            onClick={() => setStep(2)}
+            onClick={() => {
+              setStep(2), setCurrentHarga(0);
+            }}
           >
             Kembali
           </Button>

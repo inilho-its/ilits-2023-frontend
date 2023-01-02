@@ -2,29 +2,20 @@ import { createSelectorHooks } from 'auto-zustand-selectors-hook';
 import produce from 'immer';
 import create from 'zustand';
 
-import { Peserta } from '@/types/entitas/forda';
-
-type ImageType = {
-  [0]: File;
-  [1]: File;
-};
+import { Berkas, Peserta } from '@/types/entitas/forda';
 
 export type FormDataType = {
-  forda_id?: string;
+  forda_id?: string | number;
   jumlah_tiket?: number;
-};
-type ImageFileType = {
-  [key: string]: ImageType | undefined;
-  follow_ig?: ImageType;
-  repost_poster?: ImageType;
+  harga?: number;
 };
 type FordaStoreType = {
   formData: FormDataType;
   pesertaData: Peserta[];
-  imageFile: ImageFileType;
+  imageFile: Berkas[];
   setFormData: (data: FormDataType) => void;
   setPesertaData: (data: Peserta[]) => void;
-  setImageFile: (data: ImageFileType) => void;
+  setImageFile: (data: Berkas[]) => void;
 };
 
 const useFordaStoreBase = create<FordaStoreType>((set) => ({
@@ -33,8 +24,9 @@ const useFordaStoreBase = create<FordaStoreType>((set) => ({
   // Page 2
   pesertaData: [],
   // Page 3
-  imageFile: {},
+  imageFile: [],
   // Set Page 1
+
   setFormData: (data) =>
     set(
       produce<FordaStoreType>((state) => {
@@ -51,10 +43,9 @@ const useFordaStoreBase = create<FordaStoreType>((set) => ({
   // Memasukan data image ke dalam store
   setImageFile: (data) =>
     set(
-      produce((state) => ({
-        ...state,
-        ...data,
-      }))
+      produce<FordaStoreType>((state) => {
+        state.imageFile = { ...state.imageFile, ...data };
+      })
     ),
 }));
 

@@ -1,5 +1,4 @@
-// import * as React from 'react';
-
+import * as React from 'react';
 import { useEffect } from 'react';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
@@ -12,7 +11,10 @@ type BiodataFormProps = {
   jumlah_tiket: number;
 };
 
-export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
+export default function KonfirmasiArrayField({
+  jumlah_tiket,
+}: BiodataFormProps) {
+  //#region  //*=========== Field Array build ===========
   const {
     register,
     formState: { errors },
@@ -29,7 +31,6 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
       append({});
     }
   });
-  //#region  //*=========== Field Array build ===========
 
   //#endregion  //*======== Field Array ===========
 
@@ -39,107 +40,48 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
         fields.map((item, index) => (
           <>
             <Typography variant='h5' className='text-center'>
-              Data Peserta {index + 1}
+              Peserta {index + 1}
             </Typography>
             <Input
-              required={true}
+              disabled={true}
+              readOnly={true}
               label='Asal Sekolah/Institusi'
               id={`peserta.${index}.asal_sekolah`}
               placeholder='Asal Sekolah'
               helperText='Contoh : SMA Negeri 1 Surabaya'
-              validation={{
-                required: {
-                  value: true,
-                  message: 'Wajib mengisi asal sekolah',
-                },
-              }}
             />
             <Input
-              required={true}
+              disabled={true}
               label='Nama Lengkap'
               id={`peserta.${index}.nama`}
               placeholder='Nama Pendaftar'
-              validation={{
-                required: { value: true, message: 'Wajib mengisi nama' },
-              }}
             />
 
             <Input
-              required={true}
+              disabled={true}
               label='NIK'
               id={`peserta.${index}.nik`}
               placeholder='Masukkan NIK'
-              validation={{
-                required: {
-                  value: true,
-                  message: 'Wajib mengisi NIK',
-                },
-                pattern: {
-                  value: /^[0-9]*$/,
-                  message: 'NIK harus berupa angka',
-                },
-                maxLength: {
-                  value: 16,
-                  message: 'NIK harus sejumlah 16 karakter',
-                },
-                minLength: {
-                  value: 16,
-                  message: 'NIK harus sejumlah 16 karakter',
-                },
-              }}
             />
             <Input
-              required={true}
+              disabled={true}
               label='Alamat Sekolah'
               id={`peserta.${index}.alamat_sekolah`}
               placeholder='Masukkan Alamat Sekolah'
-              validation={{
-                required: {
-                  value: true,
-                  message: 'Wajib mengisi alamat sekolah',
-                },
-              }}
             />
             <Input
-              required={true}
+              disabled={true}
               label='Nomor Telepon'
               id={`peserta.${index}.no_hp`}
               placeholder='No. Telepon'
-              validation={{
-                required: {
-                  value: true,
-                  message: 'Wajib mengisi nomor telepon',
-                },
-                pattern: {
-                  value: /^[0-9]*$/,
-                  message: 'Nomor telepon harus berupa angka',
-                },
-                maxLength: {
-                  value: 16,
-                  message: 'Nomor telepon maksimal 16 karakter',
-                },
-                minLength: {
-                  value: 8,
-                  message: 'Nomor telepon minimal 10 karakter',
-                },
-              }}
             />
             <Input
+              disabled={true}
               required={true}
               label='Email'
               id={`peserta.${index}.email`}
               type='email'
               placeholder='email'
-              validation={{
-                required: {
-                  value: true,
-                  message: 'Wajib mengisi email',
-                },
-                pattern: {
-                  value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-                  message: 'Email tidak valid',
-                },
-              }}
             />
             <div className='mt-4 '>
               <label>
@@ -149,6 +91,7 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
                 <label>
                   <div>
                     <input
+                      disabled={true}
                       type='radio'
                       value='1'
                       {...register(`peserta.${index}.kelompok_ujian` as const)}
@@ -159,14 +102,10 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
                 <label>
                   <div>
                     <input
+                      disabled={true}
                       type='radio'
                       value='2'
-                      {...register(`peserta.${index}.kelompok_ujian` as const, {
-                        required: {
-                          value: true,
-                          message: 'Wajib memilih jenis tryout',
-                        },
-                      })}
+                      {...register(`peserta.${index}.kelompok_ujian` as const)}
                     />
                     <span className='ml-4'>Soshum</span>
                   </div>

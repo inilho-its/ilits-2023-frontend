@@ -3,94 +3,66 @@
 import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from '@/components/buttons/Button';
-import DropzoneInput from '@/components/forms/DropzoneInput';
 
-import useOpenCampusStore from '@/store/useOpenCampusStore';
-type FormDataFile = {
-  [0]: File;
-  [1]: File;
-};
+import useFordaStore from '@/store/useFordaStore';
 
-type BiodataFormState = {
-  sertifikat_vaksin: FormDataFile;
-  repost_poster: FormDataFile;
-  follow_ig: FormDataFile;
-};
+import BerkasArrayField from '@/pages/welcome-forda/components/fields/BerkasArrayField';
+
+import { BerkasFormType } from '@/types/entitas/forda';
 
 type BiodataFormProps = {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export default function BerkasForm({ setStep }: BiodataFormProps) {
-  const methods = useForm<BiodataFormState>({
+  //#region  //*=========== Store ===========
+
+  const setImage = useFordaStore.useSetImageFile();
+  const formData = useFordaStore.useFormData();
+  const imageData = useFordaStore.useImageFile();
+
+  //#endregion  //*======== Store ===========
+
+  const methods = useForm<BerkasFormType>({
     mode: 'onChange',
+    defaultValues: {
+      peserta: Object.entries(imageData).map(([, value]) => value),
+    },
   });
 
   const { handleSubmit } = methods;
 
   // Store
-  const setImage = useOpenCampusStore.useSetImage();
-
-  const onSubmit = (data: BiodataFormState) => {
-    setImage(data);
-
+  const onSubmit = (data: BerkasFormType) => {
+    setImage(data.peserta);
     setStep(3);
   };
-
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-3'>
-        <DropzoneInput
-          label='Upload Bukti Follow Instagram @inilhoits'
-          id='follow_ig'
-          helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
-          validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengupload bukti follow Instagram @inilhoits',
-            },
-          }}
-        />
-        <DropzoneInput
-          label='Upload Bukti Share Poster'
-          id='repost_poster'
-          helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
-          validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengupload bukti share poster',
-            },
-          }}
-        />
-        <DropzoneInput
-          label='Upload Serifikat Vaksin Dosis ke-3'
-          id='sertifikat_vaksin'
-          helperText='Ukuran maksimal file 1 Mb (.jpeg/.png)'
-          validation={{
-            required: {
-              value: true,
-              message: 'Wajib mengupload bukti vaksinasi dosis ke-3',
-            },
-          }}
-        />
         <div className='flex justify-center space-x-2 pt-2'>
-          <Button
-            variant='red'
-            round='medium'
-            size='medium'
-            onClick={() => setStep(1)}
-          >
-            Kembali
-          </Button>
-          <Button
-            variant='lightBlue'
-            round='medium'
-            size='medium'
-            type='submit'
-            className='ml-auto'
-          >
-            Lanjutkan
-          </Button>
+          <div className='w-full'>
+            {formData.jumlah_tiket && (
+              <BerkasArrayField jumlah_tiket={formData?.jumlah_tiket || 0} />
+            )}
+            <Button
+              variant='red'
+              round='medium'
+              size='medium'
+              onClick={() => setStep(1)}
+            >
+              Kembali
+            </Button>
+            <Button
+              variant='lightBlue'
+              round='medium'
+              size='medium'
+              type='submit'
+              className='ml-auto'
+            >
+              Lanjutkan
+            </Button>
+          </div>
         </div>
       </form>
     </FormProvider>

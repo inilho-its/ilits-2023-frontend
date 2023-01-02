@@ -41,6 +41,10 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
   //#endregion  //*======== Fetch Harga  ===========
 
   const onSubmit = (data: FormDataType) => {
+    const harga = queryData?.data.find((item) => {
+      if (item.id == data.forda_id) return item.harga;
+    });
+    data.harga = harga?.harga;
     setFormData(data);
     setStep(1);
   };
@@ -51,7 +55,7 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
         <SelectInput
           required={true}
           label='Pilih Forum Daerah'
-          id='forda'
+          id='forda_id'
           placeholder='Masukkan Forum Daerah Anda'
           validation={{
             required: { value: true, message: 'Wajib mengisi nama' },
