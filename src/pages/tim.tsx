@@ -22,31 +22,33 @@ function TimList(props: teamProps) {
   return (
     <div
       className={clsxm(
-        'flex flex-col rounded-2xl border-2 border-black bg-neutral-100',
+        'flex flex-col items-center overflow-hidden rounded-2xl border-2 border-black bg-neutral-100 lg:max-w-6xl xl:max-w-7xl',
         props.isLeft ? ' lg:flex-row' : ' lg:flex-row-reverse'
       )}
     >
-      <div className='h-full w-full grayscale transition duration-200 hover:grayscale-0'>
-        <NextImage
-          src={props.imgSrc}
-          width={props.width}
-          height={props.height}
-          objectFit='contain'
-          layout='responsive'
-          alt='tim'
-          imgClassName={clsxm(
-            'rounded-t-2xl',
-            props.isLeft
-              ? ' lg:rounded-tr-none lg:rounded-l-2xl'
-              : ' lg:rounded-tl-none lg:rounded-r-2xl'
-          )}
-        />
+      <div className='w-full lg:w-full xl:w-1/4'>
+        <div className='w-full grayscale transition duration-200 hover:grayscale-0'>
+          <NextImage
+            src={props.imgSrc}
+            width={props.width}
+            height={props.height}
+            objectFit='contain'
+            layout='responsive'
+            alt='tim'
+            imgClassName={clsxm(
+              'rounded-t-2xl',
+              props.isLeft
+                ? ' lg:rounded-tr-none lg:rounded-l-2xl'
+                : ' lg:rounded-tl-none lg:rounded-r-2xl'
+            )}
+          />
+        </div>
       </div>
-      <div className='py-6 px-5 text-center lg:text-left'>
+      <div className='w-11/12 py-6 px-5 text-center lg:w-full lg:text-left xl:w-3/4'>
         <Typography
           variant='h4'
           as='h4'
-          className='text-xl font-bold text-bone-1000 lg:text-5xl'
+          className='text-2xl font-bold text-bone-1000 md:text-4xl xl:text-5xl'
         >
           {props.teamName}
         </Typography>
@@ -66,7 +68,7 @@ export default function TimPage() {
   return (
     <>
       <Seo templateTitle='Tim' />
-      <main className='min-h-screen bg-bone-500'>
+      <main className='min-h-screen overflow-hidden bg-bone-500'>
         <section className='relative mb-28'>
           <div className='absolute -top-16 left-0 hidden w-screen lg:block'>
             <NextImage
@@ -501,7 +503,7 @@ export default function TimPage() {
                 />
               </div>
             </div>
-            <div className='relative z-30 mx-auto mt-9 mb-[159px] w-10/12 space-y-10 lg:mt-[159px]'>
+            <div className='relative z-30 mx-4 mt-9 mb-[159px] flex flex-col items-center justify-center space-y-10  sm:mx-20 lg:mt-[159px]'>
               {teamData.map((v, i) => (
                 <TimList key={i} {...v} />
               ))}
