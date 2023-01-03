@@ -10,11 +10,12 @@ import Typography from '@/components/typography/Typography';
 
 import BerkasForm from '@/pages/open-campus/components/BerkasForm';
 import BiodataForm from '@/pages/open-campus/components/BiodataForm';
+import ClosedFormPage from '@/pages/open-campus/components/ClosedForm';
 import CompletedPage from '@/pages/open-campus/components/Completed';
 import FakultasDepartemenForm from '@/pages/open-campus/components/FakultasDepartemenForm';
 
 export default function DaftarOpenCampusPage() {
-  const [step, setStep] = React.useState(0);
+  const [step, setStep] = React.useState(4);
   return (
     <Layout withFooter={false} withNavbar={false}>
       <Seo templateTitle='Daftar Open Campus' />
@@ -170,6 +171,7 @@ export default function DaftarOpenCampusPage() {
                 {step === 1 && <BerkasForm setStep={setStep} />}
                 {step === 2 && <FakultasDepartemenForm setStep={setStep} />}
                 {step === 3 && <CompletedPage />}
+                {step === 4 && <ClosedFormPage />}
               </div>
             </div>
           </div>

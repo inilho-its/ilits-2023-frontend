@@ -6,6 +6,8 @@ module.exports = {
 
   reactStrictMode: true,
 
+  pageExtensions: ['page.tsx', 'api.tsx'],
+
   // Uncoment to add domain whitelist
   // images: {
   //   domains: [

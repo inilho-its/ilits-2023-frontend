@@ -42,35 +42,41 @@ export const alumni = [
 export const beasiswa = [
   {
     src: '/images/homePage/beasiswabi.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa Bank Indonesia',
   },
   {
     src: '/images/homePage/beasiswadik.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa Unggulan',
   },
   {
     src: '/images/homePage/beasiswakse.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa KSE',
   },
   {
     src: '/images/homePage/beasiswabca.png',
-    href: '',
+    href: '/coming-soon',
     label: 'Beasiswa BCA',
   },
 ];
 
 export const companyLogo = [
   {
-    src: '/images/homePage/companyLogo1.png',
+    src: '/images/homePage/logoPP.png',
   },
   {
-    src: '/images/homePage/companyLogo2.png',
+    src: '/images/homePage/logoATM.png',
   },
   {
-    src: '/images/homePage/companyLogo3.png',
+    src: '/images/homePage/logoYSH.png',
+  },
+  {
+    src: '/images/homePage/logoSDF.png',
+  },
+  {
+    src: '/images/homePage/logoPLN.png',
   },
 ];
 
