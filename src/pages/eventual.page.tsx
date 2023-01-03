@@ -242,11 +242,12 @@ const Tab3Content = () => {
       <div className='mx-2 md:mx-0'>
         <div className='relative mx-auto flex min-h-[280px] max-w-[330px] items-center justify-center rounded-[20px] border-2 border-neutral-1000 bg-neutral-100 px-10 py-14 text-justify text-sm font-medium md:min-h-[250px] md:max-w-2xl md:py-0 md:px-14 md:pt-4 md:text-lg xl:min-h-[228px] xl:max-w-[1049px] xl:px-28'>
           <div className='absolute -top-5 flex h-14 w-full max-w-[829.37px] items-center justify-center rounded-full border-2 border-neutral-1000 bg-yellow-300 px-4 text-center text-2xl font-bold leading-none md:-top-10 md:h-[72px] md:px-0 md:text-[32px] md:font-semibold'>
-            Welcome
+            Welcome Forum Daerah
           </div>
-          Kegiatan eventual Ini Lho ITS! yang diselenggarakan oleh panitia Ini
-          Lho ITS! diberbagai daerah di Indonesia yang berkerja sama dengan
-          Forum Daerah (Forda) dengan kegiatan utama yakni tryout.
+          Salah satu acara utama INI LHO ITS! yang diselenggarakan secara
+          offline di berbagai daerah di Indonesia oleh Panitia INI LHO ITS! 2023
+          yang bekerja sama dengan Forum Daerah (Forda) dengan kegiatan utama
+          yaitu Try Out.
         </div>
       </div>
 
@@ -649,7 +650,7 @@ export default function EventualPage() {
                     : 'bg-bone-500 transition duration-200 hover:bg-yellow-300/70'
                 )}
               >
-                Welcome
+                Welcome Forum Daerah
               </div>
               {tab == 3 && (
                 <div className='absolute -bottom-2 -right-2 -z-50 h-14 w-full max-w-[404px] rounded-2xl bg-black md:h-[80px]'></div>
