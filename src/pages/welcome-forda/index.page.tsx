@@ -19,7 +19,7 @@ export default function DaftarOpenCampusPage() {
 
   return (
     <Layout withFooter={false} withNavbar={false}>
-      <Seo templateTitle='Daftar Open Campus' />
+      <Seo templateTitle='Daftar Welcome Forda' />
 
       <main className='bg-bone-500'>
         <section className='relative'>
