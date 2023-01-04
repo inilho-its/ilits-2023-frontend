@@ -1,1 +1,1 @@
-export type ApiReturn<T> = { data: T; message?: string };
+export type ApiReturn<T> = { data: T; message?: string; status?: boolean };

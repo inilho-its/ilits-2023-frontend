@@ -56,19 +56,3 @@ export type OpenCampusForm = {
   repost_poster?: FormDataFile;
   follow_ig?: FormDataFile;
 };
-
-// export type OpenCampusForm = {
-//   nama?: string;
-//   asal_sekolah?: string;
-//   asal_kota?: string;
-//   no_hp?: string;
-//   email?: string;
-//   jenis_tryout?: string;
-//   pilihan_fakultas1?: string;
-//   pilihan_fakultas2?: string;
-//   pilihan_departemen1?: string;
-//   pilihan_departemen2?: string;
-//   sertifikat_vaksin?: File;
-//   repost_poster?: File;
-//   follow_ig?: File;
-// };
