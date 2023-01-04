@@ -239,8 +239,8 @@ const Tab3Content = () => {
   return (
     <div>
       {/* Text Box Tab 3 */}
-      <div className='mx-2 md:mx-0'>
-        <div className='relative mx-auto flex min-h-[280px] max-w-[330px] items-center justify-center rounded-[20px] border-2 border-neutral-1000 bg-neutral-100 px-10 py-14 text-justify text-sm font-medium md:min-h-[250px] md:max-w-2xl md:py-0 md:px-14 md:pt-4 md:text-lg xl:min-h-[228px] xl:max-w-[1049px] xl:px-28'>
+      <div className='mx-4 md:mx-0'>
+        <div className='relative mx-auto flex min-h-[220px] max-w-[330px] items-center justify-center rounded-[20px] border-2 border-neutral-1000 bg-neutral-100 px-10 pt-12 pb-4 text-justify text-sm font-medium md:min-h-[250px] md:max-w-2xl md:px-14 md:pb-0 md:pt-4 md:text-lg xl:min-h-[228px] xl:max-w-[1049px] xl:px-28'>
           <div className='absolute -top-5 flex h-14 w-full max-w-[829.37px] items-center justify-center rounded-full border-2 border-neutral-1000 bg-yellow-300 px-4 text-center text-2xl font-bold leading-none md:-top-10 md:h-[72px] md:px-0 md:text-[32px] md:font-semibold'>
             Welcome Forum Daerah
           </div>
@@ -255,22 +255,22 @@ const Tab3Content = () => {
       <div className='mt-14 flex flex-col items-center justify-center gap-6 md:mt-20 xl:flex-row'>
         <div className='w-52 md:w-[38rem]'>
           <NextImage
-            src='/images/eventualPage/tab2-image-1.png'
+            src='/images/eventualPage/tab3-image-1.png'
             width='100%'
             height='82%'
             layout='responsive'
             objectFit='contain'
-            alt='tab2-image-1'
+            alt='tab3-image-1'
           />
         </div>
         <div className='w-52 md:w-[38rem]'>
           <NextImage
-            src='/images/eventualPage/tab2-image-2.png'
+            src='/images/eventualPage/tab3-image-2.png'
             width='100%'
             height='82%'
             layout='responsive'
             objectFit='contain'
-            alt='tab2-image-2'
+            alt='tab3-image-2'
           />
         </div>
       </div>
