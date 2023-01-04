@@ -96,12 +96,12 @@ const Tab1Content = () => {
             variant='h4'
             className='stroke md:stroke px-11 text-center text-2xl font-bold leading-none text-white md:text-[48px] md:leading-[64px]  lg:px-60'
           >
-            Ayo Jangan Lewatkan Keseruan Open Campus ILITS 2023!
+            Ayo Jangan Lewatkan Keseruan Visit ILITS 2023!
           </Typography>
           <ButtonLink
             variant='bone'
             size='large'
-            href='/open-campus'
+            href='/welcome-forda'
             className='font-semibol mt-8 hidden md:block'
           >
             Daftar Sekarang
@@ -109,7 +109,7 @@ const Tab1Content = () => {
           <ButtonLink
             variant='bone'
             size='small'
-            href='/open-campus'
+            href='/welcome-forda'
             className='mt-8 block font-semibold md:hidden'
           >
             Daftar Sekarang
@@ -276,8 +276,8 @@ const Tab3Content = () => {
       </div>
 
       {/* Jumbotron Tab 3 */}
-      <div className='relative z-20 mt-14 flex h-[244px] w-screen items-center justify-center border-b-2 border-t-2 border-bone-1000  bg-lightBlue-500 md:mt-20 md:h-[384px]'>
-        <div className='absolute top-0 -left-1 -z-10 w-[4.3rem] md:w-36 xl:w-[8rem]'>
+      <div className='relative z-20 mt-14 flex h-[265px] w-screen items-center justify-center border-b-2 border-t-2 border-bone-1000  bg-lightBlue-500 sm:h-[384px] md:mt-20'>
+        <div className='absolute top-0 -left-1 -z-10 w-[3.54rem] md:w-36 xl:w-[8rem]'>
           <NextImage
             src='/images/eventualPage/star-1.png'
             width='100%'
@@ -320,26 +320,44 @@ const Tab3Content = () => {
         <div className='flex flex-col items-center justify-center'>
           <Typography
             variant='h4'
-            className='stroke md:stroke px-11 text-center text-2xl font-bold leading-none text-white md:text-[48px] md:leading-[64px]  lg:px-60'
+            className='stroke md:stroke px-11 text-center text-2xl font-bold leading-[28px] text-white sm:leading-[64px] md:text-[48px]  lg:px-60'
           >
-            Ayo Jangan Lewatkan Keseruan Open Campus ILITS 2023!
+            Udah Siap Ujian Belum? Yuk Langsung Daftar WELCOME ILITS 2023!
           </Typography>
-          <ButtonLink
-            variant='bone'
-            size='large'
-            href='/open-campus'
-            className='font-semibol mt-8 hidden md:block'
-          >
-            Daftar Sekarang
-          </ButtonLink>
-          <ButtonLink
-            variant='bone'
-            size='small'
-            href='/open-campus'
-            className='mt-8 block font-semibold md:hidden'
-          >
-            Daftar Sekarang
-          </ButtonLink>
+          <div className='flex flex-col gap-2 sm:flex-row sm:gap-4'>
+            <ButtonLink
+              variant='bone'
+              size='large'
+              href='/welcome-forda'
+              className='font-semibol mt-8 hidden md:block'
+            >
+              Daftar Sekarang
+            </ButtonLink>
+            <ButtonLink
+              variant='bone'
+              size='small'
+              href='/welcome-forda'
+              className='mt-4 block font-semibold sm:mt-8 md:hidden'
+            >
+              Daftar Sekarang
+            </ButtonLink>
+            <ButtonLink
+              variant='lightBlue'
+              size='large'
+              href='/welcome-forda/myticket'
+              className='font-semibol mt-8 hidden md:block'
+            >
+              My Ticket
+            </ButtonLink>
+            <ButtonLink
+              variant='lightBlue'
+              size='small'
+              href='/welcome-forda/myticket'
+              className='block text-center font-semibold sm:mt-8 md:hidden'
+            >
+              My Ticket
+            </ButtonLink>
+          </div>
         </div>
       </div>
     </div>
@@ -347,7 +365,7 @@ const Tab3Content = () => {
 };
 
 export default function EventualPage() {
-  const [tab, setTab] = React.useState(2);
+  const [tab, setTab] = React.useState(3);
 
   return (
     <Layout>
