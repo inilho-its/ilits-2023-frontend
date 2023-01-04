@@ -30,26 +30,38 @@ type detailTiket = {
 };
 
 type nomor_peserta = {
-  nomerPeserta: string;
-  password: string;
+  status: string;
+  dataPeserta: [
+    {
+      nomerPeserta: string;
+      password: string;
+    }
+  ];
 };
-
-function filterDataPeserta(dataPeserta: nomor_peserta[], status: string) {
-  const filteredArr: nomor_peserta[] = dataPeserta.filter(
-    (idx) => idx.nomerPeserta != ''
-  );
-  if (filteredArr.length == 0 && status != 'menunggu verifikasi')
-    filteredArr[0] = { nomerPeserta: '', password: '' };
-  return filteredArr;
-}
 
 export default function MyTiket() {
   const useSearchInput = useSearchInputHooks();
-  const [nomor_peserta, setNomorPeserta] = React.useState<nomor_peserta[]>([]);
+  const [nomor_peserta, setNomorPeserta] = React.useState<nomor_peserta>({
+    status: '',
+    dataPeserta: [
+      {
+        nomerPeserta: '',
+        password: '',
+      },
+    ],
+  });
   const methods = useForm<TiketFormState>();
   const { handleSubmit } = methods;
   const onSubmit = (data: TiketFormState) => {
-    setNomorPeserta([]);
+    setNomorPeserta({
+      status: '',
+      dataPeserta: [
+        {
+          nomerPeserta: '',
+          password: '',
+        },
+      ],
+    });
     toast.promise(
       apiMock
         .get<ApiReturn<detailTiket>>(
@@ -61,12 +73,10 @@ export default function MyTiket() {
           }
         )
         .then((res) => {
-          setNomorPeserta(
-            filterDataPeserta(
-              res.data.data.dataPeserta,
-              res.data.data.status.status
-            )
-          );
+          setNomorPeserta({
+            status: res.data.data.status.status,
+            dataPeserta: res.data.data.dataPeserta,
+          });
           if (res.data.data.status.status == 'menunggu verifikasi')
             useSearchInput.isVerified(true, res.data.data.status.status);
           else if (
@@ -176,7 +186,8 @@ export default function MyTiket() {
                     />
                   </form>
                 </FormProvider>
-                {nomor_peserta.length != 0 && (
+                {nomor_peserta.status ===
+                  'pembayaran berhasil diverifikasi' && (
                   <div className='pt-5'>
                     <Typography
                       variant='body'
@@ -185,7 +196,7 @@ export default function MyTiket() {
                       Nomor Peserta & Password :
                     </Typography>
                     <div className='flex flex-col gap-y-2'>
-                      {nomor_peserta.map(
+                      {nomor_peserta.dataPeserta.map(
                         ({ nomerPeserta, password }, index) => (
                           <div className='w-full' key={index}>
                             <div className='flex justify-between gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
