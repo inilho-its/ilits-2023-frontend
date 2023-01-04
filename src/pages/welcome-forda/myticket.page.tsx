@@ -67,7 +67,7 @@ export default function MyTiket() {
               res.data.data.status.status
             )
           );
-          useSearchInput.isVerified(true, res.data.data.status.status);
+          useSearchInput.isVerified(true, 'Terverifikasi');
         })
         .catch((err) => {
           useSearchInput.isVerified(false, 'Tidak Terverifikasi');
