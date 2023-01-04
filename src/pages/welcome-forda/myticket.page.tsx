@@ -69,7 +69,11 @@ export default function MyTiket() {
           );
           if (res.data.data.status.status == 'menunggu verifikasi')
             useSearchInput.isVerified(true, res.data.data.status.status);
-          else useSearchInput.isVerified(true, 'Terverifikasi');
+          else if (
+            res.data.data.status.status == 'pembayaran berhasil diverifikasi'
+          )
+            useSearchInput.isVerified(true, 'Terverifikasi');
+          else useSearchInput.isVerified(false, 'Tidak Terverifikasi');
         })
         .catch((err) => {
           useSearchInput.isVerified(false, 'Tidak Terverifikasi');
