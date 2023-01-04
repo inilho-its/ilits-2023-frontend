@@ -166,7 +166,7 @@ export default function DaftarOpenCampusPage() {
                 {step === 1 && <BiodataForm setStep={setStep} />}
                 {step === 2 && <BerkasForm setStep={setStep} />}
                 {step === 3 && <KonfirmasiForm setStep={setStep} />}
-                {step === 4 && <CompletedForm setStep={setStep} />}
+                {step === 4 && <CompletedForm />}
               </div>
             </div>
           </div>

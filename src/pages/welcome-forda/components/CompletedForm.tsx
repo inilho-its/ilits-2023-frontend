@@ -12,7 +12,9 @@ const CompletedForm = () => {
       <p className='text-center font-medium'>
         Kami sedang memproses pembayaran Anda, silahkan cek "My Tickets" pada
         halaman utama web Ini Lho ITS! untuk melihat verifikasi pembayaran Anda.
-        Berikut No. Pendaftaran Anda untuk pengecekan status tiket :
+        {/* Berikut No. Pendaftaran Anda untuk pengecekan status tiket : */}
+        Pembayaran anda sudah kami terima, kami akan segera mengirimkan email
+        kapada anda.
       </p>
       <div className='flex flex-col items-center font-medium'>
         <p>CP 1 : Maharani (maharaniglh/081906398138)</p>

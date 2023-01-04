@@ -82,10 +82,7 @@ export default function Footer() {
               } w-full flex-col transition-all duration-1000 md:w-fit`}
             >
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/coming-soon'
-                  className='mx-auto text-lg md:mx-0'
-                >
+                <UnstyledLink href='/' className='mx-auto text-lg md:mx-0'>
                   Ini Lho ITS 2023!
                 </UnstyledLink>
               </div>
@@ -119,15 +116,7 @@ export default function Footer() {
             >
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/coming-soon'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  One Day Lecture
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/coming-soon'
+                  href='/eventual'
                   className='mx-auto text-lg md:mx-0'
                 >
                   Welcome Surabaya
@@ -135,18 +124,10 @@ export default function Footer() {
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/coming-soon'
+                  href='/eventual'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  ITS Fair
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/coming-soon'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  Tour De Campus
+                  Welcome Forum Daerah
                 </UnstyledLink>
               </div>
             </div>
@@ -171,10 +152,18 @@ export default function Footer() {
             >
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
+                  href='/open-campus'
+                  className='mx-auto text-lg md:mx-0'
+                >
+                  Try Out Surabaya
+                </UnstyledLink>
+              </div>
+              <div className='flex h-10 gap-5 px-7 md:pl-0'>
+                <UnstyledLink
                   href='/coming-soon'
                   className='mx-auto text-lg md:mx-0'
                 >
-                  Website Try Out
+                  Try Out Forum Daerah
                 </UnstyledLink>
               </div>
             </div>

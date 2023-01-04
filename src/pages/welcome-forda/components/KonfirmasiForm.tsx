@@ -210,13 +210,6 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
       <h2 className='text-center font-bold'>Konfirmasi Akhir Pendaftaran</h2>
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-5'>
         <h4>Verifikasi Dokumen</h4>
-        <div>
-          <pre>{JSON.stringify(formData, null, 2)}</pre>
-          <pre>{JSON.stringify(pesertaData, null, 2)}</pre>
-          <pre>{JSON.stringify(imageData, null, 2)}</pre>
-
-          {/* Final Value */}
-        </div>
         <KonfirmasiArrayField jumlah_tiket={formData?.jumlah_tiket || 0} />
 
         <div className='space-y-3 font-semibold'>
