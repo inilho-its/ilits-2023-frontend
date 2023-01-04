@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 import { IconType } from 'react-icons';
-import { HiExclamationCircle } from 'react-icons/hi';
+import { HiExclamation } from 'react-icons/hi';
 
 import clsxm from '@/lib/clsxm';
 
@@ -14,6 +14,8 @@ enum LabelType {
 export type InputProps = {
   /** Input label */
   label: string;
+  index?: number;
+  name?: string;
   /**
    * id to be initialized with React Hook Form,
    * must be the same with the pre-defined types.
@@ -171,10 +173,17 @@ export default function Input({
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
         {!hideError && errors[id] && (
           <span className='flex gap-2 text-sm text-red-500'>
-            <HiExclamationCircle className='text-xl text-red-500' />
+            <HiExclamation className='text-xl text-red-500' />
             {errors[id]?.message as unknown as string}
           </span>
         )}
+        {/* 
+        {!hideError && errors.peserta && (
+          <span className='flex gap-2 text-sm text-red-500'>
+            <HiExclamation className='text-xl text-red-500' />
+            {errors?.peserta[index][name].message as unknown as string}
+          </span>
+        )} */}
       </div>
     </div>
   );

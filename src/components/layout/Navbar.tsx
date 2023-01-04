@@ -14,7 +14,7 @@ const links = [
   { href: '/coming-soon', label: 'Fakultas' },
   { href: '/coming-soon', label: 'Prestasi' },
   { href: '/coming-soon', label: 'Alumni' },
-  { href: '/coming-soon', label: 'Beasiswa' },
+  { href: '/beasiswa', label: 'Beasiswa' },
   { href: '/merchandise', label: 'Merchandise' },
 ];
 
@@ -74,7 +74,7 @@ export default function Navbar() {
         </nav>
         <div className='hidden md:block'>
           <ButtonLink
-            href='/open-campus'
+            href='/welcome-forda'
             className='px-2 font-semibold lg:px-[22px]'
             variant='bone'
           >
@@ -131,7 +131,7 @@ export default function Navbar() {
             ))}
           </ul>
           <ButtonLink
-            href='/open-campus'
+            href='/welcome-forda'
             className='mx-auto mt-3 font-semibold'
             variant='bone'
             size='medium'

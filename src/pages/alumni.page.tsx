@@ -13,7 +13,7 @@ export default function Alumni() {
     <Layout>
       <Seo templateTitle='Alumni' />
       <main>
-        <section className='Hero relative overflow-hidden bg-bone-500'>
+        <section className='Hero relative overflow-hidden bg-bone-500 md:pt-24'>
           <div className='m-auto px-5 pt-32 pb-16 md:max-w-7xl md:pt-32 md:pb-44'>
             <div className='relative z-10 mx-auto max-w-lg self-center md:max-w-[800px] md:px-10 lg:max-w-[625px] lg:px-0 xl:m-0'>
               <div className='relative h-5 rounded-t-xl border-x-2 border-t-2 border-x-black border-t-black bg-yellow-400 md:h-8'>
@@ -42,7 +42,11 @@ export default function Alumni() {
                   Institut Teknologi Sepuluh Nopember
                 </Typography>
                 <div className='flex justify-center pb-2 md:justify-start'>
-                  <ButtonLink variant='yellow' href='/' className='inline-flex'>
+                  <ButtonLink
+                    variant='yellow'
+                    href='#TahukahKamu'
+                    className='inline-flex'
+                  >
                     Kenali lebih lanjut
                   </ButtonLink>
                 </div>
@@ -67,7 +71,7 @@ export default function Alumni() {
                   alt='Megaphone'
                 />
               </div>
-              <div className='absolute -top-20 -right-72 hidden w-36 xl:block'>
+              <div className='absolute -top-24 -right-72 hidden w-32 xl:block'>
                 <NextImage
                   src='/images/alumni/Star.png'
                   width='100%'
@@ -116,7 +120,7 @@ export default function Alumni() {
               alt=''
             />
           </div>
-          <div className='absolute -bottom-7 w-[140vw] md:top-44 md:w-full'>
+          <div className='absolute -bottom-7 w-[140vw] md:top-72 md:w-full'>
             <div className='relative h-24 w-[140vw] md:h-56 md:w-full'>
               <NextImage
                 src='/images/alumni/benang.png'
@@ -138,7 +142,7 @@ export default function Alumni() {
               />
             </div>
           </div>
-          <div className='absolute -bottom-16 w-[120vw] md:top-72 '>
+          <div className='absolute -bottom-16 w-[120vw] md:top-[400px] '>
             <div className='relative -left-20 h-24 w-[120vw] md:h-56 md:w-full'>
               <NextImage
                 src='/images/alumni/benang1.png'
@@ -149,11 +153,11 @@ export default function Alumni() {
               />
             </div>
           </div>
-          <div className='absolute -top-64 hidden w-full md:block'>
-            <div className='relative h-[750px] w-full'>
+          <div className='absolute -top-6 hidden w-full md:block'>
+            <div className='relative h-[600px] w-full'>
               <NextImage
                 src='/images/alumni/benang-merah1.png'
-                width='110%'
+                width='100%'
                 height='45%'
                 layout='fill'
                 alt=''
@@ -194,7 +198,10 @@ export default function Alumni() {
             </div>
           </div>
         </section>
-        <section className='Info Unik relative overflow-hidden bg-bone-500'>
+        <section
+          id='TahukahKamu'
+          className='Info Unik relative overflow-hidden bg-bone-500 '
+        >
           <div className='relative z-40 mx-auto flex max-w-lg flex-col px-5 py-12 md:max-w-[900px] md:pt-40 md:pb-48 lg:max-w-6xl'>
             <div className='flex justify-end gap-1 rounded-t-xl border-2 border-black bg-lightBlue-500 p-1 pr-2 sm:gap-2 md:gap-4 md:p-3 '>
               <div className='h-2 w-2 rounded-full bg-yellow-300 outline outline-2 outline-black md:h-4 md:w-4'></div>
@@ -332,7 +339,7 @@ export default function Alumni() {
               layout='responsive'
             />
           </div>
-          <div className='absolute top-[1000px] right-0 w-full sm:hidden'>
+          <div className='absolute top-[1000px] right-0 w-full md:hidden'>
             <NextImage
               src='/images/alumni/benang7.png'
               alt=''
@@ -480,11 +487,11 @@ export default function Alumni() {
               layout='responsive'
             />
           </div>
-          <div className='absolute bottom-[1439px] right-0 w-full md:hidden'>
+          <div className='absolute top-[1600px] right-0 w-full md:hidden'>
             <NextImage
               src='/images/alumni/benang-merah7.png'
               width='100%'
-              height='100%'
+              height='50%'
               alt=''
               layout='responsive'
             />
@@ -517,7 +524,7 @@ export default function Alumni() {
               layout='responsive'
             />
           </div>
-          <div className='absolute bottom-[760px] w-full sm:hidden'>
+          <div className='absolute bottom-[760px] w-full md:hidden'>
             <NextImage
               src='/images/alumni/benang-mobile1.png'
               width='100%'
@@ -526,7 +533,7 @@ export default function Alumni() {
               layout='responsive'
             />
           </div>
-          <div className='absolute bottom-[775px]  w-full sm:hidden'>
+          <div className='absolute bottom-[775px]  w-full md:hidden'>
             <NextImage
               src='/images/alumni/benang-mobile1.png'
               width='100%'
