@@ -99,7 +99,11 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
         error: (err) => (
           <>
             <div className='flex flex-col space-y-2'>
-              <span className='font-bold'>{err.response.data.message}</span>
+              <span className='font-bold'>
+                {typeof err.response.data.message === 'string'
+                  ? err.response.data.message
+                  : err.response.data.message[0].constraints.isNotEmpty}
+              </span>
             </div>
           </>
         ),
@@ -113,7 +117,10 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
       jumlah_pendaftar: formData.jumlah_tiket || 0,
       forda_id: formData.forda_id || 0,
     };
-    getDiskon(data);
+
+    if (data.kode_diskon !== '' || data.kode_diskon !== null) {
+      getDiskon(data);
+    }
   };
 
   //#endregion  //*======== Get Diskon ===========
@@ -165,8 +172,7 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
     formdata.append('bukti_pembayaran', data.bukti_pembayaran[0] as File);
 
     //#endregion  //*======== formForda ===========
-    // eslint-disable-next-line no-console
-    console.log(formdata);
+
     // Sending data
     toast.promise(
       apiMock
@@ -177,6 +183,7 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
         })
         .then((res) => {
           if (res.data.status) {
+            setStep(4);
             return res.data;
           } else {
             throw Error(res.data.message);
@@ -323,7 +330,7 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
             round='medium'
             size='medium'
             type='submit'
-            className='ml-auto'
+            className='ml-4'
           >
             Lanjutkan
           </Button>

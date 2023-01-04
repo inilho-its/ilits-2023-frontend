@@ -30,10 +30,14 @@ export default function BerkasArrayField({
       {fields &&
         fields.map((item, index) => (
           <>
-            <Typography variant='h5' className='text-center'>
+            <Typography
+              variant='h6'
+              className='mt-4 text-center font-semibold text-gray-700'
+            >
               Peserta {index + 1}
             </Typography>
             <Input
+              name='repost_feeds'
               required={true}
               label='Repost Feeds'
               id={`peserta.${index}.repost_feeds`}
@@ -46,6 +50,7 @@ export default function BerkasArrayField({
               }}
             />
             <Input
+              name='follow_ig'
               required={true}
               label='Follow IG'
               id={`peserta.${index}.follow_ig`}
@@ -58,6 +63,7 @@ export default function BerkasArrayField({
               }}
             />
             <Input
+              name='upload_vaksin'
               required={true}
               label='Upload Vaksin'
               id={`peserta.${index}.upload_vaksin`}

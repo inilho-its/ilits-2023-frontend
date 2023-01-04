@@ -38,10 +38,15 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
       {fields &&
         fields.map((item, index) => (
           <>
-            <Typography variant='h5' className='text-center'>
+            <Typography
+              variant='h6'
+              className='mt-4 text-center font-semibold text-gray-700'
+            >
               Data Peserta {index + 1}
             </Typography>
             <Input
+              name='asal_sekolah'
+              index={index}
               required={true}
               label='Asal Sekolah/Institusi'
               id={`peserta.${index}.asal_sekolah`}
@@ -55,6 +60,8 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
               }}
             />
             <Input
+              name='nama'
+              index={index}
               required={true}
               label='Nama Lengkap'
               id={`peserta.${index}.nama`}
@@ -65,6 +72,8 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
             />
 
             <Input
+              name='nik'
+              index={index}
               required={true}
               label='NIK'
               id={`peserta.${index}.nik`}
@@ -89,6 +98,8 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
               }}
             />
             <Input
+              name='alamat_sekolah'
+              index={index}
               required={true}
               label='Alamat Sekolah'
               id={`peserta.${index}.alamat_sekolah`}
@@ -101,6 +112,8 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
               }}
             />
             <Input
+              name='no_hp'
+              index={index}
               required={true}
               label='Nomor Telepon'
               id={`peserta.${index}.no_hp`}
@@ -125,6 +138,8 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
               }}
             />
             <Input
+              name='email'
+              index={index}
               required={true}
               label='Email'
               id={`peserta.${index}.email`}
@@ -141,7 +156,7 @@ export default function BiodataArrayField({ jumlah_tiket }: BiodataFormProps) {
                 },
               }}
             />
-            <div className='mt-4 '>
+            <div className='mt-4'>
               <label>
                 Pilih Jenis Tryout <span className='text-red-500'>*</span>
               </label>

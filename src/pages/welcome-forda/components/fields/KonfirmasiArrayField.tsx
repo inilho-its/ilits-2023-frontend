@@ -39,13 +39,14 @@ export default function KonfirmasiArrayField({
       {fields &&
         fields.map((item, index) => (
           <>
-            <Typography variant='h5' className='text-center'>
+            <Typography variant='h6' className='mt-4 text-center text-gray-700'>
               Peserta {index + 1}
             </Typography>
             <Input
               disabled={true}
               readOnly={true}
               label='Asal Sekolah/Institusi'
+              name='asal_sekolah'
               id={`peserta.${index}.asal_sekolah`}
               placeholder='Asal Sekolah'
               helperText='Contoh : SMA Negeri 1 Surabaya'
@@ -53,6 +54,7 @@ export default function KonfirmasiArrayField({
             <Input
               disabled={true}
               label='Nama Lengkap'
+              name='nama'
               id={`peserta.${index}.nama`}
               placeholder='Nama Pendaftar'
             />
@@ -60,10 +62,12 @@ export default function KonfirmasiArrayField({
             <Input
               disabled={true}
               label='NIK'
+              name='nik'
               id={`peserta.${index}.nik`}
               placeholder='Masukkan NIK'
             />
             <Input
+              name='alamat_sekolah'
               disabled={true}
               label='Alamat Sekolah'
               id={`peserta.${index}.alamat_sekolah`}

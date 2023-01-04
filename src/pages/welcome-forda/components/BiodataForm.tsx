@@ -52,7 +52,7 @@ export default function BiodataForm({ setStep }: BiodataFormProps) {
             round='medium'
             size='medium'
             type='submit'
-            className='ml-auto'
+            className='ml-4'
           >
             Lanjutkan
           </Button>

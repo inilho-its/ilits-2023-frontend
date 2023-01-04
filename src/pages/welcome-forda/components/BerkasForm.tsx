@@ -9,7 +9,6 @@ import useFordaStore from '@/store/useFordaStore';
 import BerkasArrayField from '@/pages/welcome-forda/components/fields/BerkasArrayField';
 
 import { BerkasFormType } from '@/types/entitas/forda';
-
 type BiodataFormProps = {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -32,6 +31,10 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
 
   const { handleSubmit } = methods;
 
+  const openGuideBook = () => {
+    window.open('https://inilho.its.ac.id/GuidebookPembayaranWelfor', '_blank');
+  };
+
   // Store
   const onSubmit = (data: BerkasFormType) => {
     setImage(data.peserta);
@@ -45,23 +48,27 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
             {formData.jumlah_tiket && (
               <BerkasArrayField jumlah_tiket={formData?.jumlah_tiket || 0} />
             )}
-            <Button
-              variant='red'
-              round='medium'
-              size='medium'
-              onClick={() => setStep(1)}
-            >
-              Kembali
-            </Button>
-            <Button
-              variant='lightBlue'
-              round='medium'
-              size='medium'
-              type='submit'
-              className='ml-auto'
-            >
-              Lanjutkan
-            </Button>
+
+            <div className='mt-5'>
+              <Button
+                variant='red'
+                round='medium'
+                size='medium'
+                onClick={() => setStep(1)}
+              >
+                Kembali
+              </Button>
+              <Button
+                variant='lightBlue'
+                round='medium'
+                size='medium'
+                type='submit'
+                className='ml-4'
+                onClick={openGuideBook}
+              >
+                Lanjutkan
+              </Button>
+            </div>
           </div>
         </div>
       </form>

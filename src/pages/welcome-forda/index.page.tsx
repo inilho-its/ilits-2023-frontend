@@ -10,6 +10,7 @@ import Typography from '@/components/typography/Typography';
 
 import BerkasForm from '@/pages/welcome-forda/components/BerkasForm';
 import BiodataForm from '@/pages/welcome-forda/components/BiodataForm';
+import CompletedForm from '@/pages/welcome-forda/components/CompletedForm';
 import FordaForm from '@/pages/welcome-forda/components/FordaForm';
 import KonfirmasiForm from '@/pages/welcome-forda/components/KonfirmasiForm';
 
@@ -165,6 +166,7 @@ export default function DaftarOpenCampusPage() {
                 {step === 1 && <BiodataForm setStep={setStep} />}
                 {step === 2 && <BerkasForm setStep={setStep} />}
                 {step === 3 && <KonfirmasiForm setStep={setStep} />}
+                {step === 4 && <CompletedForm setStep={setStep} />}
               </div>
             </div>
           </div>
