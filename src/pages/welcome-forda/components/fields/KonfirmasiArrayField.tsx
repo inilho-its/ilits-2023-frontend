@@ -53,6 +53,7 @@ export default function KonfirmasiArrayField({
             />
             <Input
               disabled={true}
+              readOnly={true}
               label='Nama Lengkap'
               name='nama'
               id={`peserta.${index}.nama`}
@@ -60,6 +61,7 @@ export default function KonfirmasiArrayField({
             />
 
             <Input
+              readOnly={true}
               disabled={true}
               label='NIK'
               name='nik'
@@ -67,6 +69,7 @@ export default function KonfirmasiArrayField({
               placeholder='Masukkan NIK'
             />
             <Input
+              readOnly={true}
               name='alamat_sekolah'
               disabled={true}
               label='Alamat Sekolah'
@@ -74,14 +77,15 @@ export default function KonfirmasiArrayField({
               placeholder='Masukkan Alamat Sekolah'
             />
             <Input
+              readOnly={true}
               disabled={true}
               label='Nomor Telepon'
               id={`peserta.${index}.no_hp`}
               placeholder='No. Telepon'
             />
             <Input
+              readOnly={true}
               disabled={true}
-              required={true}
               label='Email'
               id={`peserta.${index}.email`}
               type='email'

@@ -9,6 +9,7 @@ import Button from '@/components/buttons/Button';
 import DropzoneInput from '@/components/forms/DropzoneInput';
 import Input from '@/components/forms/Input';
 import SelectInput from '@/components/forms/SelectInput';
+import PrimaryLink from '@/components/links/PrimaryLink';
 
 import useFordaStore from '@/store/useFordaStore';
 
@@ -279,6 +280,18 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
                   : currentHarga}
               </p>
             )}
+          </div>
+          <div>
+            <p className='-mt-1 text-end text-sm'>
+              <span className='text-red-500'>*</span> Jangan lupa menambahkan
+              kode unik sesuai dengan{' '}
+              <PrimaryLink
+                className='text-red-500 underline'
+                href='https://inilho.its.ac.id/GuidebookPembayaranWelfor'
+              >
+                Guidebook
+              </PrimaryLink>
+            </p>
           </div>
           <div className='space-y-5 font-normal'>
             <SelectInput

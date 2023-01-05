@@ -38,6 +38,7 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
   // Store
   const onSubmit = (data: BerkasFormType) => {
     setImage(data.peserta);
+    openGuideBook();
     setStep(3);
   };
   return (
@@ -64,7 +65,6 @@ export default function BerkasForm({ setStep }: BiodataFormProps) {
                 size='medium'
                 type='submit'
                 className='ml-4'
-                onClick={openGuideBook}
               >
                 Lanjutkan
               </Button>
