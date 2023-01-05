@@ -40,6 +40,7 @@ export default async function middleware(req: NextRequest) {
       'fakultas',
       'pembayaran',
       'merchandise',
+      'welcome-forda',
     ],
   ]);
 

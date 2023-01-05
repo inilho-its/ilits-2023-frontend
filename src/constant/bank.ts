@@ -4,10 +4,6 @@ export const Bank_Forda = [
     name: ' 085745596388 (Ita Dwi Septiani)',
   },
   {
-    id: 'OVO',
-    name: ' 085745596388 (Ita Dwi Septiani)',
-  },
-  {
     id: 'ShopeePay',
     name: ' 085745596388 (Ita Dwi Septiani)',
   },
