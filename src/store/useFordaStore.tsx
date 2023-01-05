@@ -13,9 +13,11 @@ type FordaStoreType = {
   formData: FormDataType;
   pesertaData: Peserta[];
   imageFile: Berkas[];
+  fordaOrderId: string;
   setFormData: (data: FormDataType) => void;
   setPesertaData: (data: Peserta[]) => void;
   setImageFile: (data: Berkas[]) => void;
+  setFordaOrderId: (data: string) => void;
 };
 
 const useFordaStoreBase = create<FordaStoreType>((set) => ({
@@ -25,6 +27,7 @@ const useFordaStoreBase = create<FordaStoreType>((set) => ({
   pesertaData: [],
   // Page 3
   imageFile: [],
+  fordaOrderId: '',
   // Set Page 1
 
   setFormData: (data) =>
@@ -45,6 +48,13 @@ const useFordaStoreBase = create<FordaStoreType>((set) => ({
     set(
       produce<FordaStoreType>((state) => {
         state.imageFile = { ...state.imageFile, ...data };
+      })
+    ),
+  //
+  setFordaOrderId: (data) =>
+    set(
+      produce<FordaStoreType>((state) => {
+        state.fordaOrderId = data;
       })
     ),
 }));

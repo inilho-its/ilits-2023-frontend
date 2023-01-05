@@ -39,6 +39,20 @@ type BiodataFormProps = {
   setStep: React.Dispatch<React.SetStateAction<number>>;
 };
 
+type FordaData = {
+  forda_order_id: string;
+};
+
+type Forda = {
+  data: FordaData[];
+  message: string;
+  status: boolean;
+};
+
+type FordaId = {
+  data: Forda;
+};
+
 export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
   const [voucer, setVoucer] = React.useState<DiskonReturn>();
   const [currentHarga, setCurrentHarga] = React.useState(0);
@@ -47,6 +61,7 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
   const imageData = useFordaStore.useImageFile();
   const formData = useFordaStore.useFormData();
   const pesertaData = useFordaStore.usePesertaData();
+  const fordaOrderId = useFordaStore.useSetFordaOrderId();
 
   //#endregion  //*======== Store  ===========
 
@@ -177,13 +192,14 @@ export default function KonfirmasiForm({ setStep }: BiodataFormProps) {
     // Sending data
     toast.promise(
       apiMock
-        .post<ApiReturn<null>>('/forda', formdata, {
+        .post<ApiReturn<null>, FordaId>('/forda', formdata, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         })
         .then((res) => {
           if (res.data.status) {
+            fordaOrderId(res.data.data[0].forda_order_id as string);
             setStep(4);
             return res.data;
           } else {

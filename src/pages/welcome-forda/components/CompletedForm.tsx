@@ -2,7 +2,10 @@ import React from 'react';
 
 import ButtonLink from '@/components/links/ButtonLink';
 
+import useFordaStore from '@/store/useFordaStore';
+
 const CompletedForm = () => {
+  const fordaOrderId = useFordaStore.useFordaOrderId();
   return (
     <div className='flex flex-col items-center justify-center space-y-4 text-gray-700'>
       <h6 className='font-medium'>
@@ -12,7 +15,8 @@ const CompletedForm = () => {
       <p className='text-center font-medium'>
         Kami sedang memproses pembayaran Anda, silahkan cek "My Tickets" pada
         halaman utama web Ini Lho ITS! untuk melihat verifikasi pembayaran Anda.
-        {/* Berikut No. Pendaftaran Anda untuk pengecekan status tiket : */}
+        Berikut No. Pendaftaran Anda untuk pengecekan status tiket :
+        <div className='py-2 font-bold'>{fordaOrderId}</div>
         Pembayaran anda sudah kami terima, kami akan segera mengirimkan email
         kapada anda.
       </p>
