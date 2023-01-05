@@ -73,7 +73,7 @@ export default function MerchandisePage() {
               </div>
             </div>
             <div>
-              <div className='w-80 md:mt-48 md:w-[400px] lg:w-[550px] xl:mt-24 xl:w-[755px]'>
+              <div className='w-[300px] sm:w-96 md:mt-48 md:w-[400px] lg:w-[550px] xl:mt-24 xl:w-[755px]'>
                 <NextImage
                   src='/images/merchandisePage/hero-1.png'
                   width='90%'
