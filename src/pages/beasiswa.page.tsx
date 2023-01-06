@@ -18,16 +18,17 @@ import {
 
 type BeasiswaCardProps = {
   title: string;
-  imgUrl: string;
+  imgSrc: string;
+  link: string;
 };
 
-const BeasiswaCard = ({ title, imgUrl }: BeasiswaCardProps) => {
+const BeasiswaCard = ({ title, imgSrc, link }: BeasiswaCardProps) => {
   return (
     <>
       {/* Desktop Img Main */}
       <div className='relative inset-0 hidden h-52 w-full max-w-[1046px] sm:block'>
         <NextImage
-          src={imgUrl}
+          src={imgSrc}
           width='100%'
           height='20%'
           layout='responsive'
@@ -43,12 +44,12 @@ const BeasiswaCard = ({ title, imgUrl }: BeasiswaCardProps) => {
           </Typography>
         </div>
         <div className='absolute right-4 bottom-4 hidden lg:block '>
-          <ButtonLink variant='yellow' size='medium' round='medium' href='#'>
+          <ButtonLink variant='yellow' size='medium' round='medium' href={link}>
             Lihat
           </ButtonLink>
         </div>
-        <div className='absolute right-4 bottom-11 hidden sm:block lg:hidden'>
-          <ButtonLink variant='yellow' size='medium' round='medium' href='#'>
+        <div className='absolute right-4 bottom-[4.8rem] hidden sm:block lg:hidden'>
+          <ButtonLink variant='yellow' size='medium' round='medium' href={link}>
             Lihat
           </ButtonLink>
         </div>
@@ -57,14 +58,14 @@ const BeasiswaCard = ({ title, imgUrl }: BeasiswaCardProps) => {
       {/* Mobile Img Main */}
       <div className='relative block w-full sm:hidden'>
         <NextImage
-          src={imgUrl}
+          src={imgSrc}
           width='100%'
           height='57%'
           layout='responsive'
           objectFit='contain'
           alt='beasiswa-card'
         />
-        <div className='absolute top-6 flex h-16 w-full max-w-[231px] items-center justify-center rounded-r-xl border-2 border-bone-1000 bg-white sm:hidden'>
+        <div className='absolute top-6 flex h-16 w-full max-w-[158px] items-center justify-center rounded-r-xl border-2 border-bone-1000 bg-white sm:hidden'>
           <Typography
             variant='title'
             className='text-sm font-bold leading-[24px] text-black '
@@ -77,7 +78,7 @@ const BeasiswaCard = ({ title, imgUrl }: BeasiswaCardProps) => {
             variant='yellow'
             size='medium'
             round='medium'
-            href='#'
+            href={link}
             className='text-[12px]'
           >
             Lihat
@@ -276,10 +277,10 @@ export default function BeasiswaPage() {
           </div>
           {/* Img Area 2 End*/}
           <div
-            className='relative z-10 flex flex-col items-center justify-center border-t-2 border-b-2 border-black'
+            className='relative z-10 flex flex-col items-center justify-center'
             id='section2'
           >
-            <div className='relative z-20 flex h-36 w-screen items-center justify-center  border-2 border-bone-1000 bg-red-500'>
+            <div className='relative z-20 flex h-36 w-screen items-center justify-center border-t-2 border-b-2 border-bone-1000 bg-red-500'>
               <div className='absolute -top-[3px] left-0 -z-10 w-[5.5rem] md:w-48'>
                 <NextImage
                   src='/images/beasiswaPage/mic-1.png'
@@ -315,7 +316,7 @@ export default function BeasiswaPage() {
               <div className='h-[20px] w-[20px] rounded-full border-2 border-bone-1000 bg-yellow-400'></div>
             </div>
             <div className='mb-20 flex h-full max-h-[586px] w-full max-w-[600px] flex-col-reverse items-center rounded-b-2xl border-l-2 border-r-2 border-b-2 border-bone-1000 bg-white sm:max-h-[900px] lg:max-h-[463px] lg:max-w-[1046px] lg:flex-row'>
-              <div className='w-[80%] sm:w-2/3 lg:w-1/2 lg:pt-10 lg:pl-11 lg:pr-20 lg:pb-6'>
+              <div className='w-[75%] sm:w-2/3 lg:w-1/2 lg:pt-10 lg:pl-11 lg:pr-20 lg:pb-6'>
                 <Typography
                   variant='h5'
                   className='hidden text-[32px] font-semibold text-bone-1000 sm:leading-none lg:block lg:leading-[48px]'
@@ -326,17 +327,18 @@ export default function BeasiswaPage() {
                   variant='body'
                   className='mt-5 text-[16px] font-normal leading-[24px] text-bone-1000 sm:mt-8 sm:text-center lg:mt-4 lg:text-left'
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore hic neque quasi repudiandae molestiae doloremque id
-                  deserunt quis accusantium qui nam amet eos excepturi, nemo
-                  quisquam dignissimos. A, est atque.
+                  Jumlah dari lembaga yang menyediakan beasiswa di ITS ada 45
+                  lembaga dengan skema sebanyak 55 macam dan total mahasiswa
+                  yang telah mendapat beasiswa sebanyak 4.733 orang. Hal ini
+                  menunjukkan bahwa peluang untuk mendapat beasiswa di ITS
+                  sangat besar
                 </Typography>
                 {/* Desktop ver */}
                 <ButtonLink
                   variant='lightBlue'
                   round='medium'
                   size='medium'
-                  href='#'
+                  href='https://www.youtube.com/@INILHOITS'
                   className='mt-14 hidden w-max lg:block '
                 >
                   Tonton Sekarang
@@ -346,7 +348,7 @@ export default function BeasiswaPage() {
                   variant='lightBlue'
                   round='medium'
                   size='medium'
-                  href='#'
+                  href='https://www.youtube.com/@INILHOITS'
                   className='my-5 block w-full text-center sm:my-8 lg:hidden'
                 >
                   Tonton Sekarang
@@ -546,25 +548,25 @@ export default function BeasiswaPage() {
                     <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
                       <div className='w-full'>
                         <NextImage
-                          src='/images/beasiswaPage/carousel-1.png'
+                          src='/images/beasiswaPage/beasiswa-car-1.png'
                           width='100%'
                           height='70%'
                           layout='responsive'
                           objectFit='contain'
-                          alt='carousel-1'
+                          alt='beasiswa-car-1'
                         />
                       </div>
                       <Typography
                         variant='title'
                         className='text-[20px] font-bold leading-[24px] text-black '
                       >
-                        Beasiswa Unggulan
+                        Beasiswa Sang Pejuang
                       </Typography>
                       <ButtonLink
                         variant='yellow'
                         size='medium'
                         round='medium'
-                        href='#'
+                        href='https://www.its.ac.id/id/agenda/beasiswa-sang-pejuang-2021/'
                       >
                         Lihat
                       </ButtonLink>
@@ -574,25 +576,25 @@ export default function BeasiswaPage() {
                     <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
                       <div className='w-full'>
                         <NextImage
-                          src='/images/beasiswaPage/carousel-1.png'
+                          src='/images/beasiswaPage/beasiswa-car-2.png'
                           width='100%'
                           height='70%'
                           layout='responsive'
                           objectFit='contain'
-                          alt='carousel-1'
+                          alt='beasiswa-car-2'
                         />
                       </div>
                       <Typography
                         variant='title'
                         className='text-[20px] font-bold leading-[24px] text-black '
                       >
-                        Beasiswa Unggulan
+                        Beasiswa IKA ITS
                       </Typography>
                       <ButtonLink
                         variant='yellow'
                         size='medium'
                         round='medium'
-                        href='#'
+                        href='https://tunasunggulbangsa.or.id'
                       >
                         Lihat
                       </ButtonLink>
@@ -602,25 +604,25 @@ export default function BeasiswaPage() {
                     <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
                       <div className='w-full'>
                         <NextImage
-                          src='/images/beasiswaPage/carousel-1.png'
+                          src='/images/beasiswaPage/beasiswa-car-3.png'
                           width='100%'
                           height='70%'
                           layout='responsive'
                           objectFit='contain'
-                          alt='carousel-1'
+                          alt='beasiswa-car-3'
                         />
                       </div>
                       <Typography
                         variant='title'
                         className='text-[20px] font-bold leading-[24px] text-black '
                       >
-                        Beasiswa Unggulan
+                        Beasiswa Dana Abadi
                       </Typography>
                       <ButtonLink
                         variant='yellow'
                         size='medium'
                         round='medium'
-                        href='#'
+                        href='http://danaabadi.its.ac.id/web/about'
                       >
                         Lihat
                       </ButtonLink>
@@ -630,25 +632,53 @@ export default function BeasiswaPage() {
                     <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
                       <div className='w-full'>
                         <NextImage
-                          src='/images/beasiswaPage/carousel-1.png'
+                          src='/images/beasiswaPage/beasiswa-car-4.png'
                           width='100%'
                           height='70%'
                           layout='responsive'
                           objectFit='contain'
-                          alt='carousel-1'
+                          alt='beasiswa-car-4'
                         />
                       </div>
                       <Typography
                         variant='title'
                         className='text-[20px] font-bold leading-[24px] text-black '
                       >
-                        Beasiswa Unggulan
+                        Beasiswa UKT ADIK
                       </Typography>
                       <ButtonLink
                         variant='yellow'
                         size='medium'
                         round='medium'
-                        href='#'
+                        href='https://www.its.ac.id/ppid/wp-content/uploads/sites/68/2021/07/3.-2348-SK-Rektor-ttg-Perubahan-Penerima-Beasiswa-Afirmasi-Pendidikan-Tinggi-ADIK-On-Going-Semester-Genap.pdf'
+                      >
+                        Lihat
+                      </ButtonLink>
+                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <div className='mx-auto flex h-[345px] w-full max-w-[297px] flex-col items-center justify-center space-y-5 rounded-2xl border-2 border-neutral-1000 bg-neutral-100 pt-6 pl-6 pr-6 pb-4'>
+                      <div className='w-full'>
+                        <NextImage
+                          src='/images/beasiswaPage/beasiswa-car-5.png'
+                          width='100%'
+                          height='70%'
+                          layout='responsive'
+                          objectFit='contain'
+                          alt='beasiswa-car-5'
+                        />
+                      </div>
+                      <Typography
+                        variant='title'
+                        className='text-[20px] font-bold leading-[24px] text-black '
+                      >
+                        Beasiswa UKT Bidikmisi
+                      </Typography>
+                      <ButtonLink
+                        variant='yellow'
+                        size='medium'
+                        round='medium'
+                        href='https://www.its.ac.id/instrumentasi/id/calon-mahasiswa/beasiswa/#1584626771150-eaac8132-7441'
                       >
                         Lihat
                       </ButtonLink>
