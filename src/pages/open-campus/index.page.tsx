@@ -22,11 +22,11 @@ export default function OpenCampusPage() {
                   priority
                 />
               </div>
-              <div className='px-7 pt-7 text-center text-3xl font-bold sm:px-3 sm:text-4xl md:pt-6 md:text-5xl lg:pt-6 lg:text-6xl'>
+              <div className='stroke-sm px-7 pt-7 text-center text-3xl font-bold sm:px-3 sm:text-4xl md:pt-6 md:text-5xl lg:pt-6 lg:text-6xl'>
                 <p className='text-dark'>
-                  Hai <br />
-                  <span className='text-danger-main'>
-                    Pendaftaran Open Campus sudah ditutup
+                  <span className='leading-none text-danger-main md:leading-[68px]'>
+                    Pendaftaran Open Campus <br />
+                    sudah ditutup
                   </span>
                 </p>
               </div>

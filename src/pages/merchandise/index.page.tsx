@@ -73,7 +73,7 @@ export default function MerchandisePage() {
               </div>
             </div>
             <div>
-              <div className='w-80 md:mt-48 md:w-[400px] lg:w-[550px] xl:mt-24 xl:w-[755px]'>
+              <div className='w-[300px] sm:w-96 md:mt-48 md:w-[400px] lg:w-[550px] xl:mt-24 xl:w-[755px]'>
                 <NextImage
                   src='/images/merchandisePage/hero-1.png'
                   width='90%'
@@ -394,7 +394,7 @@ export default function MerchandisePage() {
             </div>
           </div>
           {/* Img Area 4 End*/}
-          <div className='relative z-10 flex flex-col items-center justify-center'>
+          <div className='relative z-10 mt-14 flex flex-col items-center justify-center sm:mt-0'>
             <div className='relative z-50 h-20 w-full max-w-[300px]  rounded-2xl border-2 sm:h-32 sm:max-w-lg md:max-w-xl lg:max-w-[811px] '>
               <div className=' absolute  z-50 flex h-20 w-full max-w-xs items-center  justify-between rounded-2xl border-2 border-bone-1000 bg-orange-400 px-9 sm:h-32 sm:max-w-lg md:max-w-xl lg:max-w-[811px]'>
                 <div className='flex flex-col items-center justify-center gap-4'>

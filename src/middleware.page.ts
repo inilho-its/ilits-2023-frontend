@@ -40,14 +40,9 @@ export default async function middleware(req: NextRequest) {
       'fakultas',
       'pembayaran',
       'merchandise',
+      'welcome-forda',
     ],
   ]);
-
-  const { pathname } = req.nextUrl;
-
-  if (pathname == '/open-campus') {
-    return NextResponse.redirect('https://inilho.its.ac.id/open-campus/daftar');
-  }
 
   if (pageList.includes(path)) {
     return;

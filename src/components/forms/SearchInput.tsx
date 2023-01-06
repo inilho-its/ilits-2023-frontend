@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 import { IconType } from 'react-icons';
-import { HiExclamation } from 'react-icons/hi';
+import { HiExclamationCircle } from 'react-icons/hi';
 
 import clsxm from '@/lib/clsxm';
 
@@ -11,11 +11,9 @@ enum LabelType {
   'col',
 }
 
-export type InputProps = {
+export type SearchInputProps = {
   /** Input label */
-  label: string;
-  index?: number;
-  name?: string;
+  label?: string;
   /**
    * id to be initialized with React Hook Form,
    * must be the same with the pre-defined types.
@@ -41,49 +39,49 @@ export type InputProps = {
   labelType?: keyof typeof LabelType;
 
   // Text
-  leftText?: string;
-  rightText?: string;
-  leftTextClassName?: string;
+  rightTextButton?: string;
   rightTextClassName?: string;
 
+  //SearchInput
+  // status for unverified/verified, disable for disabling button
+  status: boolean;
+  disable: boolean;
+
   // Icon
-  leftIcon?: IconType;
   rightIcon?: IconType;
-  leftIconClassName?: string;
   rightIconClassName?: string;
 } & React.ComponentPropsWithoutRef<'input'>;
 
-export default function Input({
+export default function SearchInput({
   label,
   placeholder = '',
   helperText,
   labelType = 'col',
   id,
+
   type = 'text',
   readOnly = false,
   hideError = false,
   required,
 
   // Icon Type
-  leftIcon: LeftIcon,
   rightIcon: RightIcon,
-  leftIconClassName,
   rightIconClassName,
 
-  // Text Type
-  leftText: LeftText,
-  rightText: RightText,
-  leftTextClassName,
-  rightTextClassName,
+  // SearchInput
+  status,
+  disable,
 
+  // Text Type
+  rightTextButton: RightTextButton,
+  rightTextClassName,
   validation,
   ...rest
-}: InputProps) {
+}: SearchInputProps) {
   const {
     register,
     formState: { errors },
   } = useFormContext();
-
   return (
     <div>
       <div
@@ -109,24 +107,6 @@ export default function Input({
             labelType === 'row' && 'col-span-3'
           )}
         >
-          {/* Icon and Text Left */}
-          {LeftIcon && (
-            <div className='absolute pl-4'>
-              <LeftIcon className={clsxm('', leftIconClassName)} />
-            </div>
-          )}
-          {/* Prefix */}
-          {LeftText && (
-            <div
-              className={clsxm(
-                'rounded-l-xl border border-[#D1D5DC] bg-gray-50 px-3 py-2 text-[#687083]',
-                leftTextClassName
-              )}
-            >
-              {LeftText}
-            </div>
-          )}
-
           <input
             {...register(id, validation)}
             {...rest}
@@ -141,25 +121,30 @@ export default function Input({
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                 : 'focus:ring-primary-500 border-neutral-300 focus:border-blue-400',
               'block w-full shadow-sm hover:border-blue-400',
-              LeftIcon && 'rounded-md pl-12',
               RightIcon && 'rounded-md pr-10',
-              LeftText && 'rounded-r-md',
-              RightText && 'rounded-l-md',
-              !LeftIcon && !RightIcon && !LeftText && !RightText && 'rounded-md'
+              RightTextButton && 'rounded-l-md',
+              !RightIcon && !RightTextButton && 'rounded-md'
             )}
             placeholder={placeholder}
             aria-describedby={id}
           />
           {/* Suffix */}
-          {RightText && (
-            <div
-              className={clsxm(
-                'rounded-r-xl border border-[#D1D5DC] bg-gray-50 px-3 py-2 text-[#687083]',
-                rightTextClassName
-              )}
-            >
-              {RightText}
-            </div>
+          {RightTextButton && (
+            <button className='relative' disabled={disable} type='submit'>
+              <div
+                className={clsxm(
+                  rightTextClassName,
+                  'w-16 rounded-r-xl border border-[#D1D5DC] px-3 py-[10px] text-[#687083] transition-all duration-500 md:py-2',
+                  !status && disable
+                    ? 'w-52 bg-warning-main text-neutral-50'
+                    : status && disable
+                    ? 'w-52 bg-green-300 text-neutral-50'
+                    : 'bg-gray-50'
+                )}
+              >
+                {RightTextButton}
+              </div>
+            </button>
           )}
           {/* Right Icon */}
           {RightIcon && (
@@ -173,17 +158,10 @@ export default function Input({
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
         {!hideError && errors[id] && (
           <span className='flex gap-2 text-sm text-red-500'>
-            <HiExclamation className='text-xl text-red-500' />
+            <HiExclamationCircle className='text-xl text-red-500' />
             {errors[id]?.message as unknown as string}
           </span>
         )}
-        {/* 
-        {!hideError && errors.peserta && (
-          <span className='flex gap-2 text-sm text-red-500'>
-            <HiExclamation className='text-xl text-red-500' />
-            {errors?.peserta[index][name].message as unknown as string}
-          </span>
-        )} */}
       </div>
     </div>
   );
