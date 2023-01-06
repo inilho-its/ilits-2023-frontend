@@ -114,11 +114,7 @@ export default function PrestasiPage() {
                   </div>
                   <div className='flex justify-center align-middle md:block'>
                     <div className='m-auto pb-10'>
-                      <ButtonLink
-                        href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
-                        variant='yellow'
-                        size='small'
-                      >
+                      <ButtonLink href='#more' variant='yellow' size='small'>
                         <Typography
                           variant='button'
                           className='flex-none px-1 font-primary text-sm font-medium leading-6 text-gray-800 lg:text-base'
@@ -196,7 +192,10 @@ export default function PrestasiPage() {
               </div>
             </div>
 
-            <div className='relative flex h-full flex-col justify-center'>
+            <div
+              className='relative flex h-full flex-col justify-center'
+              id='more'
+            >
               <div className='flex justify-center'>
                 <Typography
                   variant='h5'
@@ -257,7 +256,7 @@ export default function PrestasiPage() {
               </div>
               {/* ONLY SHOW ON MOBILE */}
               <Typography
-                className='mt-8 mb-4 text-center font-primary text-[32px] font-bold text-[#121212] sm:text-4xl lg:hidden'
+                className='mt-8 mb-4 text-center font-primary text-2xl font-bold text-[#121212] sm:text-3xl lg:hidden'
                 variant='h6'
               >
                 Info Unik Buat Kamu!
@@ -320,7 +319,7 @@ export default function PrestasiPage() {
         {/* SECTION REGIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute top-10 w-full'>
+          <div className='absolute -top-36 w-full'>
             <NextImage
               src='/images/prestasi/String-Cloud-3.png'
               width='100%'
@@ -407,7 +406,7 @@ const TitleTable = ({
                   <Typography
                     key={indexItem}
                     className={clsxm(
-                      'px-4 text-center font-primary font-medium text-black',
+                      'px-4 py-2 text-center font-primary font-medium text-black',
                       indexItem == 0 ? 'font-bold' : ''
                     )}
                     variant='caption'
