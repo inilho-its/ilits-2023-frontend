@@ -14,7 +14,7 @@ const links = [
   { href: '/coming-soon', label: 'Fakultas' },
   { href: '/coming-soon', label: 'Prestasi' },
   { href: '/coming-soon', label: 'Alumni' },
-  { href: '/coming-soon', label: 'Beasiswa' },
+  { href: '/beasiswa', label: 'Beasiswa' },
   { href: '/merchandise', label: 'Merchandise' },
 ];
 
