@@ -82,6 +82,16 @@
       1px 1px 0px #000;
   }
 
+  .stroke-bone-1000 {
+    text-shadow: -2px -2px 0px #30302e, 2px -2px 0px #30302e,
+      -2px 2px 0px #30302e, 2px 2px 0px #30302e;
+  }
+
+  .stroke-sm-bone-1000 {
+    text-shadow: -1px -1px 0px #30302e, 1px -1px 0px #30302e,
+      -1px 1px 0px #30302e, 1px 1px 0px #30302e;
+  }
+
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
