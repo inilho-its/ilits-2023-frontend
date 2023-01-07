@@ -13,8 +13,6 @@ type teamProps = {
   teamName: string;
   imgSrc: string;
   desc: string;
-  width: string;
-  height: string;
   isLeft: boolean;
 };
 
@@ -30,8 +28,8 @@ function TimList(props: teamProps) {
         <div className='w-full grayscale transition duration-200 hover:grayscale-0'>
           <NextImage
             src={props.imgSrc}
-            width={props.width}
-            height={props.height}
+            width='100%'
+            height='80%'
             objectFit='contain'
             layout='responsive'
             alt='tim'
@@ -100,7 +98,7 @@ export default function TimPage() {
               alt='cloud'
             />
           </div>
-          <div className='mx-auto flex w-10/12 lg:justify-between'>
+          <div className='mx-auto flex w-11/12 md:w-10/12 lg:justify-between'>
             <div className='relative w-[618px] pt-[225px]'>
               <div className='relative z-30 h-[33px] rounded-t-2xl border-2 border-black bg-yellow-400'>
                 <div className='absolute -top-6 -left-4 z-50 w-28'>
@@ -124,7 +122,7 @@ export default function TimPage() {
                   alt='cloud'
                 />
               </div>
-              <div className='relative z-20 h-[343px] rounded-b-2xl border-b-2 border-l-2 border-r-2 border-black bg-neutral-100 pt-10 text-center md:pl-12 md:text-left lg:pt-[66px] lg:pl-[66px]'>
+              <div className='relative z-20 h-[343px] rounded-b-2xl border-b-2 border-l-2 border-r-2 border-black bg-neutral-100 pt-10 text-center md:pl-[66px] md:text-left lg:pt-[66px]'>
                 <Typography
                   variant='h1'
                   as='h1'
@@ -302,7 +300,7 @@ export default function TimPage() {
               alt='ornament'
             />
           </div>
-          <div className='relative mx-auto mb-12 w-[356px] pt-[137px] sm:w-[500px] md:w-[618px] lg:mb-32 lg:w-[950px] lg:px-4 xl:w-[1046px]'>
+          <div className='relative mx-auto mb-12 w-11/12 pt-[137px] sm:w-[500px] md:w-[618px] lg:mb-32 lg:w-[950px] lg:px-4 xl:w-[1046px]'>
             <div className='relative z-10'>
               <div>
                 <div className='z-30 rounded-t-2xl border-2 border-black bg-pink-500'>
@@ -363,7 +361,7 @@ export default function TimPage() {
                       <NextImage
                         src='/images/pageTim/image-8.png'
                         width='100%'
-                        height='87.5%'
+                        height='88.5%'
                         objectFit='contain'
                         layout='responsive'
                         alt='image'
@@ -406,7 +404,7 @@ export default function TimPage() {
           </div>
         </section>
         <section className='relative'>
-          <div className='absolute left-0 -top-36 z-50 block w-96 lg:hidden'>
+          <div className='absolute -left-40 -top-24 block w-96 lg:hidden'>
             <NextImage
               src='/images/pageTim/gradien-4.png'
               width='100%'
@@ -427,9 +425,9 @@ export default function TimPage() {
                 alt='gradien'
               />
             </div>
-            <div className='relative z-30 mx-auto mt-12 w-10/12 rounded-3xl border-2 border-black bg-green-400 lg:mt-[147.66px]'>
+            <div className='relative z-30 mx-auto mt-12 w-11/12 rounded-3xl border-2 border-black bg-green-400 md:w-10/12 lg:mt-[147.66px]'>
               <div className='relative'>
-                <div className='absolute -top-12 -left-8 hidden w-32 md:block'>
+                <div className='absolute -top-6 -left-8 hidden w-24 md:block lg:-top-12 lg:w-32'>
                   <NextImage
                     src='/images/pageTim/Magnifier.png'
                     width='100%'
@@ -445,7 +443,7 @@ export default function TimPage() {
                 >
                   Apa Saja Tim di ITS?
                 </Typography>
-                <div className='absolute -bottom-20 right-4 hidden w-16 md:block lg:right-6 lg:w-36'>
+                <div className='absolute right-4 -bottom-6 hidden w-20 md:block lg:-bottom-20 lg:right-6 lg:w-36'>
                   <NextImage
                     src='/images/pageTim/Arrow-2.png'
                     width='100%'
@@ -495,7 +493,97 @@ export default function TimPage() {
               <div className='absolute -top-96 z-10 hidden w-screen lg:block'>
                 <NextImage
                   src='/images/pageTim/Group-7238.png'
-                  width='85%'
+                  width='83%'
+                  height='100%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute -top-20 block w-screen md:-top-32 lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/Vector-2.png'
+                  width='100%'
+                  height='160%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[570px] block w-screen lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/Vector-3.png'
+                  width='100%'
+                  height='100%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[825px] -right-32 block w-[437px] lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/gradien-5.png'
+                  width='100%'
+                  height='100%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[1050px] z-10 block w-screen lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/Vector.png'
+                  width='100%'
+                  height='75%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[1050px] left-0 z-0 block w-48 lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/cloud-7.png'
+                  width='100%'
+                  height='75%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='cloud'
+                />
+              </div>
+              <div className='absolute top-[1400px] z-0 block w-screen lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/Vector-5.png'
+                  width='100%'
+                  height='150%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[1650px] z-0 block w-screen lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/Vector-6.png'
+                  width='100%'
+                  height='150%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[2600px] -left-32 z-0 block w-[437px] md:top-[2900px] lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/gradien-6.png'
+                  width='100%'
+                  height='100%'
+                  objectFit='contain'
+                  layout='responsive'
+                  alt='ornament'
+                />
+              </div>
+              <div className='absolute top-[2750px] right-0 z-0 block w-80 md:top-[3050px] md:w-96 lg:hidden'>
+                <NextImage
+                  src='/images/pageTim/cloud-8.png'
+                  width='100%'
                   height='100%'
                   objectFit='contain'
                   layout='responsive'
@@ -508,8 +596,8 @@ export default function TimPage() {
                 <TimList key={i} {...v} />
               ))}
             </div>
-            {/* <div className='relative'>
-              <div className='absolute b-0 l-0 w-96 hidden lg:block'>
+            <div className='relative flex flex-row items-start'>
+              <div className='absolute -top-80 -left-20 hidden w-96 lg:block'>
                 <NextImage
                   src='/images/pageTim/gradien.png'
                   width='100%'
@@ -519,7 +607,7 @@ export default function TimPage() {
                   alt='gradien'
                 />
               </div>
-              <div className='absolute b-0 l-0 w-96 hidden lg:block'>
+              <div className='absolute -top-[400px] left-48 hidden w-[600px] lg:block xl:-top-[450px] xl:w-[800px]'>
                 <NextImage
                   src='/images/pageTim/cloud-3.png'
                   width='100%'
@@ -529,7 +617,7 @@ export default function TimPage() {
                   alt='cloud'
                 />
               </div>
-            </div> */}
+            </div>
           </div>
         </section>
       </main>
