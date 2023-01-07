@@ -13,7 +13,7 @@ const links = [
   { href: '/eventual', label: 'Eventual' },
   { href: '/coming-soon', label: 'Fakultas' },
   { href: '/prestasi', label: 'Prestasi' },
-  { href: '/coming-soon', label: 'Alumni' },
+  { href: '/alumni', label: 'Alumni' },
   { href: '/beasiswa', label: 'Beasiswa' },
   { href: '/merchandise', label: 'Merchandise' },
 ];
