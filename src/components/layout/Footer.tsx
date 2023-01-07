@@ -1,13 +1,5 @@
 import * as React from 'react';
-import {
-  FaAngleDown,
-  FaInstagram,
-  FaLine,
-  FaLinkedin,
-  FaTiktok,
-  FaTwitter,
-  FaYoutube,
-} from 'react-icons/fa';
+import { FaAngleDown, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -52,12 +44,16 @@ export default function Footer() {
               Temukan kami di sosial media!
             </Typography>
             <div className='flex items-center justify-between space-x-2 text-neutral-100 md:space-x-4'>
-              <FaTwitter className='w-4 md:w-fit' size={32} />
-              <FaInstagram className='w-4 md:w-fit' size={32} />
-              <FaYoutube className='w-4 md:w-fit' size={32} />
+              <UnstyledLink href='https://www.instagram.com/inilhoits/'>
+                <FaInstagram className='w-4 md:w-fit' size={32} />
+              </UnstyledLink>
+              <UnstyledLink href='https://www.youtube.com/@INILHOITS'>
+                <FaYoutube className='w-4 md:w-fit' size={32} />
+              </UnstyledLink>
+              {/* <FaTwitter className='w-4 md:w-fit' size={32} />
               <FaLinkedin className='w-4 md:w-fit' size={32} />
               <FaTiktok className='w-4 md:w-fit' size={32} />
-              <FaLine className='w-4 md:w-fit' size={32} />
+              <FaLine className='w-4 md:w-fit' size={32} /> */}
             </div>
           </div>
         </div>
@@ -84,14 +80,6 @@ export default function Footer() {
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink href='/' className='mx-auto text-lg md:mx-0'>
                   Ini Lho ITS 2023!
-                </UnstyledLink>
-              </div>
-              <div className='flex h-10 gap-5 px-7 md:pl-0'>
-                <UnstyledLink
-                  href='/coming-soon'
-                  className='mx-auto text-lg md:mx-0'
-                >
-                  Fasilitas
                 </UnstyledLink>
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
