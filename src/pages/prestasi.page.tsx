@@ -13,7 +13,7 @@ import {
   PrestasiInternasional,
   PrestasiNasional,
   PrestasiRegional,
-} from '@/constant/prestasi';
+} from '@/constant/prestasiData';
 
 // Responsivity down to 300px
 export default function PrestasiPage() {
@@ -26,7 +26,7 @@ export default function PrestasiPage() {
           {/* ANCHOR BACKGROUND IMAGE AREA */}
           <div className='absolute top-24 w-full'>
             <NextImage
-              src='/images/prestasi/String-1.png'
+              src='/images/prestasiPage/String-1.png'
               width='100%'
               height='22%'
               objectFit='contain'
@@ -36,7 +36,7 @@ export default function PrestasiPage() {
           </div>
           <div className='absolute -bottom-2/3 -ml-32 w-full sm:ml-0 sm:w-1/2'>
             <NextImage
-              src='/images/prestasi/Cloud-1.png'
+              src='/images/prestasiPage/Cloud-1.png'
               width='100%'
               height='25%'
               objectFit='contain'
@@ -46,7 +46,7 @@ export default function PrestasiPage() {
           </div>
           <div className='absolute -top-[8%] right-1/2 w-[40rem]'>
             <NextImage
-              src='/images/prestasi/Light-2.png'
+              src='/images/prestasiPage/Light-2.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -57,7 +57,7 @@ export default function PrestasiPage() {
           </div>
           <div className='absolute -top-6 right-56 w-72'>
             <NextImage
-              src='/images/prestasi/Light-1.png'
+              src='/images/prestasiPage/Light-1.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -69,7 +69,7 @@ export default function PrestasiPage() {
 
           <div className='absolute right-0 mt-6 md:w-[37rem]'>
             <NextImage
-              src='/images/prestasi/Person-3.png'
+              src='/images/prestasiPage/Person-3.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -81,7 +81,7 @@ export default function PrestasiPage() {
           </div>
           <div className='absolute right-0 mt-[30rem] w-16 sm:w-24 md:right-96 md:mt-64'>
             <NextImage
-              src='/images/prestasi/Star-1.png'
+              src='/images/prestasiPage/Star-1.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -129,7 +129,7 @@ export default function PrestasiPage() {
 
               <div className='relative float-right -mt-[75px] mr-10 w-9 sm:mr-2'>
                 <NextImage
-                  src='/images/prestasi/Star-box.png'
+                  src='/images/prestasiPage/Star-box.png'
                   width='100%'
                   height='100%'
                   objectFit='contain'
@@ -138,7 +138,7 @@ export default function PrestasiPage() {
                 ></NextImage>
                 <div className='absolute top-4 -right-7 w-14'>
                   <NextImage
-                    src='/images/prestasi/Cursor.png'
+                    src='/images/prestasiPage/Cursor.png'
                     width='100%'
                     height='100%'
                     objectFit='contain'
@@ -158,7 +158,7 @@ export default function PrestasiPage() {
           {/* ANCHOR BACKGROUND AREA*/}
           <div className='absolute top-14 w-1/6'>
             <NextImage
-              src='/images/prestasi/Cloud-2.png'
+              src='/images/prestasiPage/Cloud-2.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -168,7 +168,7 @@ export default function PrestasiPage() {
 
           <div className='absolute top-14 right-0 w-1/4'>
             <NextImage
-              src='/images/prestasi/Cloud-3.png'
+              src='/images/prestasiPage/Cloud-3.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -181,7 +181,7 @@ export default function PrestasiPage() {
             <div className='absolute bottom-0 left-1 sm:left-[3%] md:left-[10%] lg:left-[20%]'>
               <div className='w-16 sm:w-24 lg:w-28'>
                 <NextImage
-                  src='/images/prestasi/Megaphone.png'
+                  src='/images/prestasiPage/Megaphone.png'
                   width='100%'
                   height='100%'
                   objectFit='contain'
@@ -243,7 +243,7 @@ export default function PrestasiPage() {
               <div className='flex w-full justify-center lg:-mt-5'>
                 <div className='mx-7 block w-10/12 rounded-lg pb-0 md:w-9/12 lg:m-0 lg:w-full lg:rounded-none lg:p-0'>
                   <NextImage
-                    src='/images/prestasi/InfoUnik.png'
+                    src='/images/prestasiPage/InfoUnik.png'
                     width='100%'
                     height='100%'
                     alt='people getting excited'
@@ -271,7 +271,7 @@ export default function PrestasiPage() {
           {/* ANCHOR BACKGROUND AREA */}
           <div className='absolute -top-28 w-full'>
             <NextImage
-              src='/images/prestasi/String-Cloud-1.png'
+              src='/images/prestasiPage/String-Cloud-1.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -298,7 +298,7 @@ export default function PrestasiPage() {
           {/* ANCHOR BACKGROUND AREA */}
           <div className='absolute right-0 top-4 -mr-20 w-full sm:-top-[10%] sm:mr-0 sm:w-9/12'>
             <NextImage
-              src='/images/prestasi/String-Cloud-2.png'
+              src='/images/prestasiPage/String-Cloud-2.png'
               width='100%'
               height='100%'
               objectFit='contain'
@@ -325,7 +325,7 @@ export default function PrestasiPage() {
           {/* ANCHOR BACKGROUND AREA */}
           <div className='absolute -top-[30rem] w-full'>
             <NextImage
-              src='/images/prestasi/String-Cloud-3.png'
+              src='/images/prestasiPage/String-Cloud-3.png'
               width='100%'
               height='60%'
               objectFit='contain'
