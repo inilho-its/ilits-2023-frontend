@@ -2,12 +2,13 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import Layout from '@/components/layout/Layout';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
-import { teamData } from '@/constant/timList';
+import { teamData } from '@/constant/timData';
 
 type teamProps = {
   teamName: string;
@@ -20,12 +21,12 @@ function TimList(props: teamProps) {
   return (
     <div
       className={clsxm(
-        'flex flex-col items-center overflow-hidden rounded-2xl border-2 border-black bg-neutral-100 lg:max-w-6xl xl:max-w-7xl',
+        'flex flex-col items-center overflow-hidden rounded-2xl border-2 border-black bg-neutral-100 grayscale transition duration-200 hover:grayscale-0 lg:max-w-6xl xl:max-w-7xl ',
         props.isLeft ? ' lg:flex-row' : ' lg:flex-row-reverse'
       )}
     >
       <div className='w-full lg:w-full xl:w-1/4'>
-        <div className='w-full grayscale transition duration-200 hover:grayscale-0'>
+        <div className='w-full'>
           <NextImage
             src={props.imgSrc}
             width='100%'
@@ -64,10 +65,10 @@ function TimList(props: teamProps) {
 
 export default function TimPage() {
   return (
-    <>
+    <Layout>
       <Seo templateTitle='Tim' />
       <main className='min-h-screen overflow-hidden bg-bone-500'>
-        <section className='relative mb-28'>
+        <section className='relative mb-20 md:mb-24 xl:mb-2'>
           <div className='absolute -top-16 left-0 hidden w-screen lg:block'>
             <NextImage
               src='/images/pageTim/Group-7235.png'
@@ -138,7 +139,7 @@ export default function TimPage() {
                   Institut Teknologi Sepuluh Nopember
                 </Typography>
                 <ButtonLink
-                  href='#'
+                  href='#more'
                   variant='yellow'
                   size='medium'
                   round='medium'
@@ -216,7 +217,10 @@ export default function TimPage() {
           </div>
         </section>
         <section>
-          <div className='relative border-t-2 border-b-2 border-black bg-red-500'>
+          <div
+            className='relative border-t-2 border-b-2 border-black bg-red-500'
+            id='more'
+          >
             <div className='absolute top-0 left-3 w-20 lg:w-32'>
               <NextImage
                 src='/images/pageTim/Arrow-1.png'
@@ -346,7 +350,7 @@ export default function TimPage() {
                         </Typography>
                         <div className='pt-4 lg:pt-16'>
                           <ButtonLink
-                            href='#'
+                            href='https://youtube.com/@itseurekatv'
                             variant='pink'
                             size='medium'
                             round='medium'
@@ -621,6 +625,6 @@ export default function TimPage() {
           </div>
         </section>
       </main>
-    </>
+    </Layout>
   );
 }
