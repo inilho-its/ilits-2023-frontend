@@ -90,6 +90,14 @@ export default function Footer() {
                   Fasilitas
                 </UnstyledLink>
               </div>
+              <div className='flex h-10 gap-5 px-7 md:pl-0'>
+                <UnstyledLink
+                  href='/coming-soon'
+                  className='mx-auto text-lg md:mx-0'
+                >
+                  Fakultas
+                </UnstyledLink>
+              </div>
             </div>
           </div>
           <div className='flex flex-col items-center justify-center space-y-3 text-white md:items-start'>
@@ -156,7 +164,7 @@ export default function Footer() {
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/coming-soon'
+                  href='/welcome-forda'
                   className='mx-auto text-lg md:mx-0'
                 >
                   Try Out Forum Daerah
