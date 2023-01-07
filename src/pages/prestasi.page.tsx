@@ -22,9 +22,9 @@ export default function PrestasiPage() {
       <Seo templateTitle='Prestasi' />
       <main className='m-0 min-h-screen bg-bone-500 p-0'>
         {/* SECTION LANDING */}
-        <section className='relative mb-60 p-0'>
+        <section className='relative mb-60 p-0 pt-24'>
           {/* ANCHOR BACKGROUND IMAGE AREA */}
-          <div className='absolute top-6 w-full'>
+          <div className='absolute top-24 w-full'>
             <NextImage
               src='/images/prestasi/String-1.png'
               width='100%'
@@ -101,7 +101,7 @@ export default function PrestasiPage() {
                   <div className='mb-8 mt-2 sm:mt-2'>
                     <Typography
                       variant='h3'
-                      className='stroke-sm-neutral-1000 flex-none text-center font-primary text-[64px] font-bold text-red-400 sm:text-[72px] sm:leading-[90px] md:text-left md:font-bold'
+                      className='flex-none stroke-bone-1000 text-center font-primary text-[64px] font-bold text-red-400 sm:text-[72px] sm:leading-[90px] md:text-left md:font-bold'
                     >
                       Prestasi
                     </Typography>
@@ -199,7 +199,7 @@ export default function PrestasiPage() {
               <div className='flex justify-center'>
                 <Typography
                   variant='h5'
-                  className='stroke-neutral-1000 text-2xl font-bold text-white sm:text-4xl'
+                  className='stroke-bone-1000 text-2xl font-bold text-white sm:text-4xl'
                 >
                   ITS BERPRESTASI LHO!
                 </Typography>
@@ -280,14 +280,16 @@ export default function PrestasiPage() {
             ></NextImage>
           </div>
           {/* ANCHOR CONTENT AREA */}
-          <TitleTable
-            headerClass='bg-red-500'
-            tableClass='bg-red-200'
-            className='relative mb-40'
-            title='PRESTASI INTERNASIONAL'
-            header={HeaderPrestasi}
-            items={PrestasiInternasional}
-          ></TitleTable>
+          <div className='relative z-10'>
+            <TitleTable
+              headerClass='bg-red-500'
+              tableClass='bg-red-200'
+              className='relative mb-40'
+              title='PRESTASI INTERNASIONAL'
+              header={HeaderPrestasi}
+              items={PrestasiInternasional}
+            ></TitleTable>
+          </div>
         </section>
         {/* !SECTION INTERNASIONAL END */}
 
@@ -305,21 +307,23 @@ export default function PrestasiPage() {
             ></NextImage>
           </div>
           {/* ANCHOR CONTENT AREA */}
-          <TitleTable
-            headerClass='bg-blue-500'
-            tableClass='bg-blue-200'
-            className='relative mb-40'
-            title='PRESTASI NASIONAL'
-            header={HeaderPrestasi}
-            items={PrestasiNasional}
-          ></TitleTable>
+          <div className='relative z-10'>
+            <TitleTable
+              headerClass='bg-blue-500'
+              tableClass='bg-blue-200'
+              className='relative mb-40'
+              title='PRESTASI NASIONAL'
+              header={HeaderPrestasi}
+              items={PrestasiNasional}
+            ></TitleTable>
+          </div>
         </section>
         {/* !SECTION NASIONAL END */}
 
         {/* SECTION REGIONAL */}
         <section className='relative'>
           {/* ANCHOR BACKGROUND AREA */}
-          <div className='absolute -top-36 w-full'>
+          <div className='absolute -top-[30rem] w-full'>
             <NextImage
               src='/images/prestasi/String-Cloud-3.png'
               width='100%'
@@ -331,14 +335,16 @@ export default function PrestasiPage() {
           </div>
 
           {/* ANCHOR CONTENT AREA */}
-          <TitleTable
-            headerClass='bg-yellow-500'
-            tableClass='bg-yellow-200'
-            className='relative pb-40'
-            title='PRESTASI REGIONAL'
-            header={HeaderPrestasi}
-            items={PrestasiRegional}
-          ></TitleTable>
+          <div className='relative z-10'>
+            <TitleTable
+              headerClass='bg-yellow-500'
+              tableClass='bg-yellow-200'
+              className='relative pb-40'
+              title='PRESTASI REGIONAL'
+              header={HeaderPrestasi}
+              items={PrestasiRegional}
+            ></TitleTable>
+          </div>
         </section>
         {/* !SECTION REGIONAL END */}
       </main>
@@ -365,7 +371,7 @@ const TitleTable = ({
     <div className={className}>
       <Typography
         variant='h5'
-        className='mb-8 stroke-neutral-1000 text-center font-primary text-2xl font-bold text-white sm:mb-10 sm:text-3xl md:text-4xl'
+        className='mb-8 stroke-bone-1000 text-center font-primary text-2xl font-bold text-white sm:mb-10 sm:text-3xl md:text-4xl'
       >
         {title}
       </Typography>
@@ -381,7 +387,7 @@ const TitleTable = ({
             <Typography
               style={{ width: `${100 / header.length}%` }} // we use style  here for readibility (integrating to tailwind results in unneeded complexity)
               key={index}
-              className='stroke-sm-neutral-1000 px-2 text-center font-primary text-base font-medium text-white sm:text-base sm:font-bold'
+              className='stroke-sm-bone-1000 px-2 text-center font-primary text-base font-medium text-white sm:text-base sm:font-bold'
               variant='body'
             >
               {title}
