@@ -39,7 +39,8 @@ export default function BerkasArrayField({
             <Input
               name='repost_feeds'
               required={true}
-              label='Repost Feeds'
+              label='Repost Feeds poster Welcome Forda
+              '
               id={`peserta.${index}.repost_feeds`}
               placeholder='Repost Feeds'
               validation={{
@@ -52,7 +53,7 @@ export default function BerkasArrayField({
             <Input
               name='follow_ig'
               required={true}
-              label='Follow IG'
+              label='Follow Instagram @inilhoits dan Akun Forda masing-masing'
               id={`peserta.${index}.follow_ig`}
               placeholder='Follow IG'
               validation={{
