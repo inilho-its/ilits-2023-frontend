@@ -217,10 +217,7 @@ export default function TimPage() {
           </div>
         </section>
         <section>
-          <div
-            className='relative border-t-2 border-b-2 border-black bg-red-500'
-            id='more'
-          >
+          <div className='relative border-t-2 border-b-2 border-black bg-red-500'>
             <div className='absolute top-0 left-3 w-20 lg:w-32'>
               <NextImage
                 src='/images/pageTim/Arrow-1.png'
@@ -253,7 +250,7 @@ export default function TimPage() {
             </div>
           </div>
         </section>
-        <section className='relative'>
+        <section className='relative' id='more'>
           <div className='absolute top-36 right-0 hidden w-[400px] lg:block'>
             <NextImage
               src='/images/pageTim/cloud-4.png'
