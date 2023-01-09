@@ -25,7 +25,7 @@ export default function FasilitasPage() {
             <section className='relative'>
               <Divider />
             </section>
-            <section className='relative'>
+            <section className='relative overflow-hidden'>
               <CardInfo />
             </section>
             <div id='fasilitas'></div>
@@ -50,109 +50,91 @@ export default function FasilitasPage() {
 
 function CardInfo() {
   return (
-    <div
-      className={clsx(
-        'mt-[46px] mb-[46px]',
-        'lg:m-[80px] lg:mb-[0px] lg:flex lg:justify-center'
-      )}
-    >
-      <div
-        className={clsx(
-          'ml-[17px] mr-[17px] h-auto w-auto rounded-[12px] border-[2px] border-solid border-bone-1000',
-          'lg:h-[454px] lg:w-[1046px]'
-        )}
-      >
-        <div
-          className={clsx(
-            'border-b-solid h-[20px] w-full rounded-t-[9px] border-b-[2px] border-b-bone-1000 bg-lightBlue-500',
-            'lg:relative lg:z-10 lg:flex lg:h-[36px] lg:justify-end'
-          )}
-        >
-          <div
-            className={clsx(
-              'ml-[295px] w-[50px] pt-[3px]',
-              'sm:ml-[545px] sm:w-[50px] sm:pt-[3px]',
-              'md:ml-[670px]',
-              'lg:mt-[5px] lg:mr-[16px] lg:w-[76px]'
-            )}
+    <div className='relative z-10 mx-auto mt-8 flex w-[95%] flex-col items-center justify-center md:mt-[137px]'>
+      <div className='flex h-10 w-full max-w-[600px] items-center justify-end space-x-2 rounded-t-2xl border-2 border-bone-1000 bg-lightBlue-500 px-2 lg:max-w-[1046px]'>
+        <div className='h-[20px] w-[20px] rounded-full border-2 border-bone-1000 bg-green-400'></div>
+        <div className='h-[20px] w-[20px] rounded-full border-2 border-bone-1000 bg-red-400'></div>
+        <div className='h-[20px] w-[20px] rounded-full border-2 border-bone-1000 bg-yellow-400'></div>
+      </div>
+      <div className='mb-10 flex h-full max-h-[586px] w-full max-w-[600px] flex-col-reverse items-center rounded-b-2xl border-l-2 border-r-2 border-b-2 border-bone-1000 bg-white sm:max-h-[900px] md:mb-20 lg:max-h-[463px] lg:max-w-[1046px] lg:flex-row'>
+        <div className='w-[75%] sm:w-2/3 lg:w-1/2 lg:pt-10 lg:pl-11 lg:pr-20 lg:pb-6'>
+          <Typography
+            variant='h5'
+            className='hidden text-[32px] font-semibold text-bone-1000 sm:leading-none lg:block lg:leading-[48px]'
           >
+            Info Unik Buat Kamu
+          </Typography>
+          <Typography
+            variant='body'
+            className='mt-5 text-[16px] font-normal leading-[24px] text-bone-1000 sm:mt-8 sm:text-center lg:mt-4 lg:text-left'
+          >
+            Institut Teknologi Sepuluh Nopember (ITS) menyediakan berbagai
+            fasilitas kampus untuk mendukung dan menunjang kegiatan yang ada di
+            lingkungan kampus. ITS akan selalu berupaya mengembangkan dan
+            meningkatkan kualitas fasilitas kampus ITS sehingga dapat selalu
+            menyediakan pelayanan yang prima.
+          </Typography>
+          {/* Desktop ver */}
+          <ButtonLink
+            variant='lightBlue'
+            round='medium'
+            size='medium'
+            href='https://www.youtube.com/@INILHOITS'
+            className='mt-14 hidden w-max lg:block '
+          >
+            Tonton Sekarang
+          </ButtonLink>
+          {/* Mobile ver */}
+          <ButtonLink
+            variant='lightBlue'
+            round='medium'
+            size='medium'
+            href='https://www.youtube.com/@INILHOITS'
+            className='my-5 block w-full text-center sm:my-8 lg:hidden'
+          >
+            Tonton Sekarang
+          </ButtonLink>
+        </div>
+        <div className='relative rounded-2xl sm:w-fit lg:w-1/2 '>
+          <Typography
+            variant='h5'
+            className='my-5 block text-2xl font-semibold text-bone-1000 sm:my-8 sm:text-[32px] sm:leading-none lg:my-0 lg:hidden lg:leading-[48px]'
+          >
+            Info Unik Buat Kamu
+          </Typography>
+          {/* Desktop ver */}
+          <div className='hidden w-full lg:block'>
             <NextImage
-              alt='comingsoon'
-              src='/images/pageFasilitas/fasilitas-deco-nav.png'
+              src='/images/pageFasilitas/fasilitas-dummy4.png'
               width='100%'
-              height='25%'
+              height='81%'
               layout='responsive'
               objectFit='contain'
-              imgClassName='lg:rounded-br-[10px]'
+              alt='people-1'
+              imgClassName='rounded-br-2xl'
             />
           </div>
-        </div>
-        <div className='lg:flex'>
-          <div
-            className={clsx(
-              'border-r-solid h-auto rounded-bl-[10px] rounded-br-[10px] bg-neutral-100',
-              'lg:h-[414px] lg:w-full lg:rounded-br-[0px]'
-            )}
-          >
-            <div
-              className={clsx(
-                'p-[20px] pl-[32px] pr-[32px]',
-                'lg:p-[37px] lg:pl-[66px] lg:pr-[93px]'
-              )}
-            >
-              <Typography
-                as='h5'
-                variant='h5'
-                className={clsx(
-                  'mb-[20px] text-center text-[24px] font-semibold',
-                  'lg:mb-[16px] lg:text-left lg:text-[32px]'
-                )}
-              >
-                Info Unik Buat Kamu
-              </Typography>
-              <div className='flex justify-center'>
-                <div className='mb-[20px] w-[292px] lg:w-[0px]'>
-                  <NextImage
-                    alt='comingsoon'
-                    src='/images/pageFasilitas/fasilitas-dummy3.png'
-                    width='100%'
-                    height='62%'
-                    layout='responsive'
-                    objectFit='contain'
-                    imgClassName='lg:rounded-br-[10px]'
-                  />
-                </div>
-              </div>
-              <Typography
-                variant='body'
-                className='mb-[16px] text-[14px] lg:mb-[36px] lg:text-[16px]'
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
-              </Typography>
-              <ButtonLink
-                variant='lightBlue'
-                size='medium'
-                className='w-full justify-center text-[14px] lg:w-[195px] lg:p-[12px] lg:text-[16px]'
-                href='https://www.youtube.com/@INILHOITS'
-              >
-                Tonton Sekarang!
-              </ButtonLink>
-            </div>
-          </div>
-          <div className='w-[0px] lg:z-0 lg:mt-[-10px] lg:w-full'>
+          <div className='hidden w-full sm:block lg:hidden'>
             <NextImage
-              alt='comingsoon'
-              src='/images/pageFasilitas/fasilitas-dummy.png'
-              width='50%'
-              height='41%'
+              src='/images/pageFasilitas/fasilitas-dummy3.png'
+              width='100%'
+              height='88%'
               layout='responsive'
               objectFit='contain'
-              imgClassName='lg:rounded-br-[10px]'
+              alt='people-1'
+              imgClassName='rounded-xl border-2 border-black border-none '
+            />
+          </div>
+          {/* Mobile ver */}
+          <div className='block w-full sm:hidden'>
+            <NextImage
+              src='/images/pageFasilitas/fasilitas-dummy3.png'
+              width='100%'
+              height='65%'
+              layout='responsive'
+              objectFit='contain'
+              alt='smolpeople-1'
+              imgClassName='rounded-xl border-2 border-black border-none '
             />
           </div>
         </div>
@@ -164,62 +146,36 @@ function CardInfo() {
 function Divider() {
   return (
     <div
-      className={clsx(
-        'border-t-solid border-b-solid flex h-[100px] w-full justify-between border-t-[2px] border-b-[2px] border-t-bone-1000 border-b-bone-1000 bg-[#FF7A66]',
-        'lg:h-[144px]'
-      )}
+      className='relative z-10 flex flex-col items-center justify-center'
+      id='section2'
     >
-      <div className='sm:ml-[-58px] sm:mt-[-2px] md:ml-[50px] md:mt-[-14px] md:w-[90px] lg:mt-[-24px] lg:w-[150px]'>
-        <NextImage
-          alt='comingsoon'
-          src='/images/pageFasilitas/fasilitas-deco-eyes.png'
-          width='100%'
-          height='100%'
-          layout='responsive'
-          objectFit='contain'
-          priority
-        />
-      </div>
-      <div className='ml-[0px] mt-[-6px] w-[70px] md:w-[0px] lg:w-[0px]'>
-        <NextImage
-          alt='comingsoon'
-          src='/images/pageFasilitas/fasilitas-deco-eyes-mobile.png'
-          width='100%'
-          height='100%'
-          layout='responsive'
-          objectFit='contain'
-          priority
-        />
-      </div>
-      <Typography
-        as='h4'
-        variant='h4'
-        className={clsx(
-          'bordered bordered1 ml-[10px] mt-[8px] pt-[18px] pb-[18px] pl-[0px] pr-[0px] text-center text-[24px] font-extrabold text-neutral-100',
-          'lg:bordered lg:mt-[15px] lg:ml-[-180px] lg:p-[40px] lg:text-[48px]',
-          'md:mt-[15px] md:text-[27px]',
-          'sm:mt-[15px] sm:text-[27px]'
-        )}
-      >
-        Ada info Unik Buat Kamu!
-      </Typography>
-      <div
-        className={clsx(
-          'mr-[0px] w-[80px] pt-[40px]',
-          'lg:mt-[-3px] lg:mr-[50px] lg:w-[120px]',
-          'md:mt-[-13px] md:mr-[70px] md:w-[80px]',
-          'sm:mt-[-13px] sm:mr-[20px] sm:w-[80px]'
-        )}
-      >
-        <NextImage
-          alt='comingsoon'
-          src='/images/pageFasilitas/fasilitas-deco-megaphone.png'
-          width='100%'
-          height='100%'
-          layout='responsive'
-          objectFit='contain'
-          priority
-        />
+      <div className='relative z-20 flex h-28 w-screen items-center justify-center border-t-2 border-b-2 border-bone-1000 bg-red-500 sm:h-36'>
+        <div className='absolute top-0 left-0 -z-10 w-[4.5rem] sm:left-10 sm:w-24 lg:left-[4.5rem]  lg:w-40 xl:w-44'>
+          <NextImage
+            src='/images/pageFasilitas/fasilitas-deco-eyes.png'
+            width='90%'
+            height='60%'
+            layout='responsive'
+            objectFit='contain'
+            alt='eyes'
+          />
+        </div>
+        <div className='absolute bottom-0 right-0 -z-10 w-[5rem] sm:right-10 sm:w-24 lg:right-[4.5rem] lg:w-40 xl:w-44'>
+          <NextImage
+            src='/images/pageFasilitas/fasilitas-deco-megaphone.png'
+            width='100%'
+            height='60%'
+            layout='responsive'
+            objectFit='contain'
+            alt='megaphone'
+          />
+        </div>
+        <Typography
+          variant='h4'
+          className='stroke-sm md:stroke px-11 text-center text-2xl font-bold leading-none text-white sm:text-4xl md:px-0 md:text-5xl lg:text-[48px]  lg:leading-[64px]'
+        >
+          Ada Info Unik Buat Kamu!
+        </Typography>
       </div>
     </div>
   );
@@ -248,7 +204,7 @@ function Ornaments() {
           alt=''
         />
       </div>
-      <div className='absolute ml-[1140px] mt-[100px] lg:w-[300px]'>
+      {/* <div className='absolute ml-[1140px] mt-[100px] lg:w-[300px]'>
         <NextImage
           src='/images/pageFasilitas/deco-hero-rCloud.png'
           width='80%'
@@ -257,8 +213,8 @@ function Ornaments() {
           layout='responsive'
           alt=''
         />
-      </div>
-      <div className='absolute top-[19rem] ml-[18.7rem] w-[90px] sm:top-[5rem] sm:ml-[32.4rem] sm:w-[120px] md:ml-[40.5rem] lg:hidden'>
+      </div> */}
+      {/* <div className='absolute top-[19rem] ml-[18.7rem] w-[90px] sm:top-[5rem] sm:ml-[32.4rem] sm:w-[120px] md:ml-[40.5rem] lg:hidden'>
         <NextImage
           src='/images/pageFasilitas/fasilitas-mrcloud.png'
           width='93%'
@@ -267,7 +223,7 @@ function Ornaments() {
           layout='responsive'
           alt=''
         />
-      </div>
+      </div> */}
       <div className='absolute lg:w-full'>
         <NextImage
           src='/images/pageFasilitas/deco-hero-redStrings.png'
@@ -308,7 +264,7 @@ function Ornaments() {
           alt=''
         />
       </div>
-      <div className='absolute mt-[55.8rem] lg:w-full'>
+      <div className='absolute mt-[8.4rem] lg:w-full'>
         <NextImage
           src='/images/pageFasilitas/dornamen2.png'
           width='22%'
@@ -448,7 +404,7 @@ function Ornaments() {
           alt=''
         />
       </div>
-      <div className='absolute mt-[430rem] w-full lg:hidden'>
+      <div className='absolute  mt-[430rem] w-full lg:hidden'>
         <NextImage
           src='/images/pageFasilitas/mor14.png'
           width='70%'
@@ -587,7 +543,7 @@ function FacilityCards({
 
 function FacilityBanner() {
   return (
-    <div className='mb-[-48px] mt-[-28px] flex w-full justify-between rounded-[16px] border-[2px] border-solid border-bone-1000 bg-[#FF9447] lg:m-[16px] lg:mb-[-20px] lg:h-[144px] lg:w-[1255px] lg:rounded-[24px]'>
+    <div className='mx-4 mb-[-48px] mt-[-28px] flex w-full justify-between rounded-[16px] border-[2px] border-solid border-bone-1000 bg-[#FF9447] lg:m-[16px] lg:mb-[-20px] lg:h-[144px] lg:w-[1255px] lg:rounded-[24px]'>
       <div className='ml-[-25px] lg:mt-[45px] lg:w-[110px]'>
         <NextImage
           alt='comingsoon'
@@ -602,7 +558,7 @@ function FacilityBanner() {
         as='h4'
         variant='h4'
         className={clsx(
-          'bordered text bordered1 ml-[24px] p-[18px] pl-[80px] pr-[80px] text-center text-2xl font-extrabold text-neutral-100',
+          'bordered text bordered1 ml-[24px] p-[18px] px-10 text-center text-2xl font-extrabold text-neutral-100',
           'lg:bordered lg:mt-[15px] lg:p-[40px] lg:text-[48px]'
         )}
       >

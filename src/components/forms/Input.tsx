@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 import { IconType } from 'react-icons';
-import { HiExclamationCircle } from 'react-icons/hi';
+import { HiExclamation } from 'react-icons/hi';
 
 import clsxm from '@/lib/clsxm';
 
@@ -14,6 +14,8 @@ enum LabelType {
 export type InputProps = {
   /** Input label */
   label: string;
+  index?: number;
+  name?: string;
   /**
    * id to be initialized with React Hook Form,
    * must be the same with the pre-defined types.
@@ -134,11 +136,11 @@ export default function Input({
             readOnly={readOnly}
             className={clsx(
               readOnly
-                ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
+                ? 'cursor-not-allowed border-neutral-300 bg-gray-100 focus:border-neutral-300 focus:ring-0'
                 : errors[id]
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-                : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300',
-              'block w-full shadow-sm hover:border-[#ED6C3A]',
+                : 'focus:ring-primary-500 border-neutral-300 focus:border-blue-400',
+              'block w-full shadow-sm hover:border-blue-400',
               LeftIcon && 'rounded-md pl-12',
               RightIcon && 'rounded-md pr-10',
               LeftText && 'rounded-r-md',
@@ -171,10 +173,17 @@ export default function Input({
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
         {!hideError && errors[id] && (
           <span className='flex gap-2 text-sm text-red-500'>
-            <HiExclamationCircle className='text-xl text-red-500' />
+            <HiExclamation className='text-xl text-red-500' />
             {errors[id]?.message as unknown as string}
           </span>
         )}
+        {/* 
+        {!hideError && errors.peserta && (
+          <span className='flex gap-2 text-sm text-red-500'>
+            <HiExclamation className='text-xl text-red-500' />
+            {errors?.peserta[index][name].message as unknown as string}
+          </span>
+        )} */}
       </div>
     </div>
   );
