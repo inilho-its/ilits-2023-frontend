@@ -6,7 +6,7 @@ import Typography from '@/components/typography/Typography';
 
 export default function FacilityBanner() {
   return (
-    <div className='m-[16px] mb-[-20px] flex w-full justify-between rounded-[16px] border-[2px] border-solid border-bone-1000 bg-[#FF9447] lg:h-[144px] lg:w-[1255px] lg:rounded-[24px]'>
+    <div className='mb-[-48px] mt-[-28px] flex w-full justify-between rounded-[16px] border-[2px] border-solid border-bone-1000 bg-[#FF9447] lg:m-[16px] lg:mb-[-20px] lg:h-[144px] lg:w-[1255px] lg:rounded-[24px]'>
       <div className='ml-[-25px] lg:mt-[45px] lg:w-[110px]'>
         <NextImage
           alt='comingsoon'

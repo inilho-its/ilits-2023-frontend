@@ -1,14 +1,20 @@
 import clsx from 'clsx';
 import * as React from 'react';
 
-import ButtonLink from '@/components/links/ButtonLink';
+import Button from '@/components/buttons/Button';
 import NextImage from '@/components/NextImage';
 import Typography from '@/components/typography/Typography';
 
 export default function HeroSection() {
+  const handleClickScroll = () => {
+    const element = document.getElementById('fasilitas');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <>
-      <div className='layout flex w-full '>
+      <div className='layout flex w-full pt-[4.9rem]'>
         <div className='m-auto flex'>
           <div className={clsx('px-7 pt-7 text-center font-bold')}>
             <Typography
@@ -27,7 +33,7 @@ export default function HeroSection() {
               as='h5'
               variant='h5'
               className={clsx(
-                'mt-[8px] text-[14px] font-medium text-bone-1000',
+                'mt-[8px] text-[14px] font-semibold text-bone-1000',
                 'lg:mt-[15px] lg:text-[32px]',
                 'md:mt-[15px] md:text-[28px]',
                 'sm:mt-[15px] sm:text-[28px]'
@@ -39,7 +45,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div className='flex justify-center'>
-        <ButtonLink
+        <Button
           variant='yellow'
           size='medium'
           className={clsx(
@@ -48,10 +54,10 @@ export default function HeroSection() {
             'md:mt-[48px] md:h-[48px] md:w-[202px] md:text-[16px]',
             'sm:mt-[48px] sm:h-[48px] sm:w-[202px] sm:text-[16px]'
           )}
-          href='/'
+          onClick={handleClickScroll}
         >
           Kenali Lebih Lanjut
-        </ButtonLink>
+        </Button>
       </div>
       <div className='mt-[126px] flex justify-center lg:mt-[74px]'>
         <div className='w-[390px] sm:w-[600px] md:w-[800px] lg:w-[897px]'>

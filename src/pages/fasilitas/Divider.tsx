@@ -23,7 +23,7 @@ export default function Divider() {
           priority
         />
       </div>
-      <div className='sm-[0px] ml-[0px] mt-[-6px] w-[70px] md:w-[0px] lg:w-[0px]'>
+      <div className='ml-[0px] mt-[-6px] w-[70px] md:w-[0px] lg:w-[0px]'>
         <NextImage
           alt='comingsoon'
           src='/images/pageFasilitas/fasilitas-deco-eyes-mobile.png'
