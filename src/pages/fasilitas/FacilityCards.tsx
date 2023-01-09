@@ -6,10 +6,11 @@ import NextImage from '@/components/NextImage';
 import Typography from '@/components/typography/Typography';
 
 export type FacilityCardProps = {
-  facilityName: string;
+  facilityName: React.ReactNode;
   imgSrc: string;
   desc: string;
   headerStyle: string;
+  customFontHeader: string;
 };
 
 export default function FacilityCards({
@@ -17,6 +18,7 @@ export default function FacilityCards({
   imgSrc,
   desc,
   headerStyle,
+  customFontHeader,
 }: FacilityCardProps) {
   return (
     <div className='mb-[32px] pl-[18px] pr-[18px] last:mb-[82px]'>
@@ -24,19 +26,22 @@ export default function FacilityCards({
         <Typography
           as='h5'
           variant='h5'
-          className='text-[18px] font-semibold text-neutral-100 sm:text-[24px] md:text-[24px] lg:mt-[10px] lg:text-[24px]'
+          className={clsxm(
+            'text-[18px] font-semibold text-neutral-100 sm:text-[24px] md:text-[24px] lg:mt-[10px] lg:text-[32px]',
+            customFontHeader
+          )}
         >
           {facilityName}
         </Typography>
       </div>
       <div
         className={clsxm(
-          'z-0 mt-[-13px] flex justify-center rounded-[20px] border-[2px] border-solid border-neutral-1000 bg-neutral-100 p-[20px] text-[18px]',
-          'lg:h-[661px] lg:w-[618px] lg:p-[53px] lg:pt-[48px] lg:pb-[32px]'
+          'z-0 mt-[-13px] flex justify-center rounded-[20px] border-[2px] border-solid border-neutral-1000 bg-neutral-100 p-[20px] text-[18px] lg:saturate-0 lg:hover:saturate-100',
+          'lg:min-h-[612px] lg:w-[618px] lg:p-[53px] lg:pt-[48px] lg:pb-[32px]'
         )}
       >
         <div>
-          <div className='mb-[32px] lg:w-[512px]'>
+          <div className='mb-[32px] mt-[6px] hover:saturate-100 lg:mt-[0px] lg:w-[512px]'>
             <NextImage
               alt='comingsoon'
               src={imgSrc}
@@ -46,7 +51,10 @@ export default function FacilityCards({
               objectFit='contain'
             />
           </div>
-          <Typography variant='body' className='text-center font-medium'>
+          <Typography
+            variant='body'
+            className='font-[16px] text-justify font-medium'
+          >
             {desc}
           </Typography>
         </div>

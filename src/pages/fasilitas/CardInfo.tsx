@@ -10,7 +10,7 @@ export default function CardInfo() {
     <div
       className={clsx(
         'mt-[46px] mb-[46px]',
-        'lg:m-[80px] lg:flex lg:justify-center'
+        'lg:m-[80px] lg:mb-[0px] lg:flex lg:justify-center'
       )}
     >
       <div
