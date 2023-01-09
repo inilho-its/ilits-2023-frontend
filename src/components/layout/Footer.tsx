@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className='w-full bg-neutral-900'>
+    <footer className='relative z-50 w-full bg-neutral-900'>
       <div className='mx-auto w-[95%] md:w-10/12'>
         <div className='flex flex-col justify-between md:flex-row md:items-center'>
           <NextImage
@@ -84,7 +84,7 @@ export default function Footer() {
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/coming-soon'
+                  href='/fasilitas'
                   className='mx-auto text-lg md:mx-0'
                 >
                   Fasilitas

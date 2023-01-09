@@ -280,7 +280,7 @@ export default function BeasiswaPage() {
             className='relative z-10 flex flex-col items-center justify-center'
             id='section2'
           >
-            <div className='relative z-20 flex h-36 w-screen items-center justify-center border-t-2 border-b-2 border-bone-1000 bg-red-500'>
+            <div className='relative z-20 flex h-28 w-screen items-center justify-center border-t-2 border-b-2 border-bone-1000 bg-red-500 sm:h-36'>
               <div className='absolute -top-[3px] left-0 -z-10 w-[5.5rem] md:w-48'>
                 <NextImage
                   src='/images/beasiswaPage/mic-1.png'
@@ -303,7 +303,7 @@ export default function BeasiswaPage() {
               </div>
               <Typography
                 variant='h4'
-                className='stroke md:stroke px-11 text-center text-2xl font-bold leading-none text-white md:px-0 md:text-[48px]  md:leading-[64px]'
+                className='stroke-sm md:stroke px-11 text-center text-2xl font-bold leading-none text-white md:px-0 md:text-[48px]  md:leading-[64px]'
               >
                 Ada Info Unik Nih Buat Kamu!
               </Typography>
