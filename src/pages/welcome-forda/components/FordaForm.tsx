@@ -58,16 +58,11 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
           id='forda_id'
           placeholder='Masukkan Forum Daerah Anda'
           validation={{
-            required: { value: true, message: 'Wajib mengisi nama' },
+            required: { value: true, message: 'Wajib mengisi nama forda' },
           }}
         >
-          <option>Pilih Forum Daerah</option>
           {queryData?.data.map((item) => (
-            <option
-              key={item.id}
-              value={item.id}
-              selected={formData.forda_id == item.id ? true : false}
-            >
+            <option key={item.id} value={item.id}>
               {item.nama_forda}
             </option>
           ))}

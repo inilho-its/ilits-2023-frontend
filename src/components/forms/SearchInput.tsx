@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { RegisterOptions, useFormContext } from 'react-hook-form';
+import { get, RegisterOptions, useFormContext } from 'react-hook-form';
 import { IconType } from 'react-icons';
 import { HiExclamationCircle } from 'react-icons/hi';
 
@@ -82,6 +82,9 @@ export default function SearchInput({
     register,
     formState: { errors },
   } = useFormContext();
+
+  const error = get(errors, id);
+
   return (
     <div>
       <div
@@ -156,10 +159,10 @@ export default function SearchInput({
       </div>
       <div className='mt-1'>
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
-        {!hideError && errors[id] && (
+        {!hideError && error && (
           <span className='flex gap-2 text-sm text-red-500'>
             <HiExclamationCircle className='text-xl text-red-500' />
-            {errors[id]?.message as unknown as string}
+            {error.message as unknown as string}
           </span>
         )}
       </div>
