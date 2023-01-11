@@ -1,6 +1,11 @@
 import clsx from 'clsx';
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker';
-import { Controller, RegisterOptions, useFormContext } from 'react-hook-form';
+import {
+  Controller,
+  get,
+  RegisterOptions,
+  useFormContext,
+} from 'react-hook-form';
 import { HiExclamationCircle, HiOutlineCalendar } from 'react-icons/hi';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -38,6 +43,8 @@ export default function DatePicker({
     control,
   } = useFormContext();
 
+  const error = get(errors, id);
+
   // If there is a year default, then change the year to the props
   const defaultDate = new Date();
   if (defaultYear) defaultDate.setFullYear(defaultYear);
@@ -68,7 +75,7 @@ export default function DatePicker({
                 className={clsx(
                   readOnly
                     ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
-                    : errors[id]
+                    : error
                     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                     : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300 hover:border-[#ED6C3A]',
                   'block w-full rounded-md shadow-sm'
@@ -89,10 +96,10 @@ export default function DatePicker({
               {helperText && (
                 <p className='text-xs text-gray-500'>{helperText}</p>
               )}
-              {!hideError && errors[id] && (
+              {!hideError && error && (
                 <span className='flex gap-2 text-sm text-red-500'>
                   <HiExclamationCircle className='text-xl text-red-500' />
-                  {errors[id]?.message as unknown as string}
+                  {error?.message as unknown as string}
                 </span>
               )}
             </div>

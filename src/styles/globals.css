@@ -82,6 +82,16 @@
       1px 1px 0px #000;
   }
 
+  .stroke-bone-1000 {
+    text-shadow: -2px -2px 0px #30302e, 2px -2px 0px #30302e,
+      -2px 2px 0px #30302e, 2px 2px 0px #30302e;
+  }
+
+  .stroke-sm-bone-1000 {
+    text-shadow: -1px -1px 0px #30302e, 1px -1px 0px #30302e,
+      -1px 1px 0px #30302e, 1px 1px 0px #30302e;
+  }
+
   .cursor-newtab {
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
@@ -109,6 +119,14 @@
   h4,
   .h4 {
     @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  .bordered {
+    -webkit-text-stroke: 2px #30302e;
+  }
+
+  .bordered1 {
+    -webkit-text-stroke: 1px #30302e;
   }
 
   body,
@@ -152,7 +170,11 @@
       -1px 0px 0px #000, 1px 0px 0px #000, -1px 1px 0px #000, 0px 1px 0px #000,
       1px 1px 0px #000;
   }
-
+  .shadow-box-left {
+    box-shadow: -10px 9px 0px 0px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: -10px 9px 0px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -10px 9px 0px 0px rgba(0, 0, 0, 1);
+  }
   .shadow-box {
     box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 1);
     -webkit-box-shadow: 7px 7px 0px 0px rgba(0, 0, 0, 1);

@@ -11,10 +11,10 @@ import NextImage from '@/components/NextImage';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/eventual', label: 'Eventual' },
-  { href: '/coming-soon', label: 'Fakultas' },
-  { href: '/coming-soon', label: 'Prestasi' },
-  { href: '/coming-soon', label: 'Alumni' },
+  { href: '/prestasi', label: 'Prestasi' },
+  { href: '/alumni', label: 'Alumni' },
   { href: '/beasiswa', label: 'Beasiswa' },
+  { href: '/tim', label: 'Tim' },
   { href: '/merchandise', label: 'Merchandise' },
 ];
 

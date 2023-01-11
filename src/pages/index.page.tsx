@@ -474,7 +474,7 @@ export default function HomePage() {
                             konten menarik lainnya!
                           </Typography>
                           <ButtonLink
-                            href='/coming-soon'
+                            href='https://www.youtube.com/@INILHOITS'
                             variant='lightBlue'
                             className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
@@ -528,7 +528,7 @@ export default function HomePage() {
                             Spotify Ini Lho ITS!
                           </Typography>
                           <ButtonLink
-                            href='/coming-soon'
+                            href='https://www.youtube.com/@INILHOITS'
                             variant='lightBlue'
                             className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
@@ -579,7 +579,7 @@ export default function HomePage() {
                             lomba-lomba, gaboleh ketinggalan nich!
                           </Typography>
                           <ButtonLink
-                            href='/coming-soon'
+                            href='https://www.youtube.com/@INILHOITS'
                             variant='lightBlue'
                             className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
@@ -632,7 +632,7 @@ export default function HomePage() {
                             lho!!
                           </Typography>
                           <ButtonLink
-                            href='/coming-soon'
+                            href='https://www.youtube.com/@INILHOITS'
                             variant='lightBlue'
                             className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
@@ -682,7 +682,7 @@ export default function HomePage() {
                             nih recap vlog dari big event INI LHO ITS! 2023.
                           </Typography>
                           <ButtonLink
-                            href='/coming-soon'
+                            href='https://www.youtube.com/@INILHOITS'
                             variant='lightBlue'
                             className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
@@ -735,7 +735,7 @@ export default function HomePage() {
                             Youtube Ini Lho ITS!
                           </Typography>
                           <ButtonLink
-                            href='/coming-soon'
+                            href='https://www.youtube.com/@INILHOITS'
                             variant='lightBlue'
                             className='mb-12 mt-6 font-semibold lg:mb-0 lg:mt-12'
                           >
@@ -862,7 +862,7 @@ export default function HomePage() {
                 </Typography>
                 <div className='self-center px-2'>
                   <ButtonLink
-                    href='/coming-soon'
+                    href='/welcome-forda'
                     variant='bone'
                     size='medium'
                     round='medium'
@@ -871,7 +871,7 @@ export default function HomePage() {
                     Daftar Sekarang!
                   </ButtonLink>
                   <ButtonLink
-                    href='/coming-soon'
+                    href='/welcome-forda'
                     variant='bone'
                     size='small'
                     round='medium'
@@ -1324,12 +1324,12 @@ export default function HomePage() {
                         variant='p'
                         className='max-w-4xl pt-3 pb-[3.2rem] md:pb-6 xl:pt-4 xl:pb-10'
                       >
-                        menyelenggarakan pelatihan profesi dan jasa sertifikasi
+                        Menyelenggarakan pelatihan profesi dan jasa sertifikasi
                         bagi mahasiswa dan tenaga profesional dalam rangka
                         peningkatan kompetensi dalam bidang profesi tertentu.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/fasilitas'
                         variant='bone'
                         className='px-auto relative z-[10] flex w-full justify-center bg-white font-semibold md:w-fit'
                       >
@@ -1454,7 +1454,7 @@ export default function HomePage() {
                         dan masih banyak lagi.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/fasilitas'
                         variant='bone'
                         className='px-auto relative z-[10] flex w-full justify-center bg-white font-semibold md:w-fit'
                       >
@@ -1576,7 +1576,7 @@ export default function HomePage() {
                         suasana kafe, agar belajar terasa lebih menyenangkan.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/fasilitas'
                         variant='bone'
                         className='px-auto relative z-[10] flex w-full justify-center bg-white font-semibold md:w-fit'
                       >
@@ -1687,7 +1687,7 @@ export default function HomePage() {
             </div>
             <div className='flex justify-center'>
               <ButtonLink
-                href='/coming-soon'
+                href='/beasiswa'
                 size='medium'
                 variant='orange'
                 className='relative z-[30] mt-20 justify-center bg-orange-500 font-semibold'
@@ -1811,7 +1811,7 @@ export default function HomePage() {
                         <br />
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/tim'
                         variant='bone'
                         className='px-auto relative z-[10] mx-0 flex justify-center bg-white font-semibold md:w-fit'
                       >
@@ -1926,7 +1926,7 @@ export default function HomePage() {
                         maupun internasional.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/tim'
                         variant='bone'
                         className='px-auto relative z-[10] mx-0 flex justify-center bg-white font-semibold md:w-fit'
                       >
@@ -2039,7 +2039,7 @@ export default function HomePage() {
                         mahasiswa Institut Teknologi Sepuluh Nopember.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/tim'
                         variant='bone'
                         className='px-auto relative z-[10] mx-0 flex justify-center bg-white font-semibold md:w-fit'
                       >
@@ -2132,7 +2132,7 @@ export default function HomePage() {
             </div>
             <div className='flex justify-center pt-8 pb-12 md:pb-20'>
               <ButtonLink
-                href='/coming-soon'
+                href='/alumni'
                 variant='bone'
                 className='bg-white font-semibold'
               >

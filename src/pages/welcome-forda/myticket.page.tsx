@@ -140,7 +140,6 @@ export default function MyTiket() {
               Status Verifikasi Welcome Forda
             </Typography>
           </div>
-
           <div className='flex min-h-screen w-full items-center justify-center px-5 md:py-56 lg:py-64'>
             <div className='relative'>
               <NextImage
