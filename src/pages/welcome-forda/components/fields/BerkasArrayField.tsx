@@ -46,7 +46,7 @@ export default function BerkasArrayField({
               validation={{
                 required: {
                   value: true,
-                  message: 'Wajib mengisi asal sekolah',
+                  message: 'Wajib mengisi bukti repost feeds',
                 },
               }}
             />
@@ -59,7 +59,7 @@ export default function BerkasArrayField({
               validation={{
                 required: {
                   value: true,
-                  message: 'Wajib mengisi asal sekolah',
+                  message: 'Wajib mengisi bukti follow ig',
                 },
               }}
             />
@@ -72,7 +72,7 @@ export default function BerkasArrayField({
               validation={{
                 required: {
                   value: true,
-                  message: 'Wajib mengisi asal sekolah',
+                  message: 'Wajib mengisi bukti upload vaksin',
                 },
               }}
             />

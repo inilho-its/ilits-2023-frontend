@@ -862,7 +862,7 @@ export default function HomePage() {
                 </Typography>
                 <div className='self-center px-2'>
                   <ButtonLink
-                    href='/coming-soon'
+                    href='/welcome-forda'
                     variant='bone'
                     size='medium'
                     round='medium'
@@ -871,7 +871,7 @@ export default function HomePage() {
                     Daftar Sekarang!
                   </ButtonLink>
                   <ButtonLink
-                    href='/coming-soon'
+                    href='/welcome-forda'
                     variant='bone'
                     size='small'
                     round='medium'
@@ -1329,7 +1329,7 @@ export default function HomePage() {
                         peningkatan kompetensi dalam bidang profesi tertentu.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/fasilitas'
                         variant='bone'
                         className='px-auto relative z-[10] flex w-full justify-center bg-white font-semibold md:w-fit'
                       >
@@ -1454,7 +1454,7 @@ export default function HomePage() {
                         dan masih banyak lagi.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/fasilitas'
                         variant='bone'
                         className='px-auto relative z-[10] flex w-full justify-center bg-white font-semibold md:w-fit'
                       >
@@ -1576,7 +1576,7 @@ export default function HomePage() {
                         suasana kafe, agar belajar terasa lebih menyenangkan.
                       </Typography>
                       <ButtonLink
-                        href='/coming-soon'
+                        href='/fasilitas'
                         variant='bone'
                         className='px-auto relative z-[10] flex w-full justify-center bg-white font-semibold md:w-fit'
                       >
