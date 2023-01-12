@@ -61,11 +61,18 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
             required: { value: true, message: 'Wajib mengisi nama forda' },
           }}
         >
-          {queryData?.data.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.nama_forda}
-            </option>
-          ))}
+          {queryData?.data.map((item) => {
+            if (
+              item.nama_forda !== 'Sidoarjo' &&
+              item.nama_forda !== 'Tuban Jawa Timur'
+            ) {
+              return (
+                <option key={item.id} value={item.id}>
+                  {item.nama_forda}
+                </option>
+              );
+            }
+          })}
         </SelectInput>
         <SelectInput
           id='jumlah_tiket'
