@@ -62,10 +62,7 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
           }}
         >
           {queryData?.data.map((item) => {
-            if (
-              item.nama_forda !== 'Sidoarjo' &&
-              item.nama_forda !== 'Tuban Jawa Timur'
-            ) {
+            if (item.nama_forda !== 'Sidoarjo') {
               return (
                 <option key={item.id} value={item.id}>
                   {item.nama_forda}
