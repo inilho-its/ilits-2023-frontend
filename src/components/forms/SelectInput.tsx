@@ -7,6 +7,7 @@ import clsxm from '@/lib/clsxm';
 
 export type SelectInputProps = {
   label: string;
+  isLabel?: boolean;
   id: string;
   placeholder?: string;
   helperText?: string;
@@ -21,6 +22,7 @@ export default function SelectInput({
   label,
   helperText,
   id,
+  isLabel = true,
   placeholder,
   readOnly = false,
   children,
@@ -53,12 +55,14 @@ export default function SelectInput({
 
   return (
     <div>
-      <label
-        htmlFor={id}
-        className={clsxm('block text-sm font-semibold text-gray-700')}
-      >
-        {label}
-      </label>
+      {isLabel && (
+        <label
+          htmlFor={id}
+          className={clsxm('block text-sm font-semibold text-gray-700')}
+        >
+          {label}
+        </label>
+      )}
       <div className='relative mt-1'>
         <select
           {...register(id, validation)}
@@ -72,7 +76,7 @@ export default function SelectInput({
               ? 'cursor-not-allowed border-gray-300 bg-gray-100 focus:border-gray-300 focus:ring-0'
               : errors[id]
               ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-              : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300 hover:border-[#ED6C3A]',
+              : 'focus:border-primary-500 focus:ring-primary-500 border-gray-300 hover:border-blue-400',
             'block w-full rounded-md shadow-sm',
             { 'text-gray-500': value === '' }
           )}

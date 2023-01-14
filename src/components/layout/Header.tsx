@@ -9,14 +9,14 @@ const links = [
   { href: '/', label: 'Eventual' },
   { href: '/', label: 'Fakultas' },
   { href: '/', label: 'Prestasi' },
-  { href: '/fasilitas', label: 'Fasilitas' },
+  { href: '/', label: 'Fasilitas' },
   { href: '/', label: 'Alumni' },
   { href: '/', label: 'Beasiswa' },
 ];
 
 export default function Header() {
   return (
-    <header className='sticky top-0 z-50 bg-bone-500'>
+    <header className='sticky top-0 z-50 bg-transparent'>
       <div className='layout flex h-24 items-center justify-between'>
         <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
           <NextImage
