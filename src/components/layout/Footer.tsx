@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { FaAngleDown, FaInstagram, FaYoutube } from 'react-icons/fa';
+import {
+  FaAngleDown,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+  FaYoutube,
+} from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -50,10 +56,12 @@ export default function Footer() {
               <UnstyledLink href='https://www.youtube.com/@INILHOITS'>
                 <FaYoutube className='w-4 md:w-fit' size={32} />
               </UnstyledLink>
-              {/* <FaTwitter className='w-4 md:w-fit' size={32} />
-              <FaLinkedin className='w-4 md:w-fit' size={32} />
-              <FaTiktok className='w-4 md:w-fit' size={32} />
-              <FaLine className='w-4 md:w-fit' size={32} /> */}
+              <UnstyledLink href='https://twitter.com/inilhoits2023_/'>
+                <FaTwitter className='w-4 md:w-fit' size={32} />
+              </UnstyledLink>
+              <UnstyledLink href='https://www.tiktok.com/@inilhoits'>
+                <FaTiktok className='w-4 md:w-fit' size={32} />
+              </UnstyledLink>
             </div>
           </div>
         </div>
