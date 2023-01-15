@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { mockQuery } from '@/lib/apiMock';
-import useDialog from '@/hooks/useDialog';
 
 import Button from '@/components/buttons/Button';
 import SelectInput from '@/components/forms/SelectInput';
@@ -31,7 +30,6 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
   const setFormData = useFordaStore.useSetFormData();
 
   const { handleSubmit } = methods;
-  const dialog = useDialog();
 
   // Store
 
@@ -51,16 +49,6 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
     setStep(1);
   };
 
-  const openWarning = () => {
-    dialog({
-      title: 'Konfirmasi',
-      description:
-        'Peserta yang sudah mengikuti Welcome Surabaya tidak bisa mendaftar Welcome Nasional, pendaftaran akan dibatalkan sepihak oleh Ini Lho ITS! dan pembayaran akan direfund.',
-      submitText: 'Lanjut',
-      variant: 'warning',
-      catchOnCancel: true,
-    }).then(() => handleSubmit(onSubmit)());
-  };
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} className='mt-8 space-y-5'>
@@ -77,8 +65,7 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
             if (
               item.nama_forda !== 'Sidoarjo' &&
               item.nama_forda !== 'Tuban Jawa Timur' &&
-              item.nama_forda !== 'Situbondo' &&
-              item.nama_forda !== 'Mojokerto'
+              item.nama_forda !== 'Situbondo'
             ) {
               return (
                 <option key={item.id} value={item.id}>
@@ -109,7 +96,7 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
             variant='lightBlue'
             round='medium'
             size='medium'
-            onClick={openWarning}
+            type='submit'
           >
             Lanjutkan
           </Button>
