@@ -65,7 +65,6 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
             if (
               item.nama_forda !== 'Sidoarjo' &&
               item.nama_forda !== 'Tuban Jawa Timur' &&
-              item.nama_forda !== 'Situbondo' &&
               item.nama_forda !== 'Pamekasan' &&
               item.nama_forda !== 'Madiun' &&
               item.nama_forda !== 'Tulungagung' &&
