@@ -10,12 +10,13 @@ import Typography from '@/components/typography/Typography';
 
 import BerkasForm from '@/pages/welcome-forda/components/BerkasForm';
 import BiodataForm from '@/pages/welcome-forda/components/BiodataForm';
+import ClosedFormPage from '@/pages/welcome-forda/components/ClosedForm';
 import CompletedForm from '@/pages/welcome-forda/components/CompletedForm';
 import FordaForm from '@/pages/welcome-forda/components/FordaForm';
 import KonfirmasiForm from '@/pages/welcome-forda/components/KonfirmasiForm';
 
 export default function DaftarOpenCampusPage() {
-  const [step, setStep] = React.useState(0);
+  const [step, setStep] = React.useState(5);
 
   return (
     <Layout withFooter={false} withNavbar={false}>
@@ -167,6 +168,7 @@ export default function DaftarOpenCampusPage() {
                 {step === 2 && <BerkasForm setStep={setStep} />}
                 {step === 3 && <KonfirmasiForm setStep={setStep} />}
                 {step === 4 && <CompletedForm />}
+                {step === 5 && <ClosedFormPage />}
               </div>
             </div>
           </div>
