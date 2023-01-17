@@ -67,10 +67,7 @@ export default function ReuploadPembayaranWelcomeForda() {
   const onSubmit = (data: FormPembayaran) => {
     const formdata: FormData = new FormData();
     formdata.append('bukti_pembayaran', data.bukti_pembayaran[0]);
-    formdata.append(
-      'opsi_pembayaran',
-      queryData?.data.opsi_pembayaran as string
-    );
+    formdata.append('opsi_pembayaran', data.opsi_pembayaran as string);
     formdata.append('harga', queryData?.data.harga.toString() as string);
     formdata.append(
       'jumlah_tiket',
@@ -115,6 +112,10 @@ export default function ReuploadPembayaranWelcomeForda() {
       }
     );
   };
+
+  if (!queryData) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <Layout withFooter={false} withNavbar={false}>

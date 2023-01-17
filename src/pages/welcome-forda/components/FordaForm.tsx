@@ -68,6 +68,7 @@ export default function FordaFormPage({ setStep }: FordaFormPageProps) {
               item.nama_forda !== 'Situbondo' &&
               item.nama_forda !== 'Pamekasan' &&
               item.nama_forda !== 'Madiun'
+              item.nama_forda !== 'Tulungagung'
             ) {
               return (
                 <option key={item.id} value={item.id}>
