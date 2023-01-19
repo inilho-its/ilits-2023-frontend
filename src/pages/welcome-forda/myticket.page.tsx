@@ -23,17 +23,8 @@ type detailTiket = {
   };
   dataPeserta: [
     {
-      nomerPeserta: string;
-      password: string;
-    }
-  ];
-};
-
-type nomor_peserta = {
-  status: string;
-  dataPeserta: [
-    {
-      nomerPeserta: string;
+      namaPeserta: string;
+      email: string;
       password: string;
     }
   ];
@@ -41,11 +32,14 @@ type nomor_peserta = {
 
 export default function MyTiket() {
   const useSearchInput = useSearchInputHooks();
-  const [nomor_peserta, setNomorPeserta] = React.useState<nomor_peserta>({
-    status: '',
+  const [nomor_peserta, setNomorPeserta] = React.useState<detailTiket>({
+    status: {
+      status: '',
+    },
     dataPeserta: [
       {
-        nomerPeserta: '',
+        namaPeserta: '',
+        email: '',
         password: '',
       },
     ],
@@ -54,10 +48,13 @@ export default function MyTiket() {
   const { handleSubmit } = methods;
   const onSubmit = (data: TiketFormState) => {
     setNomorPeserta({
-      status: '',
+      status: {
+        status: '',
+      },
       dataPeserta: [
         {
-          nomerPeserta: '',
+          namaPeserta: '',
+          email: '',
           password: '',
         },
       ],
@@ -74,7 +71,9 @@ export default function MyTiket() {
         )
         .then((res) => {
           setNomorPeserta({
-            status: res.data.data.status.status,
+            status: {
+              status: res.data.data.status.status,
+            },
             dataPeserta: res.data.data.dataPeserta,
           });
           if (res.data.data.status.status == 'menunggu verifikasi')
@@ -185,7 +184,7 @@ export default function MyTiket() {
                     />
                   </form>
                 </FormProvider>
-                {nomor_peserta.status ===
+                {nomor_peserta.status.status ===
                   'pembayaran berhasil diverifikasi' && (
                   <div className='pt-5'>
                     <Typography
@@ -194,42 +193,58 @@ export default function MyTiket() {
                     >
                       Nomor Peserta & Password :
                     </Typography>
-                    <div className='flex flex-col gap-y-2'>
+                    <div className='flex flex-col gap-y-3'>
                       {nomor_peserta.dataPeserta.map(
-                        ({ nomerPeserta, password }, index) => (
+                        ({ email, password, namaPeserta }, index) => (
                           <div className='w-full' key={index}>
-                            <div className='flex justify-between gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
-                              {nomerPeserta && password != '' ? (
-                                <>
-                                  <div>
+                            <div className='w-full gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
+                              {email && password != '' ? (
+                                <div className='flex flex-col gap-y-2 sm:gap-y-3'>
+                                  <div className='flex flex-col justify-between sm:flex-row'>
                                     <Typography
                                       variant='body'
-                                      className='text-sm font-bold sm:text-[16px]'
+                                      className='text-start text-sm font-bold sm:text-center sm:text-[16px]'
                                     >
-                                      Nomor Peserta :
+                                      Nama Peserta :
                                     </Typography>
                                     <Typography
                                       variant='body'
-                                      className='text-sm font-semibold sm:text-[16px]'
+                                      className='text-start text-sm font-semibold sm:text-end sm:text-[16px]'
                                     >
-                                      {nomerPeserta}
-                                    </Typography>
-                                  </div>
-                                  <div className=' pr-4 md:pr-10'>
-                                    <Typography
-                                      variant='body'
-                                      className='text-sm font-bold sm:text-[16px]'
-                                    >
-                                      Password :
-                                    </Typography>
-                                    <Typography
-                                      variant='body'
-                                      className='text-sm font-semibold sm:text-[16px]'
-                                    >
-                                      {password}
+                                      {namaPeserta}
                                     </Typography>
                                   </div>
-                                </>
+                                  <div className='flex flex-col justify-between gap-x-24 sm:flex-row'>
+                                    <div>
+                                      <Typography
+                                        variant='body'
+                                        className='text-sm font-bold sm:text-[16px]'
+                                      >
+                                        Email :
+                                      </Typography>
+                                      <Typography
+                                        variant='body'
+                                        className='text-sm font-semibold sm:text-[16px]'
+                                      >
+                                        {email}
+                                      </Typography>
+                                    </div>
+                                    <div className=' pr-4 md:pr-10'>
+                                      <Typography
+                                        variant='body'
+                                        className='text-sm font-bold sm:text-[16px]'
+                                      >
+                                        Password :
+                                      </Typography>
+                                      <Typography
+                                        variant='body'
+                                        className='text-sm font-semibold sm:text-[16px]'
+                                      >
+                                        {password}
+                                      </Typography>
+                                    </div>
+                                  </div>
+                                </div>
                               ) : (
                                 <Typography
                                   variant='body'
