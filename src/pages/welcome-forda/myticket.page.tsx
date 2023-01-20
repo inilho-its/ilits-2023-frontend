@@ -24,7 +24,7 @@ type detailTiket = {
   dataPeserta: [
     {
       namaPeserta: string;
-      email: string;
+      username: string;
       password: string;
     }
   ];
@@ -39,7 +39,7 @@ export default function MyTiket() {
     dataPeserta: [
       {
         namaPeserta: '',
-        email: '',
+        username: '',
         password: '',
       },
     ],
@@ -54,7 +54,7 @@ export default function MyTiket() {
       dataPeserta: [
         {
           namaPeserta: '',
-          email: '',
+          username: '',
           password: '',
         },
       ],
@@ -195,10 +195,10 @@ export default function MyTiket() {
                     </Typography>
                     <div className='flex flex-col gap-y-3'>
                       {nomor_peserta.dataPeserta.map(
-                        ({ email, password, namaPeserta }, index) => (
+                        ({ username, password, namaPeserta }, index) => (
                           <div className='w-full' key={index}>
                             <div className='w-full gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
-                              {email && password != '' ? (
+                              {username && password != '' ? (
                                 <div className='flex flex-col gap-y-2 sm:gap-y-3'>
                                   <div className='flex flex-col justify-between sm:flex-row'>
                                     <Typography
@@ -220,13 +220,13 @@ export default function MyTiket() {
                                         variant='body'
                                         className='text-sm font-bold sm:text-[16px]'
                                       >
-                                        Email :
+                                        Username :
                                       </Typography>
                                       <Typography
                                         variant='body'
                                         className='text-sm font-semibold sm:text-[16px]'
                                       >
-                                        {email}
+                                        {username}
                                       </Typography>
                                     </div>
                                     <div className=' pr-4 md:pr-10'>
