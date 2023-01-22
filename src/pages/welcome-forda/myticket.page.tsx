@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router';
 import * as React from 'react';
+import { useCookies } from 'react-cookie';
 import { FormProvider, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
@@ -21,29 +23,17 @@ type detailTiket = {
   status: {
     status: string;
   };
-  dataPeserta: [
-    {
-      namaPeserta: string;
-      username: string;
-      password: string;
-    }
-  ];
 };
 
 export default function MyTiket() {
+  const router = useRouter();
   const useSearchInput = useSearchInputHooks();
   const [nomor_peserta, setNomorPeserta] = React.useState<detailTiket>({
     status: {
       status: '',
     },
-    dataPeserta: [
-      {
-        namaPeserta: '',
-        username: '',
-        password: '',
-      },
-    ],
   });
+  const [, setCookie] = useCookies(['nomor_pendaftaran']);
   const methods = useForm<TiketFormState>();
   const { handleSubmit } = methods;
   const onSubmit = (data: TiketFormState) => {
@@ -51,13 +41,6 @@ export default function MyTiket() {
       status: {
         status: '',
       },
-      dataPeserta: [
-        {
-          namaPeserta: '',
-          username: '',
-          password: '',
-        },
-      ],
     });
     toast.promise(
       apiMock
@@ -74,15 +57,20 @@ export default function MyTiket() {
             status: {
               status: res.data.data.status.status,
             },
-            dataPeserta: res.data.data.dataPeserta,
           });
           if (res.data.data.status.status == 'menunggu verifikasi')
             useSearchInput.isVerified(true, res.data.data.status.status);
           else if (
             res.data.data.status.status == 'pembayaran berhasil diverifikasi'
-          )
+          ) {
             useSearchInput.isVerified(true, 'Terverifikasi');
-          else useSearchInput.isVerified(false, 'Tidak Terverifikasi');
+            setCookie('nomor_pendaftaran', data.nomor_pendaftaran, {
+              path: '/',
+              sameSite: 'lax',
+              maxAge: 43200,
+            });
+            router.push('/redirect?url=/pembahasan-tryout');
+          } else useSearchInput.isVerified(false, 'Tidak Terverifikasi');
         })
         .catch((err) => {
           useSearchInput.isVerified(false, 'Tidak Terverifikasi');
@@ -185,81 +173,7 @@ export default function MyTiket() {
                   </form>
                 </FormProvider>
                 {nomor_peserta.status.status ===
-                  'pembayaran berhasil diverifikasi' && (
-                  <div className='pt-5'>
-                    <Typography
-                      variant='body'
-                      className='pb-4 text-sm font-semibold sm:text-[16px]'
-                    >
-                      Nomor Peserta & Password :
-                    </Typography>
-                    <div className='flex flex-col gap-y-3'>
-                      {nomor_peserta.dataPeserta.map(
-                        ({ username, password, namaPeserta }, index) => (
-                          <div className='w-full' key={index}>
-                            <div className='w-full gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
-                              {username && password != '' ? (
-                                <div className='flex flex-col gap-y-2 sm:gap-y-3'>
-                                  <div className='flex flex-col justify-between sm:flex-row'>
-                                    <Typography
-                                      variant='body'
-                                      className='text-start text-sm font-bold sm:text-center sm:text-[16px]'
-                                    >
-                                      Nama Peserta :
-                                    </Typography>
-                                    <Typography
-                                      variant='body'
-                                      className='text-start text-sm font-semibold sm:text-end sm:text-[16px]'
-                                    >
-                                      {namaPeserta}
-                                    </Typography>
-                                  </div>
-                                  <div className='flex flex-col justify-between gap-x-24 sm:flex-row'>
-                                    <div>
-                                      <Typography
-                                        variant='body'
-                                        className='text-sm font-bold sm:text-[16px]'
-                                      >
-                                        Username :
-                                      </Typography>
-                                      <Typography
-                                        variant='body'
-                                        className='text-sm font-semibold sm:text-[16px]'
-                                      >
-                                        {username}
-                                      </Typography>
-                                    </div>
-                                    <div className=' pr-4 md:pr-10'>
-                                      <Typography
-                                        variant='body'
-                                        className='text-sm font-bold sm:text-[16px]'
-                                      >
-                                        Password :
-                                      </Typography>
-                                      <Typography
-                                        variant='body'
-                                        className='text-sm font-semibold sm:text-[16px]'
-                                      >
-                                        {password}
-                                      </Typography>
-                                    </div>
-                                  </div>
-                                </div>
-                              ) : (
-                                <Typography
-                                  variant='body'
-                                  className='text-sm font-semibold sm:text-[16px]'
-                                >
-                                  Coba beberapa saat lagi...
-                                </Typography>
-                              )}
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                )}
+                  'pembayaran berhasil diverifikasi' && <></>}
               </div>
             </div>
           </div>
