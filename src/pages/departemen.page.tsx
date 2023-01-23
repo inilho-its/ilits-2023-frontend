@@ -27,6 +27,8 @@ export default function DepartemenPage() {
         akreditasiTitle2='BAN-PT'
         akreditasiDesc1='Memperoleh sertifikasi Asean University Network Quality Assurance (AUN-QA)  '
         akreditasiDesc2='Mendapatkan akreditasi “A” pada program studi S1, S2, dan S3'
+        srcDayaTampungDesktop='/images/pageDepartemen/dayatampungSisfor.png'
+        srcDayaTampungMobile='/images/pageDepartemen/m-sisfordayatampung.png'
         bidangKeahlian1='Infrastruktur dan Keamanan Teknologi Informasi'
         bidangKeahlian2='Rekayasa Data dan Integrasi Bisnis'
         bidangKeahlian3='Akuisisi Data dan Diseminasi Informasi'

@@ -8,7 +8,9 @@ import DepartemenAkreditasi, {
 import DepartemenBidangKeahlian, {
   DepartemenBidangKeahlianProps,
 } from '@/pages/departemen/fragments/DepartemenBidangKeahlian';
-import DepartemenDayaTampung from '@/pages/departemen/fragments/DepartemenDayaTampung';
+import DepartemenDayaTampung, {
+  DepartemenDayaTampungProps,
+} from '@/pages/departemen/fragments/DepartemenDayaTampung';
 import DepartemenHeroSection, {
   DepartemenHeroSectionProps,
 } from '@/pages/departemen/fragments/DepartemenHeroSection';
@@ -40,11 +42,14 @@ export default function DepartemenTemplate({
   bidangKeahlian3,
   bidangKeahlian4,
   bidangKeahlian5,
+  srcDayaTampungDesktop,
+  srcDayaTampungMobile,
 }: DepartemenHeroSectionProps &
   DepartemenTemplateProps &
   DepartemenKnowMoreProps &
   DepartemenAkreditasiProps &
-  DepartemenBidangKeahlianProps) {
+  DepartemenBidangKeahlianProps &
+  DepartemenDayaTampungProps) {
   return (
     <div>
       <Seo templateTitle={departmentName} />
@@ -76,7 +81,10 @@ export default function DepartemenTemplate({
             />
           </section>
           <section className='relative'>
-            <DepartemenDayaTampung />
+            <DepartemenDayaTampung
+              srcDayaTampungDesktop={srcDayaTampungDesktop}
+              srcDayaTampungMobile={srcDayaTampungMobile}
+            />
           </section>
           <section className='relative'>
             <DepartemenBidangKeahlian

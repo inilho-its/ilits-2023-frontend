@@ -23,10 +23,12 @@ export default function DepartemenBidangKeahlian({
   };
   const CardBidangKeahlian = ({ bidangKeahlian }: CardBidangKeahlianProps) => {
     return (
-      <div className='flex h-[120px] w-[220px] flex-col justify-center rounded-[8px] border-[2px] border-solid border-bone-1000 bg-white'>
-        <Typography variant='body' className=' text-center lg:text-[16px]'>
-          {bidangKeahlian}
-        </Typography>
+      <div className='flex justify-center pb-[30px] lg:pb-0'>
+        <div className='mb-[24px] flex h-[120px] w-[220px] flex-col justify-center rounded-[8px] border-[2px] border-solid border-bone-1000 bg-white lg:mb-0'>
+          <Typography variant='body' className=' text-center lg:text-[16px]'>
+            {bidangKeahlian}
+          </Typography>
+        </div>
       </div>
     );
   };
@@ -64,10 +66,10 @@ export default function DepartemenBidangKeahlian({
                 as='h5'
                 variant='h5'
                 className={clsx(
-                  'bordered1 text-left font-bold text-[#FFFFFF]',
-                  'lg:bordered lg:text-[48px] lg:leading-[64px]',
-                  'md:bordered md:text-[72px]',
-                  'sm:bordered sm:text-[72px]'
+                  'bordered1 pt-[23px] pb-[23px] text-left text-[18px] font-bold text-[#FFFFFF]',
+                  'lg:bordered lg:pt-0 lg:pb-0 lg:text-[48px] lg:leading-[64px]',
+                  'md:bordered1 md:text-[32px]',
+                  'sm:bordered1 sm:text-[32px]'
                 )}
               >
                 Bidang Keahlian Departemen
@@ -76,7 +78,7 @@ export default function DepartemenBidangKeahlian({
           </div>
         </div>
       </div>
-      <div className='flex justify-center lg:mt-[100px] lg:mb-[100px] lg:gap-[24px]'>
+      <div className='mt-[54px] lg:mt-[100px] lg:mb-[100px] lg:flex lg:justify-center lg:gap-[24px]'>
         {data?.map((v, i) => (
           <CardBidangKeahlian key={`Card-Item-key-${i}`} {...v} />
         ))}
