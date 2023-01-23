@@ -24,18 +24,18 @@ export default function DepartemenAkreditasi({
     return (
       <div
         className={clsx(
-          'lg:h-[80px] lg:pl-[32px]',
-          'flex w-full justify-start rounded-[8px] border-[2px] border-solid border-bone-1000 bg-[#F78E54] pt-[8px]'
+          'sm:w-[500px] md:w-[500px] lg:h-[88px] lg:w-full lg:justify-start lg:pl-[32px]',
+          'flex h-[48px] w-[329px] justify-center rounded-[8px] border-[2px] border-solid border-bone-1000 bg-[#F78E54] pt-[8px]'
         )}
       >
         <Typography
           as='h5'
           variant='h5'
           className={clsx(
-            'bordered1 text-left font-bold text-[#FFFFFF]',
-            'lg:bordered lg:text-[48px] lg:leading-[64px]',
-            'md:bordered md:text-[72px]',
-            'sm:bordered sm:text-[72px]'
+            'bordered1 pt-[0.3rem] text-[24px] font-bold text-[#FFFFFF]',
+            'lg:bordered lg:pt-0 lg:text-[48px] lg:leading-[64px]',
+            'md:bordered1 md:text-[32px]',
+            'sm:bordered1 sm:text-[32px]'
           )}
         >
           Akreditasi Bersaing!
@@ -55,7 +55,7 @@ export default function DepartemenAkreditasi({
     akreditasiDesc,
   }: AkreditasiCard) => {
     return (
-      <div>
+      <div className='mb-[32px] lg:mb-[0px]'>
         <div className='rounded-[12px] rounded-b-[0px] border-[2px] border-solid border-bone-1000 bg-white lg:h-[240px] lg:w-[360px]'>
           <div className='w-full'>
             <NextImage
@@ -64,7 +64,7 @@ export default function DepartemenAkreditasi({
               height='66%'
               objectFit='contain'
               layout='responsive'
-              imgClassName='lg:rounded-[10px]'
+              imgClassName='rounded-[10px]'
               alt=''
             />
           </div>
@@ -123,11 +123,13 @@ export default function DepartemenAkreditasi({
         >
           <div
             className={clsx(
-              'lg:mb-[56px] lg:pt-[76px] lg:pl-[120px] lg:pr-[120px]'
+              'pb-[15px] lg:pb-[38px] lg:pt-[76px] lg:pl-[120px] lg:pr-[120px]'
             )}
           >
-            <AkreditasiTitle />
-            <div className='mt-[56px] mb-[76px] flex justify-center gap-[64px]'>
+            <div className='flex justify-center pt-[43px] lg:flex-none lg:justify-start lg:pt-0'>
+              <AkreditasiTitle />
+            </div>
+            <div className='mt-[32px] flex-wrap justify-center pl-[60px] pr-[60px] pb-[76px] lg:flex lg:flex-nowrap lg:gap-[64px]'>
               {data?.map((v, i) => (
                 <CardAkreditasi key={`Card-Item-key-${i}`} {...v} />
               ))}
