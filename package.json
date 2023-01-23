@@ -39,6 +39,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.4.0",
     "react-image-lightbox": "^5.1.4",
+    "react-youtube": "^10.1.0",
     "sharp": "^0.31.1",
     "swiper": "^8.4.5",
     "tailwind-config-viewer": "^1.7.2",

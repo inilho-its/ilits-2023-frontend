@@ -5,6 +5,8 @@ import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
+import Youtube from '@/pages/pembahasan-tryout/components/youtube';
+
 export default function PembahasanTryout() {
   return (
     <Layout withFooter={false} withNavbar={false}>
@@ -13,16 +15,24 @@ export default function PembahasanTryout() {
         <section>
           <NextImage
             className='absolute top-0 right-0 w-[15%] lg:w-[9%]'
-            src='/images/tiket/eye.png'
+            src='/images/pembahasan-tryout/Star 2.png'
             width='95%'
             height='100%'
             layout='responsive'
             alt=''
           />
           <NextImage
+            className='absolute bottom-0 right-0 w-[20%] '
+            src='/images/pembahasan-tryout/Person.png'
+            width='80%'
+            height='100%'
+            layout='responsive'
+            alt=''
+          />
+          <NextImage
             className='absolute bottom-0 w-[15%] '
-            src='/images/tiket/person.png'
-            width='43%'
+            src='/images/pembahasan-tryout/Rainbow.png'
+            width='100%'
             height='100%'
             layout='responsive'
             alt=''
@@ -45,26 +55,13 @@ export default function PembahasanTryout() {
           </div>
           <div className='flex min-h-screen w-full items-center justify-center px-5 md:py-56 lg:py-64'>
             <div className='relative'>
-              <NextImage
-                className='absolute -right-2 -bottom-5 w-[15%] sm:-bottom-12 sm:-right-10 lg:w-[15%]'
-                src='/images/tiket/magnifier.png'
-                width='85%'
-                height='100%'
-                layout='responsive'
-                alt=''
-              />
               <div className='flex h-9 w-full items-center justify-end gap-x-3 rounded-t-2xl bg-dark pr-5 md:h-12 md:pr-8'>
                 <div className='h-3 w-3 rounded-full bg-green-300 md:h-4 md:w-4'></div>
                 <div className='h-3 w-3 rounded-full bg-red-300 md:h-4 md:w-4'></div>
                 <div className='h-3 w-3 rounded-full bg-yellow-300 md:h-4 md:w-4'></div>
               </div>
-              <div className='rounded-b-2xl border-4 border-dark bg-white px-6 py-8 sm:p-10 md:p-16 lg:px-32 lg:py-16'>
-                <Typography
-                  variant='h4'
-                  className='stroke max-w-xl pb-4 text-2xl font-bold text-red-300 sm:text-3xl md:text-4xl lg:text-5xl'
-                >
-                  Pembahasan Tryout Nasional!
-                </Typography>
+              <div className='tryout rounded-b-2xl  border-4 border-dark bg-white '>
+                <Youtube />
               </div>
             </div>
           </div>

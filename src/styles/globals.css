@@ -251,6 +251,27 @@
   @apply !right-[50%] !left-auto !-translate-x-[2%] md:!right-[32%] lg:!right-[28%];
 }
 
+.tryout .video .swiper-button-next,
+.tryout .video .swiper-button-prev {
+  @apply absolute bottom-6 !top-auto  z-50 !flex !h-10 !w-10 items-center justify-center rounded-xl border-2 border-black bg-white !p-4 !text-black md:bottom-5;
+}
+.tryout .swiper {
+  @apply z-0 pb-20;
+}
+.tryout .video .swiper-button-next:after,
+.tryout .video .swiper-button-prev:after {
+  font-size: 18px !important;
+  font-weight: 900 !important;
+}
+
+.tryout .video .swiper-button-next {
+  @apply !right-[50%] !translate-x-[102%] md:!right-16;
+}
+
+.tryout .video .swiper-button-prev {
+  @apply !right-[50%] !left-auto !-translate-x-[2%] md:!right-[4.2rem];
+}
+
 @layer utilities {
   .animated-underline {
     background-image: linear-gradient(#33333300, #33333300),
