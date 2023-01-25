@@ -1,15 +1,10 @@
 import React from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
-import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
-import Typography from '@/components/typography/Typography';
-
-import playlist_tryout from '@/constant/pembahasan-tryout';
-
+import {
+  PlaylistSaintek,
+  PlaylistSoshum,
+  PlaylistTPS,
+} from '@/pages/pembahasan-tryout/components/Playlist';
 const css = `.intrinsic-container {
   position: relative;
   height: 0;
@@ -26,7 +21,7 @@ const css = `.intrinsic-container {
 /* 4x3 Aspect Ratio */
 
 .intrinsic-container-4x3 {
-  padding-bottom: 70%;
+  padding-bottom:  60%;
 }
 
 .intrinsic-container iframe {
@@ -38,38 +33,80 @@ const css = `.intrinsic-container {
 }
 }`;
 
-export default function Youtube() {
-  const opts: YouTubeProps['opts'] = {
-    width: '100%',
-  };
+type jenis_tryout = {
+  soshum: boolean;
+  saintek: boolean;
+  tps: boolean;
+};
+
+const Youtube = () => {
+  const [jenis_tryout, SetJenisTryout] = React.useState<jenis_tryout>({
+    soshum: false,
+    saintek: true,
+    tps: false,
+  });
+  function changeTryout(matkul: string) {
+    if (matkul == 'soshum') {
+      SetJenisTryout({
+        soshum: true,
+        saintek: false,
+        tps: false,
+      });
+    } else if (matkul == 'saintek') {
+      SetJenisTryout({
+        soshum: false,
+        saintek: true,
+        tps: false,
+      });
+    } else if (matkul == 'tps') {
+      SetJenisTryout({
+        soshum: false,
+        saintek: false,
+        tps: true,
+      });
+    }
+  }
   return (
-    <Swiper
-      className='video relative max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
-      modules={[Navigation]}
-      navigation={true}
-      slidesPerView={1}
-    >
-      <style>{css}</style>
-      {playlist_tryout.map(({ youtubeId, title }) => (
-        <SwiperSlide
-          className='intrinsic-container intrinsic-container-4x3'
-          key={youtubeId}
-        >
-          <YouTube
-            id='ytb'
-            videoId={youtubeId}
-            opts={opts}
-            title={title}
-            loading='lazy'
-          />
-          <Typography
-            variant='h4'
-            className='stroke -bottom-[3.55rem] hidden text-xl font-bold text-red-300 sm:px-8 sm:text-3xl md:absolute md:block md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
+    <div className='flex min-h-screen w-full flex-col items-center justify-center px-5 md:py-56 lg:py-64'>
+      <div className='relative'>
+        <div className='grid grid-cols-2 grid-rows-2 gap-6 pb-6'>
+          <div
+            className='col-span-1 w-full rounded-2xl border-2 border-dark bg-white py-3 px-4 text-center text-2xl font-bold hover:bg-red-200 '
+            onClick={() => changeTryout('saintek')}
+            role='button'
           >
-            {title}
-          </Typography>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+            Saintek
+          </div>
+          <div
+            className='col-span-1 w-full rounded-2xl border-2 border-black bg-white py-3 px-4 text-center text-2xl font-bold hover:bg-red-200 '
+            onClick={() => changeTryout('soshum')}
+            role='button'
+          >
+            Soshum
+          </div>
+          <div
+            className='col-span-2 w-full rounded-2xl border-2 border-black bg-white py-3 px-4 text-center text-2xl font-bold hover:bg-red-200 '
+            onClick={() => changeTryout('tps')}
+            role='button'
+          >
+            TPS
+          </div>
+        </div>
+        <div className='border-t-2xl flex h-9 w-full items-center justify-end gap-x-3 rounded-t-2xl bg-dark pr-5 md:h-12 md:pr-8'>
+          <div className='h-3 w-3 rounded-full bg-green-300 md:h-4 md:w-4'></div>
+          <div className='h-3 w-3 rounded-full bg-red-300 md:h-4 md:w-4'></div>
+          <div className='h-3 w-3 rounded-full bg-yellow-300 md:h-4 md:w-4'></div>
+        </div>
+        <div className='tryout rounded-b-2xl  border-x-2 border-b-2 border-dark bg-white '>
+          <style>{css}</style>
+
+          {jenis_tryout.saintek && <PlaylistSaintek />}
+          {jenis_tryout.soshum && <PlaylistSoshum />}
+          {jenis_tryout.tps && <PlaylistTPS />}
+        </div>
+      </div>
+    </div>
   );
-}
+};
+
+export default Youtube;

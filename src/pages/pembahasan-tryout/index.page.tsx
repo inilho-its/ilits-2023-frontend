@@ -5,7 +5,7 @@ import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
-import Youtube from '@/pages/pembahasan-tryout/components/youtube';
+import Youtube from '@/pages/pembahasan-tryout/components/Youtube';
 
 export default function PembahasanTryout() {
   return (
@@ -53,18 +53,7 @@ export default function PembahasanTryout() {
               Pembahasan Tryout Nasional
             </Typography>
           </div>
-          <div className='flex min-h-screen w-full items-center justify-center px-5 md:py-56 lg:py-64'>
-            <div className='relative'>
-              <div className='flex h-9 w-full items-center justify-end gap-x-3 rounded-t-2xl bg-dark pr-5 md:h-12 md:pr-8'>
-                <div className='h-3 w-3 rounded-full bg-green-300 md:h-4 md:w-4'></div>
-                <div className='h-3 w-3 rounded-full bg-red-300 md:h-4 md:w-4'></div>
-                <div className='h-3 w-3 rounded-full bg-yellow-300 md:h-4 md:w-4'></div>
-              </div>
-              <div className='tryout rounded-b-2xl  border-4 border-dark bg-white '>
-                <Youtube />
-              </div>
-            </div>
-          </div>
+          <Youtube />
         </section>
       </main>
     </Layout>
