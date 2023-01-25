@@ -5,6 +5,7 @@ import {
   PlaylistSoshum,
   PlaylistTPS,
 } from '@/pages/pembahasan-tryout/components/Playlist';
+
 const css = `.intrinsic-container {
   position: relative;
   height: 0;
@@ -67,11 +68,11 @@ const Youtube = () => {
     }
   }
   return (
-    <div className='flex min-h-screen w-full flex-col items-center justify-center px-5 md:py-56 lg:py-64'>
+    <div className='flex min-h-screen w-full flex-col items-center justify-center sm:py-20 md:py-28 lg:py-32'>
       <div className='relative'>
-        <div className='grid grid-cols-2 grid-rows-2 gap-6 pb-6'>
+        <div className='grid grid-cols-2 grid-rows-2 gap-3 pb-3 md:gap-6 md:pb-6'>
           <div
-            className='col-span-1 w-full rounded-2xl border-2 border-dark bg-white py-3 px-4 text-center text-2xl font-bold hover:bg-red-200 '
+            className='col-span-1 w-full rounded-2xl border-2 border-dark bg-white py-3 px-4 text-center text-2xl font-bold hover:bg-red-200'
             onClick={() => changeTryout('saintek')}
             role='button'
           >
@@ -99,7 +100,6 @@ const Youtube = () => {
         </div>
         <div className='tryout rounded-b-2xl  border-x-2 border-b-2 border-dark bg-white '>
           <style>{css}</style>
-
           {jenis_tryout.saintek && <PlaylistSaintek />}
           {jenis_tryout.soshum && <PlaylistSoshum />}
           {jenis_tryout.tps && <PlaylistTPS />}

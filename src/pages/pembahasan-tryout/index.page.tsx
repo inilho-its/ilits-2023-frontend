@@ -5,7 +5,7 @@ import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Typography from '@/components/typography/Typography';
 
-import Youtube from '@/pages/pembahasan-tryout/components/Youtube';
+import Youtube from '@/pages/pembahasan-tryout/components/YoutubePlayer';
 
 export default function PembahasanTryout() {
   return (
@@ -22,7 +22,7 @@ export default function PembahasanTryout() {
             alt=''
           />
           <NextImage
-            className='absolute bottom-0 right-0 w-[20%] '
+            className='absolute bottom-0 right-0 w-[20%]'
             src='/images/pembahasan-tryout/Person.png'
             width='80%'
             height='100%'
@@ -37,7 +37,7 @@ export default function PembahasanTryout() {
             layout='responsive'
             alt=''
           />
-          <div className='absolute flex w-full items-center justify-center pt-16 sm:justify-start sm:pt-20 sm:pl-20 md:pt-16 md:pl-20 lg:pl-24 lg:pt-8'>
+          <div className='flex w-full items-center justify-center pt-14 sm:justify-start sm:pt-20 sm:pl-20 md:pt-16 md:pl-20 lg:pl-24 lg:pt-8'>
             <NextImage
               className='w-[20%]'
               src='/images/ilits-logo.png'

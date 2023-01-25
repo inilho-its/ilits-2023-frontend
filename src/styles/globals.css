@@ -253,10 +253,10 @@
 
 .tryout .video .swiper-button-next,
 .tryout .video .swiper-button-prev {
-  @apply absolute bottom-6 !top-auto  z-50 !flex !h-10 !w-10 items-center justify-center rounded-xl border-2 border-black bg-white !p-4 !text-black md:bottom-5;
+  @apply absolute bottom-6 !top-auto z-50 !flex !h-10 !w-10 items-center justify-center rounded-xl border-2 border-black bg-white !p-4 !text-black md:bottom-5;
 }
 .tryout .swiper {
-  @apply z-0 pb-20;
+  @apply z-0 pb-36 md:pb-20;
 }
 .tryout .video .swiper-button-next:after,
 .tryout .video .swiper-button-prev:after {

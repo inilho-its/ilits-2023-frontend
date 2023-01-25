@@ -11,13 +11,12 @@ import playlist_tryout from '@/constant/pembahasan-tryout';
 
 const opts: YouTubeProps['opts'] = {
   frameborder: '0',
-  allow: 'autoplay; encrypted-media',
 };
 
 export const PlaylistSaintek = () => {
   return (
     <Swiper
-      className='video relative max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
+      className='video relative max-w-[350px] sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
       modules={[Navigation]}
       navigation={true}
       slidesPerView={1}
@@ -36,7 +35,7 @@ export const PlaylistSaintek = () => {
           />
           <Typography
             variant='h4'
-            className='stroke -bottom-[3.55rem] hidden text-xl font-bold text-red-300 sm:px-8 sm:text-3xl md:absolute md:block md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
+            className='stroke absolute  -bottom-[3.55rem] left-1/2 translate-x-[-50%] transform text-3xl font-bold text-red-300 sm:px-8 sm:text-3xl md:left-0 md:translate-x-0 md:transform-none md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
           >
             {title}
           </Typography>
@@ -49,7 +48,7 @@ export const PlaylistSaintek = () => {
 export const PlaylistSoshum = () => {
   return (
     <Swiper
-      className='video relative max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
+      className='video relative max-w-[350px] sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
       modules={[Navigation]}
       navigation={true}
       slidesPerView={1}
@@ -68,7 +67,7 @@ export const PlaylistSoshum = () => {
           />
           <Typography
             variant='h4'
-            className='stroke -bottom-[3.55rem] hidden text-xl font-bold text-red-300 sm:px-8 sm:text-3xl md:absolute md:block md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
+            className='stroke absolute  -bottom-[3.55rem] left-1/2 translate-x-[-50%] transform text-3xl font-bold text-red-300 sm:px-8 sm:text-3xl md:left-0 md:translate-x-0 md:transform-none md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
           >
             {title}
           </Typography>
@@ -81,7 +80,7 @@ export const PlaylistSoshum = () => {
 export const PlaylistTPS = () => {
   return (
     <Swiper
-      className='video relative max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
+      className='video relative max-w-[350px] sm:max-w-lg md:max-w-2xl lg:max-w-4xl'
       modules={[Navigation]}
       navigation={true}
       slidesPerView={1}
@@ -100,7 +99,7 @@ export const PlaylistTPS = () => {
           />
           <Typography
             variant='h4'
-            className='stroke -bottom-[3.55rem] hidden text-xl font-bold text-red-300 sm:px-8 sm:text-3xl md:absolute md:block md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
+            className='stroke absolute  -bottom-[3.55rem] left-1/2 translate-x-[-50%] transform text-3xl font-bold text-red-300 sm:px-8 sm:text-3xl md:left-0 md:translate-x-0 md:transform-none md:text-3xl lg:-left-10 lg:-bottom-[3.67rem]  lg:mx-10 lg:px-12 lg:text-4xl'
           >
             {title}
           </Typography>
