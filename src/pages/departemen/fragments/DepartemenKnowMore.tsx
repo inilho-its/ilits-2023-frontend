@@ -80,7 +80,7 @@ export default function DepartemenKenaliLebih({
             <div
               className={clsx(
                 'p-[20px] pl-[32px] pr-[32px] pt-[61px] pb-[61px]',
-                'lg:pt-[117px] lg:pb-0 lg:pl-[91px]'
+                'lg:left-0 lg:pt-[117px] lg:pb-0 lg:pl-[91px]'
               )}
             >
               <div className='flex justify-center lg:justify-start'>

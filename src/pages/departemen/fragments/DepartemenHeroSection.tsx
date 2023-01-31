@@ -22,8 +22,10 @@ export default function DepartemenHeroSection({
   };
   return (
     <>
-      <div className='layout w-full pb-[80px] lg:flex lg:pb-0'>
-        <div className={clsx('lg:mt-[9.5rem] lg:ml-[-1.875rem]')}>
+      <div className='layout relative z-20 w-full pb-[80px] lg:flex lg:pb-0'>
+        <div
+          className={clsx('lg:top-[9.5rem] lg:left-[-1.875rem] lg:mt-[9.5rem]')}
+        >
           <div
             className={clsx(
               'text-center font-bold lg:max-w-[48.188rem] lg:px-7 lg:pt-7 lg:text-left'
@@ -53,7 +55,7 @@ export default function DepartemenHeroSection({
             >
               {facultyName}
             </Typography>
-            <div className=''>
+            <div className='z-20'>
               <Button
                 variant='lightBlue'
                 size='medium'

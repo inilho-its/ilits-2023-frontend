@@ -78,7 +78,7 @@ export default function DepartemenBidangKeahlian({
           </div>
         </div>
       </div>
-      <div className='mt-[54px] lg:mt-[100px] lg:mb-[100px] lg:flex lg:justify-center lg:gap-[24px]'>
+      <div className='relative z-20 mt-[54px] lg:mt-[100px] lg:mb-[100px] lg:flex lg:justify-center lg:gap-[24px]'>
         {data?.map((v, i) => (
           <CardBidangKeahlian key={`Card-Item-key-${i}`} {...v} />
         ))}
