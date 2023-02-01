@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import BaseDialog from '@/components/dialog/BaseDialog';
 import Footer from '@/components/layout/Footer';
-import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 
 import useDialogStore from '@/store/useDialogStore';
