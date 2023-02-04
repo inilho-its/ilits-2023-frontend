@@ -46,7 +46,7 @@ export default function DepartemenKenaliLebih({
           'w-full'
         )}
       >
-        <div className={clsx('bg-[#30302E]', 'lg:h-[80px]')}>
+        <div className={clsx('relative bg-[#30302E]', 'xl:h-[80px]')}>
           <div className='w-0 lg:w-full'>
             <NextImage
               src='/images/pageDepartemen/knowMoreText.png'
