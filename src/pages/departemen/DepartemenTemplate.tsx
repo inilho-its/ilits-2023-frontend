@@ -54,7 +54,7 @@ export default function DepartemenTemplate({
     <div>
       <Seo templateTitle={departmentName} />
       <main>
-        <div className='m-auto min-h-screen place-items-center self-center bg-bone-500'>
+        <div className='m-auto min-h-screen place-items-center self-center overflow-hidden bg-bone-500'>
           <section className='relative z-20'>
             <div>
               {/* Hero Section Start */}
@@ -98,7 +98,7 @@ export default function DepartemenTemplate({
                   alt=''
                 />
               </div>
-              <div className='absolute lg:right-[0rem] lg:mt-[4.5rem] lg:w-[250px]'>
+              <div className='absolute -z-50 lg:right-[0rem] lg:mt-[4.5rem] lg:w-[250px]'>
                 <NextImage
                   src='/images/pageDepartemen/hero-3.png'
                   width='90%'
@@ -147,7 +147,7 @@ export default function DepartemenTemplate({
               buildingImg={buildingImg}
             />
           </section>
-          <section className='relative'>
+          <section className='relative z-20'>
             <div>
               {/* Akreditasi Section Start */}
               <div className='absolute z-30 mt-[4.5rem] ml-[21rem] w-[50px] sm:top-[0rem] sm:ml-[34rem] md:ml-[38rem] md:mt-[4rem] lg:right-[4rem] lg:mt-[8rem] lg:w-[100px]'>
@@ -181,7 +181,7 @@ export default function DepartemenTemplate({
               akreditasiDesc2={akreditasiDesc2}
             />
           </section>
-          <section className='relative'>
+          <section className='relative z-20'>
             <div>
               {/* Daya Tampung Section Start */}
               <div className='min-[1023px]:hidden absolute z-30 w-0 lg:right-[5rem] lg:mt-[12.1rem] lg:w-[160px]'>
@@ -211,7 +211,7 @@ export default function DepartemenTemplate({
               srcDayaTampungMobile={srcDayaTampungMobile}
             />
           </section>
-          <section className='relative'>
+          <section className='relative z-20'>
             <div>
               {/* Bidang Keahlian Section Start */}
               <div className='absolute z-30 w-0 md:w-0 lg:mt-[7.4rem] lg:ml-[0rem] lg:w-[150px]'>

@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router';
 import * as React from 'react';
+import { useCookies } from 'react-cookie';
 import { FormProvider, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 
@@ -21,46 +23,24 @@ type detailTiket = {
   status: {
     status: string;
   };
-  dataPeserta: [
-    {
-      nomerPeserta: string;
-      password: string;
-    }
-  ];
-};
-
-type nomor_peserta = {
-  status: string;
-  dataPeserta: [
-    {
-      nomerPeserta: string;
-      password: string;
-    }
-  ];
 };
 
 export default function MyTiket() {
+  const router = useRouter();
   const useSearchInput = useSearchInputHooks();
-  const [nomor_peserta, setNomorPeserta] = React.useState<nomor_peserta>({
-    status: '',
-    dataPeserta: [
-      {
-        nomerPeserta: '',
-        password: '',
-      },
-    ],
+  const [nomor_peserta, setNomorPeserta] = React.useState<detailTiket>({
+    status: {
+      status: '',
+    },
   });
+  const [, setCookie] = useCookies(['nomor_pendaftaran']);
   const methods = useForm<TiketFormState>();
   const { handleSubmit } = methods;
   const onSubmit = (data: TiketFormState) => {
     setNomorPeserta({
-      status: '',
-      dataPeserta: [
-        {
-          nomerPeserta: '',
-          password: '',
-        },
-      ],
+      status: {
+        status: '',
+      },
     });
     toast.promise(
       apiMock
@@ -74,16 +54,23 @@ export default function MyTiket() {
         )
         .then((res) => {
           setNomorPeserta({
-            status: res.data.data.status.status,
-            dataPeserta: res.data.data.dataPeserta,
+            status: {
+              status: res.data.data.status.status,
+            },
           });
           if (res.data.data.status.status == 'menunggu verifikasi')
             useSearchInput.isVerified(true, res.data.data.status.status);
           else if (
             res.data.data.status.status == 'pembayaran berhasil diverifikasi'
-          )
+          ) {
             useSearchInput.isVerified(true, 'Terverifikasi');
-          else useSearchInput.isVerified(false, 'Tidak Terverifikasi');
+            setCookie('nomor_pendaftaran', data.nomor_pendaftaran, {
+              path: '/',
+              sameSite: 'lax',
+              maxAge: 43200,
+            });
+            router.push('/redirect?url=/pembahasan-tryout');
+          } else useSearchInput.isVerified(false, 'Tidak Terverifikasi');
         })
         .catch((err) => {
           useSearchInput.isVerified(false, 'Tidak Terverifikasi');
@@ -185,66 +172,8 @@ export default function MyTiket() {
                     />
                   </form>
                 </FormProvider>
-                {nomor_peserta.status ===
-                  'pembayaran berhasil diverifikasi' && (
-                  <div className='pt-5'>
-                    <Typography
-                      variant='body'
-                      className='pb-4 text-sm font-semibold sm:text-[16px]'
-                    >
-                      Nomor Peserta & Password :
-                    </Typography>
-                    <div className='flex flex-col gap-y-2'>
-                      {nomor_peserta.dataPeserta.map(
-                        ({ nomerPeserta, password }, index) => (
-                          <div className='w-full' key={index}>
-                            <div className='flex justify-between gap-2 rounded-md border-2 p-3 sm:flex-row sm:p-4 md:px-7 md:py-4'>
-                              {nomerPeserta && password != '' ? (
-                                <>
-                                  <div>
-                                    <Typography
-                                      variant='body'
-                                      className='text-sm font-bold sm:text-[16px]'
-                                    >
-                                      Nomor Peserta :
-                                    </Typography>
-                                    <Typography
-                                      variant='body'
-                                      className='text-sm font-semibold sm:text-[16px]'
-                                    >
-                                      {nomerPeserta}
-                                    </Typography>
-                                  </div>
-                                  <div className=' pr-4 md:pr-10'>
-                                    <Typography
-                                      variant='body'
-                                      className='text-sm font-bold sm:text-[16px]'
-                                    >
-                                      Password :
-                                    </Typography>
-                                    <Typography
-                                      variant='body'
-                                      className='text-sm font-semibold sm:text-[16px]'
-                                    >
-                                      {password}
-                                    </Typography>
-                                  </div>
-                                </>
-                              ) : (
-                                <Typography
-                                  variant='body'
-                                  className='text-sm font-semibold sm:text-[16px]'
-                                >
-                                  Coba beberapa saat lagi...
-                                </Typography>
-                              )}
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                )}
+                {nomor_peserta.status.status ===
+                  'pembayaran berhasil diverifikasi' && <></>}
               </div>
             </div>
           </div>

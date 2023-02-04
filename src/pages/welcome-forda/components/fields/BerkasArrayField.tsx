@@ -42,11 +42,11 @@ export default function BerkasArrayField({
               label='Repost Feeds poster Welcome Forda
               '
               id={`peserta.${index}.repost_feeds`}
-              placeholder='Repost Feeds'
+              placeholder='Please kindly drop links here'
               validation={{
                 required: {
                   value: true,
-                  message: 'Wajib mengisi asal sekolah',
+                  message: 'Wajib mengisi bukti repost feeds',
                 },
               }}
             />
@@ -55,11 +55,11 @@ export default function BerkasArrayField({
               required={true}
               label='Follow Instagram @inilhoits dan Akun Forda masing-masing'
               id={`peserta.${index}.follow_ig`}
-              placeholder='Follow IG'
+              placeholder='Please kindly drop links here'
               validation={{
                 required: {
                   value: true,
-                  message: 'Wajib mengisi asal sekolah',
+                  message: 'Wajib mengisi bukti follow ig',
                 },
               }}
             />
@@ -68,11 +68,11 @@ export default function BerkasArrayField({
               required={true}
               label='Upload Vaksin'
               id={`peserta.${index}.upload_vaksin`}
-              placeholder='Upload Vaksin'
+              placeholder='Please kindly drop links here'
               validation={{
                 required: {
                   value: true,
-                  message: 'Wajib mengisi asal sekolah',
+                  message: 'Wajib mengisi bukti upload vaksin',
                 },
               }}
             />

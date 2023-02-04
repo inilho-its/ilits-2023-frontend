@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
-import { RegisterOptions, useFormContext } from 'react-hook-form';
+import { get, RegisterOptions, useFormContext } from 'react-hook-form';
 import { IconType } from 'react-icons';
 import { HiExclamation } from 'react-icons/hi';
 
@@ -84,6 +84,8 @@ export default function Input({
     formState: { errors },
   } = useFormContext();
 
+  const error = get(errors, id);
+
   return (
     <div>
       <div
@@ -137,7 +139,7 @@ export default function Input({
             className={clsx(
               readOnly
                 ? 'cursor-not-allowed border-neutral-300 bg-gray-100 focus:border-neutral-300 focus:ring-0'
-                : errors[id]
+                : errors
                 ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                 : 'focus:ring-primary-500 border-neutral-300 focus:border-blue-400',
               'block w-full shadow-sm hover:border-blue-400',
@@ -171,19 +173,12 @@ export default function Input({
       </div>
       <div className='mt-1'>
         {helperText && <p className='text-xs text-gray-500'>{helperText}</p>}
-        {!hideError && errors[id] && (
+        {!hideError && error && (
           <span className='flex gap-2 text-sm text-red-500'>
             <HiExclamation className='text-xl text-red-500' />
-            {errors[id]?.message as unknown as string}
+            {error?.message as unknown as string}
           </span>
         )}
-        {/* 
-        {!hideError && errors.peserta && (
-          <span className='flex gap-2 text-sm text-red-500'>
-            <HiExclamation className='text-xl text-red-500' />
-            {errors?.peserta[index][name].message as unknown as string}
-          </span>
-        )} */}
       </div>
     </div>
   );

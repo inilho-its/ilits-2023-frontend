@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { FaAngleDown, FaInstagram, FaYoutube } from 'react-icons/fa';
+import {
+  FaAngleDown,
+  FaInstagram,
+  FaTiktok,
+  FaTwitter,
+  FaYoutube,
+} from 'react-icons/fa';
 import { FiExternalLink } from 'react-icons/fi';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -23,7 +29,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className='w-full bg-neutral-900'>
+    <footer className='relative z-50 w-full bg-neutral-900'>
       <div className='mx-auto w-[95%] md:w-10/12'>
         <div className='flex flex-col justify-between md:flex-row md:items-center'>
           <NextImage
@@ -50,10 +56,12 @@ export default function Footer() {
               <UnstyledLink href='https://www.youtube.com/@INILHOITS'>
                 <FaYoutube className='w-4 md:w-fit' size={32} />
               </UnstyledLink>
-              {/* <FaTwitter className='w-4 md:w-fit' size={32} />
-              <FaLinkedin className='w-4 md:w-fit' size={32} />
-              <FaTiktok className='w-4 md:w-fit' size={32} />
-              <FaLine className='w-4 md:w-fit' size={32} /> */}
+              <UnstyledLink href='https://twitter.com/inilhoits2023_/'>
+                <FaTwitter className='w-4 md:w-fit' size={32} />
+              </UnstyledLink>
+              <UnstyledLink href='https://www.tiktok.com/@inilhoits'>
+                <FaTiktok className='w-4 md:w-fit' size={32} />
+              </UnstyledLink>
             </div>
           </div>
         </div>
@@ -84,7 +92,7 @@ export default function Footer() {
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/coming-soon'
+                  href='/fasilitas'
                   className='mx-auto text-lg md:mx-0'
                 >
                   Fasilitas
