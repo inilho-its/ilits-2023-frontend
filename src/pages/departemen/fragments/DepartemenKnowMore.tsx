@@ -70,33 +70,33 @@ export default function DepartemenKenaliLebih({
             />
           </div>
         </div>
-        <div className='flex flex-wrap lg:flex-nowrap'>
+        <div className='flex flex-wrap min-lg:flex-wrap xl:flex-nowrap'>
           <div
             className={clsx(
-              'h-auto border-b-[4px] border-solid border-bone-1000 bg-[#FFBE3D]',
-              'lg:h-auto lg:w-full lg:rounded-br-[0px] lg:border-r-[4px] lg:border-b-[0px]'
+              'h-auto border-b-[4px] border-solid border-bone-1000 bg-[#FFBE3D] min-lg:flex min-lg:justify-center',
+              'lg:w-full min-lg:border-r-[0px] min-lg:border-b-[4px] xl:h-auto xl:rounded-br-[0px] xl:border-r-[4px] xl:border-b-[0px]'
             )}
           >
             <div
               className={clsx(
                 'p-[20px] pl-[32px] pr-[32px] pt-[61px] pb-[61px]',
-                'lg:left-0 lg:pt-[117px] lg:pb-0 lg:pl-[91px]'
+                'xl:left-0 xl:pt-[117px] xl:pb-0 xl:pl-[91px]'
               )}
             >
-              <div className='flex justify-center lg:justify-start'>
+              <div className='flex justify-center min-lg:justify-center min-lg:pb-[30px] xl:justify-start'>
                 <KnowMoreTitle />
               </div>
               <Typography
                 variant='body'
                 className={clsx(
-                  'mt-[24px] pr-[27.5px] pl-[27.5px] text-center text-[14px]',
-                  'lg:mt-[36px] lg:mb-[36px] lg:min-h-[192px] lg:w-[491px] lg:pr-[0px] lg:pl-[0px] lg:text-left lg:text-[18px]'
+                  'mt-[24px] pr-[27.5px] pl-[27.5px] text-center text-[14px] min-lg:mt-[24px] min-lg:text-center min-lg:text-[14px]',
+                  'xl:mt-[36px] xl:mb-[36px] xl:min-h-[192px] xl:w-[491px] xl:pr-[0px] xl:pl-[0px] xl:text-left xl:text-[18px]'
                 )}
               >
                 {kenaliLebihDesc}
               </Typography>
-              <div className='flex justify-center lg:justify-start'>
-                <div className='w-[168px] pt-[24px] lg:w-[168px] lg:pb-[121px] lg:pt-[0px]'>
+              <div className='flex justify-center xl:justify-start'>
+                <div className='w-[168px] pt-[24px] min-lg:pt-[50px] min-lg:pb-[0px] xl:w-[168px] xl:pb-[121px] xl:pt-[0px]'>
                   <NextImage
                     src='/images/pageDepartemen/departemenDot.png'
                     width='100%'
@@ -111,7 +111,7 @@ export default function DepartemenKenaliLebih({
           </div>
           <div className='w-full bg-[#49AD7B]'>
             <div className='flex justify-center'>
-              <div className='w-[282px] pt-[42px] pb-[42px] lg:w-[500px] lg:pb-[0px] lg:pt-[112.5px]'>
+              <div className='w-[282px] pt-[42px] pb-[42px] min-lg:w-[500px] min-lg:pb-[84px] xl:pb-[0px] xl:pt-[112.5px]'>
                 <NextImage
                   src={buildingImg}
                   width='100%'

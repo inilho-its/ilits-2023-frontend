@@ -24,7 +24,7 @@ export default function DepartemenBidangKeahlian({
   const CardBidangKeahlian = ({ bidangKeahlian }: CardBidangKeahlianProps) => {
     return (
       <div className='flex justify-center pb-[30px] lg:pb-0'>
-        <div className='mb-[24px] flex h-[120px] w-[220px] flex-col justify-center rounded-[8px] border-[2px] border-solid border-bone-1000 bg-white lg:mb-0'>
+        <div className='mb-[24px] flex h-[120px] w-[220px] flex-col justify-center rounded-[8px] border-[2px] border-solid border-bone-1000 bg-white lg:mb-0 min-lg:mb-[24px]'>
           <Typography variant='body' className=' text-center lg:text-[16px]'>
             {bidangKeahlian}
           </Typography>
@@ -42,7 +42,7 @@ export default function DepartemenBidangKeahlian({
   ];
 
   return (
-    <div className='lg:h-[440px]'>
+    <div className='xl:h-[440px]'>
       <div
         className={clsx(
           'h-auto w-auto border-b-[2px] border-solid border-bone-1000',
@@ -78,7 +78,7 @@ export default function DepartemenBidangKeahlian({
           </div>
         </div>
       </div>
-      <div className='relative z-20 mt-[54px] lg:mt-[100px] lg:mb-[100px] lg:flex lg:justify-center lg:gap-[24px]'>
+      <div className='relative z-30 mt-[54px] min-lg:flex min-lg:flex-wrap min-lg:justify-center min-lg:gap-[24px] xl:mt-[100px] xl:mb-[100px] xl:justify-center'>
         {data?.map((v, i) => (
           <CardBidangKeahlian key={`Card-Item-key-${i}`} {...v} />
         ))}

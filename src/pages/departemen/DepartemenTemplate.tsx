@@ -129,7 +129,7 @@ export default function DepartemenTemplate({
           <section id={idScrollto} className='relative z-20'>
             <div>
               {/* Know More Section Start */}
-              <div className='absolute z-30 mt-[37rem] ml-[2rem] w-[70px] sm:mt-[32rem] sm:ml-[10rem] md:mt-[34rem] md:ml-[14rem] lg:right-[33.5rem] lg:mt-[10rem] lg:w-[100px]'>
+              <div className='absolute z-30 mt-[37rem] ml-[2rem] w-[70px] sm:mt-[32rem] sm:ml-[10rem] md:mt-[34rem] md:ml-[14rem] lg:w-[100px] min-lg:right-[43rem] min-lg:mt-[33rem] xl:right-[33.5rem] xl:mt-[10rem]'>
                 <NextImage
                   src='/images/pageDepartemen/eye.png'
                   width='100%'
@@ -224,7 +224,7 @@ export default function DepartemenTemplate({
                   alt=''
                 />
               </div>
-              <div className='absolute z-30 w-0 md:w-0 lg:right-[0rem] lg:mt-[15.6rem] lg:w-[200px] '>
+              <div className='absolute z-30 w-0 md:w-0 lg:right-[0rem] min-lg:mt-[18.6rem] min-lg:w-[200px] xl:mt-[15.6rem] '>
                 <NextImage
                   src='/images/pageDepartemen/bidangkeahlian-1.png'
                   width='96%'
@@ -234,7 +234,7 @@ export default function DepartemenTemplate({
                   alt=''
                 />
               </div>
-              <div className='absolute w-0 md:w-0 lg:top-[-24.4rem] lg:w-full '>
+              <div className='absolute w-0 md:w-0 min-lg:top-[-10rem] min-lg:w-full xl:top-[-24.4rem] '>
                 <NextImage
                   src='/images/pageDepartemen/bidangkeahlian-3.png'
                   width='86%'
