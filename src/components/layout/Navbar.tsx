@@ -74,11 +74,11 @@ export default function Navbar() {
         </nav>
         <div className='hidden md:block'>
           <ButtonLink
-            href='/welcome-forda'
+            href='/hasil-tryout'
             className='px-2 font-semibold lg:px-[22px]'
             variant='bone'
           >
-            Daftar Sekarang!
+            Hasil Try Out
           </ButtonLink>
         </div>
         <div className='relative z-50 mr-0 flex md:hidden'>
@@ -131,13 +131,13 @@ export default function Navbar() {
             ))}
           </ul>
           <ButtonLink
-            href='/welcome-forda'
+            href='/hasil-tryout'
             className='mx-auto mt-3 font-semibold'
             variant='bone'
             size='medium'
             round='medium'
           >
-            Daftar Sekarang!
+            Hasil Try Out
           </ButtonLink>
           {isOpen && (
             <FaTimes
