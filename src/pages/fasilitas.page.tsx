@@ -408,10 +408,10 @@ function HeroSection() {
               as='h1'
               variant='h1'
               className={clsx(
-                'bordered1 pt-[100px] text-5xl text-[#FF9447] ',
-                'lg:bordered lg:pt-6 lg:text-[80px]',
-                'md:bordered md:text-[72px]',
-                'sm:bordered sm:text-[72px]'
+                'stroke-sm pt-[100px] text-5xl text-[#FF9447] ',
+                'lg:stroke lg:pt-6 lg:text-[80px]',
+                'md:stroke md:text-[72px]',
+                'sm:stroke sm:text-[72px]'
               )}
             >
               Fasilitas
@@ -538,8 +538,8 @@ function FacilityBanner() {
         as='h4'
         variant='h4'
         className={clsx(
-          'bordered text bordered1 ml-[24px] p-[18px] px-10 text-center text-2xl font-extrabold text-neutral-100',
-          'lg:bordered lg:mt-[15px] lg:p-[40px] lg:text-[48px]'
+          'text stroke-sm ml-[24px] p-[18px] px-10 text-center text-2xl font-extrabold text-neutral-100',
+          'lg:stroke lg:mt-[15px] lg:p-[40px] lg:text-[48px]'
         )}
       >
         Apa Saja Fasilitas di ITS?

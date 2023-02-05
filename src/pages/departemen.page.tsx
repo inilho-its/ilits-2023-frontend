@@ -10,8 +10,6 @@ export default function DepartemenPage() {
       <DepartemenTemplate
         departmentName='Departemen Sistem Informasi'
         facultyName='FTEIC / ELECTICS'
-        buttonScrollto='departemenSisfor'
-        idScrollto='departemenSisfor'
         kenaliLebihDesc='Departemen Sistem Informasi ITS merupakan jurusan sistem
           informasi pertama di Indonesia. Dalam bidang keilmuan, sistem
           informasi akan mempelajari pengembangan dan manajemen suatu

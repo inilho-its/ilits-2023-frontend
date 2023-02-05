@@ -19,15 +19,9 @@ import DepartemenKnowMore, {
   DepartemenKnowMoreProps,
 } from '@/pages/departemen/fragments/DepartemenKnowMore';
 
-export type DepartemenTemplateProps = {
-  idScrollto: string;
-};
-
 export default function DepartemenTemplate({
   departmentName,
   facultyName,
-  buttonScrollto,
-  idScrollto,
   buildingName,
   kenaliLebihDesc,
   buildingImg,
@@ -45,7 +39,6 @@ export default function DepartemenTemplate({
   srcDayaTampungDesktop,
   srcDayaTampungMobile,
 }: DepartemenHeroSectionProps &
-  DepartemenTemplateProps &
   DepartemenKnowMoreProps &
   DepartemenAkreditasiProps &
   DepartemenBidangKeahlianProps &
@@ -123,10 +116,9 @@ export default function DepartemenTemplate({
             <DepartemenHeroSection
               departmentName={departmentName}
               facultyName={facultyName}
-              buttonScrollto={buttonScrollto}
             />
           </section>
-          <section id={idScrollto} className='relative z-20'>
+          <section id='buttonScrollto' className='relative z-20'>
             <div>
               {/* Know More Section Start */}
               <div className='absolute z-30 mt-[37rem] ml-[2rem] w-[70px] sm:mt-[32rem] sm:ml-[10rem] md:mt-[34rem] md:ml-[14rem] lg:w-[100px] min-lg:right-[43rem] min-lg:mt-[33rem] xl:right-[33.5rem] xl:mt-[10rem]'>

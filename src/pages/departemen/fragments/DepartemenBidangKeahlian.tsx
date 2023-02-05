@@ -66,10 +66,10 @@ export default function DepartemenBidangKeahlian({
                 as='h5'
                 variant='h5'
                 className={clsx(
-                  'bordered1 pt-[23px] pb-[23px] text-left text-[18px] font-bold text-[#FFFFFF]',
-                  'lg:bordered lg:pt-0 lg:pb-0 lg:text-[48px] lg:leading-[64px]',
-                  'md:bordered1 md:text-[32px]',
-                  'sm:bordered1 sm:text-[32px]'
+                  'stroke-sm pt-[23px] pb-[23px] text-left text-[18px] font-bold text-[#FFFFFF]',
+                  'lg:stroke lg:pt-0 lg:pb-0 lg:text-[48px] lg:leading-[64px]',
+                  'md:stroke-sm md:text-[32px]',
+                  'sm:stroke-sm sm:text-[32px]'
                 )}
               >
                 Bidang Keahlian Departemen

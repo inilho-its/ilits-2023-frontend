@@ -1,25 +1,17 @@
 import clsx from 'clsx';
 import * as React from 'react';
 
-import Button from '@/components/buttons/Button';
+import ButtonLink from '@/components/links/ButtonLink';
 import Typography from '@/components/typography/Typography';
 
 export type DepartemenHeroSectionProps = {
   departmentName: string;
   facultyName: string;
-  buttonScrollto: string;
 };
 export default function DepartemenHeroSection({
   departmentName,
   facultyName,
-  buttonScrollto,
 }: DepartemenHeroSectionProps) {
-  const handleClickScroll = () => {
-    const element = document.getElementById(buttonScrollto);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
   return (
     <>
       <div className='layout relative z-20 w-full pb-[80px] lg:flex lg:pb-0'>
@@ -35,10 +27,10 @@ export default function DepartemenHeroSection({
               as='h1'
               variant='h1'
               className={clsx(
-                'bordered1 pt-[155px] pr-[72px] pl-[72px] text-[24px] leading-[32px] text-[#FFC95D]',
-                'lg:bordered lg:pt-6 lg:pr-[0px] lg:pl-[0px] lg:text-left lg:text-[80px] lg:leading-[96px]',
-                'md:bordered md:text-[50px] md:leading-[50px]',
-                'sm:bordered sm:text-[50px] sm:leading-[50px]'
+                'stroke-sm pt-[155px] pr-[72px] pl-[72px] text-[24px] leading-[32px] text-[#FFC95D]',
+                'lg:stroke lg:pt-6 lg:pr-[0px] lg:pl-[0px] lg:text-left lg:text-[80px] lg:leading-[96px]',
+                'md:stroke md:text-[50px] md:leading-[50px]',
+                'sm:stroke sm:text-[50px] sm:leading-[50px]'
               )}
             >
               {departmentName}
@@ -56,7 +48,7 @@ export default function DepartemenHeroSection({
               {facultyName}
             </Typography>
             <div className='z-20'>
-              <Button
+              <ButtonLink
                 variant='lightBlue'
                 size='medium'
                 className={clsx(
@@ -65,10 +57,10 @@ export default function DepartemenHeroSection({
                   'md:mt-[48px] md:h-[48px] md:text-[16px]',
                   'sm:mt-[48px] sm:h-[48px] sm:text-[16px]'
                 )}
-                onClick={handleClickScroll}
+                href='#buttonScrollto'
               >
                 Kenali Lebih Lanjut!
-              </Button>
+              </ButtonLink>
             </div>
           </div>
         </div>

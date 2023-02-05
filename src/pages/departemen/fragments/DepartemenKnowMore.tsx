@@ -27,10 +27,10 @@ export default function DepartemenKenaliLebih({
           as='h5'
           variant='h5'
           className={clsx(
-            'bordered1 pt-[0.3rem] text-[24px] font-bold text-[#FFFFFF]',
-            'lg:bordered lg:pt-0 lg:text-[48px] lg:leading-[64px]',
-            'md:bordered1 md:text-[32px]',
-            'sm:bordered1 sm:text-[32px]'
+            'stroke-sm pt-[0.3rem] text-[24px] font-bold text-[#FFFFFF]',
+            'lg:stroke lg:pt-0 lg:text-[48px] lg:leading-[64px]',
+            'md:stroke-sm md:text-[32px]',
+            'sm:stroke-sm sm:text-[32px]'
           )}
         >
           Kenali Lebih Jauh!
@@ -46,19 +46,24 @@ export default function DepartemenKenaliLebih({
           'w-full'
         )}
       >
-        <div className={clsx('relative bg-[#30302E]', 'xl:h-[80px]')}>
-          <div className='w-0 lg:w-full'>
+        <div
+          className={clsx(
+            'relative overflow-hidden bg-[#30302E]',
+            'lg:h-[80px]'
+          )}
+        >
+          <div className='absolute top-7 w-0 lg:w-full xl:top-5'>
             <NextImage
               src='/images/pageDepartemen/knowMoreText.png'
               width='100%'
-              height='6%'
+              height='3%'
               objectFit='contain'
               layout='responsive'
               alt=''
             />
           </div>
         </div>
-        <div className={clsx('bg-[#30302E]', 'lg:hidden')}>
+        <div className={clsx('overflow-hidden bg-[#30302E]', 'lg:hidden')}>
           <div className='w-full lg:hidden'>
             <NextImage
               src='/images/pageDepartemen/m-knowMoreText.png'
