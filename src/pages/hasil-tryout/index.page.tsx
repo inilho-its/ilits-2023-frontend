@@ -108,11 +108,11 @@ export default function HasilTryout() {
   return (
     <Layout withFooter={false} withNavbar={false}>
       <Seo templateTitle='Hasil Try Out' />
-      <main className='relative h-full bg-bone-500'>
+      <main className='relative min-h-screen bg-bone-500'>
         <section className=' bg-bone-500'>
           {page === 2 && (
             <NextImage
-              className='absolute top-1/2 left-1/2 w-[120vh] -translate-x-1/2 -translate-y-1/2'
+              className='absolute top-1/2 left-1/2 w-[90vh] -translate-x-1/2 -translate-y-1/2 lg:w-[120vh]'
               alt='bakground'
               height='60%'
               width='100%'
@@ -152,7 +152,7 @@ export default function HasilTryout() {
               {page === 1 && (
                 <Typography
                   variant='h6'
-                  className='mt-2 text-sm font-semibold sm:mt-4 sm:text-lg md:text-xl lg:pl-10'
+                  className='mt-2 text-xs font-semibold sm:mt-4 sm:text-lg md:text-xl lg:pl-10'
                 >
                   Kesuksesanmu bukanlah kebetulan. Sudah berapa banyak kerja
                   keras dan pengorbanan. Berharap, semoga selalu diberi
@@ -165,7 +165,7 @@ export default function HasilTryout() {
               {page === 2 && (
                 <Typography
                   variant='h6'
-                  className='mt-2 text-sm font-semibold sm:mt-4 sm:text-lg md:text-xl lg:pl-10'
+                  className='mt-0 text-sm font-semibold sm:mt-4 sm:text-lg md:text-xl lg:pl-10'
                 >
                   Hasil Try Out INI LHO ITS !
                 </Typography>
@@ -174,8 +174,8 @@ export default function HasilTryout() {
           </div>
           <div
             className={`${
-              page === 1 ? '' : '-translate-y-24'
-            } flex min-h-screen w-full items-center justify-center px-5 md:py-32 lg:py-32`}
+              page === 1 ? 'md:py-32 lg:py-32' : 'z-[99] pt-32 pb-8'
+            } relative flex min-h-screen w-full items-center justify-center px-5`}
           >
             {page === 1 && (
               <div className='relative'>
@@ -221,8 +221,8 @@ export default function HasilTryout() {
             )}
 
             {page === 2 && (
-              <div className='h-72 w-[65%] space-y-10'>
-                <div className='text-2xl'>
+              <div className='h-fit w-[95%] space-y-10 md:w-[70%] xl:w-[65%]'>
+                <div className='text-lg md:text-2xl'>
                   <span className='inline-block w-24 font-medium'>Nama</span>
                   <span>: {ranking?.nama}</span>
                   <br />
@@ -236,11 +236,11 @@ export default function HasilTryout() {
                 </div>
 
                 <div className='space-y-4'>
-                  <h4 className='font-medium'>
+                  <h4 className='text-base font-medium md:text-xl'>
                     Terimakasih telah mengikuti Welcome Surabaya Ini Lho ITS!
                     2023, berikut merupakan hasil ujian mu:
                   </h4>
-                  <div className='flex space-x-72 text-lg'>
+                  <div className='lg: flex flex-col space-y-8 text-base md:space-x-0 md:text-lg lg:flex-row lg:space-x-44 lg:space-y-0 xl:space-x-72'>
                     <div>
                       <p>Nilai TPA : {ranking?.nilai_tpa}</p>
                       <p>
@@ -274,79 +274,98 @@ export default function HasilTryout() {
                       )}
                     </div>
                   </div>
-                  <div className='mx-auto flex w-fit flex-wrap gap-x-4'>
-                    {ranking?.sertifikat.freePass && (
-                      <Button
-                        variant='bone'
-                        onClick={() =>
-                          downloadSertifikat(
-                            `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.freePass[0]}`
-                          )
-                        }
-                      >
-                        Freepass
-                      </Button>
-                    )}
-                    {ranking?.sertifikat.pemenang_WelcomeNasional && (
-                      <Button
-                        variant='bone'
-                        onClick={() =>
-                          downloadSertifikat(
-                            `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.pemenang_WelcomeNasional[0]}`
-                          )
-                        }
-                      >
-                        Pemenang Welcome Nasional
-                      </Button>
-                    )}
-                    {ranking?.sertifikat.pemenang_Welsur && (
-                      <Button
-                        variant='bone'
-                        onClick={() =>
-                          downloadSertifikat(
-                            `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.pemenang_Welsur[0]}`
-                          )
-                        }
-                      >
-                        Pemenang Welcome Surabaya
-                      </Button>
-                    )}
-                    {ranking?.sertifikat.pemenang_Welfor && (
-                      <Button
-                        variant='bone'
-                        onClick={() =>
-                          downloadSertifikat(
-                            `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.pemenang_Welfor[0]}`
-                          )
-                        }
-                      >
-                        Pemenang Welcome Forda
-                      </Button>
-                    )}
-                    {ranking?.sertifikat.peserta_openCampus_Welcome && (
-                      <Button
-                        variant='bone'
-                        onClick={() =>
-                          downloadSertifikat(
-                            `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.peserta_openCampus_Welcome[0]}`
-                          )
-                        }
-                      >
-                        Peserta Open Campus Welcome
-                      </Button>
-                    )}
-                    {ranking?.sertifikat.peserta_welcomeNasional && (
-                      <Button
-                        variant='bone'
-                        onClick={() =>
-                          downloadSertifikat(
-                            `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.peserta_welcomeNasional[0]}`
-                          )
-                        }
-                      >
-                        Peserta Welcome Nasional
-                      </Button>
-                    )}
+
+                  <div>
+                    <h4 className='mb-4 text-center font-semibold'>
+                      Sertifikat
+                    </h4>
+
+                    <div className='mx-auto flex flex-col items-center gap-y-3'>
+                      {ranking?.sertifikat.freePass && (
+                        <Button
+                          variant='bone'
+                          className='flex w-64 items-center justify-center'
+                          size='small'
+                          onClick={() =>
+                            downloadSertifikat(
+                              `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.freePass[0]}`
+                            )
+                          }
+                        >
+                          Freepass
+                        </Button>
+                      )}
+                      {ranking?.sertifikat.pemenang_WelcomeNasional && (
+                        <Button
+                          variant='bone'
+                          className='flex w-64 items-center justify-center'
+                          size='small'
+                          onClick={() =>
+                            downloadSertifikat(
+                              `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.pemenang_WelcomeNasional[0]}`
+                            )
+                          }
+                        >
+                          Pemenang Welcome Nasional
+                        </Button>
+                      )}
+                      {ranking?.sertifikat.pemenang_Welsur && (
+                        <Button
+                          variant='bone'
+                          className='flex w-64 items-center justify-center'
+                          size='small'
+                          onClick={() =>
+                            downloadSertifikat(
+                              `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.pemenang_Welsur[0]}`
+                            )
+                          }
+                        >
+                          Pemenang Welcome Surabaya
+                        </Button>
+                      )}
+                      {ranking?.sertifikat.pemenang_Welfor && (
+                        <Button
+                          variant='bone'
+                          className='flex w-64 items-center justify-center'
+                          size='small'
+                          onClick={() =>
+                            downloadSertifikat(
+                              `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.pemenang_Welfor[0]}`
+                            )
+                          }
+                        >
+                          Pemenang Welcome Forda
+                        </Button>
+                      )}
+                      {ranking?.sertifikat.peserta_openCampus_Welcome && (
+                        <Button
+                          variant='bone'
+                          className='flex w-64 items-center justify-center'
+                          size='small'
+                          onClick={() =>
+                            downloadSertifikat(
+                              `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.peserta_openCampus_Welcome[0]}`
+                            )
+                          }
+                        >
+                          Peserta Open Campus Welcome
+                        </Button>
+                      )}
+                      {ranking?.sertifikat.peserta_welcomeNasional && (
+                        <Button
+                          variant='bone'
+                          className='flex w-64 items-center justify-center'
+                          size='small'
+                          onClick={() =>
+                            downloadSertifikat(
+                              `https://inilho.its.ac.id/storage/asset-sertifikat${ranking?.sertifikat.peserta_welcomeNasional[0]}`
+                            )
+                          }
+                        >
+                          Peserta Welcome Nasional
+                        </Button>
+                      )}
+                    </div>
                   </div>
 
                   <h4 className='pt-10 text-center font-semibold'>
