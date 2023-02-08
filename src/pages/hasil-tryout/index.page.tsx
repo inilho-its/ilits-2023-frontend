@@ -62,9 +62,14 @@ export default function HasilTryout() {
   };
 
   const downloadSertifikat = (url: string) => {
+    const isPdf = url.includes('.pdf');
     const filename = url.split('/');
+    if (isPdf) {
+      download(url, filename[5] + '.pdf');
+    } else {
+      download(url, filename[5] + '.jpg');
+    }
 
-    download(url, filename[5]);
     window.open(url);
   };
 
