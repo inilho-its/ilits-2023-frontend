@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -117,7 +118,7 @@ export default function HasilTryout() {
         <section className=' bg-bone-500'>
           {page === 2 && (
             <NextImage
-              className='absolute top-1/2 left-1/2 w-[90vh] -translate-x-1/2 -translate-y-1/2 lg:w-[120vh]'
+              className='absolute top-1/2 left-1/2 w-[70vh] -translate-x-1/2 -translate-y-1/2 md:w-[90vh] lg:w-[120vh]'
               alt='bakground'
               height='60%'
               width='100%'
@@ -157,20 +158,17 @@ export default function HasilTryout() {
               {page === 1 && (
                 <Typography
                   variant='h6'
-                  className='mt-2 text-xs font-semibold sm:mt-4 sm:text-lg md:text-xl lg:pl-10'
+                  className='mt-2 text-sm font-semibold sm:mt-4 sm:text-xl md:text-2xl lg:pl-10'
                 >
-                  Kesuksesanmu bukanlah kebetulan. Sudah berapa banyak kerja
-                  keras dan pengorbanan. Berharap, semoga selalu diberi
-                  kemudahan.
-                  <br />
-                  Semangat! kami tunggu di ITS yaa
+                  Tetap semangat dan terus berjuang, sampai bertemu di kampus
+                  perjuangan ITS Surabaya!
                 </Typography>
               )}
 
               {page === 2 && (
                 <Typography
                   variant='h6'
-                  className='mt-0 text-sm font-semibold sm:mt-4 sm:text-lg md:text-xl lg:pl-10'
+                  className='mt-0 text-sm font-semibold sm:text-lg md:mt-1 md:text-xl lg:mt-4 lg:pl-10'
                 >
                   Hasil Try Out INI LHO ITS !
                 </Typography>
@@ -242,32 +240,32 @@ export default function HasilTryout() {
 
                 <div className='space-y-4'>
                   <h4 className='text-base font-medium md:text-xl'>
-                    Terimakasih telah mengikuti Welcome Surabaya Ini Lho ITS!
+                    Terima kasih telah mengikuti Welcome Surabaya Ini Lho ITS!
                     2023, berikut merupakan hasil ujian mu:
                   </h4>
                   <div className='lg: flex flex-col space-y-8 text-base md:space-x-0 md:text-lg lg:flex-row lg:space-x-44 lg:space-y-0 xl:space-x-72'>
                     <div>
-                      <p>Nilai TPA : {ranking?.nilai_tpa}</p>
+                      <p>Nilai TPA: {ranking?.nilai_tpa}</p>
                       <p>
                         Nilai{' '}
-                        {ranking?.jenis_tryout === 1 ? 'Saintek' : 'Soshum'} :{' '}
+                        {ranking?.jenis_tryout === 1 ? 'Saintek' : 'Soshum'}:{' '}
                         {ranking?.nilai_tka}
                       </p>
-                      <p>Nilai Total : {ranking?.nilai_total}</p>
+                      <p>Nilai Total: {ranking?.nilai_total}</p>
                     </div>
                     <div>
                       {ranking?.ranking_freepass && (
-                        <p>Ranking Freepas : {ranking?.ranking_freepass}</p>
+                        <p>Ranking Freepass: {ranking?.ranking_freepass}</p>
                       )}
                       {ranking?.ranking_welcome_surabaya && (
                         <p>
-                          Ranking Welcome Surabaya :{' '}
+                          Ranking Welcome Surabaya:{' '}
                           {ranking?.ranking_welcome_surabaya}
                         </p>
                       )}
                       {ranking?.ranking_welfor_nasional && (
                         <p>
-                          Ranking Welcome Nasional :{' '}
+                          Ranking Welcome Nasional:{' '}
                           {ranking?.ranking_welfor_nasional}
                         </p>
                       )}
@@ -372,10 +370,22 @@ export default function HasilTryout() {
                       )}
                     </div>
                   </div>
+                  <h4 className='px-2 pt-10 text-center text-sm md:px-10 md:text-lg lg:px-16 lg:text-xl xl:px-16'>
+                    Kesuksesanmu bukanlah kebetulan. Sudah berapa banyak kerja
+                    keras dan pengorbanan. Berharap, semoga selalu diberi
+                    kemudahan.
+                    <br />
+                    Semangat! kami tunggu di ITS yaa...
+                  </h4>
 
-                  <h4 className='pt-10 text-center font-semibold'>
-                    “Tetap semangat dan terus berjuang, sampai bertemu di kampus
-                    perjuangan ITS Surabaya!”
+                  <h4 className='pt-4 text-center font-semibold'>
+                    Informasi seputar Penerimaan mahasiswa baru ITS
+                    <br />
+                    <Link href='http://its.ac.id/admission'>
+                      <a target='_blank' className='text-blue-400 underline'>
+                        http://its.ac.id/admission
+                      </a>
+                    </Link>
                   </h4>
                   <div className='mx-auto mt-44 w-fit pt-8'>
                     <Button
