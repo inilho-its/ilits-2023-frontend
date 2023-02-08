@@ -8,12 +8,10 @@ module.exports = {
 
   pageExtensions: ['page.tsx', 'page.ts', 'api.tsx'],
 
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
+  //Uncoment to add domain whitelist
+  images: {
+    domains: ['inilho.its.ac.id'],
+  },
 
   // SVGR
   webpack(config) {
