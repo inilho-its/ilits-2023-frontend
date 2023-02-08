@@ -53,8 +53,6 @@ export default function HasilTryout() {
 
   const { download } = useDownloader();
 
-  const filename = 'Sertifikat.jpeg';
-
   const methods = useForm<TiketFormState>();
   const { handleSubmit } = methods;
 
@@ -64,7 +62,9 @@ export default function HasilTryout() {
   };
 
   const downloadSertifikat = (url: string) => {
-    download(url, filename);
+    const filename = url.split('/');
+
+    download(url, filename[5]);
     window.open(url);
   };
 
