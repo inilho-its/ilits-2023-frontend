@@ -1163,7 +1163,7 @@ export default function HomePage() {
                         >
                           <ButtonLink
                             className='hidden font-semibold lg:inline-block'
-                            href='/coming-soon'
+                            href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
                             variant='yellow'
                             size='medium'
                             round='medium'
@@ -1172,7 +1172,7 @@ export default function HomePage() {
                           </ButtonLink>
                           <ButtonLink
                             className='inline-block lg:hidden'
-                            href='/coming-soon'
+                            href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
                             variant='yellow'
                             size='small'
                             round='medium'

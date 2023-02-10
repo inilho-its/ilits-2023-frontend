@@ -469,7 +469,7 @@ function HeroSection() {
       <div className='mt-[126px] flex justify-center lg:mt-[74px]'>
         <div className='w-[390px] sm:w-[600px] md:w-[800px] lg:w-[897px]'>
           <NextImage
-            alt='comingsoon'
+            alt='fasilitas'
             src='/images/pageFasilitas/fasilitas-img.png'
             width='100%'
             height='34.5%'
@@ -521,7 +521,7 @@ function FacilityCards({
         <div>
           <div className='mb-[32px] mt-[6px] hover:saturate-100 lg:mt-[0px] lg:w-[512px]'>
             <NextImage
-              alt='comingsoon'
+              alt='fasilitas'
               src={imgSrc}
               width='100%'
               height='55%'
@@ -546,7 +546,7 @@ function FacilityBanner() {
     <div className='mx-4 mb-[-48px] mt-[-28px] flex w-full justify-between rounded-[16px] border-[2px] border-solid border-bone-1000 bg-[#FF9447] lg:m-[16px] lg:mb-[-20px] lg:h-[144px] lg:w-[1255px] lg:rounded-[24px]'>
       <div className='ml-[-25px] lg:mt-[45px] lg:w-[110px]'>
         <NextImage
-          alt='comingsoon'
+          alt='fasilitas'
           src='/images/pageFasilitas/fasilitas-deco-loc.png'
           width='35%'
           height='35%'
@@ -566,7 +566,7 @@ function FacilityBanner() {
       </Typography>
       <div className='lg:mt-[-20px] lg:mr-[-15px] lg:w-[100px]'>
         <NextImage
-          alt='comingsoon'
+          alt='fasilitas'
           src='/images/pageFasilitas/fasilitas-deco-star.png'
           width='35%'
           height='35%'

@@ -100,7 +100,7 @@ export default function Footer() {
               </div>
               <div className='flex h-10 gap-5 px-7 md:pl-0'>
                 <UnstyledLink
-                  href='/coming-soon'
+                  href='https://www.its.ac.id/id/kuliah-di-its/fakultas-dan-departemen/'
                   className='mx-auto text-lg md:mx-0'
                 >
                   Fakultas
