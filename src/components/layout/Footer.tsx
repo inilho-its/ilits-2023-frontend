@@ -200,12 +200,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
+        {/* Copy Right Start */}
         <div className='py-12 text-center font-medium text-white'>
           <Typography variant='caption'>
             &copy; Copyright Ini Lho ITS! 2023. All Rights Reserved
           </Typography>
         </div>
+        {/* Copy Right End */}
       </div>
     </footer>
   );
