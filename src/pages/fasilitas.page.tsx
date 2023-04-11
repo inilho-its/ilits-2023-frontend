@@ -204,26 +204,6 @@ function Ornaments() {
           alt=''
         />
       </div>
-      {/* <div className='absolute ml-[1140px] mt-[100px] lg:w-[300px]'>
-        <NextImage
-          src='/images/pageFasilitas/deco-hero-rCloud.png'
-          width='80%'
-          height='60%'
-          objectFit='contain'
-          layout='responsive'
-          alt=''
-        />
-      </div> */}
-      {/* <div className='absolute top-[19rem] ml-[18.7rem] w-[90px] sm:top-[5rem] sm:ml-[32.4rem] sm:w-[120px] md:ml-[40.5rem] lg:hidden'>
-        <NextImage
-          src='/images/pageFasilitas/fasilitas-mrcloud.png'
-          width='93%'
-          height='100%'
-          objectFit='contain'
-          layout='responsive'
-          alt=''
-        />
-      </div> */}
       <div className='absolute lg:w-full'>
         <NextImage
           src='/images/pageFasilitas/deco-hero-redStrings.png'
@@ -428,10 +408,10 @@ function HeroSection() {
               as='h1'
               variant='h1'
               className={clsx(
-                'bordered1 pt-[100px] text-5xl text-[#FF9447] ',
-                'lg:bordered lg:pt-6 lg:text-[80px]',
-                'md:bordered md:text-[72px]',
-                'sm:bordered sm:text-[72px]'
+                'stroke-sm pt-[100px] text-5xl text-[#FF9447] ',
+                'lg:stroke lg:pt-6 lg:text-[80px]',
+                'md:stroke md:text-[72px]',
+                'sm:stroke sm:text-[72px]'
               )}
             >
               Fasilitas
@@ -558,8 +538,8 @@ function FacilityBanner() {
         as='h4'
         variant='h4'
         className={clsx(
-          'bordered text bordered1 ml-[24px] p-[18px] px-10 text-center text-2xl font-extrabold text-neutral-100',
-          'lg:bordered lg:mt-[15px] lg:p-[40px] lg:text-[48px]'
+          'text stroke-sm ml-[24px] p-[18px] px-10 text-center text-2xl font-extrabold text-neutral-100',
+          'lg:stroke lg:mt-[15px] lg:p-[40px] lg:text-[48px]'
         )}
       >
         Apa Saja Fasilitas di ITS?
